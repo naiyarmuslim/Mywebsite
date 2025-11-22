@@ -1,0 +1,141 @@
+
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naiyar Muslim | Developer, Chef, Influencer</title>
+    
+    <!-- Tailwind CSS for layout and responsiveness -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- --- NAVIGATION --- -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="showPage('home')">
+                    <span class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" onclick="showPage('home')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Home</a>
+                    <a href="about.html" onclick="showPage('about')" class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
+                    <a href="it.html" onclick="showPage('projects')" class="nav-link text-gray-600 hover:text-primary font-medium transition">IT Projects</a>
+                    <a href="chef.html" onclick="showPage('chef')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a>
+                    <a href="influencer.html" onclick="showPage('influencer')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
+                    <a href="travel.html" onclick="showPage('travel')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
+                    <a href="contact.html" onclick="showPage('contact')" class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html" onclick="showPage('home')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
+                <a href="about.html" onclick="showPage('about')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
+                <a href="it.html" onclick="showPage('projects')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">IT Projects</a>
+                <a href="chef.html" onclick="showPage('chef')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
+                <a href="influencer.html" onclick="showPage('influencer')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
+                <a href="travel.html" onclick="showPage('travel')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
+                <a href="contact.html" onclick="showPage('contact')" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+ <!-- --- PAGE 7: CONTACT --- -->
+    <section id="contact" >
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-gray-400">Whether you are a student needing advice, interested in a tech collaboration, or just want to talk about burgers.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 border-b border-gray-700 pb-2">Contact Info</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-envelope text-secondary"></i>
+                            </div>
+                            <span>naiyar.muslim@example.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <span>Germany (Applied CS Student)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center mr-4">
+                                <i class="fab fa-github text-white"></i>
+                            </div>
+                            <a href="https://github.com/naiyarmuslim" class="hover:text-primary transition">github.com/naiyarmuslim</a>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold mb-4">Socials</h3>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/naiyar.gull/" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/reels.gull/" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition"><i class="fab fa-instagram"></i></a>
+                            <a href="https://github.com/naiyarmuslim" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form onsubmit="event.preventDefault(); alert('Thank you! This is a demo form.');" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Name</label>
+                        <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Email</label>
+                        <input type="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary" placeholder="your@email.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Message</label>
+                        <textarea rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-primary" placeholder="How can I help you?"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary hover:bg-red-700 text-white font-bold py-3 rounded-lg transition">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- --- FOOTER --- -->
+    <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
+            <div class="mt-2 space-x-4 text-sm">
+                <a href="#" onclick="showPage('home')" class="hover:text-white">Home</a>
+                <a href="#" onclick="showPage('projects')" class="hover:text-white">Projects</a>
+                <a href="#" onclick="showPage('chef')" class="hover:text-white">Chef</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/general.js"></script>
+</body>
+</html>

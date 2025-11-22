@@ -1,0 +1,143 @@
+
+   
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naiyar Muslim | Developer, Chef, Influencer</title>
+    
+    <!-- Tailwind CSS for layout and responsiveness -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- --- NAVIGATION --- -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="showPage('home')">
+                    <span class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" onclick="showPage('home')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Home</a>
+                    <a href="about.html" onclick="showPage('about')" class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
+                    <a href="it.html" onclick="showPage('projects')" class="nav-link text-gray-600 hover:text-primary font-medium transition">IT Projects</a>
+                    <a href="chef.html" onclick="showPage('chef')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a>
+                    <a href="influencer.html" onclick="showPage('influencer')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
+                    <a href="travel.html" onclick="showPage('travel')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
+                    <a href="contact.html" onclick="showPage('contact')" class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html" onclick="showPage('home')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
+                <a href="about.html" onclick="showPage('about')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
+                <a href="it.html" onclick="showPage('projects')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">IT Projects</a>
+                <a href="chef.html" onclick="showPage('chef')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
+                <a href="influencer.html" onclick="showPage('influencer')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
+                <a href="travel.html" onclick="showPage('travel')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
+                <a href="contact.html" onclick="showPage('contact')" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+   <!-- --- PAGE 5: INFLUENCER --- -->
+    <section id="influencer" >
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Connecting Communities</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Helping students from Gilgit-Baltistan dream big and study in Germany. Sharing culture, tips, and student life.</p>
+            </div>
+
+            <!-- Stats/Impact -->
+            <div class="bg-primary rounded-2xl p-8 text-white mb-12 shadow-xl">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <i class="fab fa-facebook-f text-4xl mb-2 text-white/80"></i>
+                        <h3 class="text-3xl font-bold">Followers</h3>
+                        <p class="text-sm opacity-80">Growing Community</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-user-graduate text-4xl mb-2 text-white/80"></i>
+                        <h3 class="text-3xl font-bold">Mentorship</h3>
+                        <p class="text-sm opacity-80">Helping Students Abroad</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-video text-4xl mb-2 text-white/80"></i>
+                        <h3 class="text-3xl font-bold">Content</h3>
+                        <p class="text-sm opacity-80">Vlogs & Guides</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Placeholders (Representing Facebook Embeds) -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow p-4 border border-gray-100">
+                    <div class="aspect-video bg-gray-100 rounded-lg flex items-center justify-center mb-4 relative overflow-hidden group">
+                        <!-- Placeholder image for video -->
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-700" alt="Student Life">
+                        <div class="absolute inset-0 bg-black/30"></div>
+                        <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="relative z-10 w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:scale-110 transition">
+                            <i class="fas fa-play ml-1"></i>
+                        </a>
+                    </div>
+                    <h4 class="font-bold text-lg">Student Life in Germany</h4>
+                    <p class="text-sm text-gray-500">A guide for newcomers from GB.</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow p-4 border border-gray-100">
+                    <div class="aspect-video bg-gray-100 rounded-lg flex items-center justify-center mb-4 relative overflow-hidden group">
+                         <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition duration-700" alt="Travel Vlog">
+                         <div class="absolute inset-0 bg-black/30"></div>
+                        <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="relative z-10 w-16 h-16 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:scale-110 transition">
+                            <i class="fas fa-play ml-1"></i>
+                        </a>
+                    </div>
+                    <h4 class="font-bold text-lg">Cultural Differences</h4>
+                    <p class="text-sm text-gray-500">My experiences adapting to life abroad.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="text-blue-600 hover:underline font-medium">Watch more on Facebook <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- --- FOOTER --- -->
+    <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
+            <div class="mt-2 space-x-4 text-sm">
+                <a href="#" onclick="showPage('home')" class="hover:text-white">Home</a>
+                <a href="#" onclick="showPage('projects')" class="hover:text-white">Projects</a>
+                <a href="#" onclick="showPage('chef')" class="hover:text-white">Chef</a>
+            </div>
+        </div>
+    </footer>
+  <script src="../assets/js/general.js"></script>
+  
+</body>
+</html>

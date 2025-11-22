@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naiyar Muslim | Developer, Chef, Influencer</title>
+    
+    <!-- Tailwind CSS for layout and responsiveness -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- --- NAVIGATION --- -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="showPage('home')">
+                    <span class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" onclick="showPage('home')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Home</a>
+                    <a href="about.html" onclick="showPage('about')" class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
+                    <a href="it.html" onclick="showPage('projects')" class="nav-link text-gray-600 hover:text-primary font-medium transition">IT Projects</a>
+                    <a href="#" onclick="showPage('chef')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a>
+                    <a href="influencer.html" onclick="showPage('influencer')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
+                    <a href="travel.html" onclick="showPage('travel')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
+                    <a href="contact.html" onclick="showPage('contact')" class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html" onclick="showPage('home')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
+                <a href="about.html" onclick="showPage('about')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
+                <a href="it.html" onclick="showPage('projects')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">IT Projects</a>
+                <a href="#" onclick="showPage('chef')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
+                <a href="influencer.html" onclick="showPage('influencer')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
+                <a href="travel.html" onclick="showPage('travel')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
+                <a href="contact.html" onclick="showPage('contact')" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+<!-- --- PAGE 4: CHEF / FOOD --- -->
+    <section id="chef" >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-12">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm">Big Apple Burgers</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Culinary Creations</h2>
+                <p class="text-gray-600 mt-4">When I'm not coding, I'm crafting flavors. From secret sauces to the perfect patty.</p>
+            </div>
+
+            <!-- Food Content -->
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">The Art of the Burger</h3>
+                    <p class="text-gray-600 mb-4">Working at <strong>Big Apple Burgers</strong> has taught me that cooking is just like programming: it requires patience, precision, and creativity. I specialize in creating unique sauce blends that elevate a simple burger to an experience.</p>
+                    <ul class="space-y-3 mb-6 text-gray-700">
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i> Custom Sauce Development</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i> Premium Burger Assembly</li>
+                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i> High-Volume Kitchen Management</li>
+                    </ul>
+                    <a href="https://www.bigappleburgerskuenzell-kuenzell.de/" target="_blank" class="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
+                        Visit Restaurant Website
+                    </a>
+                </div>
+                <div class="order-1 md:order-2 grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="rounded-lg shadow-md w-full h-48 object-cover" alt="Burger">
+                    <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="rounded-lg shadow-md w-full h-48 object-cover mt-8" alt="Cooking">
+                </div>
+            </div>
+
+            <!-- Menu Showcase -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-4 rounded-xl shadow text-center chef-card cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="w-full h-48 object-cover rounded-lg mb-4 transition duration-500" alt="Burger 1">
+                    <h4 class="font-bold text-lg">Classic Cheeseburger</h4>
+                    <p class="text-sm text-gray-500">With my signature spice blend</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow text-center chef-card cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="w-full h-48 object-cover rounded-lg mb-4 transition duration-500" alt="Burger 2">
+                    <h4 class="font-bold text-lg">The Spicy Stack</h4>
+                    <p class="text-sm text-gray-500">Jalapeños & Chili Sauce</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow text-center chef-card cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1625938145244-80525907464d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="w-full h-48 object-cover rounded-lg mb-4 transition duration-500" alt="Sauce">
+                    <h4 class="font-bold text-lg">Secret Sauces</h4>
+                    <p class="text-sm text-gray-500">Developed in-house</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- --- FOOTER --- -->
+    <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
+            <div class="mt-2 space-x-4 text-sm">
+                <a href="#" onclick="showPage('home')" class="hover:text-white">Home</a>
+                <a href="#" onclick="showPage('projects')" class="hover:text-white">Projects</a>
+                <a href="#" onclick="showPage('chef')" class="hover:text-white">Chef</a>
+            </div>
+        </div>
+    </footer>
+  <script src="../assets/js/general.js"></script>
+  
+</body>
+</html>

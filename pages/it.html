@@ -1,0 +1,145 @@
+
+
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naiyar Muslim | Developer, Chef, Influencer</title>
+    
+    <!-- Tailwind CSS for layout and responsiveness -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- --- NAVIGATION --- -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="showPage('home')">
+                    <span class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" onclick="showPage('home')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Home</a>
+                    <a href="about.html" onclick="showPage('about')" class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
+                    <a href="it.html" onclick="showPage('projects')" class="nav-link text-gray-600 hover:text-primary font-medium transition">IT Projects</a>
+                    <a href="chef.html" onclick="showPage('chef')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a>
+                    <a href="influencer.html" onclick="showPage('influencer')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
+                    <a href="travel.html" onclick="showPage('travel')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
+                    <a href="contact.html" onclick="showPage('contact')" class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html" onclick="showPage('home')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
+                <a href="about.html" onclick="showPage('about')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
+                <a href="it.html" onclick="showPage('projects')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">IT Projects</a>
+                <a href="chef.html" onclick="showPage('chef')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
+                <a href="influencer.html" onclick="showPage('influencer')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
+                <a href="travel.html" onclick="showPage('travel')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
+                <a href="contact.html" onclick="showPage('contact')" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+<!-- --- PAGE 3: IT PROJECTS --- -->
+    <section id="projects" >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Code & Projects</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">I build things to solve problems and learn new technologies. Here are some highlights from my GitHub.</p>
+            </div>
+
+            <!-- Skills Tags -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">Java</span>
+                <span class="px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold">Python</span>
+                <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold">HTML/CSS</span>
+                <span class="px-4 py-2 bg-gray-100 text-gray-800 rounded-full text-sm font-semibold">Git</span>
+                <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold">Web Dev</span>
+            </div>
+
+            <!-- Projects Grid (Mock Data based on prompt) -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="project-grid">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition group">
+                    <div class="h-48 bg-gray-800 flex items-center justify-center group-hover:bg-gray-700 transition">
+                        <i class="fas fa-laptop-code text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Portfolio Website</h3>
+                        <p class="text-gray-600 text-sm mb-4">A responsive personal portfolio website built with modern web technologies to showcase my skills and recipes.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">HTML, CSS, JS</span>
+                            <a href="https://github.com/naiyarmuslim" target="_blank" class="text-primary hover:text-red-800 font-medium text-sm">View Code <i class="fas fa-external-link-alt ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition group">
+                    <div class="h-48 bg-blue-900 flex items-center justify-center group-hover:bg-blue-800 transition">
+                        <i class="fab fa-java text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">University Projects</h3>
+                        <p class="text-gray-600 text-sm mb-4">Various algorithms and data structure implementations created during my 3rd semester studies.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Java, Algorithms</span>
+                            <a href="https://github.com/naiyarmuslim" target="_blank" class="text-primary hover:text-red-800 font-medium text-sm">View Code <i class="fas fa-external-link-alt ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition group">
+                    <div class="h-48 bg-green-800 flex items-center justify-center group-hover:bg-green-700 transition">
+                        <i class="fas fa-leaf text-4xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">More Projects</h3>
+                        <p class="text-gray-600 text-sm mb-4">Check out my GitHub for the latest updates on what I am building currently.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Open Source</span>
+                            <a href="https://github.com/naiyarmuslim" target="_blank" class="text-primary hover:text-red-800 font-medium text-sm">Visit GitHub <i class="fab fa-github ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- --- FOOTER --- -->
+    <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
+            <div class="mt-2 space-x-4 text-sm">
+                <a href="#" onclick="showPage('home')" class="hover:text-white">Home</a>
+                <a href="#" onclick="showPage('projects')" class="hover:text-white">Projects</a>
+                <a href="#" onclick="showPage('chef')" class="hover:text-white">Chef</a>
+            </div>
+        </div>
+    </footer>
+  <script src="../assets/js/general.js"></script>
+  
+</body>
+</html>
