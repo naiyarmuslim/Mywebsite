@@ -1,96 +1,39 @@
-// --- GENERAL SITE LOGIC ---
+// --- Configuration ---
+const PRIMARY_COLOR_CODE = '#DC2626'; // Red-600 (Tailwind Primary)
 
-// 1. Navigation Logic (Uses URL Hash for "Multi-Page" feel)
-    
+// --- General Navigation (for future use if pages were linked via JS) ---
+
 /**
- * Shows the page corresponding to the URL hash, defaulting to the first page.
- * @param {string} pageId - The ID of the page to show (e.g., 'home-page').
+ * Placeholder function for multi-page navigation (currently using direct hrefs in HTML)
+ * @param {string} pageId - The ID of the page to show.
  */
 function showPage(pageId) {
-    // Fallback to a default page ID if the hash is empty (ensure you have a 'home-page' ID in HTML)
-    const finalPageId = pageId || 'home-page'; 
-
-    // Hide all pages
-    const pages = document.querySelectorAll('.page-section');
-    pages.forEach(page => {
-        page.classList.remove('active');
-        page.setAttribute('aria-hidden', 'true'); 
-    });
-
-    // Show selected page
-    const activePage = document.getElementById(finalPageId);
-    if (activePage) {
-        activePage.classList.add('active');
-        activePage.setAttribute('aria-hidden', 'false');
-        window.scrollTo(0, 0); // Scroll to top
-    }
-
-    // Close mobile menu if open
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.add('hidden');
-    }
+    // This function is currently just for console logging or simple interactions,
+    // as navigation is handled by standard HTML <a> tags.
+    console.log(`Navigating to page: ${pageId}. (Using standard HTML links for now.)`);
+    // In a real SPA, this would handle routing logic. For now, it just redirects.
+    if (pageId === 'home') window.location.href = '../index.html';
+    if (pageId === 'projects') window.location.href = './it.html';
+    if (pageId === 'chef') window.location.href = './chef.html';
 }
 
 /**
- * Handles navigation based on the current URL hash.
+ * Toggles the mobile menu visibility.
  */
-function handleNavigation() {
-    // Get the page ID from the URL hash (e.g., #about-page -> about-page)
-    const hash = window.location.hash.substring(1); 
-    showPage(hash);
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
 }
 
+// Apply Poppins to body for Tailwind font styling
+document.body.style.fontFamily = 'Inter, sans-serif';
 
-// Wait for the DOM to be fully loaded before looking for elements
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // A. Initialize the correct page on load
-    handleNavigation();
-    
-    // B. Listen for hash changes (when a user clicks a link)
-    window.addEventListener('hashchange', handleNavigation);
-
-
-    // 2. Mobile Menu Toggle
-    // Expose globally for inline HTML usage (e.g., onclick="toggleMobileMenu()")
-    window.toggleMobileMenu = function() {
-        const menu = document.getElementById('mobile-menu');
-        if (menu) {
-            menu.classList.toggle('hidden');
-        }
-    };
-    
-    // 3. Sticky Navbar Effect
-    const nav = document.getElementById('navbar');
-    if (nav) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 10) {
-                // Now only uses the standard shadow-md class
-                nav.classList.add('shadow-md');
-            } else {
-                nav.classList.remove('shadow-md');
-            }
-        });
+// --- Initialization: Sticky Navigation Bar ---
+window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('shadow-lg');
+    } else {
+        navbar.classList.remove('shadow-lg');
     }
-
-    // 4. Initialization Message
-    console.log("Website Loaded - Welcome Naiyar!");
 });
-
-/* Tailwind Config (Keep this outside of the JS logic block if it's separate script) */
-tailwind.config = {
-    theme: {
-        extend: {
-            colors: {
-                primary: '#B91C1C', // Deep Red (Chef/Passion)
-                secondary: '#059669', // Emerald Green (Nature/GB)
-                // Removed 'dark' and 'light' colors as they relate to dark mode
-            },
-            fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                display: ['Poppins', 'sans-serif'],
-            }
-        }
-    }
-}

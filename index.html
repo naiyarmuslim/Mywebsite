@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naiyar Muslim | Developer, Chef, Influencer</title>
+    <title>Naiyar Muslim | Full Stack Portfolio & Multi-Persona</title>
     
-    <!-- Tailwind CSS library -->
+    <!-- Tailwind CSS for layout and responsiveness -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
@@ -13,38 +13,52 @@
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- External CSS file (for hero-bg styling, etc.) -->
-    <link rel="stylesheet" href="assets/css/style.css">
     
-    <!-- NOTE: Tailwind config must be in an external script or manually set -->
+    <!-- Custom CSS (for colors/fonts/overrides) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Tailwind Configuration for Custom Fonts/Colors (for example) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#DC2626', // Red-600
+                        'secondary': '#FBBF24', // Amber-400
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- --- NAVIGATION --- -->
+    <!-- --- NAVIGATION (Consistent Header) --- -->
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center">
-                    <!-- Navigates to the root -->
-                    <a href="index.html" class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></a>
-                </div>
+                <!-- Logo: Correctly links to index.html -->
+                <a href="index.html" class="flex-shrink-0 flex items-center cursor-pointer">
+                    <span class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></span>
+                </a>
                 
-                <!-- Desktop Menu -->
+                <!-- Desktop Menu: Links use the 'pages/' prefix -->
                 <div class="hidden md:flex space-x-8">
-                    <!-- Links use native HREFs for Multi-Page App structure -->
-                    <a href="index.html" class="nav-link text-primary font-bold transition">Home</a>
-                    <a href="pages/about.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
-                    <a href="pages/it.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">IT Projects</a>
-                    <a href="pages/chef.html"  class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a>
-                    <a href="pages/influencer.html"  class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
+                    <a href="index.html" class="nav-link text-primary font-bold border-b-2 border-primary">Home</a>
+                    <a href="pages/about.html"  class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
+                    <a href="pages/it.html"  class="nav-link text-gray-600 hover:text-primary font-medium transition">IT Projects</a>
+                    <a href="pages/chef.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a>
+                    <a href="pages/influencer.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
                     <a href="pages/travel.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
                     <a href="pages/contact.html"  class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
                 </div>
-                
+
                 <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
-                    <!-- Calls the toggleMobileMenu function from assets/js/general.js -->
                     <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-primary focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
@@ -52,67 +66,135 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Panel -->
+        <!-- Mobile Menu Panel: Links use the 'pages/' prefix -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-primary bg-gray-50">Home</a>
-                <a href="pages/about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
+                <a href="pages/about.html"  class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
                 <a href="pages/it.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">IT Projects</a>
-                <a href="pages/chef.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
-                <a href="pages/influencer.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
-                <a href="pages/travel.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
+                <a href="pages/chef.html"  class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
+                <a href="pages/influencer.html"  class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
+                <a href="pages/travel.html"  class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
                 <a href="pages/contact.html" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
             </div>
         </div>
     </nav>
-
-    <!-- --- PAGE CONTENT: HOME --- -->
-    <main class="pt-20">
-        <section id="home-page" class="page-section">
-            <div class="hero-bg h-[calc(100vh-80px)] flex items-center justify-center text-center px-4">
-                <div class="max-w-4xl mx-auto text-white">
-                    <div class="mb-6 relative inline-block">
-                        <img src="https://placehold.co/200x200/B91C1C/fff?text=NM" alt="Naiyar Muslim" class="w-32 h-32 rounded-full border-4 border-white shadow-xl mx-auto object-cover" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Naiyar+Muslim&background=B91C1C&color=fff&size=200';">
-                        <div class="absolute bottom-0 right-0 bg-secondary text-white text-xs px-2 py-1 rounded-full border-2 border-white">
-                            GB 🏔️
+    
+    <main class="min-h-screen">
+        
+        <!-- --- 1. HERO SECTION --- -->
+        <section id="hero" class="bg-white pt-32 pb-20 md:pt-40 md:pb-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="md:flex md:items-center md:justify-between">
+                    
+                    <!-- Text Content -->
+                    <div class="md:w-1/2">
+                        <span class="text-xs md:text-sm font-semibold text-primary uppercase tracking-widest mb-2 block">FULL STACK PORTFOLIO</span>
+                        <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4 font-display">
+                            Hi, I'm Naiyar Muslim
+                        </h1>
+                        <p class="text-xl text-gray-600 mb-8 max-w-lg">
+                            An Applied Computer Science Student, blending technical skills with a passion for cooking, travel, and media.
+                        </p>
+                        
+                        <div class="flex space-x-4">
+                            <!-- Link uses the 'pages/' prefix -->
+                            <a href="pages/it.html" class="px-6 py-3 bg-primary text-white font-semibold rounded-full shadow-lg hover:bg-red-700 transition transform hover:scale-105 flex items-center">
+                                <i class="fas fa-code mr-2"></i> Explore IT Projects
+                            </a>
+                            <!-- Link uses the 'pages/' prefix -->
+                            <a href="pages/contact.html" class="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-full hover:bg-gray-100 transition flex items-center">
+                                Contact Me
+                            </a>
                         </div>
                     </div>
-                    <h1 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight font-display">Hi, I'm Naiyar Muslim</h1>
-                    <p class="text-xl md:text-2xl mb-8 text-gray-200 font-light font-sans">Student, Developer, Chef & Influencer from Gilgit-Baltistan</p>
-                    
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <!-- Buttons use native HREFs -->
-                        <a href="pages/it.html" class="px-8 py-3 bg-primary hover:bg-red-700 text-white font-semibold rounded-lg transition transform hover:-translate-y-1 shadow-lg flex items-center">
-                            View My Code <i class="fas fa-code ml-2"></i>
-                        </a>
-                        <a href="pages/chef.html" class="px-8 py-3 bg-white hover:bg-gray-100 text-gray-900 font-semibold rounded-lg transition transform hover:-translate-y-1 shadow-lg flex items-center">
-                            See My Food <i class="fas fa-utensils ml-2 text-secondary"></i>
-                        </a>
+
+                    <!-- Image Placeholder (Replace with actual photo path later) -->
+                    <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end">
+                        <div class="relative w-72 h-72 md:w-80 md:h-80 bg-gray-200 rounded-full overflow-hidden shadow-2xl border-4 border-primary/50">
+                            <!-- Placeholder Image -->
+                            <img src="assets/images/profile.png" alt="Naiyar Muslim Portfolio Photo" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" onerror="this.onerror=null;this.src='https://placehold.co/800x800/DC2626/ffffff?text=Naiyar+Muslim+Photo';">
+                        </div>
                     </div>
 
-                    <div class="mt-12 flex justify-center gap-6 text-2xl text-gray-300">
-                        <a href="https://github.com/naiyarmuslim" target="_blank" class="hover:text-white transition"><i class="fab fa-github"></i></a>
-                        <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="hover:text-white transition"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/reels.gull/" target="_blank" class="hover:text-white transition"><i class="fab fa-instagram"></i></a>
-                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- --- 2. MULTI-PERSONA OVERVIEW SECTION --- -->
+        <section id="personas" class="py-16 md:py-24 bg-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-display mb-3">My Four Pillars</h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">This portfolio reflects the diverse skills and passions that define me. Click to explore each domain.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Pillar 1: IT & Tech - Link uses the 'pages/' prefix -->
+                    <a href="pages/it.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-blue-600">
+                        <i class="fas fa-laptop-code text-4xl text-blue-600 mb-4 group-hover:scale-110 transition"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">IT & Development</h3>
+                        <p class="text-gray-600 text-sm">Applied Computer Science student focusing on networking, system administration, and modern web development.</p>
+                        <span class="mt-4 text-primary font-semibold block">View Projects <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
+                    </a>
+
+                    <!-- Pillar 2: Chef & Food - Link uses the 'pages/' prefix -->
+                    <a href="pages/chef.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-green-600">
+                        <i class="fas fa-utensils text-4xl text-green-600 mb-4 group-hover:scale-110 transition"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Chef & Culinary</h3>
+                        <p class="text-gray-600 text-sm">Experience as a part-time cook, passionate about European and fusion cuisine, with a focus on technique and presentation.</p>
+                        <span class="mt-4 text-primary font-semibold block">View Dishes <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
+                    </a>
+
+                    <!-- Pillar 3: Influencer & Media - Link uses the 'pages/' prefix -->
+                    <a href="pages/influencer.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-purple-600">
+                        <i class="fas fa-camera-retro text-4xl text-purple-600 mb-4 group-hover:scale-110 transition"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Media & Influencer</h3>
+                        <p class="text-gray-600 text-sm">Experience in content creation, photography, and building an online presence through engaging visual storytelling.</p>
+                        <span class="mt-4 text-primary font-semibold block">View Media <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
+                    </a>
+
+                    <!-- Pillar 4: Travel - Link uses the 'pages/' prefix -->
+                    <a href="pages/travel.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-yellow-600">
+                        <i class="fas fa-plane-departure text-4xl text-yellow-600 mb-4 group-hover:scale-110 transition"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Travel & Culture</h3>
+                        <p class="text-gray-600 text-sm">Documenting travels and cultural experiences, using these adventures to broaden perspective and creativity.</p>
+                        <span class="mt-4 text-primary font-semibold block">View Journeys <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- --- 3. CALL TO ACTION (Contact) --- -->
+        <section id="cta" class="py-16 md:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-primary p-10 rounded-xl shadow-2xl">
+                <h2 class="text-3xl font-extrabold text-white mb-4">Ready to Connect?</h2>
+                <p class="text-red-100 mb-8">Whether it's a job opportunity, a collaboration, or just a friendly hello, I'm happy to hear from you.</p>
+                <!-- Link uses the 'pages/' prefix -->
+                <a href="pages/contact.html" class="inline-block px-8 py-4 bg-white text-primary font-bold text-lg rounded-full shadow-xl hover:bg-gray-100 transition transform hover:scale-105">
+                    Send a Message
+                </a>
+            </div>
+        </section>
+        
     </main>
 
-    <!-- --- FOOTER --- -->
+    <!-- --- FOOTER (Consistent Footer) --- -->
     <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
             <div class="mt-2 space-x-4 text-sm">
                 <a href="index.html" class="hover:text-white">Home</a>
-                <a href="pages/it.html" class="hover:text-white">Projects</a>
+                <!-- Links use the 'pages/' prefix -->
+                <a href="pages/it.html" class="hover:text-white">IT Projects</a>
                 <a href="pages/chef.html" class="hover:text-white">Chef</a>
             </div>
         </div>
     </footer>
-
-    <!-- External JavaScript file for toggleMobileMenu and sticky effect -->
+    
+    <!-- General JS utilities for navigation/menu toggle -->
     <script src="assets/js/general.js"></script>
+
 </body>
 </html>

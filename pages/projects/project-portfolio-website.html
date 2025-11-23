@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Portfolio Website</title>
+    
+    <!-- Tailwind CSS for layout and responsiveness -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind Configuration for Custom Fonts/Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#DC2626', // Red-600
+                        'secondary': '#FBBF24', // Amber-400
+                        'it-blue': '#1D4ED8', // Blue-700 for project elements
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- --- NAVIGATION (Consistent Header - Adjusted for relative paths from /pages) --- -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo: Links back to the root -->
+                <a href="../index.html" class="flex-shrink-0 flex items-center cursor-pointer">
+                    <span class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></span>
+                </a>
+                
+                <!-- Desktop Menu: Links use the correct relative path -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="../index.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Home</a>
+                    <a href="about.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
+                    <a href="it.html" class="nav-link text-it-blue font-bold border-b-2 border-it-blue">IT Projects</a>
+                    <a href="chef.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a>
+                    <a href="influencer.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
+                    <a href="travel.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
+                    <a href="contact.html" class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel: Links use the correct relative path -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
+                <a href="it.html" class="block px-3 py-2 rounded-md text-base font-medium text-it-blue font-bold bg-blue-50">IT Projects</a>
+                <a href="chef.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
+                <a href="influencer.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
+                <a href="travel.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="min-h-screen pt-24 pb-12 md:pt-28 md:pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Back to Projects Button -->
+            <div class="mb-8">
+                <a href="it.html" class="inline-flex items-center text-it-blue hover:text-blue-900 transition font-medium">
+                    <i class="fas fa-arrow-left mr-2"></i> Back to All IT Projects
+                </a>
+            </div>
+
+            <!-- --- PROJECT HEADER --- -->
+            <header class="bg-white p-8 md:p-12 rounded-xl shadow-lg border-t-4 border-it-blue mb-10">
+                <p class="text-sm font-semibold uppercase text-it-blue mb-2 tracking-wider">Web Development & Frontend</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 font-display">
+                    Personal Portfolio Website
+                </h1>
+                <p class="text-lg text-gray-600 max-w-4xl">
+                    Development of a multi-faceted, responsive web presence to showcase diverse professional skills, including IT projects, culinary interests (Chef), social media presence (Influencer), and personal travel experiences.
+                </p>
+                
+                <!-- Project Metrics/Links -->
+                <div class="mt-6 flex flex-wrap gap-4 md:gap-8">
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-calendar-alt text-it-blue mr-2"></i>
+                        <span>Date: Q4 2024 - Present</span>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-code-branch text-it-blue mr-2"></i>
+                        <a href="#" target="_blank" class="hover:underline opacity-50 cursor-not-allowed">GitHub Repository (Placeholder)</a>
+                    </div>
+                    <div class="flex items-center text-gray-700">
+                        <i class="fas fa-link text-it-blue mr-2"></i>
+                        <a href="../index.html" class="hover:underline font-bold" target="_blank">Live Demo (You are here!)</a>
+                    </div>
+                </div>
+            </header>
+
+            <!-- --- PROJECT CONTENT SECTIONS --- -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                
+                <!-- Main Content (2/3 width) -->
+                <div class="lg:col-span-2 space-y-12">
+                    
+                    <!-- 1. Motivation & Goals -->
+                    <section id="motivation" class="p-6 bg-white rounded-lg shadow-md border-l-4 border-primary">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-4 flex items-center">
+                            <i class="fas fa-bullseye text-primary mr-3"></i> Motivation & Core Goals
+                        </h2>
+                        <div class="space-y-4 text-gray-700">
+                            <p>The entire project stems from a resourceful, secondary objective. The domain <code class="bg-gray-100 px-1 rounded text-sm text-it-blue font-mono">fsil.eu</code> (meaning **Cloud** in Balti) was initially purchased *only* to host my private Nextcloud server at a subdomain (<code class="bg-gray-100 px-1 rounded text-sm text-it-blue font-mono">mycloud.fsil.eu</code>). Finding the main domain empty, I recognized the wasted potential and initiated this portfolio project to utilize the existing asset fully and establish a professional presence.</p>
+                            <p>This initiative provided crucial, hands-on practice in applying web development principles to a tangible, self-directed project, serving two primary strategic purposes:</p>
+                            <ul class="list-disc list-inside ml-4 space-y-2">
+                                <li>
+                                    <span class="font-semibold text-gray-800">Controlled Digital Identity:</span> The website grants complete control over branding, aesthetic design, and content curation, ensuring a comprehensive and authentic representation of my skills and multi-faceted interests—a level of detail unattainable through standardized social profiles.
+                                </li>
+                                <li>
+                                    <span class="font-semibold text-gray-800">Practical Skill Demonstration:</span> It functions as a dynamic portfolio, providing prospective employers with direct evidence of my practical coding, design, and project management capabilities, offering a deeper insight into my real-world competency and professional approach than a short interview or standard CV.
+                                </li>
+                            </ul>
+                            <h3 class="text-xl font-semibold mt-6 text-gray-800">Technical Objectives</h3>
+                            <ul class="list-disc list-inside ml-4 space-y-2">
+                                <li>Implement a modern, mobile-first, fully responsive design using a utility-first CSS framework (Tailwind CSS) to ensure cross-device compatibility.</li>
+                                <li>Structure the content logically into distinct verticals (IT, Chef, Influencer, Travel) while maintaining a cohesive brand identity.</li>
+                                <li>Create a robust project template for detailed IT project write-ups, ensuring clear communication of technologies and methodologies.</li>
+                                <li>Optimize for fast loading times and clear, intuitive navigation.</li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <!-- 2. Step-by-Step Implementation (NARRATIVE/STORY STYLE) -->
+                    <section id="implementation" class="p-6 bg-white rounded-lg shadow-md border-l-4 border-it-blue">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                            <i class="fas fa-book-open text-it-blue mr-3"></i> The Development Journey: A Chaptered Story
+                        </h2>
+                        <div class="space-y-8 text-gray-700">
+                            
+                            <!-- Chapter 1: The Foundation -->
+                            <article class="border-b pb-4">
+                                <h3 class="text-xl font-bold text-it-blue block mb-2 flex items-center">
+                                    <i class="fas fa-globe mr-2"></i> Chapter 1: Naming the Cloud and Building the Skeleton
+                                </h3>
+                                <p>The domain, <code class="bg-gray-100 px-1 rounded text-sm text-it-blue font-mono">fsil.eu</code>, which means **cloud** in Balti, was initially secured specifically for my private Nextcloud installation (<code class="bg-gray-100 px-1 rounded text-sm text-it-blue font-mono">mycloud.fsil.eu</code>). Once that primary goal was achieved, the decision was made to utilize the main domain name for this portfolio, transforming an empty placeholder into a functional professional site.</p>
+                                <p class="mt-2">The development phase began in the **Linux Terminal** <i class="fa-solid fa-terminal text-green-600"></i>, where I methodically created the initial directory and file structure, building the robust skeleton that would hold the entire website.</p>
+                            </article>
+                            
+                            <!-- Chapter 2: The Midnight Marathon -->
+                            <article class="border-b pb-4">
+                                <h3 class="text-xl font-bold text-it-blue block mb-2 flex items-center">
+                                    <i class="fas fa-laptop-code mr-2"></i> Chapter 2: The Midnight Code Marathon (00:00 to 07:00)
+                                </h3>
+                                <p>After finishing a long evening shift at the restaurant at midnight, I sat down at my computer, fueled by pure creative energy. The goal was to translate my ideas into tangible structure as quickly as possible.</p>
+                                <p class="mt-2">To save crucial time and accelerate development, I enlisted a powerful collaborator: the **Gemini API** <i class="fa-solid fa-wand-magic-sparkles text-yellow-600"></i>. This allowed me to focus on high-level design and integration while rapidly generating and refining core code snippets.</p>
+                                <p class="mt-2">By the time the sun rose at 7 AM, the essential structure, written in clean **HTML5** <i class="fa-brands fa-html5 text-orange-600"></i> and initial **JavaScript** <i class="fa-brands fa-js-square text-yellow-500"></i>, was complete and functional.</p>
+                            </article>
+
+                            <!-- Chapter 3: Defining the Aesthetic and Responsiveness -->
+                            <article class="border-b pb-4">
+                                <h3 class="text-xl font-bold text-it-blue block mb-2 flex items-center">
+                                    <i class="fas fa-palette mr-2"></i> Chapter 3: Defining the Aesthetic and Responsiveness
+                                </h3>
+                                <p>With the core files in place, the project shifted to visual design. I adopted **Tailwind CSS** <i class="fa-brands fa-tailwindcss text-cyan-500"></i> for its utility-first approach. This allowed me to define a consistent, modern, and branded look across all pages using quick, clean class names.</p>
+                                <p class="mt-2">The priority here was **mobile-first design** to ensure the multi-category content (IT, Chef, Influencer, Travel) adapted flawlessly to any device, guaranteeing a smooth user experience regardless of the screen size.</p>
+                            </article>
+
+                            <!-- Chapter 4: The Linux Ghost Conflict -->
+                            <article class="border-b pb-4">
+                                <h3 class="text-xl font-bold text-it-blue block mb-2 flex items-center">
+                                    <i class="fas fa-bug mr-2"></i> Chapter 4: The Linux Ghost Conflict (Cloudflared Tunnel vs. DNS Proxy)
+                                </h3>
+                                <p class="text-lg font-semibold text-gray-800 mt-4 mb-2">The Need for the Tunnel</p>
+                                <p>The initial problem was a critical infrastructure limitation: my ISP's cable router strictly blocked **port forwarding for HTTPS (port 443)**, which was essential for externally hosting my Nextcloud server. To securely expose this private service, I set up a **Cloudflared Tunnel** <i class="fas fa-network-wired text-red-500"></i>, establishing a secure, persistent, zero-trust connection to the Cloudflare edge without relying on opening any inbound ports on the router.</p>
+
+                                <p class="text-lg font-semibold text-gray-800 mt-4 mb-2">The Ghost Conflict</p>
+                                <p>I deployed my portfolio website via **GitHub Pages** <i class="fa-brands fa-github text-gray-800"></i>, configuring **Cloudflare** <i class="fas fa-cloud text-orange-400"></i> to proxy the public traffic to the required GitHub IP addresses. The site worked everywhere else, but my main **Linux** <i class="fa-brands fa-linux text-yellow-700"></i> workstation couldn't load it.</p>
+                                <p class="mt-2">The conflict arose because the local machine, upon resolving the public domain (`fsil.eu`), saw the existing local configuration for the *private* Cloudflared Tunnel. Instead of routing the request externally to the internet (which would then hit the public Cloudflare proxy), the traffic was incorrectly hijacked by the local tunnel's domain resolution logic, sending it on a loop.</p>
+                                <p class="mt-2">The fix required advanced networking intervention: I had to adjust the **Docker** <i class="fa-brands fa-docker text-blue-500"></i> environment running the tunnel and, critically, manually edit my local network’s lookup tables in **<code class="bg-gray-100 px-1 rounded text-sm text-it-blue font-mono">/etc/hosts</code>** to explicitly direct my workstation to the public GitHub Pages IPs, thereby forcing a public path for the portfolio domain and avoiding the local tunnel's ghost in the machine.</p>
+                            </article>
+                            
+                            <!-- Chapter 5: The Living Portfolio -->
+                            <article>
+                                <h3 class="text-xl font-bold text-it-blue block mb-2 flex items-center">
+                                    <i class="fas fa-heart-pulse mr-2"></i> Chapter 5: The Living Portfolio (The Final Workflow)
+                                </h3>
+                                <p>The journey settled into a clean, efficient workflow. Now, every new idea, project detail, or life event begins as a local change. Once perfected, I push the updates to the **Git** repository, and the website automatically fetches and publishes the changes. This continuous deployment mechanism ensures that this website is never truly static; it is a live, ever-evolving reflection of my skills and experiences, always showing you something new and different as my life changes.</p>
+                            </article>
+
+                        </div>
+                    </section>
+
+                    <!-- 3. Updates & Debugging/Challenges -->
+                    <section id="challenges" class="p-6 bg-white rounded-lg shadow-md border-l-4 border-secondary">
+                        <h2 class="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                            <i class="fas fa-bug text-secondary mr-3"></i> Updates & Key Challenges
+                        </h2>
+                        <div class="space-y-6 text-gray-700">
+                            <article>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Challenge 1: Navigation Relative Paths</h3>
+                                <p>A recurring issue was managing relative file paths in the navigation links. Since the main file (`index.html`) is in the root, and project details are in a subdirectory (`pages/`), all navigation links in the detail pages had to be prepended with `../` (e.g., `../index.html`).</p>
+                                <p class="text-sm text-gray-600 mt-1 italic">Solution: Implemented a consistent path strategy across all files and tested navigation rigorously between subdirectories and the root.</p>
+                            </article>
+                            <article>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Update 1: Sticky Header and Mobile Layout</h3>
+                                <p>The initial fixed header obscured content on small screens. The mobile menu logic was updated to use a `z-50` layer and include a subtle backdrop blur (`backdrop-blur-sm`) to ensure visibility without losing context of the page below.</p>
+                                <p class="text-sm text-gray-600 mt-1 italic">Action: Refined CSS to ensure the sticky header shrinks slightly on scroll (future feature) and optimized padding to keep branding prominent but compact on mobile viewports.</p>
+                            </article>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar (1/3 width) - Technology Stack -->
+                <aside class="lg:col-span-1">
+                    <div class="sticky top-28 bg-white p-6 rounded-xl shadow-md border-l-4 border-it-blue">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                            <i class="fas fa-cogs text-it-blue mr-3"></i> Technology Stack
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <!-- Cloud Platform -->
+                            <div class="pb-3 border-b border-gray-100">
+                                <h3 class="font-semibold text-lg text-gray-800 flex items-center mb-1"><i class="fas fa-code text-it-blue mr-2"></i> Frontend</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">HTML5 (Semantic Markup)</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">CSS3 (Responsive Design)</span>
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-medium rounded-full">JavaScript (DOM Manipulation)</span>
+                                </div>
+                            </div>
+
+                            <!-- Styling/Frameworks -->
+                            <div class="pb-3 border-b border-gray-100">
+                                <h3 class="font-semibold text-lg text-gray-800 flex items-center mb-1"><i class="fas fa-paint-brush text-it-blue mr-2"></i> Styling</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-green-100 text-green-700 text-sm font-medium rounded-full">Tailwind CSS (Utility-First)</span>
+                                    <span class="px-3 py-1 bg-green-100 text-green-700 text-sm font-medium rounded-full">Font Awesome (Icons)</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Design Principles -->
+                            <div class="pb-3 border-b border-gray-100">
+                                <h3 class="font-semibold text-lg text-gray-800 flex items-center mb-1"><i class="fas fa-eye text-it-blue mr-2"></i> Design Focus</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm font-medium rounded-full">Mobile-First Approach</span>
+                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm font-medium rounded-full">Accessibility (ARIA/Contrast)</span>
+                                </div>
+                            </div>
+
+                             <!-- Deployment (Conceptual) -->
+                            <div>
+                                <h3 class="font-semibold text-lg text-gray-800 flex items-center mb-1"><i class="fas fa-upload text-it-blue mr-2"></i> Hosting/Deployment</h3>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm font-medium rounded-full">GitHub Pages (CDN Hosting)</span>
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm font-medium rounded-full">Cloudflare (DNS & Proxy)</span>
+                                    <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm font-medium rounded-full">Cloudflared Tunnel (Private Tunnel)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- --- FOOTER (Consistent Footer - Adjusted for relative paths from /pages) --- -->
+    <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
+            <div class="mt-2 space-x-4 text-sm">
+                <a href="../index.html" class="hover:text-white">Home</a>
+                <a href="it.html" class="hover:text-white">IT Projects</a>
+                <a href="chef.html" class="hover:text-white">Chef</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- General JS utilities for navigation/menu toggle -->
+    <script>
+        // Simple JavaScript to toggle the mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

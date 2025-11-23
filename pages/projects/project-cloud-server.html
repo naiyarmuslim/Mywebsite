@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Project: Self-Hosted Cloud Server</title>
+    <!-- Tailwind CSS for layout and responsiveness -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-inter">
+
+    <!-- --- NAVIGATION (Consistent Header) --- -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="showPage('home')">
+                    <span class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="../../index.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Home</a>
+                    <a href="../about.html"  class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
+                    <a href="../it.html"  class="nav-link text-primary font-bold border-b-2 border-primary">IT Projects</a>
+                    <a href="../chef.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a>
+                    <a href="../influencer.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
+                    <a href="../travel.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
+                    <a href="../contact.html"  class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="../../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
+                <a href="../about.html"  class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
+                <a href="../it.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">IT Projects</a>
+                <a href="../chef.html"  class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
+                <a href="../influencer.html"  class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
+                <a href="../travel.html"  class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
+                <a href="../contact.html" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="max-w-4xl mx-auto px-4 py-12 pt-24 min-h-screen">
+        
+        <a href="../it.html" class="text-gray-500 hover:text-red-600 mb-6 flex items-center transition">
+            <i class="fas fa-arrow-left mr-2"></i> Back to IT Projects Overview
+        </a>
+
+        <div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-red-600">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4 flex items-center">
+                <i class="fas fa-server text-blue-600 mr-3"></i> Self-Hosted Cloud Server
+            </h1>
+            <p class="text-lg text-gray-600 mb-8 border-b pb-4">
+                Setting up a private, secure cloud storage solution using modern containerization and networking.
+            </p>
+
+            <div class="space-y-8">
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-3 border-l-4 border-red-500 pl-3">Project Goal</h2>
+                    <p class="text-gray-700">The primary objective was to deploy a private cloud environment to replace external services, focusing on data privacy, control, and resilience. This served as a practical exercise in system administration and networking within a Linux environment.</p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-3 border-l-4 border-red-500 pl-3">Technologies & Architecture</h2>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 pl-4">
+                        <li><strong>Linux (e.g., Ubuntu):</strong> Base OS for the server hardware.</li>
+                        <li><strong>Docker & Docker Compose:</strong> Used for containerization. This allowed easy deployment and management of Nextcloud, databases (like MariaDB), and reverse proxies.</li>
+                        <li><strong>Nextcloud:</strong> The main application providing file hosting, synchronization, and collaboration features.</li>
+                        <li><strong>Cloudflared Tunnel:</strong> Implemented a zero-trust network access model. This securely exposes the internal Nextcloud instance to the internet without requiring port forwarding, enhancing security significantly.</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-3 border-l-4 border-red-500 pl-3">Key Learnings</h2>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 pl-4">
+                        <li>Mastery of `docker-compose` for multi-container application orchestration.</li>
+                        <li>Understanding of volume mapping for persistent data storage in containers.</li>
+                        <li>Practical application of network tunneling for secure remote access (Zero Trust).</li>
+                        <li>Basic system hardening and security best practices for public-facing services.</li>
+                    </ul>
+                </div>
+
+                <div class="pt-4 border-t mt-8">
+                    <span class="inline-block text-sm font-medium text-blue-800 bg-blue-100 px-3 py-1 rounded-full mr-2">Networking</span>
+                    <span class="inline-block text-sm font-medium text-gray-800 bg-gray-100 px-3 py-1 rounded-full">Containerization</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- --- FOOTER (Consistent Footer) --- -->
+    <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
+            <div class="mt-2 space-x-4 text-sm">
+                <a href="../../index.html" class="hover:text-white">Home</a>
+                <a href="../it.html" class="hover:text-white">IT Projects</a>
+                <a href="../chef.html" class="hover:text-white">Chef</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../assets/js/general.js"></script>
+    <script>
+        // Adjust the showPage function if needed for the nested path, though direct links are usually fine.
+        function showPage(pageId) {
+            console.log(`Navigating to page: ${pageId}. (Using standard HTML links for now.)`);
+            if (pageId === 'home') window.location.href = '../../index.html';
+            if (pageId === 'projects') window.location.href = '../it.html';
+            if (pageId === 'chef') window.location.href = '../chef.html';
+        }
+    </script>
+</body>
+</html>
