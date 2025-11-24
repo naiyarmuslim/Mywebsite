@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naiyar Muslim | Developer, Chef, Influencer</title>
+    <title>Naiyar Muslim | Culinary Explorer & Developer</title>
     
     <!-- Tailwind CSS for layout and responsiveness -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,8 +14,10 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-   <link rel="stylesheet" href="../assets/css/style.css">
-     <script>
+    <!-- Custom CSS Link -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -38,19 +40,21 @@
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="showPage('home')">
+                <!-- Logo: Links back to the root -->
+                <a href="../index.html" class="flex-shrink-0 flex items-center cursor-pointer">
                     <span class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></span>
-                </div>
+                </a>
                 
-                <!-- Desktop Menu -->
+                <!-- Desktop Menu: Using correct relative paths (href) -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="../index.html" onclick="showPage('home')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Home</a>
-                    <a href="about.html" onclick="showPage('about')" class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
-                    <a href="it.html" onclick="showPage('projects')" class="nav-link text-gray-600 hover:text-primary font-medium transition">IT Projects</a>
-                    <a href="#" onclick="showPage('chef')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a>
-                    <a href="influencer.html" onclick="showPage('influencer')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
-                    <a href="travel.html" onclick="showPage('travel')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
-                    <a href="contact.html" onclick="showPage('contact')" class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
+                    <a href="../index.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Home</a>
+                    <a href="about.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
+                    <a href="it.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">IT Projects</a>
+                    <!-- Active Page -->
+                    <a href="chef.html" class="nav-link text-primary font-bold border-b-2 border-primary">Chef</a> 
+                    <a href="influencer.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
+                    <a href="travel.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
+                    <a href="contact.html" class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
                 </div>
 
                 <!-- Mobile menu button -->
@@ -65,63 +69,183 @@
         <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="../index.html" onclick="showPage('home')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
-                <a href="about.html" onclick="showPage('about')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
-                <a href="it.html" onclick="showPage('projects')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">IT Projects</a>
-                <a href="#" onclick="showPage('chef')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
-                <a href="influencer.html" onclick="showPage('influencer')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
-                <a href="travel.html" onclick="showPage('travel')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
-                <a href="contact.html" onclick="showPage('contact')" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
+                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
+                <a href="it.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">IT Projects</a>
+                <a href="chef.html" class="block px-3 py-2 rounded-md text-base font-medium text-primary font-bold bg-red-50">Chef & Food</a>
+                <a href="influencer.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
+                <a href="travel.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
             </div>
         </div>
     </nav>
 
-<section id="chef" >
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-24">
-            <div class="text-center mb-12">
-                <span class="text-primary font-bold tracking-wider uppercase text-sm">Big Apple Burgers</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Culinary Creations</h2>
-                <p class="text-gray-600 mt-4">When I'm not coding, I'm crafting flavors. From secret sauces to the perfect patty.</p>
-            </div>
+<main class="min-h-screen pt-24 pb-12 md:pt-28 md:pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Main Header -->
+        <div class="text-center mb-16">
+            <span class="text-primary font-bold tracking-wider uppercase text-sm">Culinary Arts & Heritage</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mt-2 font-display">From Baltistan to Big Apple Burgers</h2>
+            <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">My cooking journey blends the traditional, soulful flavors of my Balti heritage with the speed and precision of professional European kitchens. Food is my other code.</p>
+        </div>
 
-            <div class="grid md:grid-cols-2 gap-12 mb-16">
+        <!-- --- SECTION 1: CULINARY HERITAGE (BALTI CUISINE) --- -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-secondary pb-3 flex items-center">
+                <i class="fas fa-mountain text-secondary mr-3"></i> Traditional Balti Cuisine
+            </h3>
+
+            <p class="text-gray-600 mb-8 text-lg">My earliest cooking memories are rooted in the traditional mountain cuisine of Baltistan. These dishes are rich, hearty, and meticulously prepared—a perfect reflection of the challenging environment they come from. They represent skill, patience, and community.</p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- DISH 1: PRAPU -->
+                <div class="bg-white p-4 rounded-xl shadow hover:shadow-2xl text-center chef-card cursor-pointer">
+                    <img src="/assets/images/Prapu.jpeg" class="w-full h-48 object-cover rounded-lg mb-4 transform transition duration-500" alt="Prapu - Traditional Balti Food">
+                    <h4 class="font-bold text-xl text-gray-900 flex items-center justify-center">
+                        <i class="fas fa-seedling text-secondary mr-2"></i> Prapu
+                    </h4>
+                    <p class="text-sm text-gray-500 mt-2">Cooked barley flour served with a rich sauce made from grinded apricot seeds.</p>
+                </div>
+                
+                <!-- DISH 2: MARZAN -->
+               <div class="bg-white p-4 rounded-xl shadow hover:shadow-2xl text-center chef-card cursor-pointer">
+                    <img src="/assets/images/Marzan.jpeg" class="w-full h-48 object-cover rounded-lg mb-4 transform transition duration-500" alt="Marzan - Rich Balti Dish">
+                    <h4 class="font-bold text-xl text-gray-900 flex items-center justify-center">
+                        <i class="fas fa-plate-wheat text-amber-800 mr-2"></i> Marzan
+                    </h4>
+                    <p class="text-sm text-gray-500 mt-2">A heavy, nutrient-dense meal of cooked barley flour, traditionally served with pure apricot oil or melted butter.</p>
+                </div>
+                
+                <!-- DISH 3: BALAY -->
+                <div class="bg-white p-4 rounded-xl shadow hover:shadow-2xl text-center chef-card cursor-pointer">
+                    <img src="/assets/images/Balay.webp" class="w-full h-48 object-cover rounded-lg mb-4 transform transition duration-500" alt="Balay - Hearty Balti Soup">
+                    <h4 class="font-bold text-xl text-gray-900 flex items-center justify-center">
+                        <i class="fas fa-bowl-food text-gray-700 mr-2"></i> Balay
+                    </h4>
+                    <p class="text-sm text-gray-500 mt-2">The traditional winter soup, featuring diverse grains, noodles, and rich animal fats.</p>
+                </div>
+
+                <!-- DISH 4: NAMKEEN CHAI -->
+                <div class="bg-white p-4 rounded-xl shadow hover:shadow-2xl text-center chef-card cursor-pointer">
+                    <img src="/assets/images/namkeencha.jpg" class="w-full h-48 object-cover rounded-lg mb-4 transform transition duration-500" alt="Namkeen Chai - Traditional Pink Tea">
+                    <h4 class="font-bold text-xl text-gray-900 flex items-center justify-center">
+                        <i class="fas fa-mug-hot text-pink-500 mr-2"></i> Namkeen Chai
+                    </h4>
+                    <p class="text-sm text-gray-500 mt-2">The traditional savory pink tea, slowly brewed with milk, cardamom, and a touch of salt.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+             <!-- --- SECTION 2: LAHORE'S STREET FOOD & FINE CUISINE --- -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-primary pb-3 flex items-center">
+                <i class="fas fa-utensils text-primary mr-3"></i> Mastering the Flavors of Lahore
+            </h3>
+
+            <p class="text-gray-600 mb-8 text-lg">My time in Lahore, the ultimate food hub, dramatically expanded my palate and skill set. I learned to balance complex spice profiles for a variety of beloved dishes, from robust breakfasts to signature celebratory feasts.</p>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- DISH 1: Lahori Chany (Updated Image) -->
+                <div class="bg-white p-4 rounded-xl shadow hover:shadow-xl text-center chef-card cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1626079038202-094192b0c410?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2hvbGUlMjBDdXJyeXxlbnwwfHwwfHx8" 
+                         class="w-full h-48 object-cover rounded-lg mb-4 transform transition duration-500" 
+                         alt="Lahori Chany (Spicy Chickpea Curry)">
+                    <h4 class="font-bold text-xl text-gray-900 flex items-center justify-center">
+                        <i class="fas fa-sun text-yellow-500 mr-2"></i> Lahori Chany
+                    </h4>
+                    <p class="text-sm text-gray-500 mt-2">The quintessential Lahori breakfast: slow-cooked chickpeas with rich, tangy spices, often served with crispy pooris.</p>
+                </div>
+
+                <!-- DISH 2: Pulao (Updated Image) -->
+                <div class="bg-white p-4 rounded-xl shadow hover:shadow-xl text-center chef-card cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1546761408-e7a9c372b6a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHB1bGFvfGVufDB8fDB8fHw%3D" 
+                         class="w-full h-48 object-cover rounded-lg mb-4 transform transition duration-500" 
+                         alt="Pulao (Aromatic Meat and Rice)">
+                    <h4 class="font-bold text-xl text-gray-900 flex items-center justify-center">
+                        <i class="fas fa-rice-bowl text-green-600 mr-2"></i> Pulao
+                    </h4>
+                    <p class="text-sm text-gray-500 mt-2">A flavorful rice dish where basmati rice is cooked in a rich stock with meat and whole spices, celebrated for its subtle aroma.</p>
+                </div>
+
+                <!-- DISH 3: Biryani (Updated Image) -->
+                <div class="bg-white p-4 rounded-xl shadow hover:shadow-xl text-center chef-card cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1627771746816-16e91f074d20?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmlyeWFuaXxlbnwwfHwwfHx8" 
+                         class="w-full h-48 object-cover rounded-lg mb-4 transform transition duration-500" 
+                         alt="Biryani (Layered Spicy Rice)">
+                    <h4 class="font-bold text-xl text-gray-900 flex items-center justify-center">
+                        <i class="fas fa-pepper-hot text-red-600 mr-2"></i> Biryani
+                    </h4>
+                    <p class="text-sm text-gray-500 mt-2">The festive, complex layered rice dish, featuring marinated meat, vibrant spices, potatoes, and a signature spicy kick.</p>
+                </div>
+                
+                <!-- DISH 4: Karhai (Updated Image) -->
+                <div class="bg-white p-4 rounded-xl shadow hover:shadow-xl text-center chef-card cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1632557404434-609139ccdd37?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8a2FyYWhpfGVufDB8fDB8fHw%3D" 
+                         class="w-full h-48 object-cover rounded-lg mb-4 transform transition duration-500" 
+                         alt="Karhai (Chicken/Mutton Curry)">
+                    <h4 class="font-bold text-xl text-gray-900 flex items-center justify-center">
+                        <i class="fas fa-fire text-red-800 mr-2"></i> Karhai
+                    </h4>
+                    <p class="text-sm text-gray-500 mt-2">A quick-cooked stir-fry of meat (usually chicken or mutton) prepared in an open wok with fresh ginger, tomatoes, and chilies.</p>
+                </div>
+                
+                <!-- DISH 5: Lahori Takatak (Updated Image) -->
+                <div class="bg-white p-4 rounded-xl shadow hover:shadow-xl text-center chef-card cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1616866160167-175628a8677c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z3JpZGRsZSUyMGZvb2R8ZW58MHx8MHx8fA%3D%3D" 
+                         class="w-full h-48 object-cover rounded-lg mb-4 transform transition duration-500" 
+                         alt="Lahori Takatak (Griddle Street Food)">
+                    <h4 class="font-bold text-xl text-gray-900 flex items-center justify-center">
+                        <i class="fas fa-sizzling text-gray-700 mr-2"></i> Lahori Takatak
+                    </h4>
+                    <p class="text-sm text-gray-500 mt-2">A street food specialty involving minced offal cooked on a large griddle, named after the sound of the cooking spatula.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- --- SECTION 3: COMMERCIAL KITCHEN & GLOBAL CUISINE (GERMANY) --- -->
+        <section id="commercial-kitchen">
+            <h3 class="text-3xl font-bold text-gray-900 mb-8 border-b-2 border-secondary pb-3 flex items-center">
+                 <i class="fas fa-globe text-secondary mr-3"></i> Global Culinary & Professional Kitchen Skills
+            </h3>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="order-2 md:order-1">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">The Art of the Burger</h3>
-                    <p class="text-gray-600 mb-4">Working at <strong>Big Apple Burgers</strong> has taught me that cooking is just like programming: it requires patience, precision, and creativity. I specialize in creating unique sauce blends that elevate a simple burger to an experience.</p>
+                    <span class="text-primary font-bold tracking-wider uppercase text-sm">Germany: Fulda & International Flavors</span>
+                    <h4 class="text-2xl font-bold text-gray-900 mb-4 mt-2">Precision, Speed, and Global Recipes</h4>
+                    <p class="text-gray-600 mb-4 text-lg leading-relaxed">My experience in Germany broadened my capabilities to include high-volume, modern kitchen operations and the preparation of diverse international dishes. This is where I truly connected traditional passion with professional efficiency.</p>
+                    
+                    <h5 class="font-semibold text-lg text-gray-900 mt-6 mb-3">Key Skills & Dishes:</h5>
                     <ul class="space-y-3 mb-6 text-gray-700">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i> Custom Sauce Development</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i> Premium Burger Assembly</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-secondary mr-3"></i> High-Volume Kitchen Management</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i> **Modern American Style Burgers** (Big Apple Burgers, Fulda)</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i> **Noodles & White Sauce Pasta** (Mastering basic multi-national kitchen staples)</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i> **Jamaican Stewed Chickpeas and Meat** (Adaptability to specific Caribbean profiles)</li>
+                        <li class="flex items-start"><i class="fas fa-check-circle text-primary mr-3 mt-1"></i> **High-Volume Production** and Inventory Management</li>
                     </ul>
-                    <a href="https://www.bigappleburgerskuenzell-kuenzell.de/" target="_blank" class="inline-block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition">
-                        Visit Restaurant Website
+                    <a href="https://www.bigappleburgerskuenzell-kuenzell.de/" target="_blank" class="inline-block bg-primary text-white px-6 py-3 rounded-full hover:bg-red-700 transition shadow-lg font-medium">
+                        View Past Work Experience <i class="fas fa-external-link-alt ml-2 text-sm"></i>
                     </a>
                 </div>
                 <div class="order-1 md:order-2 grid grid-cols-2 gap-4">
-                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="rounded-lg shadow-md w-full h-48 object-cover" alt="Burger">
-                    <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="rounded-lg shadow-md w-full h-48 object-cover mt-8" alt="Cooking">
+                    <!-- Image Card 1: Burgers -->
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="w-full h-56 object-cover transform hover:scale-105 transition duration-500" alt="Gourmet Burger Assembly">
+                    </div>
+                    <!-- Image Card 2: International/Pasta -->
+                    <div class="rounded-xl overflow-hidden shadow-xl mt-8">
+                        <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="w-full h-56 object-cover transform hover:scale-105 transition duration-500" alt="Pasta being served">
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white p-4 rounded-xl shadow text-center chef-card cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="w-full h-48 object-cover rounded-lg mb-4 transition duration-500" alt="Burger 1">
-                    <h4 class="font-bold text-lg">Classic Cheeseburger</h4>
-                    <p class="text-sm text-gray-500">With my signature spice blend</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow text-center chef-card cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="w-full h-48 object-cover rounded-lg mb-4 transition duration-500" alt="Burger 2">
-                    <h4 class="font-bold text-lg">The Spicy Stack</h4>
-                    <p class="text-sm text-gray-500">Jalapeños & Chili Sauce</p>
-                </div>
-                <div class="bg-white p-4 rounded-xl shadow text-center chef-card cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1625938145244-80525907464d?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="w-full h-48 object-cover rounded-lg mb-4 transition duration-500" alt="Sauce">
-                    <h4 class="font-bold text-lg">Secret Sauces</h4>
-                    <p class="text-sm text-gray-500">Developed in-house</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
+</main>
 
 
     <!-- --- FOOTER --- -->
@@ -129,13 +253,21 @@
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
             <div class="mt-2 space-x-4 text-sm">
-                <a href="#" onclick="showPage('home')" class="hover:text-white">Home</a>
-                <a href="#" onclick="showPage('projects')" class="hover:text-white">Projects</a>
-                <a href="#" onclick="showPage('chef')" class="hover:text-white">Chef</a>
+                <!-- Footer links updated to use relative paths -->
+                <a href="../index.html" class="hover:text-white">Home</a>
+                <a href="it.html" class="hover:text-white">IT Projects</a>
+                <a href="chef.html" class="hover:text-white">Chef</a>
             </div>
         </div>
     </footer>
-  <script src="../assets/js/general.js"></script>
-  
+  <!-- The general.js script is included but not strictly necessary for this static page unless it contains the toggleMobileMenu function -->
+  <script src="../assets/js/general.js"></script> 
+    <script>
+        // Simple JavaScript to toggle the mobile menu (kept here in case general.js is missing/used for other logic)
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
