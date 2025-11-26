@@ -52,28 +52,21 @@
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-    <!-- --- NAVIGATION --- -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
+   <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300 top-0" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo: Links back to the root -->
-                <a href="../index.html" class="flex-shrink-0 flex items-center cursor-pointer">
-                    <span class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></span>
-                </a>
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <a href="../index.html" class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></a>
+                </div>
                 
-                <!-- Desktop Menu: Using correct relative paths -->
                 <div class="hidden md:flex space-x-8">
                     <a href="../index.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Home</a>
-                    <a href="about.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
-                    <!-- Active Parent Page -->
-                    <a href="it.html" class="nav-link text-primary font-bold border-b-2 border-primary">IT Projects</a>
-                    <a href="chef.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a> 
-                    <a href="influencer.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
-                    <a href="travel.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
-                    <a href="contact.html" class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
+                    <a href="about.html"  class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
+                    <a href="profile.html"  class="nav-link text-gray-600 hover:text-primary font-medium transition">Professional Profile</a>
+                    <a href="it.html"  class="nav-link text-primary font-bold border-b-2 border-primary">IT Projects</a>
+                    <a href="contact.html"  class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
                 </div>
 
-                <!-- Mobile menu button -->
                 <div class="md:hidden flex items-center">
                     <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-primary focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
@@ -82,15 +75,12 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Panel -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
-                <a href="it.html" class="block px-3 py-2 rounded-md text-base font-medium text-primary font-bold bg-red-50">IT Projects</a>
-                <a href="chef.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
-                <a href="influencer.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
-                <a href="travel.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
+                <a href="profile.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Professional Profile</a>
+                <a href="it.html" class="block px-3 py-2 rounded-md text-base font-medium text-primary bg-gray-50">IT Projects</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
             </div>
         </div>

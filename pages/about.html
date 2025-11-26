@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naiyar Muslim | Developer, Chef, Influencer</title>
+    <title>Naiyar Muslim | My Journey & Diverse Strengths</title>
     
-    <!-- Tailwind CSS for layout and responsiveness -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
    <link rel="stylesheet" href="../assets/css/style.css">
@@ -32,118 +29,127 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 pt-20">
 
-    <!-- --- NAVIGATION --- -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center">
-                   <a href="../index.html" class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></a>
-                </div>
+    <main>
+        <section id="about" class="py-12 md:py-16">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 
-               <!-- Desktop Menu -->
-<div class="hidden md:flex space-x-8">
-    <a href="../index.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Home</a>
-    <a href="about.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
-    <a href="it.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">IT Projects</a>
-    <a href="chef.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a>
-    <a href="influencer.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
-    <a href="travel.html" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
-    <a href="contact.html" class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
-</div>
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-primary focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+                <header class="text-center mb-12">
+                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 font-display mb-2">My Journey & Diverse Strengths</h1>
+                    <p class="text-xl text-gray-600">The passions, skills, and experiences that shaped my character and professional mindset.</p>
+                </header>
 
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="../index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
-                <a href="it.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">IT Projects</a>
-                <a href="chef.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
-                <a href="influencer.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
-                <a href="travel.html"  class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
-                <a href="contact.html"  class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
-            </div>
-        </div>
-    </nav>
-
-<section id="about">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pt-24">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Coding Setup" class="rounded-2xl shadow-2xl">
-                    <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl hidden md:block">
-                        <p class="font-bold text-4xl text-primary">3rd</p>
-                        <p class="text-gray-600 text-sm">Semester<br>Applied CS</p>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-secondary font-bold tracking-wider uppercase text-sm mb-2">My Journey</h4>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">From the Mountains of Gilgit-Baltistan to Applied Computer Science</h2>
-                    <p class="text-gray-600 mb-4 leading-relaxed">
-                        Hello! I'm Naiyar. My journey began in the breathtaking landscapes of Gilgit-Baltistan. I've always been driven by curiosity—whether it's understanding how software shapes our world or how flavors combine to create the perfect meal.
-                    </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
-                        Currently, I am a **3rd-semester student of Applied Computer Science** in Germany. I balance my life between debugging code, developing recipes at Big Apple Burgers, and helping fellow students navigate their own study-abroad journeys.
-                    </p>
+                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
                     
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                        <div class="flex items-center">
-                            <i class="fas fa-graduation-cap text-primary w-8"></i>
-                            <span class="font-medium">Applied CS Student</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-hamburger text-secondary w-8"></i>
-                            <span class="font-medium">Chef</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-mountain text-blue-500 w-8"></i>
-                            <span class="font-medium">From Gilgit-Baltistan</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-video text-purple-500 w-8"></i>
-                            <span class="font-medium">Content Creator</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-bullhorn text-pink-600 w-8"></i>
-                            <span class="font-medium">Social Media Influencer</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-lightbulb text-yellow-600 w-8"></i>
-                            <span class="font-medium">Entrepreneur</span>
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Coding Setup" class="rounded-2xl shadow-2xl">
+                        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl hidden md:block border-t-4 border-secondary">
+                            <p class="font-bold text-4xl text-primary">C1</p>
+                            <p class="text-gray-600 text-sm">German<br>Proficiency (DSH-2)</p>
                         </div>
                     </div>
 
-                     <a href="contact.html" class="text-primary font-semibold hover:text-red-800 inline-flex items-center transition">
-                        Let's Connect <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <div>
+                        <h4 class="text-secondary font-bold tracking-wider uppercase text-sm mb-2">The Foundation</h4>
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">From the Himalayas to Applied Computer Science</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            Hello! I'm Naiyar. My journey began in the breathtaking landscapes of Gilgit-Baltistan. I've always been driven by curiosity—whether it's understanding network architecture, mastering code, or learning a new culinary technique.
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Currently, I am an **Applied Computer Science student in Germany**. I use my diverse background in communication, mentorship, and commercial work to fuel my technical learning and professional ambition.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                            <div class="flex items-center">
+                                <i class="fas fa-graduation-cap text-primary w-8"></i>
+                                <span class="font-medium">Applied CS Student</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-hammer text-blue-500 w-8"></i>
+                                <span class="font-medium">Hands-On Problem Solver</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-mountain text-yellow-600 w-8"></i>
+                                <span class="font-medium">From Gilgit-Baltistan</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-globe-europe text-green-600 w-8"></i>
+                                <span class="font-medium">Multicultural Communicator</span>
+                            </div>
+                        </div>
 
-    <!-- --- FOOTER --- -->
-   <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
+                         <a href="profile.html" class="text-primary font-semibold hover:text-red-800 inline-flex items-center transition">
+                            View Professional Profile <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <section id="skills-hub" class="py-12 md:py-16 bg-white rounded-xl shadow-2xl border-t-4 border-indigo-600">
+                    <div class="text-center mb-10 px-8">
+                        <h2 class="text-3xl font-bold text-gray-900 font-display mb-3">Exploring My Other Domains</h2>
+                        <p class="text-gray-600 max-w-4xl mx-auto">Click on any section to dive deeper into the discipline, precision, and passion I bring from these diverse fields.</p>
+                    </div>
+
+                    <div class="grid lg:grid-cols-3 gap-8 px-8">
+                        
+                        <a href="chef.html" class="block group cursor-pointer">
+                            <div class="bg-gray-50 p-6 rounded-xl shadow-md border-b-4 border-transparent group-hover:border-primary transition duration-300 transform group-hover:-translate-y-1">
+                                <i class="fas fa-utensils text-4xl text-primary mb-3"></i>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Culinary Arts & Discipline</h3>
+                                <p class="text-gray-600 text-sm">See how I apply **precision, process management, and efficiency** from the professional kitchen to complex coding challenges.</p>
+                                <span class="text-primary font-semibold text-sm mt-3 inline-block">
+                                    View Recipes & Experience <i class="fas fa-arrow-right ml-1"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <a href="influencer.html" class="block group cursor-pointer">
+                            <div class="bg-gray-50 p-6 rounded-xl shadow-md border-b-4 border-transparent group-hover:border-purple-600 transition duration-300 transform group-hover:-translate-y-1">
+                                <i class="fas fa-bullhorn text-4xl text-purple-600 mb-3"></i>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Mentorship & Public Influence</h3>
+                                <p class="text-gray-600 text-sm">Explore my work in **community building, public speaking, and education**, showcasing strong communication and leadership skills.</p>
+                                <span class="text-purple-600 font-semibold text-sm mt-3 inline-block">
+                                    View Content & Community <i class="fas fa-arrow-right ml-1"></i>
+                                </span>
+                            </div>
+                        </a>
+
+                        <a href="travel.html" class="block group cursor-pointer">
+                            <div class="bg-gray-50 p-6 rounded-xl shadow-md border-b-4 border-transparent group-hover:border-blue-600 transition duration-300 transform group-hover:-translate-y-1">
+                                <i class="fas fa-plane-departure text-4xl text-blue-600 mb-3"></i>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Travel & Cultural Adaptability</h3>
+                                <p class="text-gray-600 text-sm">Understand my deep **resilience, resourcefulness, and cultural intelligence** gained from navigating new countries and languages.</p>
+                                <span class="text-blue-600 font-semibold text-sm mt-3 inline-block">
+                                    View Travel Log <i class="fas fa-arrow-right ml-1"></i>
+                                </span>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </section>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
             <div class="mt-2 space-x-4 text-sm">
-                <!-- REMOVED onclicks and fixed paths -->
                 <a href="../index.html" class="hover:text-white">Home</a>
-                <a href="it.html" class="hover:text-white">Projects</a>
-                <a href="chef.html" class="hover:text-white">Chef</a>
+                <a href="profile.html" class="hover:text-white">Professional Profile</a>
+                <a href="it.html" class="hover:text-white">IT Projects</a>
             </div>
         </div>
     </footer>
     
    <script src="../assets/js/general.js"></script>
+   <script src="../assets/js/navbar_generator.js"></script>
+   <script>
+        // Call the function to inject the navigation bar, setting 'about' as the active page
+        generateAndInjectNavbar('about');
+    </script>
 
 </body>
 </html>

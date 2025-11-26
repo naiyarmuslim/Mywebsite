@@ -35,47 +35,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- --- NAVIGATION --- -->
-    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="showPage('home')">
-                    <span class="font-display font-bold text-2xl text-primary">NM<span class="text-secondary">.</span></span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="../index.html" onclick="showPage('home')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Home</a>
-                    <a href="about.html" onclick="showPage('about')" class="nav-link text-gray-600 hover:text-primary font-medium transition">About</a>
-                    <a href="it.html" onclick="showPage('projects')" class="nav-link text-gray-600 hover:text-primary font-medium transition">IT Projects</a>
-                    <a href="chef.html" onclick="showPage('chef')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Chef</a>
-                    <a href="influencer.html" onclick="showPage('influencer')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Influencer</a>
-                    <a href="travel.html" onclick="showPage('travel')" class="nav-link text-gray-600 hover:text-primary font-medium transition">Travel</a>
-                    <a href="contact.html" onclick="showPage('contact')" class="nav-link px-4 py-2 bg-primary text-white rounded-full hover:bg-red-700 transition shadow-md">Contact</a>
-                </div>
 
-                <!-- Mobile menu button -->
-                <div class="md:hidden flex items-center">
-                    <button onclick="toggleMobileMenu()" class="text-gray-600 hover:text-primary focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="../index.html" onclick="showPage('home')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Home</a>
-                <a href="about.html" onclick="showPage('about')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">About Me</a>
-                <a href="it.html" onclick="showPage('projects')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">IT Projects</a>
-                <a href="chef.html" onclick="showPage('chef')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Chef & Food</a>
-                <a href="influencer.html" onclick="showPage('influencer')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Influencer</a>
-                <a href="travel.html" onclick="showPage('travel')" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50">Travel</a>
-                <a href="contact.html" onclick="showPage('contact')" class="block px-3 py-2 rounded-md text-base font-medium bg-primary text-white text-center mt-4">Contact Me</a>
-            </div>
-        </div>
-    </nav>
 <section id="contact" >
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24">
             <div class="text-center mb-12">
@@ -148,5 +108,10 @@
     </footer>
 
     <script src="../assets/js/general.js"></script>
+    <script src="../assets/js/navbar_generator.js"></script>
+    <script>
+        // Call the function to inject the navigation bar, setting 'profile' as the active page
+        generateAndInjectNavbar('contact');
+    </script>
 </body>
 </html>
