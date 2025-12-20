@@ -12,14 +12,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': '#DC2626', // Red-600
-                        'secondary': '#FBBF24', // Amber-400
+                        'primary': '#DC2626',
+                        'secondary': '#FBBF24',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -32,35 +34,42 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-   
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
     
     <main class="min-h-screen">
         
-        <section id="hero" class="bg-white pt-32 pb-20 md:pt-40 md:pb-24">
+        <!-- Hero Section -->
+        <section id="hero" class="animated-gradient pt-32 pb-20 md:pt-40 md:pb-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="md:flex md:items-center md:justify-between">
                     
                     <div class="md:w-1/2">
-                        <span class="text-xs md:text-sm font-semibold text-primary uppercase tracking-widest mb-2 block">APPLIED COMPUTER SCIENCE STUDENT</span>
+                        <span class="text-xs md:text-sm font-semibold text-primary uppercase tracking-widest mb-2 block fade-in">APPLIED COMPUTER SCIENCE STUDENT</span>
                         <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4 font-display">
-                            Hi, I'm Naiyar Muslim
+                            <span class="typewriter" id="typewriter">Hi, I'm Naiyar Muslim</span>
                         </h1>
-                        <p class="text-xl text-gray-600 mb-8 max-w-lg">
+                        <p class="text-xl text-gray-600 mb-8 max-w-lg fade-in">
                             Blending technical expertise and strong professional skills with a unique background in mentorship and adaptability.
                         </p>
                         
-                        <div class="flex space-x-4">
-                            <a href="pages/profile.html" class="px-6 py-3 bg-primary text-white font-semibold rounded-full shadow-lg hover:bg-red-700 transition transform hover:scale-105 flex items-center">
+                        <div class="flex space-x-4 fade-in">
+                            <a href="pages/profile.html" class="px-6 py-3 bg-primary text-white font-semibold rounded-full shadow-lg hover:bg-red-700 transition transform hover:scale-105 flex items-center ripple-btn glow-hover">
                                 <i class="fas fa-screwdriver-wrench mr-2"></i> View Professional Profile
                             </a>
-                            <a href="pages/it.html" class="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-full hover:bg-gray-100 transition flex items-center">
+                            <a href="pages/it.html" class="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-full hover:bg-gray-100 transition flex items-center ripple-btn">
                                 <i class="fas fa-folder-open mr-2"></i> See Applied Projects
                             </a>
                         </div>
                     </div>
 
-                    <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end">
-                        <div class="relative w-72 h-72 md:w-80 md:h-80 bg-gray-200 rounded-full overflow-hidden shadow-2xl border-4 border-primary/50">
+                    <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end fade-in">
+                        <div class="relative w-72 h-72 md:w-80 md:h-80 bg-gray-200 rounded-full overflow-hidden shadow-2xl border-4 border-primary/50 float-animation">
                             <img src="assets/images/P1.JPG" alt="Naiyar Muslim Portfolio Photo" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" onerror="this.onerror=null;this.src='https://placehold.co/800x800/DC2626/ffffff?text=Naiyar+Muslim+Photo';">
                         </div>
                     </div>
@@ -69,37 +78,38 @@
             </div>
         </section>
 
-        <section id="personas" class="py-16 md:py-24 bg-gray-100">
+        <!-- Personas Section -->
+        <section id="personas" class="py-16 md:py-24 bg-gray-100 bg-pattern">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
+                <div class="text-center mb-12 fade-in">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-display mb-3">Technical Focus & Diverse Background</h2>
                     <p class="text-gray-600 max-w-3xl mx-auto">My capabilities are built on a strong technical foundation complemented by proven soft skills.</p>
                 </div>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="cards-container">
                     
-                    <a href="pages/profile.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-primary">
+                    <a href="pages/profile.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-primary fade-in tilt-card icon-pulse arrow-bounce">
                         <i class="fas fa-microchip text-4xl text-primary mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Professional Profile</h3>
                         <p class="text-gray-600 text-sm">Detailed overview of my full stack, cloud skills, work ethics, and professional methodologies.</p>
                         <span class="mt-4 text-primary font-semibold block">View Stack & Ethics <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
                     </a>
 
-                    <a href="pages/it.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-blue-600">
+                    <a href="pages/it.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-blue-600 fade-in tilt-card icon-pulse arrow-bounce">
                         <i class="fas fa-laptop-code text-4xl text-blue-600 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Project Portfolio</h3>
                         <p class="text-gray-600 text-sm">Showcasing practical application of my skills through academic and personal coding projects.</p>
                         <span class="mt-4 text-primary font-semibold block">View Work <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
                     </a>
 
-                    <a href="pages/influencer.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-green-600">
+                    <a href="pages/influencer.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-green-600 fade-in tilt-card icon-pulse arrow-bounce">
                         <i class="fas fa-chalkboard-user text-4xl text-green-600 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Mentorship & Communication</h3>
                         <p class="text-gray-600 text-sm">Experience teaching English, Math, and Science, proving strong leadership and communication.</p>
                         <span class="mt-4 text-primary font-semibold block">Read My Story <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
                     </a>
 
-                    <a href="pages/about.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-yellow-600">
+                    <a href="pages/about.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-yellow-600 fade-in tilt-card icon-pulse arrow-bounce">
                         <i class="fas fa-plane-departure text-4xl text-yellow-600 mb-4 group-hover:scale-110 transition"></i>
                         <h3 class="text-xl font-bold text-gray-900 mb-2">Discipline & Adaptability</h3>
                         <p class="text-gray-600 text-sm">Culinary discipline and travel experiences fostering precision, process, and global perspective.</p>
@@ -109,11 +119,12 @@
             </div>
         </section>
 
+        <!-- CTA Section -->
         <section id="cta" class="py-16 md:py-24">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-primary p-10 rounded-xl shadow-2xl">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-primary p-10 rounded-xl shadow-2xl fade-in">
                 <h2 class="text-3xl font-extrabold text-white mb-4">Ready to Connect?</h2>
                 <p class="text-red-100 mb-8">Whether it's a job opportunity, a collaboration, or just a friendly hello, I'm happy to hear from you.</p>
-                <a href="pages/contact.html" class="inline-block px-8 py-4 bg-white text-primary font-bold text-lg rounded-full shadow-xl hover:bg-gray-100 transition transform hover:scale-105">
+                <a href="pages/contact.html" class="inline-block px-8 py-4 bg-white text-primary font-bold text-lg rounded-full shadow-xl hover:bg-gray-100 transition transform hover:scale-105 ripple-btn glow-hover">
                     Send a Message
                 </a>
             </div>
@@ -121,6 +132,7 @@
         
     </main>
 
+    <!-- Footer -->
     <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
@@ -131,7 +143,68 @@
             </div>
         </div>
     </footer>
-    
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading-screen').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scroll-progress');
+            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = (window.scrollY / scrollTotal) * 100;
+            scrollProgress.style.width = scrollPercentage + '%';
+        });
+
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 3D Tilt effect on cards
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+
+        // Typewriter effect completed, remove border after typing
+        setTimeout(() => {
+            const typewriter = document.getElementById('typewriter');
+            if (typewriter) {
+                typewriter.style.borderRight = 'none';
+            }
+        }, 3800);
+    </script>
+
     <script src="assets/js/general.js"></script>
     <script src="assets/js/navbar_generator.js"></script>
     <script>
