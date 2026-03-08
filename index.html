@@ -1,217 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naiyar Muslim | Applied Computer Science & Professional Profile</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naiyar Muslim — Developer & Educator</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 64px;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.2s forwards;
+    }
+    .hero-eyebrow::before { content:''; display:inline-block; width:26px; height:1px; background:var(--accent); }
+    .hero-title {
+      font-family: var(--display);
+      font-size: clamp(3rem, 5vw, 5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.35s forwards;
+    }
+    .hero-title .line2 { color: var(--accent); }
+    .hero-desc {
+      color: var(--muted);
+      font-size: 1.02rem;
+      font-weight: 300;
+      max-width: 460px;
+      margin-bottom: 2.2rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.5s forwards;
+    }
+    .hero-actions {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.65s forwards;
+    }
+    .stats-strip {
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      margin-top: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.8s forwards;
+    }
+    .stat-num {
+      font-family: var(--display);
+      font-size: 1.55rem;
+      font-weight: 800;
+    }
+    .stat-label { font-size: 0.74rem; color: var(--muted); font-family: var(--mono); }
 
+    /* ── Terminal card ── */
+    .hero-terminal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeLeft 0.7s 0.4s forwards;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+    }
+    .term-bar {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.8rem 1.2rem;
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+    }
+    .dot { width:12px; height:12px; border-radius:50%; }
+    .dot.r { background:#ff5f56; }
+    .dot.y { background:#ffbd2e; }
+    .dot.g { background:#27c93f; }
+    .term-title { font-family:var(--mono); font-size:0.72rem; color:var(--muted); margin:0 auto; }
+    .term-body { padding:1.4rem; font-family:var(--mono); font-size:0.8rem; line-height:2; }
+    .t-comment { color:#3a4d63; }
+    .t-key    { color:#a78bfa; }
+    .t-str    { color:var(--accent3); }
+    .t-cyan   { color:var(--accent); }
+    .t-muted  { color:var(--muted); }
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#DC2626',
-                        'secondary': '#FBBF24',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    /* ── Feature cards ── */
+    #features { background:var(--bg2); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .feat-card {
+      padding: 1.8rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .feat-card::before {
+      content:''; position:absolute; top:0; left:0;
+      width:100%; height:3px;
+      background: var(--fc, var(--accent));
+    }
+    .feat-card { position:relative; }
+    .feat-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+    .feat-title { font-family:var(--display); font-size:1rem; font-weight:700; margin-bottom:0.4rem; }
+    .feat-desc { font-size:0.85rem; color:var(--muted); font-weight:300; line-height:1.55; }
+    .feat-link { display:inline-flex; align-items:center; gap:0.3rem; margin-top:1rem; font-family:var(--mono); font-size:0.73rem; color:var(--accent); }
+
+    /* ── CTA band ── */
+    #cta-band { background:var(--bg); }
+    .cta-inner {
+      background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(124,58,237,0.08));
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 12px;
+      padding: 4rem 3rem;
+      text-align: center;
+    }
+    .cta-title { font-family:var(--display); font-size:clamp(1.8rem,3vw,2.5rem); font-weight:800; letter-spacing:-0.02em; margin-bottom:1rem; }
+    .cta-desc { color:var(--muted); margin-bottom:2rem; font-weight:300; max-width:500px; margin-left:auto; margin-right:auto; }
+
+    @media(max-width:900px) {
+      .hero-grid { grid-template-columns:1fr; }
+      .hero-terminal { display:none; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="loader"></div>
-    </div>
+  <!-- Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <!-- Progress -->
+  <div id="progress"></div>
 
-    <!-- Scroll Progress Bar -->
-    <div id="scroll-progress"></div>
-    
-    <main class="min-h-screen">
-        
-        <!-- Hero Section -->
-        <section id="hero" class="animated-gradient pt-32 pb-20 md:pt-40 md:pb-24">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="md:flex md:items-center md:justify-between">
-                    
-                    <div class="md:w-1/2">
-                        <span class="text-xs md:text-sm font-semibold text-primary uppercase tracking-widest mb-2 block fade-in">APPLIED COMPUTER SCIENCE STUDENT</span>
-                        <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4 font-display">
-                            <span class="typewriter" id="typewriter">Hi, I'm Naiyar Muslim</span>
-                        </h1>
-                        <p class="text-xl text-gray-600 mb-8 max-w-lg fade-in">
-                            Blending technical expertise and strong professional skills with a unique background in mentorship and adaptability.
-                        </p>
-                        
-                        <div class="flex space-x-4 fade-in">
-                            <a href="pages/profile.html" class="px-6 py-3 bg-primary text-white font-semibold rounded-full shadow-lg hover:bg-red-700 transition transform hover:scale-105 flex items-center ripple-btn glow-hover">
-                                <i class="fas fa-screwdriver-wrench mr-2"></i> View Professional Profile
-                            </a>
-                            <a href="pages/it.html" class="px-6 py-3 border border-gray-300 text-gray-700 font-semibold rounded-full hover:bg-gray-100 transition flex items-center ripple-btn">
-                                <i class="fas fa-folder-open mr-2"></i> See Applied Projects
-                            </a>
-                        </div>
-                    </div>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <span class="bracket">[</span>naiyar.dev<span class="bracket">]</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pages/about.html">About Me</a></li>
+      <li><a href="pages/courses.html">Courses</a></li>
+      <li><a href="pages/projects.html">Projects</a></li>
+      <li><a href="pages/content.html">Content</a></li>
+      <li><a href="pages/contact.html" class="nav-cta">Contact →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="active">Home</a>
+    <a href="pages/about.html">About Me</a>
+    <a href="pages/courses.html">Courses</a>
+    <a href="pages/projects.html">Projects</a>
+    <a href="pages/content.html">Content</a>
+    <a href="pages/contact.html">Contact</a>
+  </div>
 
-                    <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center md:justify-end fade-in">
-                        <div class="relative w-72 h-72 md:w-80 md:h-80 bg-gray-200 rounded-full overflow-hidden shadow-2xl border-4 border-primary/50 float-animation">
-                            <img src="assets/images/P1.JPG" alt="Naiyar Muslim Portfolio Photo" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" onerror="this.onerror=null;this.src='https://placehold.co/800x800/DC2626/ffffff?text=Naiyar+Muslim+Photo';">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Personas Section -->
-        <section id="personas" class="py-16 md:py-24 bg-gray-100 bg-pattern">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12 fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 font-display mb-3">Technical Focus & Diverse Background</h2>
-                    <p class="text-gray-600 max-w-3xl mx-auto">My capabilities are built on a strong technical foundation complemented by proven soft skills.</p>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="cards-container">
-                    
-                    <a href="pages/profile.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-primary fade-in tilt-card icon-pulse arrow-bounce">
-                        <i class="fas fa-microchip text-4xl text-primary mb-4 group-hover:scale-110 transition"></i>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Professional Profile</h3>
-                        <p class="text-gray-600 text-sm">Detailed overview of my full stack, cloud skills, work ethics, and professional methodologies.</p>
-                        <span class="mt-4 text-primary font-semibold block">View Stack & Ethics <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
-                    </a>
-
-                    <a href="pages/it.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-blue-600 fade-in tilt-card icon-pulse arrow-bounce">
-                        <i class="fas fa-laptop-code text-4xl text-blue-600 mb-4 group-hover:scale-110 transition"></i>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Project Portfolio</h3>
-                        <p class="text-gray-600 text-sm">Showcasing practical application of my skills through academic and personal coding projects.</p>
-                        <span class="mt-4 text-primary font-semibold block">View Work <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
-                    </a>
-
-                    <a href="pages/influencer.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-green-600 fade-in tilt-card icon-pulse arrow-bounce">
-                        <i class="fas fa-chalkboard-user text-4xl text-green-600 mb-4 group-hover:scale-110 transition"></i>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Mentorship & Communication</h3>
-                        <p class="text-gray-600 text-sm">Experience teaching English, Math, and Science, proving strong leadership and communication.</p>
-                        <span class="mt-4 text-primary font-semibold block">Read My Story <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
-                    </a>
-
-                    <a href="pages/about.html" class="group bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 duration-300 border-t-4 border-yellow-600 fade-in tilt-card icon-pulse arrow-bounce">
-                        <i class="fas fa-plane-departure text-4xl text-yellow-600 mb-4 group-hover:scale-110 transition"></i>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Discipline & Adaptability</h3>
-                        <p class="text-gray-600 text-sm">Culinary discipline and travel experiences fostering precision, process, and global perspective.</p>
-                        <span class="mt-4 text-primary font-semibold block">View Passions <i class="fas fa-arrow-right ml-1 text-xs"></i></span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section id="cta" class="py-16 md:py-24">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-primary p-10 rounded-xl shadow-2xl fade-in">
-                <h2 class="text-3xl font-extrabold text-white mb-4">Ready to Connect?</h2>
-                <p class="text-red-100 mb-8">Whether it's a job opportunity, a collaboration, or just a friendly hello, I'm happy to hear from you.</p>
-                <a href="pages/contact.html" class="inline-block px-8 py-4 bg-white text-primary font-bold text-lg rounded-full shadow-xl hover:bg-gray-100 transition transform hover:scale-105 ripple-btn glow-hover">
-                    Send a Message
-                </a>
-            </div>
-        </section>
-        
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
-            <div class="mt-2 space-x-4 text-sm">
-                <a href="index.html" class="hover:text-white">Home</a>
-                <a href="pages/profile.html" class="hover:text-white">Professional Profile</a>
-                <a href="pages/it.html" class="hover:text-white">IT Projects</a>
-            </div>
+  <!-- ── HERO ── -->
+  <section id="home">
+    <div class="glow-orb orb-cyan" style="width:500px;height:500px;top:-120px;right:-100px;"></div>
+    <div class="glow-orb orb-purple" style="width:350px;height:350px;bottom:0;left:-80px;"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <span class="hero-eyebrow">Applied CS Student · Germany</span>
+          <h1 class="hero-title">
+            Naiyar<br>
+            <span class="line2">Muslim.</span>
+          </h1>
+          <p class="hero-desc">
+            Developer. Educator. Balti content creator. Building software with purpose and sharing knowledge — from code labs in Germany to the mountains of Baltistan.
+          </p>
+          <div class="hero-actions">
+            <a href="pages/projects.html" class="btn-primary">↳ View Projects</a>
+            <a href="pages/contact.html"  class="btn-outline">Get in touch</a>
+          </div>
+          <div class="stats-strip">
+            <div><div class="stat-num">10+</div><div class="stat-label">Projects built</div></div>
+            <div><div class="stat-num">C1</div><div class="stat-label">German (DSH-2)</div></div>
+            <div><div class="stat-num">4</div><div class="stat-label">Languages spoken</div></div>
+          </div>
         </div>
-    </footer>
 
-    <script>
-        // Loading screen
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loading-screen').classList.add('hidden');
-            }, 1000);
-        });
+        <!-- Terminal JSON card -->
+        <div class="hero-terminal">
+          <div class="term-bar">
+            <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+            <span class="term-title">naiyar.json</span>
+          </div>
+          <div class="term-body">
+            <div class="t-comment">// who is naiyar?</div>
+            <div style="margin-top:.7rem">{</div>
+            <div style="padding-left:1.2rem">
+              <div><span class="t-key">"name"</span>: <span class="t-str">"Naiyar Muslim"</span>,</div>
+              <div><span class="t-key">"from"</span>: <span class="t-str">"Gilgit-Baltistan 🏔️"</span>,</div>
+              <div><span class="t-key">"based"</span>: <span class="t-str">"Germany"</span>,</div>
+              <div><span class="t-key">"study"</span>: <span class="t-str">"Applied Comp. Science"</span>,</div>
+              <div style="margin-top:.4rem"><span class="t-key">"skills"</span>: [</div>
+              <div style="padding-left:1.2rem">
+                <span class="t-str">"Python"</span>, <span class="t-str">"JavaScript"</span>,<br>
+                <span class="t-str">"React"</span>, <span class="t-str">"Node.js"</span>,<br>
+                <span class="t-str">"Linux"</span>, <span class="t-str">"Docker"</span>, <span class="t-str">"C"</span>
+              </div>
+              <div>],</div>
+              <div style="margin-top:.4rem"><span class="t-key">"languages"</span>: [<span class="t-str">"Balti"</span>, <span class="t-str">"Urdu"</span>, <span class="t-str">"German"</span>, <span class="t-str">"English"</span>],</div>
+              <div><span class="t-key">"goal"</span>: <span class="t-str">"Cyber Security / Network Architect"</span>,</div>
+              <div><span class="t-key">"status"</span>: <span class="t-cyan">"open_to_work"</span></div>
+            </div>
+            <div>}</div>
+            <div style="margin-top:.9rem"><span class="t-muted">$</span> npm run build naiyar<span class="blink" style="color:var(--accent)">▌</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Scroll progress bar
-        window.addEventListener('scroll', () => {
-            const scrollProgress = document.getElementById('scroll-progress');
-            const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercentage = (window.scrollY / scrollTotal) * 100;
-            scrollProgress.style.width = scrollPercentage + '%';
-        });
+  <div class="divider"></div>
 
-        // Intersection Observer for fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+  <!-- ── FEATURE CARDS ── -->
+  <section id="features">
+    <div class="glow-orb orb-purple" style="width:400px;height:400px;top:0;right:-100px;"></div>
+    <div class="container">
+      <div class="section-header reveal" style="max-width:560px">
+        <div class="section-tag">explore</div>
+        <h2 class="section-title">Everything<br><span>I do.</span></h2>
+      </div>
+      <div class="features-grid">
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+        <a href="pages/about.html" class="card feat-card reveal reveal-d1" style="--fc:#00d4ff">
+          <div class="feat-icon">👤</div>
+          <div class="feat-title">About Me</div>
+          <div class="feat-desc">From the Himalayas to Applied CS in Germany — my journey, mindset, and what drives me.</div>
+          <div class="feat-link">Read my story →</div>
+        </a>
 
-        // 3D Tilt effect on cards
-        document.querySelectorAll('.tilt-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 10;
-                const rotateY = (centerX - x) / 10;
-                
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
-            });
-        });
+        <a href="pages/courses.html" class="card feat-card reveal reveal-d2" style="--fc:#7c3aed">
+          <div class="feat-icon">🎓</div>
+          <div class="feat-title">Courses</div>
+          <div class="feat-desc">Academic foundation: algorithms, web dev, cloud computing, cybersecurity and more.</div>
+          <div class="feat-link">View coursework →</div>
+        </a>
 
-        // Typewriter effect completed, remove border after typing
-        setTimeout(() => {
-            const typewriter = document.getElementById('typewriter');
-            if (typewriter) {
-                typewriter.style.borderRight = 'none';
-            }
-        }, 3800);
-    </script>
+        <a href="pages/projects.html" class="card feat-card reveal reveal-d3" style="--fc:#10b981">
+          <div class="feat-icon">💻</div>
+          <div class="feat-title">Projects</div>
+          <div class="feat-desc">Self-hosted cloud servers, web apps, C programming, and practical academic work.</div>
+          <div class="feat-link">View projects →</div>
+        </a>
 
-    <script src="assets/js/general.js"></script>
-    <script src="assets/js/navbar_generator.js"></script>
-    <script>
-        // Initialize the navbar for the root (home) page.
-        // It will now generate links starting with 'pages/...'
-        generateAndInjectNavbar('home');
-    </script>
+        <a href="pages/content.html" class="card feat-card reveal reveal-d4" style="--fc:#f59e0b">
+          <div class="feat-icon">📲</div>
+          <div class="feat-title">Content Creation</div>
+          <div class="feat-desc">Instagram reels &amp; Facebook study guides in Balti for the people of Baltistan.</div>
+          <div class="feat-link">Watch content →</div>
+        </a>
 
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── CTA BAND ── -->
+  <section id="cta-band">
+    <div class="container">
+      <div class="cta-inner reveal">
+        <div class="cta-title">Ready to connect?</div>
+        <p class="cta-desc">Whether it's a job opportunity, a collaboration, or just a friendly hello — I'd love to hear from you.</p>
+        <a href="pages/contact.html" class="btn-primary" style="font-size:0.9rem;padding:0.9rem 2.2rem">✉ Send a Message</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><span>[</span>naiyar.dev<span>]</span></div>
+    <div class="footer-copy">© 2025 Naiyar Muslim. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="pages/projects.html">Projects</a>
+      <a href="pages/contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

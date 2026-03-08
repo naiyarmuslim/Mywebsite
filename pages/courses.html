@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses — Naiyar Muslim</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    #academic { background: var(--bg2); }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      font-family: var(--mono);
+      font-size: 0.73rem;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      background: transparent;
+      color: var(--muted);
+      cursor: none;
+      transition: all 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .filter-btn:hover,
+    .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,0.06); }
+
+    /* ── Course cards ── */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.4rem;
+    }
+    .course-card {
+      padding: 1.8rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .course-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--cc, var(--accent));
+    }
+    .course-icon {
+      width: 44px; height: 44px;
+      background: var(--ci, rgba(0,212,255,0.1));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .course-code { font-family:var(--mono); font-size:0.7rem; color:var(--muted); letter-spacing:0.08em; margin-bottom:0.3rem; }
+    .course-title { font-family:var(--display); font-size:1.04rem; font-weight:700; margin-bottom:0.4rem; }
+    .course-desc  { font-size:0.85rem; color:var(--muted); font-weight:300; line-height:1.55; }
+    .course-badge {
+      display: inline-block;
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+    .badge-done     { background:rgba(16,185,129,0.1); color:var(--accent3); }
+    .badge-progress { background:rgba(245,158,11,0.1);  color:var(--accent4); }
+    .badge-planned  { background:rgba(100,116,139,0.15); color:var(--muted); }
+
+    /* ── Skills overview ── */
+    #skills-overview { background: var(--bg); }
+    .skills-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .skill-group-title {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .skill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .skill-name { font-size: 0.9rem; }
+    .skill-bar-outer { width: 55%; height: 3px; background: var(--border); border-radius: 2px; }
+    .skill-bar-inner { height: 3px; border-radius: 2px; background: var(--accent); transition: width 1.2s ease; width: 0; }
+    .skill-pct { font-family:var(--mono); font-size:0.68rem; color:var(--muted); }
+
+    /* ── Quote ── */
+    #philosophy { background: var(--bg2); }
+    .quote-block {
+      border-left: 3px solid var(--accent);
+      padding: 1.5rem 2rem;
+      background: rgba(0,212,255,0.04);
+      border-radius: 0 8px 8px 0;
+      max-width: 700px;
+    }
+    .quote-text  { font-size:1.15rem; font-weight:300; font-style:italic; color:var(--text); line-height:1.7; }
+    .quote-attr  { font-family:var(--mono); font-size:0.73rem; color:var(--accent); margin-top:0.8rem; }
+
+    @media(max-width:720px) { .skills-cols { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <div id="progress"></div>
+
+  <nav>
+    <a href="../index.html" class="nav-logo"><span class="bracket">[</span>naiyar.dev<span class="bracket">]</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="courses.html" class="active">Courses</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="content.html">Content</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="courses.html" class="active">Courses</a>
+    <a href="projects.html">Projects</a>
+    <a href="content.html">Content</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="section-tag" style="justify-content:center">education</div>
+    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)">Academic &amp;<br><span>Technical Foundation.</span></h1>
+  </div>
+
+  <!-- ── COURSES ── -->
+  <section id="academic" style="padding-top:2rem">
+    <div class="glow-orb orb-cyan" style="width:420px;height:420px;top:0;right:-80px;"></div>
+    <div class="container">
+
+      <!-- Filter -->
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="done">Completed</button>
+        <button class="filter-btn" data-filter="progress">In Progress</button>
+        <button class="filter-btn" data-filter="cs">Computer Science</button>
+        <button class="filter-btn" data-filter="math">Mathematics</button>
+      </div>
+
+      <div class="courses-grid" id="courses-grid">
+
+        <div class="card course-card reveal" data-cat="cs done" style="--cc:#00d4ff;--ci:rgba(0,212,255,0.1)">
+          <div class="course-icon">🧮</div>
+          <div class="course-code">CS — DATA STRUCTURES</div>
+          <div class="course-title">Data Structures &amp; Algorithms</div>
+          <div class="course-desc">Arrays, linked lists, trees, graphs, sorting and searching algorithms. Complexity analysis and Big-O notation in Java.</div>
+          <span class="course-badge badge-done">✓ Completed</span>
+        </div>
+
+        <div class="card course-card reveal reveal-d1" data-cat="cs done" style="--cc:#7c3aed;--ci:rgba(124,58,237,0.1)">
+          <div class="course-icon">🌐</div>
+          <div class="course-code">CS — WEB DEVELOPMENT</div>
+          <div class="course-title">Web Development &amp; Full Stack</div>
+          <div class="course-desc">HTML5, CSS, JavaScript, React, Node.js, REST APIs, Tailwind CSS, and database integration.</div>
+          <span class="course-badge badge-done">✓ Completed</span>
+        </div>
+
+        <div class="card course-card reveal reveal-d2" data-cat="cs done" style="--cc:#10b981;--ci:rgba(16,185,129,0.1)">
+          <div class="course-icon">⚙️</div>
+          <div class="course-code">CS — SYSTEMS PROGRAMMING</div>
+          <div class="course-title">C Programming &amp; Systems</div>
+          <div class="course-desc">12-week C course covering pointers, memory management, file I/O, dynamic allocation, structs, and recursion.</div>
+          <span class="course-badge badge-done">✓ Completed</span>
+        </div>
+
+        <div class="card course-card reveal reveal-d3" data-cat="cs done" style="--cc:#f59e0b;--ci:rgba(245,158,11,0.1)">
+          <div class="course-icon">🗄️</div>
+          <div class="course-code">CS — DATABASES</div>
+          <div class="course-title">Database Systems</div>
+          <div class="course-desc">Relational databases, SQL queries, normalization, MySQL, MongoDB, and database design principles.</div>
+          <span class="course-badge badge-done">✓ Completed</span>
+        </div>
+
+        <div class="card course-card reveal" data-cat="cs progress" style="--cc:#00d4ff;--ci:rgba(0,212,255,0.08)">
+          <div class="course-icon">☁️</div>
+          <div class="course-code">CS — CLOUD &amp; DEVOPS</div>
+          <div class="course-title">Cloud Computing &amp; DevOps</div>
+          <div class="course-desc">AWS fundamentals, Docker containerization, CI/CD pipelines, Linux server administration, and Cloudflare tunneling.</div>
+          <span class="course-badge badge-progress">⟳ In Progress</span>
+        </div>
+
+        <div class="card course-card reveal reveal-d1" data-cat="cs progress" style="--cc:#ec4899;--ci:rgba(236,72,153,0.1)">
+          <div class="course-icon">🤖</div>
+          <div class="course-code">CS — MACHINE LEARNING</div>
+          <div class="course-title">Machine Learning Fundamentals</div>
+          <div class="course-desc">Supervised/unsupervised learning, neural networks, Python (scikit-learn, Pandas), and practical model building.</div>
+          <span class="course-badge badge-progress">⟳ In Progress</span>
+        </div>
+
+        <div class="card course-card reveal reveal-d2" data-cat="cs done" style="--cc:#06b6d4;--ci:rgba(6,182,212,0.1)">
+          <div class="course-icon">🔐</div>
+          <div class="course-code">CS — CYBERSECURITY</div>
+          <div class="course-title">Cybersecurity Essentials</div>
+          <div class="course-desc">Network security, cryptography basics, ethical hacking fundamentals, secure coding, and zero-trust architecture.</div>
+          <span class="course-badge badge-done">✓ Completed</span>
+        </div>
+
+        <div class="card course-card reveal reveal-d3" data-cat="math done" style="--cc:#a78bfa;--ci:rgba(167,139,250,0.1)">
+          <div class="course-icon">∑</div>
+          <div class="course-code">MATH — DISCRETE</div>
+          <div class="course-title">Discrete Mathematics</div>
+          <div class="course-desc">Logic, sets, relations, graph theory, combinatorics, and mathematical proofs — foundational for computer science.</div>
+          <span class="course-badge badge-done">✓ Completed</span>
+        </div>
+
+        <div class="card course-card reveal" data-cat="math done" style="--cc:#34d399;--ci:rgba(52,211,153,0.1)">
+          <div class="course-icon">📐</div>
+          <div class="course-code">MATH — LINEAR ALGEBRA</div>
+          <div class="course-title">Linear Algebra</div>
+          <div class="course-desc">Vectors, matrices, eigenvalues, linear transformations — directly applicable to ML and computer graphics.</div>
+          <span class="course-badge badge-done">✓ Completed</span>
+        </div>
+
+        <div class="card course-card reveal reveal-d1" data-cat="cs progress" style="--cc:#fb923c;--ci:rgba(251,146,60,0.1)">
+          <div class="course-icon">🛡️</div>
+          <div class="course-code">CS — NETWORKING</div>
+          <div class="course-title">Computer Networks</div>
+          <div class="course-desc">TCP/IP stack, DNS, routing protocols, network architecture. Targeting CompTIA Security+ and CCNA certifications.</div>
+          <span class="course-badge badge-progress">⟳ In Progress</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── SKILLS OVERVIEW ── -->
+  <section id="skills-overview">
+    <div class="container">
+      <div class="section-header reveal" style="max-width:560px">
+        <div class="section-tag">proficiency</div>
+        <h2 class="section-title">Technical<br><span>skill levels.</span></h2>
+      </div>
+      <div class="skills-cols">
+        <div class="reveal">
+          <div class="skill-group-title">// Programming</div>
+          <div class="skill-row">
+            <span class="skill-name">Python</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="80%"></div></div>
+            <span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">JavaScript</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="75%"></div></div>
+            <span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">C Language</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="70%"></div></div>
+            <span class="skill-pct">70%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Java</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="60%"></div></div>
+            <span class="skill-pct">60%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">React / Node.js</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="65%" style="background:var(--accent2)"></div></div>
+            <span class="skill-pct">65%</span>
+          </div>
+        </div>
+        <div class="reveal reveal-d2">
+          <div class="skill-group-title">// Systems &amp; Tools</div>
+          <div class="skill-row">
+            <span class="skill-name">Linux (Terminal)</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="85%" style="background:var(--accent3)"></div></div>
+            <span class="skill-pct">85%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Docker</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="75%" style="background:var(--accent3)"></div></div>
+            <span class="skill-pct">75%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Git / GitHub</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="80%" style="background:var(--accent3)"></div></div>
+            <span class="skill-pct">80%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">MySQL / MongoDB</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="65%" style="background:var(--accent3)"></div></div>
+            <span class="skill-pct">65%</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-name">Networking / DNS</span>
+            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="70%" style="background:var(--accent3)"></div></div>
+            <span class="skill-pct">70%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── PHILOSOPHY ── -->
+  <section id="philosophy">
+    <div class="container" style="max-width:800px">
+      <div class="section-header reveal">
+        <div class="section-tag">approach</div>
+        <h2 class="section-title">How I<br><span>learn.</span></h2>
+      </div>
+      <div class="quote-block reveal reveal-d1">
+        <p class="quote-text">"When I want to build something, it doesn't matter if I know anything about it or not — I will learn how to do it and I will do it."</p>
+        <p class="quote-attr">— Naiyar Muslim, on Innovative Persistence</p>
+      </div>
+      <p class="reveal reveal-d2" style="margin-top:2rem;color:var(--muted);font-weight:300;font-size:1.02rem">
+        My approach is <strong style="color:var(--text)">project-driven over rote learning</strong>. Every major skill I've acquired started with a real problem I wanted to solve — from setting up a self-hosted cloud server under ISP restrictions, to diagnosing recursive loop conflicts in complex network environments. I believe the best way to learn CS is to build things that matter.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><span>[</span>naiyar.dev<span>]</span></div>
+    <div class="footer-copy">© 2025 Naiyar Muslim. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // ── Filter logic ──
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const courseCards = document.querySelectorAll('.course-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        courseCards.forEach(c => {
+          const cats = c.dataset.cat || '';
+          c.style.display = (f === 'all' || cats.includes(f)) ? '' : 'none';
+        });
+      });
+    });
+
+    // ── Skill bars ──
+    const skillBars = document.querySelectorAll('.skill-bar-inner');
+    const sbObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.style.width = e.target.dataset.w;
+      });
+    }, { threshold: 0.4 });
+    skillBars.forEach(b => sbObs.observe(b));
+  </script>
+</body>
+</html>

@@ -1,155 +1,335 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naiyar Muslim | My Journey & Diverse Strengths</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me — Naiyar Muslim</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    /* ── About grid ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .photo-wrap { position: relative; }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top;
+      filter: grayscale(0.25) contrast(1.05);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      display: block;
+    }
+    .photo-badge {
+      position: absolute;
+      bottom: -1.5rem; right: -1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.9rem 1.2rem;
+      border-radius: 8px;
+      font-family: var(--mono);
+      font-size: 0.76rem;
+    }
+    .about-body p {
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+    .about-body p strong { color: var(--text); font-weight: 500; }
+    .pills-wrap { display:flex; flex-wrap:wrap; gap:0.45rem; margin-top:1.8rem; }
 
-   <link rel="stylesheet" href="../assets/css/style.css">
-     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#DC2626', // Red-600
-                        'secondary': '#FBBF24', // Amber-400
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    /* ── Timeline ── */
+    #journey { background: var(--bg2); }
+    .timeline { position:relative; padding-left: 2.5rem; }
+    .timeline::before {
+      content:''; position:absolute; left:0.5rem; top:0; bottom:0;
+      width:1px; background: var(--border);
+    }
+    .tl-item { position:relative; margin-bottom:2.5rem; }
+    .tl-dot {
+      position:absolute; left:-2rem; top:0.3rem;
+      width:12px; height:12px;
+      border-radius:50%; background: var(--accent);
+      box-shadow: 0 0 10px rgba(0,212,255,0.4);
+    }
+    .tl-year { font-family:var(--mono); font-size:0.72rem; color:var(--accent); letter-spacing:0.08em; margin-bottom:0.3rem; }
+    .tl-title { font-family:var(--display); font-size:1.05rem; font-weight:700; margin-bottom:0.3rem; }
+    .tl-desc  { font-size:0.88rem; color:var(--muted); font-weight:300; }
+
+    /* ── Values ── */
+    #values { background: var(--bg); }
+    .values-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:1.2rem; }
+    .val-card { padding:1.8rem; }
+    .val-icon { font-size:1.6rem; margin-bottom:0.9rem; }
+    .val-title { font-family:var(--display); font-size:1rem; font-weight:700; margin-bottom:0.4rem; }
+    .val-desc  { font-size:0.84rem; color:var(--muted); font-weight:300; line-height:1.55; }
+
+    /* ── Languages ── */
+    #languages { background: var(--bg2); }
+    .lang-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1.2rem; }
+    .lang-card { padding:1.5rem; }
+    .lang-flag { font-size:2rem; margin-bottom:0.6rem; }
+    .lang-name  { font-family:var(--display); font-size:1rem; font-weight:700; margin-bottom:0.2rem; }
+    .lang-level { font-family:var(--mono); font-size:0.7rem; color:var(--accent); }
+    .lang-bar-wrap { margin-top:0.8rem; background:var(--border); border-radius:2px; height:3px; }
+    .lang-bar { height:3px; background:var(--accent); border-radius:2px; transition:width 1.2s ease; width:0; }
+
+    @media(max-width:900px) {
+      .about-grid { grid-template-columns:1fr; }
+      .photo-wrap { max-width:300px; }
+      .photo-badge { right:0; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800 pt-20">
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <div id="progress"></div>
 
-    <main>
-        <section id="about" class="py-12 md:py-16">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <header class="text-center mb-12">
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 font-display mb-2">My Journey & Diverse Strengths</h1>
-                    <p class="text-xl text-gray-600">The passions, skills, and experiences that shaped my character and professional mindset.</p>
-                </header>
+  <nav>
+    <a href="../index.html" class="nav-logo"><span class="bracket">[</span>naiyar.dev<span class="bracket">]</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html" class="active">About Me</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="content.html">Content</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact →</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="about.html" class="active">About Me</a>
+    <a href="courses.html">Courses</a>
+    <a href="projects.html">Projects</a>
+    <a href="content.html">Content</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-                <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-                    
-                    <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Coding Setup" class="rounded-2xl shadow-2xl">
-                        <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl hidden md:block border-t-4 border-secondary">
-                            <p class="font-bold text-4xl text-primary">C1</p>
-                            <p class="text-gray-600 text-sm">German<br>Proficiency (DSH-2)</p>
-                        </div>
-                    </div>
+  <!-- ── PAGE HEADER ── -->
+  <div class="page-header">
+    <div class="section-tag" style="justify-content:center">about me</div>
+    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)">From the Himalayas<br><span>to Applied CS.</span></h1>
+  </div>
 
-                    <div>
-                        <h4 class="text-secondary font-bold tracking-wider uppercase text-sm mb-2">The Foundation</h4>
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">From the Himalayas to Applied Computer Science</h2>
-                        <p class="text-gray-600 mb-4 leading-relaxed">
-                            Hello! I'm Naiyar. My journey began in the breathtaking landscapes of Gilgit-Baltistan. I've always been driven by curiosity—whether it's understanding network architecture, mastering code, or learning a new culinary technique.
-                        </p>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            Currently, I am an **Applied Computer Science student in Germany**. I use my diverse background in communication, mentorship, and commercial work to fuel my technical learning and professional ambition.
-                        </p>
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                            <div class="flex items-center">
-                                <i class="fas fa-graduation-cap text-primary w-8"></i>
-                                <span class="font-medium">Applied CS Student</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-hammer text-blue-500 w-8"></i>
-                                <span class="font-medium">Hands-On Problem Solver</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-mountain text-yellow-600 w-8"></i>
-                                <span class="font-medium">From Gilgit-Baltistan</span>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-globe-europe text-green-600 w-8"></i>
-                                <span class="font-medium">Multicultural Communicator</span>
-                            </div>
-                        </div>
+  <!-- ── INTRO ── -->
+  <section id="intro" style="padding-top:2rem">
+    <div class="glow-orb orb-cyan" style="width:450px;height:450px;top:-80px;right:-100px;"></div>
+    <div class="container">
+      <div class="about-grid">
 
-                         <a href="profile.html" class="text-primary font-semibold hover:text-red-800 inline-flex items-center transition">
-                            View Professional Profile <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <section id="skills-hub" class="py-12 md:py-16 bg-white rounded-xl shadow-2xl border-t-4 border-indigo-600">
-                    <div class="text-center mb-10 px-8">
-                        <h2 class="text-3xl font-bold text-gray-900 font-display mb-3">Exploring My Other Domains</h2>
-                        <p class="text-gray-600 max-w-4xl mx-auto">Click on any section to dive deeper into the discipline, precision, and passion I bring from these diverse fields.</p>
-                    </div>
-
-                    <div class="grid lg:grid-cols-3 gap-8 px-8">
-                        
-                        <a href="chef.html" class="block group cursor-pointer">
-                            <div class="bg-gray-50 p-6 rounded-xl shadow-md border-b-4 border-transparent group-hover:border-primary transition duration-300 transform group-hover:-translate-y-1">
-                                <i class="fas fa-utensils text-4xl text-primary mb-3"></i>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Culinary Arts & Discipline</h3>
-                                <p class="text-gray-600 text-sm">See how I apply **precision, process management, and efficiency** from the professional kitchen to complex coding challenges.</p>
-                                <span class="text-primary font-semibold text-sm mt-3 inline-block">
-                                    View Recipes & Experience <i class="fas fa-arrow-right ml-1"></i>
-                                </span>
-                            </div>
-                        </a>
-
-                        <a href="influencer.html" class="block group cursor-pointer">
-                            <div class="bg-gray-50 p-6 rounded-xl shadow-md border-b-4 border-transparent group-hover:border-purple-600 transition duration-300 transform group-hover:-translate-y-1">
-                                <i class="fas fa-bullhorn text-4xl text-purple-600 mb-3"></i>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Mentorship & Public Influence</h3>
-                                <p class="text-gray-600 text-sm">Explore my work in **community building, public speaking, and education**, showcasing strong communication and leadership skills.</p>
-                                <span class="text-purple-600 font-semibold text-sm mt-3 inline-block">
-                                    View Content & Community <i class="fas fa-arrow-right ml-1"></i>
-                                </span>
-                            </div>
-                        </a>
-
-                        <a href="travel.html" class="block group cursor-pointer">
-                            <div class="bg-gray-50 p-6 rounded-xl shadow-md border-b-4 border-transparent group-hover:border-blue-600 transition duration-300 transform group-hover:-translate-y-1">
-                                <i class="fas fa-plane-departure text-4xl text-blue-600 mb-3"></i>
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">Travel & Cultural Adaptability</h3>
-                                <p class="text-gray-600 text-sm">Understand my deep **resilience, resourcefulness, and cultural intelligence** gained from navigating new countries and languages.</p>
-                                <span class="text-blue-600 font-semibold text-sm mt-3 inline-block">
-                                    View Travel Log <i class="fas fa-arrow-right ml-1"></i>
-                                </span>
-                            </div>
-                        </a>
-                        
-                    </div>
-                </section>
-
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
-            <div class="mt-2 space-x-4 text-sm">
-                <a href="../index.html" class="hover:text-white">Home</a>
-                <a href="profile.html" class="hover:text-white">Professional Profile</a>
-                <a href="it.html" class="hover:text-white">IT Projects</a>
-            </div>
+        <div class="photo-wrap reveal">
+          <img
+            src="../assets/images/gull1.jpeg"
+            alt="Naiyar Muslim"
+            class="about-photo"
+            onerror="this.src='https://placehold.co/600x800/111827/e2e8f0?text=Naiyar+Muslim'; this.style.filter='none';"
+          >
+          <div class="photo-badge">
+            <div><span class="status-dot"></span> <span style="color:var(--text)">Open to opportunities</span></div>
+            <div style="margin-top:.4rem;color:var(--muted)">📍 Germany</div>
+          </div>
         </div>
-    </footer>
-    
-   <script src="../assets/js/general.js"></script>
-   <script src="../assets/js/navbar_generator.js"></script>
-   <script>
-        // Call the function to inject the navigation bar, setting 'about' as the active page
-        generateAndInjectNavbar('about');
-    </script>
 
+        <div class="about-body">
+          <div class="section-header reveal">
+            <div class="section-tag">my story</div>
+            <h2 class="section-title">Developer with a<br><span>human-first</span> mindset.</h2>
+          </div>
+
+          <p class="reveal reveal-d1">
+            Hello! I'm <strong>Naiyar Muslim</strong>. My journey began in the breathtaking landscapes of <strong>Gilgit-Baltistan</strong>, a region of towering peaks and rich culture in northern Pakistan. I've always been driven by curiosity — whether it's understanding network architecture, mastering code, or learning a new culinary technique.
+          </p>
+          <p class="reveal reveal-d2">
+            Currently I'm an <strong>Applied Computer Science student in Germany</strong>, studying with a German proficiency of <strong>C1 (DSH-2)</strong>. My technical approach is defined by what I call <em>"Innovative Persistence"</em> — when I want to build something, it doesn't matter if I know how yet. I will learn, and I will do it.
+          </p>
+          <p class="reveal reveal-d3">
+            Beyond code, I spent years as a <strong>volunteer teacher</strong> — teaching English, Math, and Science in Baltistan. I also create <strong>study guide videos in Balti</strong> on Facebook and lifestyle reels on Instagram, making knowledge accessible to my community back home.
+          </p>
+
+          <div class="pills-wrap reveal reveal-d4">
+            <span class="pill cyan">Python</span>
+            <span class="pill cyan">JavaScript</span>
+            <span class="pill cyan">React</span>
+            <span class="pill cyan">Node.js</span>
+            <span class="pill cyan">C</span>
+            <span class="pill purple">Docker</span>
+            <span class="pill purple">Linux</span>
+            <span class="pill purple">Nextcloud</span>
+            <span class="pill purple">MySQL</span>
+            <span class="pill purple">Git</span>
+            <span class="pill green">Mentorship</span>
+            <span class="pill green">Teaching</span>
+            <span class="pill amber">Culinary Discipline</span>
+            <span class="pill amber">Team Leadership</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── JOURNEY TIMELINE ── -->
+  <section id="journey">
+    <div class="glow-orb orb-purple" style="width:380px;height:380px;bottom:0;left:-60px;"></div>
+    <div class="container">
+      <div class="section-header reveal" style="max-width:580px">
+        <div class="section-tag">timeline</div>
+        <h2 class="section-title">My journey<br><span>so far.</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-year">BALTISTAN, PAKISTAN</div>
+          <div class="tl-title">Growing Up — Curiosity in the Mountains</div>
+          <div class="tl-desc">Grew up in the majestic landscape of Gilgit-Baltistan. First experience with computers: zero-internet environment, diagnosing hardware issues (RAM, CPU, boot settings) completely from first principles.</div>
+        </div>
+
+        <div class="tl-item reveal reveal-d1">
+          <div class="tl-dot"></div>
+          <div class="tl-year">TEACHING YEARS</div>
+          <div class="tl-title">Volunteer Teacher — English, Math &amp; Science</div>
+          <div class="tl-desc">Served as a local mentor, providing free instruction to students. Developed strong communication, leadership, and the ability to break down complex ideas simply.</div>
+        </div>
+
+        <div class="tl-item reveal reveal-d2">
+          <div class="tl-dot"></div>
+          <div class="tl-year">WORK EXPERIENCE</div>
+          <div class="tl-title">Multiple Roles — Resilience &amp; Precision</div>
+          <div class="tl-desc">Call Center Sales Agent (12-hour night shifts), Delivery &amp; Assembly Helper, and Kitchen Professional — each role building my work ethic, resilience under pressure, and process discipline.</div>
+        </div>
+
+        <div class="tl-item reveal reveal-d3">
+          <div class="tl-dot"></div>
+          <div class="tl-year">PRESENT — GERMANY</div>
+          <div class="tl-title">Applied Computer Science Student · C1 German</div>
+          <div class="tl-desc">Studying Applied CS with German proficiency DSH-2/C1. Building practical projects (self-hosted cloud, web apps, ML), pursuing a path toward Cyber Security and Network Architecture.</div>
+        </div>
+
+        <div class="tl-item reveal reveal-d4">
+          <div class="tl-dot" style="background:var(--accent4); box-shadow:0 0 10px rgba(245,158,11,0.5)"></div>
+          <div class="tl-year">FUTURE GOAL</div>
+          <div class="tl-title">Cyber Security Analyst / Network Architect</div>
+          <div class="tl-desc">Aspiring to be a "soldier of good" in cyber security — protecting citizens and ensuring a secure digital environment. Working toward CompTIA Security+ and CCNA certifications.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── CORE VALUES ── -->
+  <section id="values">
+    <div class="container">
+      <div class="section-header reveal" style="max-width:540px">
+        <div class="section-tag">what drives me</div>
+        <h2 class="section-title">Core values &amp;<br><span>strengths.</span></h2>
+      </div>
+      <div class="values-grid">
+        <div class="card val-card reveal">
+          <div class="val-icon">🔥</div>
+          <div class="val-title">Extreme Persistence</div>
+          <div class="val-desc">Willing to dedicate up to 18 consecutive hours on a technical problem until it's solved. Driven by a genuine passion for diagnosing and resolving complex issues.</div>
+        </div>
+        <div class="card val-card reveal reveal-d1">
+          <div class="val-icon">⚡</div>
+          <div class="val-title">Innovative Problem-Solving</div>
+          <div class="val-desc">"If I want to build it, I will learn how." Overcame ISP port restrictions with Cloudflare tunnels; resolved recursive Git loop conflicts through manual network diagnosis.</div>
+        </div>
+        <div class="card val-card reveal reveal-d2">
+          <div class="val-icon">🎯</div>
+          <div class="val-title">Precision &amp; Quality</div>
+          <div class="val-desc">From refining kitchen order assembly from 15 mins to 7 mins, to treating every program execution with the same commitment to perfection and detail.</div>
+        </div>
+        <div class="card val-card reveal reveal-d3">
+          <div class="val-icon">🤝</div>
+          <div class="val-title">Team Adaptability</div>
+          <div class="val-desc">Quickly assesses team strengths and adjusts my role to fill gaps and maintain maximum workflow efficiency — in kitchens, classrooms, and codebases.</div>
+        </div>
+        <div class="card val-card reveal reveal-d4">
+          <div class="val-icon">🌍</div>
+          <div class="val-title">Cultural Intelligence</div>
+          <div class="val-desc">Uses conversational greetings in Russian, Persian, and Arabic to build immediate rapport. Proven ability to coordinate complex tasks non-verbally across language barriers.</div>
+        </div>
+        <div class="card val-card reveal">
+          <div class="val-icon">🏔️</div>
+          <div class="val-title">Community Purpose</div>
+          <div class="val-desc">Creating educational content in Balti for the people of Baltistan — making knowledge accessible to a mountain community that deserves every opportunity.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── LANGUAGES ── -->
+  <section id="languages">
+    <div class="container">
+      <div class="section-header reveal" style="max-width:500px">
+        <div class="section-tag">communication</div>
+        <h2 class="section-title">Languages<br><span>I speak.</span></h2>
+      </div>
+      <div class="lang-grid">
+        <div class="card lang-card reveal">
+          <div class="lang-flag">🏔️</div>
+          <div class="lang-name">Balti</div>
+          <div class="lang-level">Native</div>
+          <div class="lang-bar-wrap"><div class="lang-bar" data-width="100%"></div></div>
+        </div>
+        <div class="card lang-card reveal reveal-d1">
+          <div class="lang-flag">🇵🇰</div>
+          <div class="lang-name">Urdu</div>
+          <div class="lang-level">Native</div>
+          <div class="lang-bar-wrap"><div class="lang-bar" data-width="100%"></div></div>
+        </div>
+        <div class="card lang-card reveal reveal-d2">
+          <div class="lang-flag">🇩🇪</div>
+          <div class="lang-name">German</div>
+          <div class="lang-level">C1 · DSH-2 Professional</div>
+          <div class="lang-bar-wrap"><div class="lang-bar" data-width="90%" style="background:var(--accent2)"></div></div>
+        </div>
+        <div class="card lang-card reveal reveal-d3">
+          <div class="lang-flag">🇬🇧</div>
+          <div class="lang-name">English</div>
+          <div class="lang-level">B2–C1 Professional</div>
+          <div class="lang-bar-wrap"><div class="lang-bar" data-width="85%" style="background:var(--accent3)"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><span>[</span>naiyar.dev<span>]</span></div>
+    <div class="footer-copy">© 2025 Naiyar Muslim. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Animate language bars when they become visible
+    const langBars = document.querySelectorAll('.lang-bar');
+    const barObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.width = e.target.dataset.width;
+        }
+      });
+    }, { threshold: 0.5 });
+    langBars.forEach(b => barObs.observe(b));
+  </script>
 </body>
 </html>

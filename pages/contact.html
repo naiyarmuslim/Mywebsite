@@ -1,117 +1,374 @@
-
-
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naiyar Muslim | Developer, Chef, Influencer</title>
-    
-    <!-- Tailwind CSS for layout and responsiveness -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="../assets/css/style.css">
-  <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary': '#DC2626', // Red-600
-                        'secondary': '#FBBF24', // Amber-400
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Poppins', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Naiyar Muslim</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    #contact-main { background: var(--bg2); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    /* ── Info side ── */
+    .contact-info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      position: sticky;
+      top: 80px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .contact-item-icon {
+      width: 40px; height: 40px;
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-item-label { font-family:var(--mono); font-size:.7rem; color:var(--muted); letter-spacing:.07em; text-transform:uppercase; margin-bottom:.2rem; }
+    .contact-item-value { font-size:.9rem; }
+    .contact-item-value a { color:var(--text); text-decoration:none; transition:color .2s; }
+    .contact-item-value a:hover { color:var(--accent); }
+
+    .social-row {
+      display: flex; gap:.75rem; flex-wrap:wrap;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .45rem .9rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: var(--mono);
+      font-size: .72rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: all .2s;
+    }
+    .social-pill:hover { color: var(--accent); border-color: var(--accent); background: rgba(0,212,255,.04); }
+    .social-pill.ig:hover  { color:#f472b6; border-color:#f472b6; background:rgba(244,114,182,.04); }
+    .social-pill.fb:hover  { color:#60a5fa; border-color:#60a5fa; background:rgba(96,165,250,.04); }
+    .social-pill.gh:hover  { color:#e2e8f0; border-color:#e2e8f0; }
+
+    /* ── Form side ── */
+    .form-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2.5rem;
+    }
+    .form-title { font-family:var(--display); font-size:1.4rem; font-weight:800; margin-bottom:.4rem; }
+    .form-sub   { font-size:.88rem; color:var(--muted); margin-bottom:2rem; font-weight:300; }
+
+    .form-group { margin-bottom:1.3rem; }
+    .form-label { font-family:var(--mono); font-size:.7rem; color:var(--muted); letter-spacing:.07em; text-transform:uppercase; display:block; margin-bottom:.5rem; }
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: .75rem 1rem;
+      color: var(--text);
+      font-family: var(--body);
+      font-size: .9rem;
+      transition: border-color .2s;
+      outline: none;
+    }
+    .form-input:focus,
+    .form-textarea:focus { border-color: var(--accent); }
+    .form-textarea { resize: vertical; min-height: 130px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+
+    .submit-btn {
+      width: 100%;
+      padding: .9rem;
+      background: var(--accent);
+      color: #000;
+      font-family: var(--mono);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      border: none;
+      border-radius: 4px;
+      cursor: none;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .submit-btn:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(0,212,255,.3); }
+
+    .form-success {
+      display: none;
+      background: rgba(16,185,129,.1);
+      border: 1px solid rgba(16,185,129,.3);
+      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      font-family: var(--mono);
+      font-size: .82rem;
+      color: var(--accent3);
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    /* ── FAQ ── */
+    #faq { background: var(--bg); }
+    .faq-list { max-width: 700px; }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-bottom: .75rem;
+      overflow: hidden;
+    }
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.4rem;
+      cursor: none;
+      font-family: var(--display);
+      font-size: .95rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    .faq-q:hover { background: var(--surface); }
+    .faq-icon { font-family:var(--mono); color:var(--accent); font-size:1rem; transition:transform .2s; }
+    .faq-item.open .faq-icon { transform:rotate(45deg); }
+    .faq-a {
+      display: none;
+      padding: 0 1.4rem 1.2rem;
+      font-size: .87rem;
+      color: var(--muted);
+      font-weight: 300;
+      line-height: 1.65;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    @media(max-width:900px) {
+      .contact-layout { grid-template-columns:1fr; }
+      .contact-info-card { position:static; }
+      .form-row { grid-template-columns:1fr; }
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <div id="progress"></div>
 
+  <nav>
+    <a href="../index.html" class="nav-logo"><span class="bracket">[</span>naiyar.dev<span class="bracket">]</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="content.html">Content</a></li>
+      <li><a href="contact.html" class="nav-cta active" style="background:var(--surface);color:var(--accent)!important">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="courses.html">Courses</a>
+    <a href="projects.html">Projects</a>
+    <a href="content.html">Content</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
 
-<section id="contact" >
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Get In Touch</h2> 
-                <p class="text-gray-600">Whether you are a student needing advice, interested in a tech collaboration, or just want to talk about burgers.</p>
-            </div>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="section-tag" style="justify-content:center">contact</div>
+    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)">Let's build<br><span>something.</span></h1>
+  </div>
 
-            <div class="grid md:grid-cols-2 gap-12 text-gray-900"> <div>
-                    <h3 class="text-xl font-bold mb-6 border-b border-gray-300 pb-2 text-gray-900">Contact Info</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-envelope text-secondary"></i>
-                            </div>
-                            <span>naiyarmuslim@gmail.com</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-map-marker-alt text-primary"></i>
-                            </div>
-                            <span>Germany (Applied CS Student)</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center mr-4">
-                                <i class="fab fa-github text-gray-700"></i>
-                            </div>
-                            <a href="https://github.com/naiyarmuslim" class="hover:text-primary transition">github.com/naiyarmuslim</a>
-                        </div>
-                    </div>
+  <!-- ── CONTACT MAIN ── -->
+  <section id="contact-main" style="padding-top:2rem">
+    <div class="glow-orb orb-cyan" style="width:420px;height:420px;top:-80px;right:-80px;"></div>
+    <div class="container">
+      <div class="contact-layout">
 
-                    <div class="mt-8">
-                        <h3 class="text-xl font-bold mb-4 text-gray-900">Socials</h3>
-                        <div class="flex space-x-4 text-white">
-                            <a href="https://www.facebook.com/naiyar.gull/" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/reels.gull/" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition"><i class="fab fa-instagram"></i></a>
-                            <a href="https://github.com/naiyarmuslim" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-gray-600 transition"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
+        <!-- Info side -->
+        <div class="reveal">
+          <div class="contact-info-card">
+            <div class="contact-item">
+              <div class="contact-item-icon">✉</div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">
+                  <a href="mailto:naiyarmuslim@gmail.com">naiyarmuslim@gmail.com</a>
                 </div>
-
-                <form onsubmit="event.preventDefault(); alert('Thank you! This is a demo form.');" class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                        <input type="text" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:outline-none focus:border-primary" placeholder="Your Name">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                        <input type="email" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:outline-none focus:border-primary" placeholder="your@email.com">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                        <textarea rows="4" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:outline-none focus:border-primary" placeholder="How can I help you?"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-primary hover:bg-red-700 text-white font-bold py-3 rounded-lg transition">Send Message</button>
-                </form>
+              </div>
             </div>
-        </div>
-    </section>
-
-    <!-- --- FOOTER --- -->
-    <footer class="bg-black text-gray-500 py-8 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; 2025 Naiyar Muslim. All rights reserved.</p>
-            <div class="mt-2 space-x-4 text-sm">
-                <a href="#" onclick="showPage('home')" class="hover:text-white">Home</a>
-                <a href="#" onclick="showPage('projects')" class="hover:text-white">Projects</a>
-                <a href="#" onclick="showPage('chef')" class="hover:text-white">Chef</a>
+            <div class="contact-item">
+              <div class="contact-item-icon">📍</div>
+              <div>
+                <div class="contact-item-label">Location</div>
+                <div class="contact-item-value">Germany — Open to Remote &amp; Relocation</div>
+              </div>
             </div>
-        </div>
-    </footer>
+            <div class="contact-item">
+              <div class="contact-item-icon">⌥</div>
+              <div>
+                <div class="contact-item-label">GitHub</div>
+                <div class="contact-item-value">
+                  <a href="https://github.com/naiyarmuslim" target="_blank">github.com/naiyarmuslim</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">🕐</div>
+              <div>
+                <div class="contact-item-label">Response time</div>
+                <div class="contact-item-value">Usually within 24 hours</div>
+              </div>
+            </div>
+            <div class="contact-item" style="margin-bottom:0">
+              <div class="contact-item-icon">🎯</div>
+              <div>
+                <div class="contact-item-label">Open to</div>
+                <div class="contact-item-value">Jobs, Internships, Collaborations, Mentorship</div>
+              </div>
+            </div>
 
-    <script src="../assets/js/general.js"></script>
-    <script src="../assets/js/navbar_generator.js"></script>
-    <script>
-        // Call the function to inject the navigation bar, setting 'profile' as the active page
-        generateAndInjectNavbar('contact');
-    </script>
+            <div class="social-row">
+              <a href="https://www.instagram.com/reels.gull/" target="_blank" class="social-pill ig">📸 Instagram</a>
+              <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="social-pill fb">📘 Facebook</a>
+              <a href="https://github.com/naiyarmuslim" target="_blank" class="social-pill gh">⌥ GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form side -->
+        <div class="form-card reveal reveal-d2">
+          <div class="form-title">Send a message</div>
+          <div class="form-sub">Whether it's a job opportunity, a collaboration, or just a friendly hello — I'd love to hear from you.</div>
+
+          <form id="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-input" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-input" placeholder="e.g. Job Opportunity / Collaboration">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-textarea" placeholder="Tell me about your project, opportunity, or question..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">✉ Send Message</button>
+          </form>
+          <div class="form-success" id="form-success">
+            ✓ Message sent! I'll get back to you within 24 hours.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ── FAQ ── -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header reveal" style="max-width:600px">
+        <div class="section-tag">common questions</div>
+        <h2 class="section-title">FAQs</h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item reveal">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Are you open to job opportunities? <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Yes! I'm actively looking for internships, working student positions, or entry-level roles in software development, web development, or cybersecurity in Germany. I'm also open to remote work internationally.</div>
+        </div>
+
+        <div class="faq-item reveal reveal-d1">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Can you work in German? <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">Absolutely. I hold a C1 German language certificate (DSH-2) and use German daily in my academic and professional environment. I can conduct meetings, write documentation, and collaborate fully in German.</div>
+        </div>
+
+        <div class="faq-item reveal reveal-d2">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Do you do freelance web development? <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">I'm open to freelance projects, especially small to medium websites, web apps, or landing pages. Feel free to send me a message with your requirements and I'll get back to you.</div>
+        </div>
+
+        <div class="faq-item reveal reveal-d3">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Can you create content / educational videos for my organization? <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">If you're working on educational content for Baltistani communities or Gilgit-Baltistan, I'd love to collaborate. I create content in Balti, Urdu, and English.</div>
+        </div>
+
+        <div class="faq-item reveal reveal-d4">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How quickly do you respond to messages? <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-a">I typically respond within 24 hours. For urgent matters, feel free to reach out directly via email at naiyarmuslim@gmail.com.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo"><span>[</span>naiyar.dev<span>]</span></div>
+    <div class="footer-copy">© 2025 Naiyar Muslim. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      setTimeout(() => {
+        e.target.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      }, 1000);
+    }
+
+    function toggleFaq(el) {
+      const item = el.parentElement;
+      item.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
