@@ -3,117 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Courses — Naiyar Muslim</title>
+  <title>Naiyar Muslim — German in Balti · Courses</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <style>
-    #academic { background: var(--bg2); }
+    .page-header{min-height:36vh;display:flex;align-items:flex-end;padding-top:64px;padding-bottom:3.5rem;position:relative;overflow:hidden}
+    .page-header .g-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
 
-    /* ── Filter bar ── */
-    .filter-bar {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 2.5rem;
-    }
-    .filter-btn {
-      font-family: var(--mono);
-      font-size: 0.73rem;
-      padding: 0.35rem 0.9rem;
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      background: transparent;
-      color: var(--muted);
-      cursor: none;
-      transition: all 0.2s;
-      letter-spacing: 0.04em;
-    }
-    .filter-btn:hover,
-    .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,212,255,0.06); }
+    /* stats */
+    .stats-row{display:flex;gap:2.5rem;flex-wrap:wrap;padding:1.8rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:3rem}
+    .stat-item .num{font-family:var(--display);font-size:1.8rem;font-weight:800;line-height:1}
+    .stat-item .lbl{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:.2rem}
 
-    /* ── Course cards ── */
-    .courses-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.4rem;
-    }
-    .course-card {
-      padding: 1.8rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .course-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 3px;
-      background: var(--cc, var(--accent));
-    }
-    .course-icon {
-      width: 44px; height: 44px;
-      background: var(--ci, rgba(0,212,255,0.1));
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-    .course-code { font-family:var(--mono); font-size:0.7rem; color:var(--muted); letter-spacing:0.08em; margin-bottom:0.3rem; }
-    .course-title { font-family:var(--display); font-size:1.04rem; font-weight:700; margin-bottom:0.4rem; }
-    .course-desc  { font-size:0.85rem; color:var(--muted); font-weight:300; line-height:1.55; }
-    .course-badge {
-      display: inline-block;
-      margin-top: 1rem;
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 3px;
-      letter-spacing: 0.05em;
-    }
-    .badge-done     { background:rgba(16,185,129,0.1); color:var(--accent3); }
-    .badge-progress { background:rgba(245,158,11,0.1);  color:var(--accent4); }
-    .badge-planned  { background:rgba(100,116,139,0.15); color:var(--muted); }
+    /* admin unlock */
+    #admin-unlock{display:flex;align-items:center;gap:.75rem;margin-bottom:2.5rem;max-width:400px}
+    #admin-unlock input{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.55rem .9rem;color:var(--text);font-family:var(--mono);font-size:.85rem;cursor:none;transition:border-color .2s}
+    #admin-unlock input:focus{outline:none;border-color:var(--accent2)}
+    .btn-admin{padding:.55rem 1.2rem;background:rgba(124,58,237,.15);border:1px solid var(--accent2);border-radius:6px;color:var(--accent2);font-family:var(--mono);font-size:.8rem;cursor:none;transition:all .2s;white-space:nowrap}
+    .btn-admin:hover{background:rgba(124,58,237,.28)}
 
-    /* ── Skills overview ── */
-    #skills-overview { background: var(--bg); }
-    .skills-cols {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-    }
-    .skill-group-title {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--accent);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-    }
-    .skill-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-    .skill-name { font-size: 0.9rem; }
-    .skill-bar-outer { width: 55%; height: 3px; background: var(--border); border-radius: 2px; }
-    .skill-bar-inner { height: 3px; border-radius: 2px; background: var(--accent); transition: width 1.2s ease; width: 0; }
-    .skill-pct { font-family:var(--mono); font-size:0.68rem; color:var(--muted); }
+    /* admin panel */
+    #admin-panel{background:var(--surface);border:1px solid var(--accent2);border-radius:12px;padding:2rem;margin-bottom:3rem;display:none}
+    #admin-panel.open{display:block}
+    .admin-label{font-family:var(--mono);font-size:.76rem;color:var(--accent2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.4rem}
+    .upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .upload-grid .full{grid-column:1/-1}
+    .fg{display:flex;flex-direction:column;gap:.4rem}
+    .fg label{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    .fg input,.fg select,.fg textarea{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:.65rem .9rem;color:var(--text);font-family:var(--body);font-size:.9rem;cursor:none;transition:border-color .2s}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--accent2)}
+    .fg select option{background:var(--surface)}
+    .fg textarea{resize:vertical;min-height:80px}
+    .url-hint{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:.3rem;line-height:1.6}
+    .url-hint code{background:rgba(0,212,255,.08);color:var(--accent);padding:.1rem .35rem;border-radius:3px}
 
-    /* ── Quote ── */
-    #philosophy { background: var(--bg2); }
-    .quote-block {
-      border-left: 3px solid var(--accent);
-      padding: 1.5rem 2rem;
-      background: rgba(0,212,255,0.04);
-      border-radius: 0 8px 8px 0;
-      max-width: 700px;
-    }
-    .quote-text  { font-size:1.15rem; font-weight:300; font-style:italic; color:var(--text); line-height:1.7; }
-    .quote-attr  { font-family:var(--mono); font-size:0.73rem; color:var(--accent); margin-top:0.8rem; }
+    /* cloud guide */
+    .cloud-guide{background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.15);border-radius:10px;padding:1.4rem 1.8rem;margin-bottom:1.8rem;font-size:.85rem;color:var(--muted);line-height:1.8}
+    .cloud-guide strong{color:var(--text)}
+    .cloud-guide code{background:rgba(0,212,255,.08);color:var(--accent);padding:.1rem .35rem;border-radius:3px;font-family:var(--mono);font-size:.78rem}
 
-    @media(max-width:720px) { .skills-cols { grid-template-columns:1fr; } }
+    /* filter bar */
+    .filter-bar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
+    .fbtn{padding:.45rem 1.1rem;border:1px solid var(--border);border-radius:20px;background:transparent;color:var(--muted);font-family:var(--mono);font-size:.75rem;cursor:none;transition:all .2s;letter-spacing:.04em}
+    .fbtn:hover{border-color:var(--accent);color:var(--accent)}
+    .fbtn.active{background:rgba(0,212,255,.1);border-color:var(--accent);color:var(--accent)}
+
+    /* course grid */
+    #course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+
+    /* course card */
+    .ccard{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .25s,transform .25s;position:relative}
+    .ccard:hover{border-color:var(--accent);transform:translateY(-3px)}
+    .ccard .ctop{height:3px;background:var(--cc,var(--accent))}
+
+    /* video thumb */
+    .vthumb{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden;cursor:none}
+    .vthumb video{width:100%;height:100%;object-fit:cover;display:block}
+    .play-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);transition:background .2s}
+    .vthumb:hover .play-ov{background:rgba(0,0,0,.15)}
+    .pbtn{width:52px;height:52px;background:rgba(0,212,255,.18);border:2px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:transform .2s,background .2s}
+    .vthumb:hover .pbtn{transform:scale(1.12);background:rgba(0,212,255,.32)}
+    .dur-badge{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.72);color:#fff;font-family:var(--mono);font-size:.67rem;padding:.2rem .5rem;border-radius:3px}
+    .lvl-badge{position:absolute;top:8px;left:8px;font-family:var(--mono);font-size:.65rem;padding:.2rem .6rem;border-radius:3px;font-weight:600;letter-spacing:.05em}
+    .la1{background:rgba(16,185,129,.22);color:#10b981;border:1px solid rgba(16,185,129,.38)}
+    .la2{background:rgba(0,212,255,.16);color:var(--accent);border:1px solid rgba(0,212,255,.32)}
+    .lb1{background:rgba(245,158,11,.16);color:var(--accent4);border:1px solid rgba(245,158,11,.32)}
+
+    /* card body */
+    .cbody{padding:1.2rem 1.4rem 1.4rem}
+    .cnum{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.06em;margin-bottom:.5rem}
+    .ctitle{font-family:var(--display);font-size:1rem;font-weight:700;margin-bottom:.3rem;line-height:1.35}
+    .cbalti{font-size:.82rem;color:var(--accent4);font-style:italic;margin-bottom:.5rem;font-family:var(--mono)}
+    .cdesc{font-size:.84rem;color:var(--muted);font-weight:300;line-height:1.55;margin-bottom:1rem}
+    .cactions{display:flex;gap:.6rem;flex-wrap:wrap}
+    .btn-watch{flex:1;min-width:100px;padding:.55rem 1rem;background:rgba(0,212,255,.1);border:1px solid var(--accent);border-radius:6px;color:var(--accent);font-family:var(--mono);font-size:.75rem;text-align:center;cursor:none;transition:all .2s}
+    .btn-watch:hover{background:rgba(0,212,255,.2)}
+    .btn-dl{padding:.55rem 1rem;background:rgba(16,185,129,.08);border:1px solid var(--accent3);border-radius:6px;color:var(--accent3);font-family:var(--mono);font-size:.75rem;text-decoration:none;display:flex;align-items:center;gap:.3rem;cursor:none;transition:all .2s}
+    .btn-dl:hover{background:rgba(16,185,129,.2)}
+    .btn-del{position:absolute;top:46px;right:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.38);border-radius:4px;color:#ef4444;font-family:var(--mono);font-size:.65rem;padding:.25rem .55rem;cursor:none;display:none;z-index:5;transition:all .2s}
+    .btn-del:hover{background:rgba(239,68,68,.3)}
+    body.admin-mode .btn-del{display:block}
+
+    /* modal */
+    #vmodal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:1.5rem}
+    #vmodal.open{display:flex}
+    .minner{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;width:100%;max-width:860px;position:relative}
+    .mhead{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.4rem;border-bottom:1px solid var(--border);background:var(--surface2)}
+    .mtitle{font-family:var(--display);font-weight:700;font-size:.95rem}
+    .mclose{width:32px;height:32px;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:6px;color:var(--muted);font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:none;transition:all .2s}
+    .mclose:hover{background:rgba(255,255,255,.15);color:var(--text)}
+    .mvideo{background:#000;aspect-ratio:16/9}
+    .mvideo video{width:100%;height:100%;object-fit:contain;display:block}
+    .mfoot{padding:1rem 1.4rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+    .mdesc{font-size:.84rem;color:var(--muted);flex:1}
+
+    /* empty */
+    #empty-state{grid-column:1/-1;text-align:center;padding:5rem 2rem;display:none}
+    #empty-state .ei{font-size:3.5rem;margin-bottom:1rem}
+    #empty-state p{color:var(--muted);font-size:.9rem;max-width:420px;margin:0 auto}
+
+    @media(max-width:700px){
+      .upload-grid{grid-template-columns:1fr}
+      #course-grid{grid-template-columns:1fr}
+      .stats-row{gap:1.4rem}
+    }
   </style>
 </head>
-<body>
+<body data-page="courses">
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
   <div id="progress"></div>
@@ -121,255 +116,383 @@
   <nav>
     <a href="../index.html" class="nav-logo"><span class="bracket">[</span>naiyar.dev<span class="bracket">]</span></a>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="courses.html" class="active">Courses</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="content.html">Content</a></li>
-      <li><a href="contact.html" class="nav-cta">Contact →</a></li>
+      <li><a href="../index.html"  data-i18n="shared.nav.home">Home</a></li>
+      <li><a href="about.html"     data-i18n="shared.nav.about">About Me</a></li>
+      <li><a href="courses.html" class="active" data-i18n="shared.nav.courses">Courses</a></li>
+      <li><a href="projects.html"  data-i18n="shared.nav.projects">Projects</a></li>
+      <li><a href="content.html"   data-i18n="shared.nav.content">Content</a></li>
+      <li><a href="contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
+    <button id="lang-toggle" onclick="toggleLang()" title="Switch language">DE 🇩🇪</button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="../index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="courses.html" class="active">Courses</a>
-    <a href="projects.html">Projects</a>
-    <a href="content.html">Content</a>
-    <a href="contact.html">Contact</a>
+    <a href="../index.html"  data-i18n="shared.nav.home">Home</a>
+    <a href="about.html"     data-i18n="shared.nav.about">About Me</a>
+    <a href="courses.html" class="active" data-i18n="shared.nav.courses">Courses</a>
+    <a href="projects.html"  data-i18n="shared.nav.projects">Projects</a>
+    <a href="content.html"   data-i18n="shared.nav.content">Content</a>
+    <a href="contact.html"   data-i18n="shared.nav.contact">Contact →</a>
   </div>
 
   <!-- PAGE HEADER -->
   <div class="page-header">
-    <div class="section-tag" style="justify-content:center">education</div>
-    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)">Academic &amp;<br><span>Technical Foundation.</span></h1>
-  </div>
-
-  <!-- ── COURSES ── -->
-  <section id="academic" style="padding-top:2rem">
-    <div class="glow-orb orb-cyan" style="width:420px;height:420px;top:0;right:-80px;"></div>
+    <div class="g-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.18),transparent 70%);top:-100px;right:-80px;"></div>
+    <div class="g-orb" style="width:300px;height:300px;background:radial-gradient(circle,rgba(0,212,255,.1),transparent 70%);bottom:-50px;left:-50px;"></div>
     <div class="container">
-
-      <!-- Filter -->
-      <div class="filter-bar reveal">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="done">Completed</button>
-        <button class="filter-btn" data-filter="progress">In Progress</button>
-        <button class="filter-btn" data-filter="cs">Computer Science</button>
-        <button class="filter-btn" data-filter="math">Mathematics</button>
-      </div>
-
-      <div class="courses-grid" id="courses-grid">
-
-        <div class="card course-card reveal" data-cat="cs done" style="--cc:#00d4ff;--ci:rgba(0,212,255,0.1)">
-          <div class="course-icon">🧮</div>
-          <div class="course-code">CS — DATA STRUCTURES</div>
-          <div class="course-title">Data Structures &amp; Algorithms</div>
-          <div class="course-desc">Arrays, linked lists, trees, graphs, sorting and searching algorithms. Complexity analysis and Big-O notation in Java.</div>
-          <span class="course-badge badge-done">✓ Completed</span>
-        </div>
-
-        <div class="card course-card reveal reveal-d1" data-cat="cs done" style="--cc:#7c3aed;--ci:rgba(124,58,237,0.1)">
-          <div class="course-icon">🌐</div>
-          <div class="course-code">CS — WEB DEVELOPMENT</div>
-          <div class="course-title">Web Development &amp; Full Stack</div>
-          <div class="course-desc">HTML5, CSS, JavaScript, React, Node.js, REST APIs, Tailwind CSS, and database integration.</div>
-          <span class="course-badge badge-done">✓ Completed</span>
-        </div>
-
-        <div class="card course-card reveal reveal-d2" data-cat="cs done" style="--cc:#10b981;--ci:rgba(16,185,129,0.1)">
-          <div class="course-icon">⚙️</div>
-          <div class="course-code">CS — SYSTEMS PROGRAMMING</div>
-          <div class="course-title">C Programming &amp; Systems</div>
-          <div class="course-desc">12-week C course covering pointers, memory management, file I/O, dynamic allocation, structs, and recursion.</div>
-          <span class="course-badge badge-done">✓ Completed</span>
-        </div>
-
-        <div class="card course-card reveal reveal-d3" data-cat="cs done" style="--cc:#f59e0b;--ci:rgba(245,158,11,0.1)">
-          <div class="course-icon">🗄️</div>
-          <div class="course-code">CS — DATABASES</div>
-          <div class="course-title">Database Systems</div>
-          <div class="course-desc">Relational databases, SQL queries, normalization, MySQL, MongoDB, and database design principles.</div>
-          <span class="course-badge badge-done">✓ Completed</span>
-        </div>
-
-        <div class="card course-card reveal" data-cat="cs progress" style="--cc:#00d4ff;--ci:rgba(0,212,255,0.08)">
-          <div class="course-icon">☁️</div>
-          <div class="course-code">CS — CLOUD &amp; DEVOPS</div>
-          <div class="course-title">Cloud Computing &amp; DevOps</div>
-          <div class="course-desc">AWS fundamentals, Docker containerization, CI/CD pipelines, Linux server administration, and Cloudflare tunneling.</div>
-          <span class="course-badge badge-progress">⟳ In Progress</span>
-        </div>
-
-        <div class="card course-card reveal reveal-d1" data-cat="cs progress" style="--cc:#ec4899;--ci:rgba(236,72,153,0.1)">
-          <div class="course-icon">🤖</div>
-          <div class="course-code">CS — MACHINE LEARNING</div>
-          <div class="course-title">Machine Learning Fundamentals</div>
-          <div class="course-desc">Supervised/unsupervised learning, neural networks, Python (scikit-learn, Pandas), and practical model building.</div>
-          <span class="course-badge badge-progress">⟳ In Progress</span>
-        </div>
-
-        <div class="card course-card reveal reveal-d2" data-cat="cs done" style="--cc:#06b6d4;--ci:rgba(6,182,212,0.1)">
-          <div class="course-icon">🔐</div>
-          <div class="course-code">CS — CYBERSECURITY</div>
-          <div class="course-title">Cybersecurity Essentials</div>
-          <div class="course-desc">Network security, cryptography basics, ethical hacking fundamentals, secure coding, and zero-trust architecture.</div>
-          <span class="course-badge badge-done">✓ Completed</span>
-        </div>
-
-        <div class="card course-card reveal reveal-d3" data-cat="math done" style="--cc:#a78bfa;--ci:rgba(167,139,250,0.1)">
-          <div class="course-icon">∑</div>
-          <div class="course-code">MATH — DISCRETE</div>
-          <div class="course-title">Discrete Mathematics</div>
-          <div class="course-desc">Logic, sets, relations, graph theory, combinatorics, and mathematical proofs — foundational for computer science.</div>
-          <span class="course-badge badge-done">✓ Completed</span>
-        </div>
-
-        <div class="card course-card reveal" data-cat="math done" style="--cc:#34d399;--ci:rgba(52,211,153,0.1)">
-          <div class="course-icon">📐</div>
-          <div class="course-code">MATH — LINEAR ALGEBRA</div>
-          <div class="course-title">Linear Algebra</div>
-          <div class="course-desc">Vectors, matrices, eigenvalues, linear transformations — directly applicable to ML and computer graphics.</div>
-          <span class="course-badge badge-done">✓ Completed</span>
-        </div>
-
-        <div class="card course-card reveal reveal-d1" data-cat="cs progress" style="--cc:#fb923c;--ci:rgba(251,146,60,0.1)">
-          <div class="course-icon">🛡️</div>
-          <div class="course-code">CS — NETWORKING</div>
-          <div class="course-title">Computer Networks</div>
-          <div class="course-desc">TCP/IP stack, DNS, routing protocols, network architecture. Targeting CompTIA Security+ and CCNA certifications.</div>
-          <span class="course-badge badge-progress">⟳ In Progress</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ── SKILLS OVERVIEW ── -->
-  <section id="skills-overview">
-    <div class="container">
-      <div class="section-header reveal" style="max-width:560px">
-        <div class="section-tag">proficiency</div>
-        <h2 class="section-title">Technical<br><span>skill levels.</span></h2>
-      </div>
-      <div class="skills-cols">
-        <div class="reveal">
-          <div class="skill-group-title">// Programming</div>
-          <div class="skill-row">
-            <span class="skill-name">Python</span>
-            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="80%"></div></div>
-            <span class="skill-pct">80%</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">JavaScript</span>
-            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="75%"></div></div>
-            <span class="skill-pct">75%</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">C Language</span>
-            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="70%"></div></div>
-            <span class="skill-pct">70%</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Java</span>
-            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="60%"></div></div>
-            <span class="skill-pct">60%</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">React / Node.js</span>
-            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="65%" style="background:var(--accent2)"></div></div>
-            <span class="skill-pct">65%</span>
-          </div>
-        </div>
-        <div class="reveal reveal-d2">
-          <div class="skill-group-title">// Systems &amp; Tools</div>
-          <div class="skill-row">
-            <span class="skill-name">Linux (Terminal)</span>
-            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="85%" style="background:var(--accent3)"></div></div>
-            <span class="skill-pct">85%</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Docker</span>
-            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="75%" style="background:var(--accent3)"></div></div>
-            <span class="skill-pct">75%</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Git / GitHub</span>
-            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="80%" style="background:var(--accent3)"></div></div>
-            <span class="skill-pct">80%</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">MySQL / MongoDB</span>
-            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="65%" style="background:var(--accent3)"></div></div>
-            <span class="skill-pct">65%</span>
-          </div>
-          <div class="skill-row">
-            <span class="skill-name">Networking / DNS</span>
-            <div class="skill-bar-outer"><div class="skill-bar-inner" data-w="70%" style="background:var(--accent3)"></div></div>
-            <span class="skill-pct">70%</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ── PHILOSOPHY ── -->
-  <section id="philosophy">
-    <div class="container" style="max-width:800px">
-      <div class="section-header reveal">
-        <div class="section-tag">approach</div>
-        <h2 class="section-title">How I<br><span>learn.</span></h2>
-      </div>
-      <div class="quote-block reveal reveal-d1">
-        <p class="quote-text">"When I want to build something, it doesn't matter if I know anything about it or not — I will learn how to do it and I will do it."</p>
-        <p class="quote-attr">— Naiyar Muslim, on Innovative Persistence</p>
-      </div>
-      <p class="reveal reveal-d2" style="margin-top:2rem;color:var(--muted);font-weight:300;font-size:1.02rem">
-        My approach is <strong style="color:var(--text)">project-driven over rote learning</strong>. Every major skill I've acquired started with a real problem I wanted to solve — from setting up a self-hosted cloud server under ISP restrictions, to diagnosing recursive loop conflicts in complex network environments. I believe the best way to learn CS is to build things that matter.
+      <div class="section-tag" style="margin-bottom:.7rem">🏔️ <span data-i18n="courses.page_tag">German in Balti</span></div>
+      <h1 class="section-title">
+        <span data-i18n="courses.page_title1">Learn German,</span><br>
+        <span data-i18n="courses.page_title2">in your language.</span>
+      </h1>
+      <p style="color:var(--muted);max-width:560px;margin-top:1.1rem;font-weight:300;font-size:1rem" data-i18n="courses.page_desc">
+        Free German language lessons explained in Balti — for the students of Gilgit-Baltistan who dream of studying in Germany.
       </p>
     </div>
-  </section>
+  </div>
 
-  <!-- FOOTER -->
+  <div class="container" style="padding-top:2rem;padding-bottom:5rem">
+
+    <!-- Stats -->
+    <div class="stats-row reveal">
+      <div class="stat-item">
+        <div class="num" id="stat-lessons" style="color:var(--accent)">0</div>
+        <div class="lbl" data-i18n="courses.stat_lessons">Video Lessons</div>
+      </div>
+      <div class="stat-item">
+        <div class="num" style="color:var(--accent2)">A1–B1</div>
+        <div class="lbl" data-i18n="courses.stat_levels">3 Levels</div>
+      </div>
+      <div class="stat-item">
+        <div class="num" style="color:var(--accent4)">🆓</div>
+        <div class="lbl" data-i18n="courses.stat_free">100% Free</div>
+      </div>
+      <div class="stat-item">
+        <div class="num" style="color:var(--accent3)">⬇</div>
+        <div class="lbl" data-i18n="courses.stat_dl">Download Available</div>
+      </div>
+    </div>
+
+    <!-- Admin unlock -->
+    <div id="admin-unlock">
+      <input type="password" id="admin-pass" placeholder="Admin password…" autocomplete="off">
+      <button class="btn-admin" onclick="unlockAdmin()">🔐 <span data-i18n="courses.admin_btn">Upload Video</span></button>
+    </div>
+
+    <!-- Admin panel -->
+    <div id="admin-panel">
+      <div class="admin-label">⬆ <span data-i18n="courses.admin_title">Upload New Lesson</span></div>
+
+      <div class="cloud-guide">
+        <strong data-i18n="courses.cloud_title">📡 How to get the video URL from your Nextcloud server:</strong><br>
+        1. <span data-i18n="courses.cloud_s1">Upload your video to Nextcloud and click on it to open.</span><br>
+        2. <span data-i18n="courses.cloud_s2">Click the <strong>⋯ Share</strong> icon → <strong>Share link</strong> → enable <strong>Allow download</strong>.</span><br>
+        3. <span data-i18n="courses.cloud_s3">Copy the share link. It looks like: <code>https://cloud.example.com/s/AbCdEfGhIj</code></span><br>
+        4. <span data-i18n="courses.cloud_s4">Add <code>/download</code> at the end → <code>https://cloud.example.com/s/AbCdEfGhIj/download</code> — paste this as your Video URL below.</span><br>
+        5. <span data-i18n="courses.cloud_s5">Use the same <code>/download</code> URL for the Download URL too. Your visitors can then stream AND download directly from your server.</span>
+      </div>
+
+      <div class="upload-grid">
+        <div class="fg">
+          <label data-i18n="courses.fl_title_en">Lesson Title (English)</label>
+          <input type="text" id="f-ten" placeholder="e.g. Lesson 1 — Greetings in German">
+        </div>
+        <div class="fg">
+          <label data-i18n="courses.fl_title_de">Lesson Title (Deutsch)</label>
+          <input type="text" id="f-tde" placeholder="z.B. Lektion 1 — Deutsche Begrüßungen">
+        </div>
+        <div class="fg">
+          <label data-i18n="courses.fl_title_balti">Lesson Title (Balti / بلتی)</label>
+          <input type="text" id="f-tbalti" placeholder="e.g. لیکشن ۱ ― جرمن زبانو آداب">
+        </div>
+        <div class="fg">
+          <label data-i18n="courses.fl_level">Level</label>
+          <select id="f-level">
+            <option value="a1">A1 — Beginner / Anfänger</option>
+            <option value="a2">A2 — Elementary / Grundlegend</option>
+            <option value="b1">B1 — Intermediate / Mittelstufe</option>
+          </select>
+        </div>
+        <div class="fg full">
+          <label data-i18n="courses.fl_desc">Description (shown on card)</label>
+          <textarea id="f-desc" placeholder="What vocabulary or grammar does this lesson cover?"></textarea>
+        </div>
+        <div class="fg full">
+          <label data-i18n="courses.fl_video">Video URL — direct stream from your Nextcloud</label>
+          <input type="url" id="f-vurl" placeholder="https://your-cloud.de/s/TOKEN/download">
+          <div class="url-hint" data-i18n="courses.hint_video">Paste the Nextcloud share link with <code>/download</code> appended. This is used to stream the video in the browser.</div>
+        </div>
+        <div class="fg full">
+          <label data-i18n="courses.fl_dl">Download URL (for the ⬇ Download button)</label>
+          <input type="url" id="f-dlurl" placeholder="https://your-cloud.de/s/TOKEN/download">
+          <div class="url-hint" data-i18n="courses.hint_dl">Usually the same URL as above. Visitors will be able to save the video file to their device.</div>
+        </div>
+        <div class="fg">
+          <label data-i18n="courses.fl_dur">Duration (e.g. 12:34)</label>
+          <input type="text" id="f-dur" placeholder="12:34">
+        </div>
+        <div class="fg">
+          <label data-i18n="courses.fl_num">Lesson Number</label>
+          <input type="number" id="f-num" placeholder="1" min="1">
+        </div>
+        <div class="fg full" style="margin-top:.4rem">
+          <button class="btn-primary" onclick="addLesson()" style="width:fit-content;padding:.75rem 2.2rem">
+            ➕ <span data-i18n="courses.btn_add">Add Lesson</span>
+          </button>
+        </div>
+      </div>
+    </div><!-- /admin-panel -->
+
+    <!-- Filter -->
+    <div class="filter-bar">
+      <button class="fbtn active" data-level="all" data-i18n="courses.filter_all">All Levels</button>
+      <button class="fbtn" data-level="a1"          data-i18n="courses.filter_a1">A1 — Beginner</button>
+      <button class="fbtn" data-level="a2"          data-i18n="courses.filter_a2">A2 — Elementary</button>
+      <button class="fbtn" data-level="b1"          data-i18n="courses.filter_b1">B1 — Intermediate</button>
+    </div>
+
+    <!-- Grid -->
+    <div id="course-grid">
+      <div id="empty-state">
+        <div class="ei">🏔️</div>
+        <p data-i18n="courses.empty">No lessons yet — check back soon!<br>If you're the admin, enter your password above to upload the first video.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <div id="vmodal" onclick="maybeClose(event)">
+    <div class="minner">
+      <div class="mhead">
+        <div class="mtitle" id="modal-title">Lesson</div>
+        <button class="mclose" onclick="closeModal()">✕</button>
+      </div>
+      <div class="mvideo">
+        <video id="modal-vid" controls preload="none" style="width:100%;height:100%">
+          <source id="modal-src" src="" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+      <div class="mfoot">
+        <div class="mdesc" id="modal-desc"></div>
+        <a id="modal-dl" href="#" class="btn-dl" target="_blank" download>
+          ⬇ <span data-i18n="courses.btn_dl">Download Video</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <div class="footer-logo"><span>[</span>naiyar.dev<span>]</span></div>
-    <div class="footer-copy">© 2025 Naiyar Muslim. All rights reserved.</div>
+    <div class="footer-copy" data-i18n="shared.footer.copy">© 2025 Naiyar Muslim. All rights reserved.</div>
     <div class="footer-links">
-      <a href="../index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="../index.html" data-i18n="shared.nav.home">Home</a>
+      <a href="contact.html"  data-i18n="shared.nav.contact">Contact →</a>
     </div>
   </footer>
 
+  <script src="../assets/js/i18n.js"></script>
   <script src="../assets/js/main.js"></script>
   <script>
-    // ── Filter logic ──
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const courseCards = document.querySelectorAll('.course-card');
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const f = btn.dataset.filter;
-        courseCards.forEach(c => {
-          const cats = c.dataset.cat || '';
-          c.style.display = (f === 'all' || cats.includes(f)) ? '' : 'none';
-        });
-      });
-    });
+  // ================================================================
+  // GERMAN IN BALTI — COURSE PLATFORM LOGIC
+  // ================================================================
 
-    // ── Skill bars ──
-    const skillBars = document.querySelectorAll('.skill-bar-inner');
-    const sbObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) e.target.style.width = e.target.dataset.w;
+  const ADMIN_PASS  = 'naiyar2025';   // ← change to your own password
+  const STORE_KEY   = 'nm_courses_v2';
+
+  const LEVEL_CFG = {
+    a1: { label: 'A1', cls: 'la1', color: '#10b981' },
+    a2: { label: 'A2', cls: 'la2', color: '#00d4ff' },
+    b1: { label: 'B1', cls: 'lb1', color: '#f59e0b' },
+  };
+
+  // ── Storage ──────────────────────────────────────────────────
+  function load()       { try { return JSON.parse(localStorage.getItem(STORE_KEY)||'[]'); } catch(e){ return []; } }
+  function save(arr)    { localStorage.setItem(STORE_KEY, JSON.stringify(arr)); }
+  function getLang()    { return localStorage.getItem('nm_lang') || 'en'; }
+
+  // ── Escape HTML ───────────────────────────────────────────────
+  function esc(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  // ── Build card HTML ───────────────────────────────────────────
+  function card(lesson, realIdx) {
+    const lang  = getLang();
+    const title = lang === 'de' ? (lesson.tde || lesson.ten) : lesson.ten;
+    const lvl   = LEVEL_CFG[lesson.level] || LEVEL_CFG.a1;
+    const dlUrl = lesson.dlurl || lesson.vurl;
+    const wLbl  = lang === 'de' ? '▶ Ansehen'       : '▶ Watch';
+    const dLbl  = lang === 'de' ? '⬇ Herunterladen' : '⬇ Download';
+    const num   = lesson.num ? String(lesson.num).padStart(2,'0') : String(realIdx+1).padStart(2,'0');
+
+    return `<div class="ccard reveal" data-level="${esc(lesson.level)}" data-ridx="${realIdx}" style="--cc:${lvl.color}">
+  <div class="ctop"></div>
+  <button class="btn-del" onclick="delLesson(${realIdx})">✕ Delete</button>
+  <div class="vthumb" onclick="openModal(${realIdx})">
+    <video preload="none" muted><source src="${esc(lesson.vurl)}#t=2" type="video/mp4"></video>
+    <div class="play-ov"><div class="pbtn">▶</div></div>
+    ${lesson.dur ? `<div class="dur-badge">${esc(lesson.dur)}</div>` : ''}
+    <div class="lvl-badge ${lvl.cls}">${lvl.label}</div>
+  </div>
+  <div class="cbody">
+    <div class="cnum">LESSON ${num}</div>
+    <div class="ctitle">${esc(title)}</div>
+    ${lesson.tbalti ? `<div class="cbalti">${esc(lesson.tbalti)}</div>` : ''}
+    ${lesson.desc   ? `<div class="cdesc">${esc(lesson.desc)}</div>`    : ''}
+    <div class="cactions">
+      <button class="btn-watch" onclick="openModal(${realIdx})">${wLbl}</button>
+      <a class="btn-dl" href="${esc(dlUrl)}" download target="_blank">${dLbl}</a>
+    </div>
+  </div>
+</div>`;
+  }
+
+  // ── Render ────────────────────────────────────────────────────
+  let activeFilter = 'all';
+
+  function render() {
+    const all      = load();
+    const grid     = document.getElementById('course-grid');
+    const empty    = document.getElementById('empty-state');
+    const filtered = activeFilter === 'all' ? all : all.filter(l => l.level === activeFilter);
+
+    // Remove old cards
+    grid.querySelectorAll('.ccard').forEach(c => c.remove());
+
+    document.getElementById('stat-lessons').textContent = all.length;
+
+    if (filtered.length === 0) {
+      empty.style.display = 'block';
+    } else {
+      empty.style.display = 'none';
+      filtered.forEach(lesson => {
+        const realIdx = all.indexOf(lesson);
+        grid.insertAdjacentHTML('beforeend', card(lesson, realIdx));
       });
-    }, { threshold: 0.4 });
-    skillBars.forEach(b => sbObs.observe(b));
+      // Hook scroll reveal
+      if (window.__obs) {
+        grid.querySelectorAll('.ccard.reveal').forEach(el => window.__obs.observe(el));
+      }
+    }
+  }
+
+  // ── Filter buttons ────────────────────────────────────────────
+  document.querySelectorAll('.fbtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.level;
+      render();
+    });
+  });
+
+  // ── Add lesson ────────────────────────────────────────────────
+  function addLesson() {
+    const ten    = document.getElementById('f-ten').value.trim();
+    const tde    = document.getElementById('f-tde').value.trim();
+    const tbalti = document.getElementById('f-tbalti').value.trim();
+    const level  = document.getElementById('f-level').value;
+    const desc   = document.getElementById('f-desc').value.trim();
+    const vurl   = document.getElementById('f-vurl').value.trim();
+    const dlurl  = document.getElementById('f-dlurl').value.trim();
+    const dur    = document.getElementById('f-dur').value.trim();
+    const num    = parseInt(document.getElementById('f-num').value) || null;
+
+    if (!ten || !vurl) {
+      alert('Please fill in the English title and Video URL at minimum.');
+      return;
+    }
+
+    const all = load();
+    all.push({ ten, tde, tbalti, level, desc, vurl, dlurl: dlurl||vurl, dur, num, ts: Date.now() });
+    save(all);
+
+    // Clear fields
+    ['f-ten','f-tde','f-tbalti','f-desc','f-vurl','f-dlurl','f-dur','f-num'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('f-level').value = 'a1';
+
+    render();
+    document.getElementById('admin-panel').scrollIntoView({ behavior: 'smooth' });
+    alert('✅ Lesson added! Scroll down to see it in the grid.');
+  }
+
+  // ── Delete lesson ─────────────────────────────────────────────
+  function delLesson(idx) {
+    if (!confirm('Delete this lesson? This cannot be undone.')) return;
+    const all = load();
+    all.splice(idx, 1);
+    save(all);
+    render();
+  }
+
+  // ── Modal ─────────────────────────────────────────────────────
+  function openModal(idx) {
+    const lesson = load()[idx];
+    if (!lesson) return;
+    const lang  = getLang();
+    const title = lang === 'de' ? (lesson.tde || lesson.ten) : lesson.ten;
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-desc').textContent  = lesson.desc || '';
+    document.getElementById('modal-src').src           = lesson.vurl;
+    const vid = document.getElementById('modal-vid');
+    vid.load();
+    vid.play().catch(() => {});
+    document.getElementById('modal-dl').href = lesson.dlurl || lesson.vurl;
+    document.getElementById('vmodal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('vmodal').classList.remove('open');
+    document.body.style.overflow = '';
+    const vid = document.getElementById('modal-vid');
+    vid.pause(); vid.currentTime = 0;
+    document.getElementById('modal-src').src = '';
+    vid.load();
+  }
+
+  function maybeClose(e) {
+    if (e.target === document.getElementById('vmodal')) closeModal();
+  }
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ── Admin unlock ──────────────────────────────────────────────
+  function unlockAdmin() {
+    const val = document.getElementById('admin-pass').value;
+    if (val === ADMIN_PASS) {
+      document.getElementById('admin-panel').classList.add('open');
+      document.getElementById('admin-unlock').style.display = 'none';
+      document.body.classList.add('admin-mode');
+    } else {
+      const inp = document.getElementById('admin-pass');
+      inp.style.borderColor = '#ef4444';
+      inp.value = '';
+      inp.placeholder = 'Wrong password — try again';
+      setTimeout(() => { inp.style.borderColor = ''; inp.placeholder = 'Admin password…'; }, 2000);
+    }
+  }
+
+  document.getElementById('admin-pass').addEventListener('keydown', e => {
+    if (e.key === 'Enter') unlockAdmin();
+  });
+
+  // ── Boot ──────────────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    // Share the IntersectionObserver with main.js's reveal system
+    window.__obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => window.__obs.observe(el));
+    render();
+  });
+
+  if (document.readyState !== 'loading') render();
   </script>
 </body>
 </html>

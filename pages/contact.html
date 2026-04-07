@@ -167,7 +167,7 @@
     }
   </style>
 </head>
-<body>
+<body data-page="contact">
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
   <div id="progress"></div>
@@ -176,26 +176,35 @@
     <a href="../index.html" class="nav-logo"><span class="bracket">[</span>naiyar.dev<span class="bracket">]</span></a>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="about.html" >About Me</a></li>
       <li><a href="courses.html">Courses</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="content.html">Content</a></li>
-      <li><a href="contact.html" class="nav-cta active" style="background:var(--surface);color:var(--accent)!important">Contact</a></li>
+      <li><a href="contact.html" class="active" class="nav-cta">Contact →</a></li>
     </ul>
+    <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
     <a href="../index.html">Home</a>
-    <a href="about.html">About Me</a>
+    <a href="about.html" class="active">About Me</a>
     <a href="courses.html">Courses</a>
     <a href="projects.html">Projects</a>
     <a href="content.html">Content</a>
-    <a href="contact.html" class="active">Contact</a>
+    <a href="contact.html">Contact →</a>
+  </div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html">Home</a>
+    <a href="about.html" data-i18n="shared.nav.home" data-i18n="shared.nav.about">About Me</a>
+    <a href="courses.html" data-i18n="shared.nav.courses">Courses</a>
+    <a href="projects.html" data-i18n="shared.nav.projects">Projects</a>
+    <a href="content.html" data-i18n="shared.nav.content">Content</a>
+    <a href="contact.html" class="active" data-i18n="shared.nav.contact">Contact</a>
   </div>
 
   <!-- PAGE HEADER -->
   <div class="page-header">
-    <div class="section-tag" style="justify-content:center">contact</div>
+    <div class="section-tag" style="justify-content:center" data-i18n="contact.page_tag">contact</div>
     <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)">Let's build<br><span>something.</span></h1>
   </div>
 
@@ -221,7 +230,7 @@
               <div class="contact-item-icon">📍</div>
               <div>
                 <div class="contact-item-label">Location</div>
-                <div class="contact-item-value">Fulda — Open to Remote &amp; Relocation</div>
+                <div class="contact-item-value">Germany — Open to Remote &amp; Relocation</div>
               </div>
             </div>
             <div class="contact-item">
@@ -258,8 +267,8 @@
 
         <!-- Form side -->
         <div class="form-card reveal reveal-d2">
-          <div class="form-title">Send a message</div>
-          <div class="form-sub">Whether it's a job opportunity, a collaboration, or just a friendly hello — I'd love to hear from you.</div>
+          <div class="form-title" data-i18n="contact.form_title">Send a message</div>
+          <div class="form-sub" data-i18n="contact.form_sub">Whether it's a job opportunity, a collaboration, or just a friendly hello — I'd love to hear from you.</div>
 
           <form id="contact-form" onsubmit="handleSubmit(event)">
             <div class="form-row">
@@ -280,7 +289,7 @@
               <label class="form-label">Message</label>
               <textarea class="form-textarea" placeholder="Tell me about your project, opportunity, or question..." required></textarea>
             </div>
-            <button type="submit" class="submit-btn">✉ Send Message</button>
+            <button type="submit" class="submit-btn" data-i18n="contact.f_submit">✉ Send Message</button>
           </form>
           <div class="form-success" id="form-success">
             ✓ Message sent! I'll get back to you within 24 hours.
@@ -297,14 +306,14 @@
   <section id="faq">
     <div class="container">
       <div class="section-header reveal" style="max-width:600px">
-        <div class="section-tag">common questions</div>
-        <h2 class="section-title">FAQs</h2>
+        <div class="section-tag" data-i18n="contact.faq_tag">common questions</div>
+        <h2 class="section-title" data-i18n="contact.faq_title">FAQs</h2>
       </div>
       <div class="faq-list">
 
         <div class="faq-item reveal">
           <div class="faq-q" onclick="toggleFaq(this)">
-            Are you open to job opportunities? <span class="faq-icon">+</span>
+            <span data-i18n="contact.q1">Are you open to job opportunities?</span> <span class="faq-icon">+</span>
           </div>
           <div class="faq-a">Yes! I'm actively looking for internships, working student positions, or entry-level roles in software development, web development, or cybersecurity in Germany. I'm also open to remote work internationally.</div>
         </div>
@@ -347,11 +356,12 @@
     <div class="footer-copy">© 2025 Naiyar Muslim. All rights reserved.</div>
     <div class="footer-links">
       <a href="../index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="projects.html" data-i18n="shared.nav.projects">Projects</a>
+      <a href="contact.html" data-i18n="shared.nav.contact">Contact</a>
     </div>
   </footer>
 
+  <script src="../assets/js/i18n.js"></script>
   <script src="../assets/js/main.js"></script>
   <script>
     function handleSubmit(e) {

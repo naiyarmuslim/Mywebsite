@@ -161,35 +161,36 @@
     }
   </style>
 </head>
-<body>
+<body data-page="content">
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
   <div id="progress"></div>
 
-  <nav>
+   <nav>
     <a href="../index.html" class="nav-logo"><span class="bracket">[</span>naiyar.dev<span class="bracket">]</span></a>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="about.html" >About Me</a></li>
       <li><a href="courses.html">Courses</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="content.html" class="active">Content</a></li>
-      <li><a href="contact.html" class="nav-cta">Contact →</a></li>
+      <li><a href="contact.html"  class="nav-cta">Contact →</a></li>
     </ul>
+    <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
     <a href="../index.html">Home</a>
-    <a href="about.html">About Me</a>
-    <a href="courses.html">Courses</a>
-    <a href="projects.html">Projects</a>
-    <a href="content.html" class="active">Content</a>
-    <a href="contact.html">Contact</a>
+    <a href="about.html" data-i18n="shared.nav.home" data-i18n="shared.nav.about">About Me</a>
+    <a href="courses.html" data-i18n="shared.nav.courses">Courses</a>
+    <a href="projects.html" data-i18n="shared.nav.projects">Projects</a>
+    <a href="content.html" class="active" data-i18n="shared.nav.content">Content</a>
+    <a href="contact.html" data-i18n="shared.nav.contact">Contact</a>
   </div>
 
   <!-- PAGE HEADER -->
   <div class="page-header">
-    <div class="section-tag" style="justify-content:center">content creation</div>
+    <div class="section-tag" style="justify-content:center" data-i18n="content.page_tag">content creation</div>
     <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)">Sharing knowledge<br><span>with Baltistan.</span></h1>
   </div>
 
@@ -199,7 +200,7 @@
       <div class="balti-card reveal">
         <div class="balti-flag">🏔️</div>
         <div>
-          <div class="balti-title">Why I create content</div>
+          <div class="balti-title" data-i18n="content.balti_title">Why I create content</div>
           <div class="balti-desc">
             Baltistan is a remote, mountainous region in northern Pakistan with incredible people and enormous potential — but limited access to quality education in the local language. I create <strong style="color:var(--text)">study guide videos in Balti</strong> on Facebook so that students back home can learn Math, Science, and Computer concepts in their mother tongue. On Instagram, I share developer life, travel reels, and content to inspire young learners from the region.
           </div>
@@ -224,7 +225,7 @@
             <div><div class="p-stat-num">@reels.gull</div><div class="p-stat-lbl">Instagram handle</div></div>
           </div>
           <a href="https://www.instagram.com/reels.gull/" target="_blank" class="btn-primary" style="width:100%;justify-content:center">
-            📸 Follow on Instagram
+            <span data-i18n="content.ig_follow">📸 Follow on Instagram</span>
           </a>
         </div>
 
@@ -243,7 +244,7 @@
                 </div>
               </div>
               <div class="reel-info">
-                <div class="reel-title">Baltistan Views 🏔️</div>
+                <div class="reel-title" data-i18n="content.r1_title">Baltistan Views 🏔️</div>
                 <div class="reel-sub">@khaleelbalti · Travel Reel</div>
               </div>
             </div>
@@ -256,7 +257,7 @@
                 </div>
               </div>
               <div class="reel-info">
-                <div class="reel-title">Awara Vibes</div>
+                <div class="reel-title" data-i18n="content.r2_title">Awara Vibes</div>
                 <div class="reel-sub">@reels.gull · Lifestyle Reel</div>
               </div>
             </div>
@@ -269,7 +270,7 @@
                 </div>
               </div>
               <div class="reel-info">
-                <div class="reel-title">Life in Motion</div>
+                <div class="reel-title" data-i18n="content.r3_title">Life in Motion</div>
                 <div class="reel-sub">@reels.gull · Lifestyle Reel</div>
               </div>
             </div>
@@ -282,7 +283,7 @@
                 </div>
               </div>
               <div class="reel-info">
-                <div class="reel-title">Peaceful Moments</div>
+                <div class="reel-title" data-i18n="content.r4_title">Peaceful Moments</div>
                 <div class="reel-sub">@reels.gull · Lifestyle Reel</div>
               </div>
             </div>
@@ -290,7 +291,7 @@
           </div>
           <div style="margin-top:1.5rem" class="reveal">
             <a href="https://www.instagram.com/reels.gull/" target="_blank" class="btn-outline">
-              View all reels on Instagram →
+              <span data-i18n="content.ig_all">View all reels on Instagram →</span>
             </a>
           </div>
         </div>
@@ -314,7 +315,7 @@
             <div><div class="p-stat-num">naiyar.gull</div><div class="p-stat-lbl">Facebook profile</div></div>
           </div>
           <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="btn-primary" style="width:100%;justify-content:center;background:#1877f2;color:#fff">
-            📘 Follow on Facebook
+            <span data-i18n="content.fb_follow">📘 Follow on Facebook</span>
           </a>
         </div>
 
@@ -333,7 +334,7 @@
                 </div>
               </div>
               <div class="fb-info">
-                <div class="fb-title">Student Life in Germany</div>
+                <div class="fb-title" data-i18n="content.f1_title">Student Life in Germany</div>
                 <div class="fb-sub">The Introduction — Tips for Baltistani students</div>
               </div>
             </div>
@@ -346,7 +347,7 @@
                 </div>
               </div>
               <div class="fb-info">
-                <div class="fb-title">Shaping New Minds</div>
+                <div class="fb-title" data-i18n="content.f2_title">Shaping New Minds</div>
                 <div class="fb-sub">Confidence &amp; leadership for the next generation</div>
               </div>
             </div>
@@ -359,7 +360,7 @@
                 </div>
               </div>
               <div class="fb-info">
-                <div class="fb-title">Studying in Germany — A Guide</div>
+                <div class="fb-title" data-i18n="content.f3_title">Studying in Germany — A Guide</div>
                 <div class="fb-sub">University application process in Balti</div>
               </div>
             </div>
@@ -372,7 +373,7 @@
                 </div>
               </div>
               <div class="fb-info">
-                <div class="fb-title">Mathematics Explained</div>
+                <div class="fb-title" data-i18n="content.f4_title">Mathematics Explained</div>
                 <div class="fb-sub">Core math concepts in the Balti language</div>
               </div>
             </div>
@@ -380,7 +381,7 @@
           </div>
           <div style="margin-top:1.5rem" class="reveal">
             <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="btn-outline">
-              Watch more on Facebook →
+              <span data-i18n="content.fb_all">Watch more on Facebook →</span>
             </a>
           </div>
         </div>
@@ -394,11 +395,12 @@
     <div class="footer-copy">© 2025 Naiyar Muslim. All rights reserved.</div>
     <div class="footer-links">
       <a href="../index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+      <a href="projects.html" data-i18n="shared.nav.projects">Projects</a>
+      <a href="contact.html" data-i18n="shared.nav.contact">Contact</a>
     </div>
   </footer>
 
+  <script src="../assets/js/i18n.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>
