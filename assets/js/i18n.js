@@ -670,6 +670,8 @@
     "en": "I typically respond within 24 hours. For urgent matters, email naiyarmuslim@gmail.com directly.",
     "de": "Ich antworte normalerweise innerhalb von 24 Stunden. Bei dringenden Angelegenheiten direkt an naiyarmuslim@gmail.com."
   },
+
+  // ── COURSES — updated for YouTube + Cloudflare Pages ────
   "courses.page_tag": {
     "en": "German in Balti",
     "de": "Deutsch auf Balti"
@@ -703,36 +705,36 @@
     "de": "Download verfügbar"
   },
   "courses.admin_btn": {
-    "en": "Upload Video",
-    "de": "Video hochladen"
+    "en": "Add Video",
+    "de": "Video hinzufügen"
   },
   "courses.admin_title": {
-    "en": "Upload New Lesson",
-    "de": "Neue Lektion hochladen"
+    "en": "Add New Lesson (YouTube)",
+    "de": "Neue Lektion hinzufügen (YouTube)"
   },
   "courses.cloud_title": {
-    "en": "How to get the video URL from your Nextcloud server:",
-    "de": "Wie du die Video-URL von deinem Nextcloud-Server bekommst:"
+    "en": "How to get your YouTube Video ID:",
+    "de": "So findest du deine YouTube-Video-ID:"
   },
   "courses.cloud_s1": {
-    "en": "Upload your video to Nextcloud and click on it to open.",
-    "de": "Lade dein Video auf Nextcloud hoch und klicke darauf, um es zu öffnen."
+    "en": "Go to your YouTube video and copy the URL from the address bar.",
+    "de": "Öffne dein YouTube-Video und kopiere die URL aus der Adressleiste."
   },
   "courses.cloud_s2": {
-    "en": "Click the ⋯ Share icon → Share link → enable Allow download.",
-    "de": "Klicke auf das ⋯ Teilen-Symbol → Link teilen → aktiviere Download erlauben."
+    "en": "The Video ID is the part after ?v= — e.g. in youtube.com/watch?v=dQw4w9WgXcQ the ID is dQw4w9WgXcQ.",
+    "de": "Die Video-ID ist der Teil nach ?v= — z.B. in youtube.com/watch?v=dQw4w9WgXcQ ist die ID dQw4w9WgXcQ."
   },
   "courses.cloud_s3": {
-    "en": "Copy the share link. It looks like: https://cloud.example.com/s/AbCdEfGhIj",
-    "de": "Kopiere den Freigabelink. Er sieht so aus: https://cloud.beispiel.de/s/AbCdEfGhIj"
+    "en": "Paste just the 11-character ID into the YouTube Video ID field. The thumbnail and embed are set automatically.",
+    "de": "Füge nur die 11-stellige ID in das YouTube-Video-ID-Feld ein. Vorschaubild und Einbettung werden automatisch gesetzt."
   },
   "courses.cloud_s4": {
-    "en": "Add /download at the end → https://cloud.example.com/s/TOKEN/download — paste this as your Video URL.",
-    "de": "Füge /download am Ende hinzu → https://cloud.beispiel.de/s/TOKEN/download — füge dies als deine Video-URL ein."
+    "en": "For the Download URL, upload the video file to Google Drive, Dropbox, or Cloudflare R2 and paste a direct download link — YouTube videos cannot be downloaded directly.",
+    "de": "Für die Download-URL lade die Videodatei auf Google Drive, Dropbox oder Cloudflare R2 hoch und füge einen direkten Download-Link ein — YouTube-Videos können nicht direkt heruntergeladen werden."
   },
   "courses.cloud_s5": {
-    "en": "Use the same /download URL for the Download URL too. Visitors can stream AND download directly from your server.",
-    "de": "Verwende die gleiche /download-URL auch für die Download-URL. Besucher können direkt von deinem Server streamen UND herunterladen."
+    "en": "Your site runs on Cloudflare Pages — lessons are stored in the browser. Use the Export button to back up your lessons as a JSON file.",
+    "de": "Deine Website läuft auf Cloudflare Pages — Lektionen werden im Browser gespeichert. Nutze den Export-Button, um deine Lektionen als JSON-Datei zu sichern."
   },
   "courses.fl_title_en": {
     "en": "Lesson Title (English)",
@@ -743,8 +745,8 @@
     "de": "Lektionstitel (Deutsch)"
   },
   "courses.fl_title_balti": {
-    "en": "Lesson Title (Balti)",
-    "de": "Lektionstitel (Balti)"
+    "en": "Lesson Title (Balti / بلتی)",
+    "de": "Lektionstitel (Balti / بلتی)"
   },
   "courses.fl_level": {
     "en": "Level",
@@ -755,20 +757,20 @@
     "de": "Beschreibung (auf der Karte angezeigt)"
   },
   "courses.fl_video": {
-    "en": "Video URL — direct stream from your Nextcloud",
-    "de": "Video-URL — direkter Stream von deinem Nextcloud"
+    "en": "YouTube Video ID",
+    "de": "YouTube-Video-ID"
   },
   "courses.hint_video": {
-    "en": "Paste the Nextcloud share link with /download appended. This streams the video in the browser.",
-    "de": "Füge den Nextcloud-Freigabelink mit /download am Ende ein. Das streamt das Video im Browser."
+    "en": "Paste only the 11-character video ID from youtube.com/watch?v=VIDEO_ID. The video will be embedded via YouTube's privacy-enhanced player.",
+    "de": "Füge nur die 11-stellige Video-ID aus youtube.com/watch?v=VIDEO_ID ein. Das Video wird über YouTubes datenschutzfreundlichen Player eingebettet."
   },
   "courses.fl_dl": {
-    "en": "Download URL (for the ⬇ Download button)",
-    "de": "Download-URL (für den ⬇ Download-Button)"
+    "en": "Download URL (Google Drive / Dropbox / Cloudflare R2)",
+    "de": "Download-URL (Google Drive / Dropbox / Cloudflare R2)"
   },
   "courses.hint_dl": {
-    "en": "Usually the same URL as above. Visitors can save the video file to their device.",
-    "de": "Normalerweise die gleiche URL wie oben. Besucher können die Videodatei auf ihrem Gerät speichern."
+    "en": "YouTube videos cannot be downloaded directly. Upload your video file separately and paste a direct download link here. For Google Drive use: drive.google.com/uc?export=download&id=FILE_ID",
+    "de": "YouTube-Videos können nicht direkt heruntergeladen werden. Lade die Videodatei separat hoch und füge hier einen direkten Download-Link ein. Für Google Drive: drive.google.com/uc?export=download&id=FILE_ID"
   },
   "courses.fl_dur": {
     "en": "Duration (e.g. 12:34)",
@@ -799,8 +801,8 @@
     "de": "B1 — Mittelstufe"
   },
   "courses.empty": {
-    "en": "No lessons yet — check back soon! If you are the admin, enter your password above to upload the first video.",
-    "de": "Noch keine Lektionen — bald verfügbar! Wenn du der Admin bist, gib oben dein Passwort ein, um das erste Video hochzuladen."
+    "en": "No lessons yet — check back soon! If you are the admin, enter your password above to add the first video.",
+    "de": "Noch keine Lektionen — bald verfügbar! Wenn du der Admin bist, gib oben dein Passwort ein, um das erste Video hinzuzufügen."
   },
   "courses.btn_dl": {
     "en": "Download Video",

@@ -36,7 +36,7 @@
     .url-hint{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:.3rem;line-height:1.6}
     .url-hint code{background:rgba(0,212,255,.08);color:var(--accent);padding:.1rem .35rem;border-radius:3px}
 
-    /* cloud guide */
+    /* guide box */
     .cloud-guide{background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.15);border-radius:10px;padding:1.4rem 1.8rem;margin-bottom:1.8rem;font-size:.85rem;color:var(--muted);line-height:1.8}
     .cloud-guide strong{color:var(--text)}
     .cloud-guide code{background:rgba(0,212,255,.08);color:var(--accent);padding:.1rem .35rem;border-radius:3px;font-family:var(--mono);font-size:.78rem}
@@ -55,13 +55,14 @@
     .ccard:hover{border-color:var(--accent);transform:translateY(-3px)}
     .ccard .ctop{height:3px;background:var(--cc,var(--accent))}
 
-    /* video thumb */
+    /* video thumb — YouTube thumbnail image */
     .vthumb{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden;cursor:none}
-    .vthumb video{width:100%;height:100%;object-fit:cover;display:block}
+    .vthumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+    .vthumb:hover img{transform:scale(1.03)}
     .play-ov{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);transition:background .2s}
     .vthumb:hover .play-ov{background:rgba(0,0,0,.15)}
-    .pbtn{width:52px;height:52px;background:rgba(0,212,255,.18);border:2px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:transform .2s,background .2s}
-    .vthumb:hover .pbtn{transform:scale(1.12);background:rgba(0,212,255,.32)}
+    .pbtn{width:52px;height:52px;background:rgba(255,0,0,.75);border:2px solid #fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;transition:transform .2s,background .2s}
+    .vthumb:hover .pbtn{transform:scale(1.12);background:rgba(255,0,0,.95)}
     .dur-badge{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.72);color:#fff;font-family:var(--mono);font-size:.67rem;padding:.2rem .5rem;border-radius:3px}
     .lvl-badge{position:absolute;top:8px;left:8px;font-family:var(--mono);font-size:.65rem;padding:.2rem .6rem;border-radius:3px;font-weight:600;letter-spacing:.05em}
     .la1{background:rgba(16,185,129,.22);color:#10b981;border:1px solid rgba(16,185,129,.38)}
@@ -75,15 +76,15 @@
     .cbalti{font-size:.82rem;color:var(--accent4);font-style:italic;margin-bottom:.5rem;font-family:var(--mono)}
     .cdesc{font-size:.84rem;color:var(--muted);font-weight:300;line-height:1.55;margin-bottom:1rem}
     .cactions{display:flex;gap:.6rem;flex-wrap:wrap}
-    .btn-watch{flex:1;min-width:100px;padding:.55rem 1rem;background:rgba(0,212,255,.1);border:1px solid var(--accent);border-radius:6px;color:var(--accent);font-family:var(--mono);font-size:.75rem;text-align:center;cursor:none;transition:all .2s}
-    .btn-watch:hover{background:rgba(0,212,255,.2)}
+    .btn-watch{flex:1;min-width:100px;padding:.55rem 1rem;background:rgba(255,0,0,.1);border:1px solid rgba(255,80,80,.5);border-radius:6px;color:#ff5050;font-family:var(--mono);font-size:.75rem;text-align:center;cursor:none;transition:all .2s}
+    .btn-watch:hover{background:rgba(255,0,0,.2)}
     .btn-dl{padding:.55rem 1rem;background:rgba(16,185,129,.08);border:1px solid var(--accent3);border-radius:6px;color:var(--accent3);font-family:var(--mono);font-size:.75rem;text-decoration:none;display:flex;align-items:center;gap:.3rem;cursor:none;transition:all .2s}
     .btn-dl:hover{background:rgba(16,185,129,.2)}
     .btn-del{position:absolute;top:46px;right:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.38);border-radius:4px;color:#ef4444;font-family:var(--mono);font-size:.65rem;padding:.25rem .55rem;cursor:none;display:none;z-index:5;transition:all .2s}
     .btn-del:hover{background:rgba(239,68,68,.3)}
     body.admin-mode .btn-del{display:block}
 
-    /* modal */
+    /* modal — YouTube iframe embed */
     #vmodal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:1.5rem}
     #vmodal.open{display:flex}
     .minner{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;width:100%;max-width:860px;position:relative}
@@ -91,8 +92,8 @@
     .mtitle{font-family:var(--display);font-weight:700;font-size:.95rem}
     .mclose{width:32px;height:32px;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:6px;color:var(--muted);font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:none;transition:all .2s}
     .mclose:hover{background:rgba(255,255,255,.15);color:var(--text)}
-    .mvideo{background:#000;aspect-ratio:16/9}
-    .mvideo video{width:100%;height:100%;object-fit:contain;display:block}
+    .mvideo{background:#000;aspect-ratio:16/9;position:relative}
+    .mvideo iframe{width:100%;height:100%;border:none;display:block}
     .mfoot{padding:1rem 1.4rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
     .mdesc{font-size:.84rem;color:var(--muted);flex:1}
 
@@ -181,15 +182,15 @@
 
     <!-- Admin panel -->
     <div id="admin-panel">
-      <div class="admin-label">⬆ <span data-i18n="courses.admin_title">Upload New Lesson</span></div>
+      <div class="admin-label">▶ <span data-i18n="courses.admin_title">Add New Lesson (YouTube)</span></div>
 
       <div class="cloud-guide">
-        <strong data-i18n="courses.cloud_title">📡 How to get the video URL from your Nextcloud server:</strong><br>
-        1. <span data-i18n="courses.cloud_s1">Upload your video to Nextcloud and click on it to open.</span><br>
-        2. <span data-i18n="courses.cloud_s2">Click the <strong>⋯ Share</strong> icon → <strong>Share link</strong> → enable <strong>Allow download</strong>.</span><br>
-        3. <span data-i18n="courses.cloud_s3">Copy the share link. It looks like: <code>https://cloud.example.com/s/AbCdEfGhIj</code></span><br>
-        4. <span data-i18n="courses.cloud_s4">Add <code>/download</code> at the end → <code>https://cloud.example.com/s/AbCdEfGhIj/download</code> — paste this as your Video URL below.</span><br>
-        5. <span data-i18n="courses.cloud_s5">Use the same <code>/download</code> URL for the Download URL too. Your visitors can then stream AND download directly from your server.</span>
+        <strong data-i18n="courses.cloud_title">📺 How to get your YouTube Video ID:</strong><br>
+        1. <span data-i18n="courses.cloud_s1">Go to your YouTube video and copy the URL from the address bar.</span><br>
+        2. <span data-i18n="courses.cloud_s2">The Video ID is the part after <code>?v=</code> — e.g. in <code>youtube.com/watch?v=<strong>dQw4w9WgXcQ</strong></code>, the ID is <code>dQw4w9WgXcQ</code>.</span><br>
+        3. <span data-i18n="courses.cloud_s3">Paste just the ID (11 characters) into the <strong>YouTube Video ID</strong> field below. The thumbnail and embed will be set automatically.</span><br>
+        4. <span data-i18n="courses.cloud_s4">For the <strong>Download URL</strong>, upload the video file to Google Drive, Dropbox, or Cloudflare R2 and paste a direct download link — YouTube videos cannot be downloaded directly.</span><br>
+        5. <span data-i18n="courses.cloud_s5">Your site is deployed on <strong>Cloudflare Pages</strong> — lessons are stored in the browser. To persist lessons across devices, back up the JSON from the export button.</span>
       </div>
 
       <div class="upload-grid">
@@ -217,16 +218,27 @@
           <label data-i18n="courses.fl_desc">Description (shown on card)</label>
           <textarea id="f-desc" placeholder="What vocabulary or grammar does this lesson cover?"></textarea>
         </div>
+
+        <!-- YouTube Video ID -->
         <div class="fg full">
-          <label data-i18n="courses.fl_video">Video URL — direct stream from your Nextcloud</label>
-          <input type="url" id="f-vurl" placeholder="https://your-cloud.de/s/TOKEN/download">
-          <div class="url-hint" data-i18n="courses.hint_video">Paste the Nextcloud share link with <code>/download</code> appended. This is used to stream the video in the browser.</div>
+          <label data-i18n="courses.fl_video">YouTube Video ID</label>
+          <input type="text" id="f-ytid" placeholder="e.g. dQw4w9WgXcQ" maxlength="20">
+          <div class="url-hint" data-i18n="courses.hint_video">
+            Paste only the 11-character video ID from <code>youtube.com/watch?v=<strong>VIDEO_ID</strong></code>.
+            The video will be embedded via YouTube's privacy-enhanced player.
+          </div>
         </div>
+
+        <!-- Download URL (separate from YouTube) -->
         <div class="fg full">
-          <label data-i18n="courses.fl_dl">Download URL (for the ⬇ Download button)</label>
-          <input type="url" id="f-dlurl" placeholder="https://your-cloud.de/s/TOKEN/download">
-          <div class="url-hint" data-i18n="courses.hint_dl">Usually the same URL as above. Visitors will be able to save the video file to their device.</div>
+          <label data-i18n="courses.fl_dl">Download URL (Google Drive / Dropbox / Cloudflare R2)</label>
+          <input type="url" id="f-dlurl" placeholder="https://drive.google.com/uc?export=download&id=FILE_ID">
+          <div class="url-hint" data-i18n="courses.hint_dl">
+            YouTube videos cannot be downloaded directly. Upload your video file separately and paste a direct download link here.
+            For Google Drive: share the file publicly, then use <code>drive.google.com/uc?export=download&id=FILE_ID</code>.
+          </div>
         </div>
+
         <div class="fg">
           <label data-i18n="courses.fl_dur">Duration (e.g. 12:34)</label>
           <input type="text" id="f-dur" placeholder="12:34">
@@ -235,33 +247,40 @@
           <label data-i18n="courses.fl_num">Lesson Number</label>
           <input type="number" id="f-num" placeholder="1" min="1">
         </div>
-        <div class="fg full" style="margin-top:.4rem">
+        <div class="fg full" style="margin-top:.4rem;display:flex;gap:.75rem;flex-wrap:wrap">
           <button class="btn-primary" onclick="addLesson()" style="width:fit-content;padding:.75rem 2.2rem">
             ➕ <span data-i18n="courses.btn_add">Add Lesson</span>
           </button>
+          <button class="btn-admin" onclick="exportData()" style="padding:.75rem 1.4rem">
+            💾 Export JSON
+          </button>
+          <label class="btn-admin" style="padding:.75rem 1.4rem;cursor:none">
+            📂 Import JSON
+            <input type="file" accept=".json" id="import-file" style="display:none" onchange="importData(event)">
+          </label>
         </div>
       </div>
     </div><!-- /admin-panel -->
 
     <!-- Filter -->
     <div class="filter-bar">
-      <button class="fbtn active" data-level="all" data-i18n="courses.filter_all">All Levels</button>
-      <button class="fbtn" data-level="a1"          data-i18n="courses.filter_a1">A1 — Beginner</button>
-      <button class="fbtn" data-level="a2"          data-i18n="courses.filter_a2">A2 — Elementary</button>
-      <button class="fbtn" data-level="b1"          data-i18n="courses.filter_b1">B1 — Intermediate</button>
+      <button class="fbtn active" data-level="all"  data-i18n="courses.filter_all">All Levels</button>
+      <button class="fbtn" data-level="a1"           data-i18n="courses.filter_a1">A1 — Beginner</button>
+      <button class="fbtn" data-level="a2"           data-i18n="courses.filter_a2">A2 — Elementary</button>
+      <button class="fbtn" data-level="b1"           data-i18n="courses.filter_b1">B1 — Intermediate</button>
     </div>
 
     <!-- Grid -->
     <div id="course-grid">
       <div id="empty-state">
         <div class="ei">🏔️</div>
-        <p data-i18n="courses.empty">No lessons yet — check back soon!<br>If you're the admin, enter your password above to upload the first video.</p>
+        <p data-i18n="courses.empty">No lessons yet — check back soon!<br>If you're the admin, enter your password above to add the first video.</p>
       </div>
     </div>
 
   </div>
 
-  <!-- VIDEO MODAL -->
+  <!-- VIDEO MODAL — YouTube iframe -->
   <div id="vmodal" onclick="maybeClose(event)">
     <div class="minner">
       <div class="mhead">
@@ -269,15 +288,20 @@
         <button class="mclose" onclick="closeModal()">✕</button>
       </div>
       <div class="mvideo">
-        <video id="modal-vid" controls preload="none" style="width:100%;height:100%">
-          <source id="modal-src" src="" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
+        <iframe
+          id="modal-iframe"
+          src=""
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
       </div>
       <div class="mfoot">
         <div class="mdesc" id="modal-desc"></div>
-        <a id="modal-dl" href="#" class="btn-dl" target="_blank" download>
+        <a id="modal-dl" href="#" class="btn-dl" target="_blank" rel="noopener">
           ⬇ <span data-i18n="courses.btn_dl">Download Video</span>
+        </a>
+        <a id="modal-yt" href="#" class="btn-watch" target="_blank" rel="noopener" style="text-decoration:none;flex:unset">
+          ▶ YouTube
         </a>
       </div>
     </div>
@@ -296,11 +320,11 @@
   <script src="../assets/js/main.js"></script>
   <script>
   // ================================================================
-  // GERMAN IN BALTI — COURSE PLATFORM LOGIC
+  // GERMAN IN BALTI — COURSE PLATFORM LOGIC (YouTube + Cloudflare)
   // ================================================================
 
-  const ADMIN_PASS  = 'naiyar2025';   // ← change to your own password
-  const STORE_KEY   = 'nm_courses_v2';
+  const ADMIN_PASS = 'naiyar2025';   // ← change to your own password
+  const STORE_KEY  = 'nm_courses_v2';
 
   const LEVEL_CFG = {
     a1: { label: 'A1', cls: 'la1', color: '#10b981' },
@@ -308,14 +332,30 @@
     b1: { label: 'B1', cls: 'lb1', color: '#f59e0b' },
   };
 
-  // ── Storage ──────────────────────────────────────────────────
-  function load()       { try { return JSON.parse(localStorage.getItem(STORE_KEY)||'[]'); } catch(e){ return []; } }
-  function save(arr)    { localStorage.setItem(STORE_KEY, JSON.stringify(arr)); }
-  function getLang()    { return localStorage.getItem('nm_lang') || 'en'; }
+  // ── Helpers ───────────────────────────────────────────────────
+  function load()    { try { return JSON.parse(localStorage.getItem(STORE_KEY)||'[]'); } catch(e){ return []; } }
+  function save(arr) { localStorage.setItem(STORE_KEY, JSON.stringify(arr)); }
+  function getLang() { return localStorage.getItem('nm_lang') || 'en'; }
+  function esc(s)    { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-  // ── Escape HTML ───────────────────────────────────────────────
-  function esc(s) {
-    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  // Extract YouTube ID from URL or raw ID
+  function parseYtId(raw) {
+    raw = (raw || '').trim();
+    // Full URL forms
+    const m = raw.match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/);
+    if (m) return m[1];
+    // Raw 11-char ID
+    if (/^[A-Za-z0-9_-]{11}$/.test(raw)) return raw;
+    return raw; // fallback — let YouTube handle it
+  }
+
+  function ytThumb(id) {
+    // hqdefault is widely available; fallback to mqdefault if needed
+    return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+  }
+
+  function ytEmbed(id) {
+    return `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
   }
 
   // ── Build card HTML ───────────────────────────────────────────
@@ -323,16 +363,22 @@
     const lang  = getLang();
     const title = lang === 'de' ? (lesson.tde || lesson.ten) : lesson.ten;
     const lvl   = LEVEL_CFG[lesson.level] || LEVEL_CFG.a1;
-    const dlUrl = lesson.dlurl || lesson.vurl;
+    const num   = lesson.num ? String(lesson.num).padStart(2,'0') : String(realIdx+1).padStart(2,'0');
+    const ytId  = lesson.ytid || '';
+    const thumb = ytId ? ytThumb(ytId) : '';
+    const dlUrl = lesson.dlurl || '#';
+    const hasDl = dlUrl && dlUrl !== '#';
     const wLbl  = lang === 'de' ? '▶ Ansehen'       : '▶ Watch';
     const dLbl  = lang === 'de' ? '⬇ Herunterladen' : '⬇ Download';
-    const num   = lesson.num ? String(lesson.num).padStart(2,'0') : String(realIdx+1).padStart(2,'0');
 
     return `<div class="ccard reveal" data-level="${esc(lesson.level)}" data-ridx="${realIdx}" style="--cc:${lvl.color}">
   <div class="ctop"></div>
   <button class="btn-del" onclick="delLesson(${realIdx})">✕ Delete</button>
   <div class="vthumb" onclick="openModal(${realIdx})">
-    <video preload="none" muted><source src="${esc(lesson.vurl)}#t=2" type="video/mp4"></video>
+    ${thumb
+      ? `<img src="${esc(thumb)}" alt="${esc(title)}" loading="lazy" onerror="this.style.display='none'">`
+      : `<div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;font-size:2rem;">▶</div>`
+    }
     <div class="play-ov"><div class="pbtn">▶</div></div>
     ${lesson.dur ? `<div class="dur-badge">${esc(lesson.dur)}</div>` : ''}
     <div class="lvl-badge ${lvl.cls}">${lvl.label}</div>
@@ -344,7 +390,10 @@
     ${lesson.desc   ? `<div class="cdesc">${esc(lesson.desc)}</div>`    : ''}
     <div class="cactions">
       <button class="btn-watch" onclick="openModal(${realIdx})">${wLbl}</button>
-      <a class="btn-dl" href="${esc(dlUrl)}" download target="_blank">${dLbl}</a>
+      ${hasDl
+        ? `<a class="btn-dl" href="${esc(dlUrl)}" target="_blank" rel="noopener">${dLbl}</a>`
+        : `<a class="btn-dl" href="https://www.youtube.com/watch?v=${esc(ytId)}" target="_blank" rel="noopener">▶ YouTube</a>`
+      }
     </div>
   </div>
 </div>`;
@@ -359,9 +408,7 @@
     const empty    = document.getElementById('empty-state');
     const filtered = activeFilter === 'all' ? all : all.filter(l => l.level === activeFilter);
 
-    // Remove old cards
     grid.querySelectorAll('.ccard').forEach(c => c.remove());
-
     document.getElementById('stat-lessons').textContent = all.length;
 
     if (filtered.length === 0) {
@@ -372,7 +419,6 @@
         const realIdx = all.indexOf(lesson);
         grid.insertAdjacentHTML('beforeend', card(lesson, realIdx));
       });
-      // Hook scroll reveal
       if (window.__obs) {
         grid.querySelectorAll('.ccard.reveal').forEach(el => window.__obs.observe(el));
       }
@@ -396,22 +442,21 @@
     const tbalti = document.getElementById('f-tbalti').value.trim();
     const level  = document.getElementById('f-level').value;
     const desc   = document.getElementById('f-desc').value.trim();
-    const vurl   = document.getElementById('f-vurl').value.trim();
+    const ytid   = parseYtId(document.getElementById('f-ytid').value);
     const dlurl  = document.getElementById('f-dlurl').value.trim();
     const dur    = document.getElementById('f-dur').value.trim();
     const num    = parseInt(document.getElementById('f-num').value) || null;
 
-    if (!ten || !vurl) {
-      alert('Please fill in the English title and Video URL at minimum.');
+    if (!ten || !ytid) {
+      alert('Please fill in the English title and YouTube Video ID at minimum.');
       return;
     }
 
     const all = load();
-    all.push({ ten, tde, tbalti, level, desc, vurl, dlurl: dlurl||vurl, dur, num, ts: Date.now() });
+    all.push({ ten, tde, tbalti, level, desc, ytid, dlurl: dlurl||'', dur, num, ts: Date.now() });
     save(all);
 
-    // Clear fields
-    ['f-ten','f-tde','f-tbalti','f-desc','f-vurl','f-dlurl','f-dur','f-num'].forEach(id => {
+    ['f-ten','f-tde','f-tbalti','f-desc','f-ytid','f-dlurl','f-dur','f-num'].forEach(id => {
       document.getElementById(id).value = '';
     });
     document.getElementById('f-level').value = 'a1';
@@ -430,19 +475,64 @@
     render();
   }
 
+  // ── Export / Import (for Cloudflare Pages — no server) ────────
+  function exportData() {
+    const data = JSON.stringify(load(), null, 2);
+    const blob = new Blob([data], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'nm_courses_backup.json';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  function importData(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      try {
+        const arr = JSON.parse(ev.target.result);
+        if (!Array.isArray(arr)) throw new Error('Not an array');
+        if (!confirm(`Import ${arr.length} lesson(s)? This will REPLACE all current lessons.`)) return;
+        save(arr);
+        render();
+        alert('✅ Imported successfully!');
+      } catch(err) {
+        alert('❌ Invalid JSON file: ' + err.message);
+      }
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  }
+
   // ── Modal ─────────────────────────────────────────────────────
   function openModal(idx) {
     const lesson = load()[idx];
     if (!lesson) return;
     const lang  = getLang();
     const title = lang === 'de' ? (lesson.tde || lesson.ten) : lesson.ten;
+
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-desc').textContent  = lesson.desc || '';
-    document.getElementById('modal-src').src           = lesson.vurl;
-    const vid = document.getElementById('modal-vid');
-    vid.load();
-    vid.play().catch(() => {});
-    document.getElementById('modal-dl').href = lesson.dlurl || lesson.vurl;
+
+    // YouTube embed
+    const ytId = lesson.ytid || '';
+    document.getElementById('modal-iframe').src = ytId ? ytEmbed(ytId) : '';
+
+    // Download & YouTube buttons
+    const dlUrl = lesson.dlurl || '';
+    const dlBtn = document.getElementById('modal-dl');
+    if (dlUrl) {
+      dlBtn.href  = dlUrl;
+      dlBtn.style.display = 'flex';
+    } else {
+      dlBtn.style.display = 'none';
+    }
+
+    const ytBtn = document.getElementById('modal-yt');
+    ytBtn.href = ytId ? `https://www.youtube.com/watch?v=${ytId}` : '#';
+
     document.getElementById('vmodal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -450,10 +540,8 @@
   function closeModal() {
     document.getElementById('vmodal').classList.remove('open');
     document.body.style.overflow = '';
-    const vid = document.getElementById('modal-vid');
-    vid.pause(); vid.currentTime = 0;
-    document.getElementById('modal-src').src = '';
-    vid.load();
+    // Stop YouTube video by clearing src
+    document.getElementById('modal-iframe').src = '';
   }
 
   function maybeClose(e) {
@@ -484,7 +572,6 @@
 
   // ── Boot ──────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
-    // Share the IntersectionObserver with main.js's reveal system
     window.__obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08 });
