@@ -9,37 +9,14 @@
     .page-header{min-height:36vh;display:flex;align-items:flex-end;padding-top:64px;padding-bottom:3.5rem;position:relative;overflow:hidden}
     .page-header .g-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
 
-    /* stats */
     .stats-row{display:flex;gap:2.5rem;flex-wrap:wrap;padding:1.8rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:3rem}
     .stat-item .num{font-family:var(--display);font-size:1.8rem;font-weight:800;line-height:1}
     .stat-item .lbl{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-top:.2rem}
 
-    /* admin unlock */
-    #admin-unlock{display:flex;align-items:center;gap:.75rem;margin-bottom:2.5rem;max-width:400px}
-    #admin-unlock input{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.55rem .9rem;color:var(--text);font-family:var(--mono);font-size:.85rem;cursor:none;transition:border-color .2s}
-    #admin-unlock input:focus{outline:none;border-color:var(--accent2)}
-    .btn-admin{padding:.55rem 1.2rem;background:rgba(124,58,237,.15);border:1px solid var(--accent2);border-radius:6px;color:var(--accent2);font-family:var(--mono);font-size:.8rem;cursor:none;transition:all .2s;white-space:nowrap}
-    .btn-admin:hover{background:rgba(124,58,237,.28)}
-
-    /* admin panel */
-    #admin-panel{background:var(--surface);border:1px solid var(--accent2);border-radius:12px;padding:2rem;margin-bottom:3rem;display:none}
-    #admin-panel.open{display:block}
-    .admin-label{font-family:var(--mono);font-size:.76rem;color:var(--accent2);text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.4rem}
-    .upload-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-    .upload-grid .full{grid-column:1/-1}
-    .fg{display:flex;flex-direction:column;gap:.4rem}
-    .fg label{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-    .fg input,.fg select,.fg textarea{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:.65rem .9rem;color:var(--text);font-family:var(--body);font-size:.9rem;cursor:none;transition:border-color .2s}
-    .fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--accent2)}
-    .fg select option{background:var(--surface)}
-    .fg textarea{resize:vertical;min-height:80px}
-    .url-hint{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:.3rem;line-height:1.6}
-    .url-hint code{background:rgba(0,212,255,.08);color:var(--accent);padding:.1rem .35rem;border-radius:3px}
-
-    /* guide box */
-    .cloud-guide{background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.15);border-radius:10px;padding:1.4rem 1.8rem;margin-bottom:1.8rem;font-size:.85rem;color:var(--muted);line-height:1.8}
-    .cloud-guide strong{color:var(--text)}
-    .cloud-guide code{background:rgba(0,212,255,.08);color:var(--accent);padding:.1rem .35rem;border-radius:3px;font-family:var(--mono);font-size:.78rem}
+    /* sheet guide */
+    .sheet-guide{background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.15);border-radius:10px;padding:1.4rem 1.8rem;margin-bottom:2rem;font-size:.85rem;color:var(--muted);line-height:1.9}
+    .sheet-guide strong{color:var(--text)}
+    .sheet-guide code{background:rgba(0,212,255,.08);color:var(--accent);padding:.1rem .35rem;border-radius:3px;font-family:var(--mono);font-size:.78rem}
 
     /* filter bar */
     .filter-bar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
@@ -55,7 +32,6 @@
     .ccard:hover{border-color:var(--accent);transform:translateY(-3px)}
     .ccard .ctop{height:3px;background:var(--cc,var(--accent))}
 
-    /* video thumb — YouTube thumbnail image */
     .vthumb{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden;cursor:none}
     .vthumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
     .vthumb:hover img{transform:scale(1.03)}
@@ -69,7 +45,6 @@
     .la2{background:rgba(0,212,255,.16);color:var(--accent);border:1px solid rgba(0,212,255,.32)}
     .lb1{background:rgba(245,158,11,.16);color:var(--accent4);border:1px solid rgba(245,158,11,.32)}
 
-    /* card body */
     .cbody{padding:1.2rem 1.4rem 1.4rem}
     .cnum{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.06em;margin-bottom:.5rem}
     .ctitle{font-family:var(--display);font-size:1rem;font-weight:700;margin-bottom:.3rem;line-height:1.35}
@@ -80,11 +55,8 @@
     .btn-watch:hover{background:rgba(255,0,0,.2)}
     .btn-dl{padding:.55rem 1rem;background:rgba(16,185,129,.08);border:1px solid var(--accent3);border-radius:6px;color:var(--accent3);font-family:var(--mono);font-size:.75rem;text-decoration:none;display:flex;align-items:center;gap:.3rem;cursor:none;transition:all .2s}
     .btn-dl:hover{background:rgba(16,185,129,.2)}
-    .btn-del{position:absolute;top:46px;right:8px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.38);border-radius:4px;color:#ef4444;font-family:var(--mono);font-size:.65rem;padding:.25rem .55rem;cursor:none;display:none;z-index:5;transition:all .2s}
-    .btn-del:hover{background:rgba(239,68,68,.3)}
-    body.admin-mode .btn-del{display:block}
 
-    /* modal — YouTube iframe embed */
+    /* modal */
     #vmodal{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:1.5rem}
     #vmodal.open{display:flex}
     .minner{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;width:100%;max-width:860px;position:relative}
@@ -92,18 +64,20 @@
     .mtitle{font-family:var(--display);font-weight:700;font-size:.95rem}
     .mclose{width:32px;height:32px;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:6px;color:var(--muted);font-size:1.1rem;display:flex;align-items:center;justify-content:center;cursor:none;transition:all .2s}
     .mclose:hover{background:rgba(255,255,255,.15);color:var(--text)}
-    .mvideo{background:#000;aspect-ratio:16/9;position:relative}
+    .mvideo{background:#000;aspect-ratio:16/9}
     .mvideo iframe{width:100%;height:100%;border:none;display:block}
     .mfoot{padding:1rem 1.4rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
     .mdesc{font-size:.84rem;color:var(--muted);flex:1}
 
-    /* empty */
-    #empty-state{grid-column:1/-1;text-align:center;padding:5rem 2rem;display:none}
-    #empty-state .ei{font-size:3.5rem;margin-bottom:1rem}
-    #empty-state p{color:var(--muted);font-size:.9rem;max-width:420px;margin:0 auto}
+    /* states */
+    .state-msg{grid-column:1/-1;text-align:center;padding:5rem 2rem}
+    .state-msg .ei{font-size:3rem;margin-bottom:1rem}
+    .state-msg p{color:var(--muted);font-size:.9rem;max-width:480px;margin:.5rem auto 0;line-height:1.7}
+    .state-msg code{background:rgba(0,212,255,.08);color:var(--accent);padding:.1rem .4rem;border-radius:3px;font-family:var(--mono);font-size:.8rem}
+    .spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 1.2rem}
+    @keyframes spin{to{transform:rotate(360deg)}}
 
     @media(max-width:700px){
-      .upload-grid{grid-template-columns:1fr}
       #course-grid{grid-template-columns:1fr}
       .stats-row{gap:1.4rem}
     }
@@ -157,7 +131,7 @@
     <!-- Stats -->
     <div class="stats-row reveal">
       <div class="stat-item">
-        <div class="num" id="stat-lessons" style="color:var(--accent)">0</div>
+        <div class="num" id="stat-lessons" style="color:var(--accent)">—</div>
         <div class="lbl" data-i18n="courses.stat_lessons">Video Lessons</div>
       </div>
       <div class="stat-item">
@@ -174,113 +148,50 @@
       </div>
     </div>
 
-    <!-- Admin unlock -->
-    <div id="admin-unlock">
-      <input type="password" id="admin-pass" placeholder="Admin password…" autocomplete="off">
-      <button class="btn-admin" onclick="unlockAdmin()">🔐 <span data-i18n="courses.admin_btn">Upload Video</span></button>
-    </div>
-
-    <!-- Admin panel -->
-    <div id="admin-panel">
-      <div class="admin-label">▶ <span data-i18n="courses.admin_title">Add New Lesson (YouTube)</span></div>
-
-      <div class="cloud-guide">
-        <strong data-i18n="courses.cloud_title">📺 How to get your YouTube Video ID:</strong><br>
-        1. <span data-i18n="courses.cloud_s1">Go to your YouTube video and copy the URL from the address bar.</span><br>
-        2. <span data-i18n="courses.cloud_s2">The Video ID is the part after <code>?v=</code> — e.g. in <code>youtube.com/watch?v=<strong>dQw4w9WgXcQ</strong></code>, the ID is <code>dQw4w9WgXcQ</code>.</span><br>
-        3. <span data-i18n="courses.cloud_s3">Paste just the ID (11 characters) into the <strong>YouTube Video ID</strong> field below. The thumbnail and embed will be set automatically.</span><br>
-        4. <span data-i18n="courses.cloud_s4">For the <strong>Download URL</strong>, upload the video file to Google Drive, Dropbox, or Cloudflare R2 and paste a direct download link — YouTube videos cannot be downloaded directly.</span><br>
-        5. <span data-i18n="courses.cloud_s5">Your site is deployed on <strong>Cloudflare Pages</strong> — lessons are stored in the browser. To persist lessons across devices, back up the JSON from the export button.</span>
+    <!-- Collapsible guide for you (the admin) -->
+    <details class="sheet-guide">
+      <summary style="cursor:pointer;color:var(--accent);font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;list-style:none">
+        📋 HOW TO ADD LESSONS — Google Sheets guide (click to expand)
+      </summary>
+      <div style="margin-top:1.2rem">
+        <strong>1. Your Google Sheet must have these exact headers in row 1:</strong><br>
+        <code>ten</code> &nbsp;·&nbsp; <code>tde</code> &nbsp;·&nbsp; <code>tbalti</code> &nbsp;·&nbsp; <code>level</code> &nbsp;·&nbsp; <code>desc</code> &nbsp;·&nbsp; <code>ytid</code> &nbsp;·&nbsp; <code>dlurl</code> &nbsp;·&nbsp; <code>dur</code> &nbsp;·&nbsp; <code>num</code><br><br>
+        <strong>Column guide:</strong><br>
+        <code>ten</code> = lesson title in English<br>
+        <code>tde</code> = lesson title in German (optional)<br>
+        <code>tbalti</code> = lesson title in Balti script (optional)<br>
+        <code>level</code> = one of: <code>a1</code> · <code>a2</code> · <code>b1</code><br>
+        <code>desc</code> = short description shown on the card<br>
+        <code>ytid</code> = YouTube video ID, e.g. <code>dQw4w9WgXcQ</code> (the part after <code>?v=</code>)<br>
+        <code>dlurl</code> = optional direct download link (Google Drive / Dropbox / R2)<br>
+        <code>dur</code> = video duration, e.g. <code>12:34</code> (optional)<br>
+        <code>num</code> = lesson number for ordering (optional)<br><br>
+        <strong>2. Publish the sheet as CSV:</strong><br>
+        File → Share → Publish to web → Sheet1 → Comma-separated values (.csv) → Publish → copy the URL<br><br>
+        <strong>3. Paste that URL into <code>SHEET_CSV_URL</code> at the top of this file's &lt;script&gt; block.</strong><br>
+        That's it — every visitor will see your lessons live from the sheet. No redeployment needed for new lessons.
       </div>
-
-      <div class="upload-grid">
-        <div class="fg">
-          <label data-i18n="courses.fl_title_en">Lesson Title (English)</label>
-          <input type="text" id="f-ten" placeholder="e.g. Lesson 1 — Greetings in German">
-        </div>
-        <div class="fg">
-          <label data-i18n="courses.fl_title_de">Lesson Title (Deutsch)</label>
-          <input type="text" id="f-tde" placeholder="z.B. Lektion 1 — Deutsche Begrüßungen">
-        </div>
-        <div class="fg">
-          <label data-i18n="courses.fl_title_balti">Lesson Title (Balti / بلتی)</label>
-          <input type="text" id="f-tbalti" placeholder="e.g. لیکشن ۱ ― جرمن زبانو آداب">
-        </div>
-        <div class="fg">
-          <label data-i18n="courses.fl_level">Level</label>
-          <select id="f-level">
-            <option value="a1">A1 — Beginner / Anfänger</option>
-            <option value="a2">A2 — Elementary / Grundlegend</option>
-            <option value="b1">B1 — Intermediate / Mittelstufe</option>
-          </select>
-        </div>
-        <div class="fg full">
-          <label data-i18n="courses.fl_desc">Description (shown on card)</label>
-          <textarea id="f-desc" placeholder="What vocabulary or grammar does this lesson cover?"></textarea>
-        </div>
-
-        <!-- YouTube Video ID -->
-        <div class="fg full">
-          <label data-i18n="courses.fl_video">YouTube Video ID</label>
-          <input type="text" id="f-ytid" placeholder="e.g. dQw4w9WgXcQ" maxlength="20">
-          <div class="url-hint" data-i18n="courses.hint_video">
-            Paste only the 11-character video ID from <code>youtube.com/watch?v=<strong>VIDEO_ID</strong></code>.
-            The video will be embedded via YouTube's privacy-enhanced player.
-          </div>
-        </div>
-
-        <!-- Download URL (separate from YouTube) -->
-        <div class="fg full">
-          <label data-i18n="courses.fl_dl">Download URL (Google Drive / Dropbox / Cloudflare R2)</label>
-          <input type="url" id="f-dlurl" placeholder="https://drive.google.com/uc?export=download&id=FILE_ID">
-          <div class="url-hint" data-i18n="courses.hint_dl">
-            YouTube videos cannot be downloaded directly. Upload your video file separately and paste a direct download link here.
-            For Google Drive: share the file publicly, then use <code>drive.google.com/uc?export=download&id=FILE_ID</code>.
-          </div>
-        </div>
-
-        <div class="fg">
-          <label data-i18n="courses.fl_dur">Duration (e.g. 12:34)</label>
-          <input type="text" id="f-dur" placeholder="12:34">
-        </div>
-        <div class="fg">
-          <label data-i18n="courses.fl_num">Lesson Number</label>
-          <input type="number" id="f-num" placeholder="1" min="1">
-        </div>
-        <div class="fg full" style="margin-top:.4rem;display:flex;gap:.75rem;flex-wrap:wrap">
-          <button class="btn-primary" onclick="addLesson()" style="width:fit-content;padding:.75rem 2.2rem">
-            ➕ <span data-i18n="courses.btn_add">Add Lesson</span>
-          </button>
-          <button class="btn-admin" onclick="exportData()" style="padding:.75rem 1.4rem">
-            💾 Export JSON
-          </button>
-          <label class="btn-admin" style="padding:.75rem 1.4rem;cursor:none">
-            📂 Import JSON
-            <input type="file" accept=".json" id="import-file" style="display:none" onchange="importData(event)">
-          </label>
-        </div>
-      </div>
-    </div><!-- /admin-panel -->
+    </details>
 
     <!-- Filter -->
-    <div class="filter-bar">
-      <button class="fbtn active" data-level="all"  data-i18n="courses.filter_all">All Levels</button>
-      <button class="fbtn" data-level="a1"           data-i18n="courses.filter_a1">A1 — Beginner</button>
-      <button class="fbtn" data-level="a2"           data-i18n="courses.filter_a2">A2 — Elementary</button>
-      <button class="fbtn" data-level="b1"           data-i18n="courses.filter_b1">B1 — Intermediate</button>
+    <div class="filter-bar" style="margin-top:2rem">
+      <button class="fbtn active" data-level="all" data-i18n="courses.filter_all">All Levels</button>
+      <button class="fbtn" data-level="a1"          data-i18n="courses.filter_a1">A1 — Beginner</button>
+      <button class="fbtn" data-level="a2"          data-i18n="courses.filter_a2">A2 — Elementary</button>
+      <button class="fbtn" data-level="b1"          data-i18n="courses.filter_b1">B1 — Intermediate</button>
     </div>
 
     <!-- Grid -->
     <div id="course-grid">
-      <div id="empty-state">
-        <div class="ei">🏔️</div>
-        <p data-i18n="courses.empty">No lessons yet — check back soon!<br>If you're the admin, enter your password above to add the first video.</p>
+      <div class="state-msg" id="state-loading">
+        <div class="spinner"></div>
+        <p>Loading lessons…</p>
       </div>
     </div>
 
   </div>
 
-  <!-- VIDEO MODAL — YouTube iframe -->
+  <!-- VIDEO MODAL -->
   <div id="vmodal" onclick="maybeClose(event)">
     <div class="minner">
       <div class="mhead">
@@ -297,10 +208,11 @@
       </div>
       <div class="mfoot">
         <div class="mdesc" id="modal-desc"></div>
-        <a id="modal-dl" href="#" class="btn-dl" target="_blank" rel="noopener">
+        <a id="modal-dl" href="#" class="btn-dl" target="_blank" rel="noopener" style="display:none">
           ⬇ <span data-i18n="courses.btn_dl">Download Video</span>
         </a>
-        <a id="modal-yt" href="#" class="btn-watch" target="_blank" rel="noopener" style="text-decoration:none;flex:unset">
+        <a id="modal-yt" href="#" class="btn-watch" target="_blank" rel="noopener"
+           style="text-decoration:none;flex:unset">
           ▶ YouTube
         </a>
       </div>
@@ -320,11 +232,10 @@
   <script src="../assets/js/main.js"></script>
   <script>
   // ================================================================
-  // GERMAN IN BALTI — COURSE PLATFORM LOGIC (YouTube + Cloudflare)
+  // ▼▼ PASTE YOUR GOOGLE SHEET CSV URL HERE — only line you change ▼▼
+  const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQfP284uTt-MCKs5zW3_DOUdRwNUIFwOQozkaCJ0P6jxaf-V59TSLPSNni_mZgJBab89ZR9vuRQH8NO/pub?output=csv';
+  // ▲▲ Get it from: File → Share → Publish to web → CSV → copy URL ▲▲
   // ================================================================
-
-  const ADMIN_PASS = 'naiyar2025';   // ← change to your own password
-  const STORE_KEY  = 'nm_courses_v2';
 
   const LEVEL_CFG = {
     a1: { label: 'A1', cls: 'la1', color: '#10b981' },
@@ -332,53 +243,112 @@
     b1: { label: 'B1', cls: 'lb1', color: '#f59e0b' },
   };
 
-  // ── Helpers ───────────────────────────────────────────────────
-  function load()    { try { return JSON.parse(localStorage.getItem(STORE_KEY)||'[]'); } catch(e){ return []; } }
-  function save(arr) { localStorage.setItem(STORE_KEY, JSON.stringify(arr)); }
   function getLang() { return localStorage.getItem('nm_lang') || 'en'; }
-  function esc(s)    { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-  // Extract YouTube ID from URL or raw ID
-  function parseYtId(raw) {
-    raw = (raw || '').trim();
-    // Full URL forms
-    const m = raw.match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/);
-    if (m) return m[1];
-    // Raw 11-char ID
-    if (/^[A-Za-z0-9_-]{11}$/.test(raw)) return raw;
-    return raw; // fallback — let YouTube handle it
+  function esc(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  function ytThumb(id) {
-    // hqdefault is widely available; fallback to mqdefault if needed
-    return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+  function ytThumb(id) { return `https://i.ytimg.com/vi/${id}/hqdefault.jpg`; }
+  function ytEmbed(id) { return `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`; }
+  function ytWatch(id) { return `https://www.youtube.com/watch?v=${id}`; }
+
+  // ── CSV parser (handles quoted fields containing commas) ──────
+  function parseCSV(text) {
+    const lines = text.trim().split('\n');
+    if (lines.length < 2) return [];
+    const headers = splitCSVLine(lines[0]);
+    const rows = [];
+    for (let i = 1; i < lines.length; i++) {
+      if (!lines[i].trim()) continue;
+      const vals = splitCSVLine(lines[i]);
+      const obj  = {};
+      headers.forEach((h, idx) => { obj[h.trim()] = (vals[idx] || '').trim(); });
+      rows.push(obj);
+    }
+    return rows;
   }
 
-  function ytEmbed(id) {
-    return `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`;
+  function splitCSVLine(line) {
+    const result = [];
+    let cur = '', inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (ch === '"') {
+        if (inQ && line[i+1] === '"') { cur += '"'; i++; }
+        else inQ = !inQ;
+      } else if (ch === ',' && !inQ) {
+        result.push(cur); cur = '';
+      } else {
+        cur += ch;
+      }
+    }
+    result.push(cur);
+    return result;
   }
 
-  // ── Build card HTML ───────────────────────────────────────────
-  function card(lesson, realIdx) {
+  // ── State ─────────────────────────────────────────────────────
+  let ALL_LESSONS  = [];
+  let activeFilter = 'all';
+
+  // ── Fetch from Google Sheets ──────────────────────────────────
+  async function fetchLessons() {
+    setGridState('loading');
+    try {
+      const url = SHEET_CSV_URL + '&t=' + Date.now(); // bypass cache
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status} — check your CSV URL`);
+      const text = await res.text();
+      // Filter out rows without a YouTube ID
+      ALL_LESSONS = parseCSV(text).filter(l => l.ytid && l.ytid.length > 3);
+      render();
+    } catch (err) {
+      setGridState('error', err.message);
+    }
+  }
+
+  // ── Render ────────────────────────────────────────────────────
+  function render() {
+    const grid     = document.getElementById('course-grid');
+    grid.querySelectorAll('.ccard').forEach(c => c.remove());
+
+    const filtered = activeFilter === 'all'
+      ? ALL_LESSONS
+      : ALL_LESSONS.filter(l => l.level === activeFilter);
+
+    document.getElementById('stat-lessons').textContent = ALL_LESSONS.length;
+
+    if (filtered.length === 0) {
+      setGridState('empty');
+      return;
+    }
+
+    clearGridStates();
+    filtered.forEach((lesson, i) => {
+      grid.insertAdjacentHTML('beforeend', buildCard(lesson, ALL_LESSONS.indexOf(lesson), i));
+    });
+
+    if (window.__obs) {
+      grid.querySelectorAll('.ccard.reveal').forEach(el => window.__obs.observe(el));
+    }
+  }
+
+  // ── Card HTML ─────────────────────────────────────────────────
+  function buildCard(lesson, globalIdx, displayIdx) {
     const lang  = getLang();
     const title = lang === 'de' ? (lesson.tde || lesson.ten) : lesson.ten;
     const lvl   = LEVEL_CFG[lesson.level] || LEVEL_CFG.a1;
-    const num   = lesson.num ? String(lesson.num).padStart(2,'0') : String(realIdx+1).padStart(2,'0');
-    const ytId  = lesson.ytid || '';
-    const thumb = ytId ? ytThumb(ytId) : '';
-    const dlUrl = lesson.dlurl || '#';
-    const hasDl = dlUrl && dlUrl !== '#';
-    const wLbl  = lang === 'de' ? '▶ Ansehen'       : '▶ Watch';
-    const dLbl  = lang === 'de' ? '⬇ Herunterladen' : '⬇ Download';
+    const num   = lesson.num
+      ? String(parseInt(lesson.num)||displayIdx+1).padStart(2,'0')
+      : String(displayIdx+1).padStart(2,'0');
+    const wLbl = lang === 'de' ? '▶ Ansehen'       : '▶ Watch';
+    const dLbl = lang === 'de' ? '⬇ Herunterladen' : '⬇ Download';
 
-    return `<div class="ccard reveal" data-level="${esc(lesson.level)}" data-ridx="${realIdx}" style="--cc:${lvl.color}">
+    return `<div class="ccard reveal" data-level="${esc(lesson.level)}" style="--cc:${lvl.color}">
   <div class="ctop"></div>
-  <button class="btn-del" onclick="delLesson(${realIdx})">✕ Delete</button>
-  <div class="vthumb" onclick="openModal(${realIdx})">
-    ${thumb
-      ? `<img src="${esc(thumb)}" alt="${esc(title)}" loading="lazy" onerror="this.style.display='none'">`
-      : `<div style="width:100%;height:100%;background:linear-gradient(135deg,#1a1a2e,#16213e);display:flex;align-items:center;justify-content:center;font-size:2rem;">▶</div>`
-    }
+  <div class="vthumb" onclick="openModal(${globalIdx})">
+    <img src="${esc(ytThumb(lesson.ytid))}" alt="${esc(title)}" loading="lazy"
+         onerror="this.style.display='none'">
     <div class="play-ov"><div class="pbtn">▶</div></div>
     ${lesson.dur ? `<div class="dur-badge">${esc(lesson.dur)}</div>` : ''}
     <div class="lvl-badge ${lvl.cls}">${lvl.label}</div>
@@ -389,40 +359,39 @@
     ${lesson.tbalti ? `<div class="cbalti">${esc(lesson.tbalti)}</div>` : ''}
     ${lesson.desc   ? `<div class="cdesc">${esc(lesson.desc)}</div>`    : ''}
     <div class="cactions">
-      <button class="btn-watch" onclick="openModal(${realIdx})">${wLbl}</button>
-      ${hasDl
-        ? `<a class="btn-dl" href="${esc(dlUrl)}" target="_blank" rel="noopener">${dLbl}</a>`
-        : `<a class="btn-dl" href="https://www.youtube.com/watch?v=${esc(ytId)}" target="_blank" rel="noopener">▶ YouTube</a>`
+      <button class="btn-watch" onclick="openModal(${globalIdx})">${wLbl}</button>
+      ${lesson.dlurl
+        ? `<a class="btn-dl" href="${esc(lesson.dlurl)}" target="_blank" rel="noopener">${dLbl}</a>`
+        : `<a class="btn-dl" href="${esc(ytWatch(lesson.ytid))}" target="_blank" rel="noopener">▶ YouTube</a>`
       }
     </div>
   </div>
 </div>`;
   }
 
-  // ── Render ────────────────────────────────────────────────────
-  let activeFilter = 'all';
+  // ── Grid state helpers ────────────────────────────────────────
+  function clearGridStates() {
+    document.getElementById('course-grid').querySelectorAll('.state-msg').forEach(e => e.remove());
+  }
 
-  function render() {
-    const all      = load();
-    const grid     = document.getElementById('course-grid');
-    const empty    = document.getElementById('empty-state');
-    const filtered = activeFilter === 'all' ? all : all.filter(l => l.level === activeFilter);
-
-    grid.querySelectorAll('.ccard').forEach(c => c.remove());
-    document.getElementById('stat-lessons').textContent = all.length;
-
-    if (filtered.length === 0) {
-      empty.style.display = 'block';
-    } else {
-      empty.style.display = 'none';
-      filtered.forEach(lesson => {
-        const realIdx = all.indexOf(lesson);
-        grid.insertAdjacentHTML('beforeend', card(lesson, realIdx));
-      });
-      if (window.__obs) {
-        grid.querySelectorAll('.ccard.reveal').forEach(el => window.__obs.observe(el));
-      }
+  function setGridState(type, errMsg) {
+    clearGridStates();
+    document.getElementById('course-grid').querySelectorAll('.ccard').forEach(c => c.remove());
+    const grid = document.getElementById('course-grid');
+    let html = '';
+    if (type === 'loading') {
+      html = `<div class="state-msg"><div class="spinner"></div><p>Loading lessons…</p></div>`;
+    } else if (type === 'empty') {
+      html = `<div class="state-msg"><div class="ei">🏔️</div>
+        <p>No lessons yet — check back soon!</p></div>`;
+    } else if (type === 'error') {
+      html = `<div class="state-msg"><div class="ei">⚠️</div>
+        <p><strong>Could not load lessons.</strong><br>
+        Make sure your Google Sheet is published as CSV and
+        <code>SHEET_CSV_URL</code> in the script is set correctly.<br><br>
+        <span style="font-size:.76rem;opacity:.55">${esc(errMsg||'')}</span></p></div>`;
     }
+    grid.insertAdjacentHTML('afterbegin', html);
   }
 
   // ── Filter buttons ────────────────────────────────────────────
@@ -435,104 +404,22 @@
     });
   });
 
-  // ── Add lesson ────────────────────────────────────────────────
-  function addLesson() {
-    const ten    = document.getElementById('f-ten').value.trim();
-    const tde    = document.getElementById('f-tde').value.trim();
-    const tbalti = document.getElementById('f-tbalti').value.trim();
-    const level  = document.getElementById('f-level').value;
-    const desc   = document.getElementById('f-desc').value.trim();
-    const ytid   = parseYtId(document.getElementById('f-ytid').value);
-    const dlurl  = document.getElementById('f-dlurl').value.trim();
-    const dur    = document.getElementById('f-dur').value.trim();
-    const num    = parseInt(document.getElementById('f-num').value) || null;
-
-    if (!ten || !ytid) {
-      alert('Please fill in the English title and YouTube Video ID at minimum.');
-      return;
-    }
-
-    const all = load();
-    all.push({ ten, tde, tbalti, level, desc, ytid, dlurl: dlurl||'', dur, num, ts: Date.now() });
-    save(all);
-
-    ['f-ten','f-tde','f-tbalti','f-desc','f-ytid','f-dlurl','f-dur','f-num'].forEach(id => {
-      document.getElementById(id).value = '';
-    });
-    document.getElementById('f-level').value = 'a1';
-
-    render();
-    document.getElementById('admin-panel').scrollIntoView({ behavior: 'smooth' });
-    alert('✅ Lesson added! Scroll down to see it in the grid.');
-  }
-
-  // ── Delete lesson ─────────────────────────────────────────────
-  function delLesson(idx) {
-    if (!confirm('Delete this lesson? This cannot be undone.')) return;
-    const all = load();
-    all.splice(idx, 1);
-    save(all);
-    render();
-  }
-
-  // ── Export / Import (for Cloudflare Pages — no server) ────────
-  function exportData() {
-    const data = JSON.stringify(load(), null, 2);
-    const blob = new Blob([data], { type: 'application/json' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = 'nm_courses_backup.json';
-    a.click();
-    URL.revokeObjectURL(a.href);
-  }
-
-  function importData(e) {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = ev => {
-      try {
-        const arr = JSON.parse(ev.target.result);
-        if (!Array.isArray(arr)) throw new Error('Not an array');
-        if (!confirm(`Import ${arr.length} lesson(s)? This will REPLACE all current lessons.`)) return;
-        save(arr);
-        render();
-        alert('✅ Imported successfully!');
-      } catch(err) {
-        alert('❌ Invalid JSON file: ' + err.message);
-      }
-    };
-    reader.readAsText(file);
-    e.target.value = '';
-  }
-
   // ── Modal ─────────────────────────────────────────────────────
   function openModal(idx) {
-    const lesson = load()[idx];
+    const lesson = ALL_LESSONS[idx];
     if (!lesson) return;
     const lang  = getLang();
     const title = lang === 'de' ? (lesson.tde || lesson.ten) : lesson.ten;
 
     document.getElementById('modal-title').textContent = title;
     document.getElementById('modal-desc').textContent  = lesson.desc || '';
+    document.getElementById('modal-iframe').src        = ytEmbed(lesson.ytid);
 
-    // YouTube embed
-    const ytId = lesson.ytid || '';
-    document.getElementById('modal-iframe').src = ytId ? ytEmbed(ytId) : '';
-
-    // Download & YouTube buttons
-    const dlUrl = lesson.dlurl || '';
     const dlBtn = document.getElementById('modal-dl');
-    if (dlUrl) {
-      dlBtn.href  = dlUrl;
-      dlBtn.style.display = 'flex';
-    } else {
-      dlBtn.style.display = 'none';
-    }
+    if (lesson.dlurl) { dlBtn.href = lesson.dlurl; dlBtn.style.display = 'flex'; }
+    else              { dlBtn.style.display = 'none'; }
 
-    const ytBtn = document.getElementById('modal-yt');
-    ytBtn.href = ytId ? `https://www.youtube.com/watch?v=${ytId}` : '#';
-
+    document.getElementById('modal-yt').href = ytWatch(lesson.ytid);
     document.getElementById('vmodal').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
@@ -540,7 +427,6 @@
   function closeModal() {
     document.getElementById('vmodal').classList.remove('open');
     document.body.style.overflow = '';
-    // Stop YouTube video by clearing src
     document.getElementById('modal-iframe').src = '';
   }
 
@@ -550,36 +436,16 @@
 
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  // ── Admin unlock ──────────────────────────────────────────────
-  function unlockAdmin() {
-    const val = document.getElementById('admin-pass').value;
-    if (val === ADMIN_PASS) {
-      document.getElementById('admin-panel').classList.add('open');
-      document.getElementById('admin-unlock').style.display = 'none';
-      document.body.classList.add('admin-mode');
-    } else {
-      const inp = document.getElementById('admin-pass');
-      inp.style.borderColor = '#ef4444';
-      inp.value = '';
-      inp.placeholder = 'Wrong password — try again';
-      setTimeout(() => { inp.style.borderColor = ''; inp.placeholder = 'Admin password…'; }, 2000);
-    }
-  }
-
-  document.getElementById('admin-pass').addEventListener('keydown', e => {
-    if (e.key === 'Enter') unlockAdmin();
-  });
-
   // ── Boot ──────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
     window.__obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => window.__obs.observe(el));
-    render();
+    fetchLessons();
   });
 
-  if (document.readyState !== 'loading') render();
+  if (document.readyState !== 'loading') fetchLessons();
   </script>
 </body>
 </html>
