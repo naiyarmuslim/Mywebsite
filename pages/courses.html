@@ -148,31 +148,6 @@
       </div>
     </div>
 
-    <!-- Collapsible guide for you (the admin) -->
-    <details class="sheet-guide">
-      <summary style="cursor:pointer;color:var(--accent);font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;list-style:none">
-        📋 HOW TO ADD LESSONS — Google Sheets guide (click to expand)
-      </summary>
-      <div style="margin-top:1.2rem">
-        <strong>1. Your Google Sheet must have these exact headers in row 1:</strong><br>
-        <code>ten</code> &nbsp;·&nbsp; <code>tde</code> &nbsp;·&nbsp; <code>tbalti</code> &nbsp;·&nbsp; <code>level</code> &nbsp;·&nbsp; <code>desc</code> &nbsp;·&nbsp; <code>ytid</code> &nbsp;·&nbsp; <code>dlurl</code> &nbsp;·&nbsp; <code>dur</code> &nbsp;·&nbsp; <code>num</code><br><br>
-        <strong>Column guide:</strong><br>
-        <code>ten</code> = lesson title in English<br>
-        <code>tde</code> = lesson title in German (optional)<br>
-        <code>tbalti</code> = lesson title in Balti script (optional)<br>
-        <code>level</code> = one of: <code>a1</code> · <code>a2</code> · <code>b1</code><br>
-        <code>desc</code> = short description shown on the card<br>
-        <code>ytid</code> = YouTube video ID, e.g. <code>dQw4w9WgXcQ</code> (the part after <code>?v=</code>)<br>
-        <code>dlurl</code> = optional direct download link (Google Drive / Dropbox / R2)<br>
-        <code>dur</code> = video duration, e.g. <code>12:34</code> (optional)<br>
-        <code>num</code> = lesson number for ordering (optional)<br><br>
-        <strong>2. Publish the sheet as CSV:</strong><br>
-        File → Share → Publish to web → Sheet1 → Comma-separated values (.csv) → Publish → copy the URL<br><br>
-        <strong>3. Paste that URL into <code>SHEET_CSV_URL</code> at the top of this file's &lt;script&gt; block.</strong><br>
-        That's it — every visitor will see your lessons live from the sheet. No redeployment needed for new lessons.
-      </div>
-    </details>
-
     <!-- Filter -->
     <div class="filter-bar" style="margin-top:2rem">
       <button class="fbtn active" data-level="all" data-i18n="courses.filter_all">All Levels</button>
