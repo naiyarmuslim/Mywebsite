@@ -571,28 +571,28 @@
     "de": "etwas bauen."
   },
   "contact.ci_loc_val": {
-    "en": "Germany — Open to Remote & Relocation",
-    "de": "Deutschland — Offen für Remote & Umzug"
+    "en": "Germany — Remote and relocation-ready",
+    "de": "Deutschland — Remote und umzugsbereit"
   },
   "contact.ci_resp_val": {
     "en": "Usually within 24 hours",
     "de": "Normalerweise innerhalb von 24 Stunden"
   },
   "contact.ci_open_lbl": {
-    "en": "Open to",
-    "de": "Offen für"
+    "en": "Best Fit",
+    "de": "Passend fuer"
   },
   "contact.ci_open_val": {
-    "en": "Jobs, Internships, Collaborations, Mentorship",
-    "de": "Jobs, Praktika, Zusammenarbeit, Mentoring"
+    "en": "Collaborative projects where we can solve meaningful problems and build useful results together.",
+    "de": "Kooperative Projekte, in denen wir sinnvolle Probleme loesen und gemeinsam nuetzliche Ergebnisse schaffen."
   },
   "contact.form_title": {
     "en": "Send a message",
     "de": "Nachricht senden"
   },
   "contact.form_sub": {
-    "en": "Whether it's a job opportunity, a collaboration, or just a friendly hello — I'd love to hear from you.",
-    "de": "Ob Jobangebot, Zusammenarbeit oder ein nettes Hallo — ich freue mich auf Ihre Nachricht."
+    "en": "I enjoy thoughtful projects, teamwork, and creative problem-solving. If our goals align, I'd be happy to connect.",
+    "de": "Ich arbeite gern an durchdachten Projekten, im Team und mit kreativer Problemlosung. Wenn unsere Ziele passen, freue ich mich auf den Austausch."
   },
   "contact.f_name": {
     "en": "Name",
@@ -643,12 +643,12 @@
     "de": "FAQs"
   },
   "contact.q1": {
-    "en": "Are you open to job opportunities?",
-    "de": "Sind Sie offen für Stellenangebote?"
+    "en": "What opportunities are a good fit for you?",
+    "de": "Welche Moeglichkeiten passen gut zu Ihnen?"
   },
   "contact.a1": {
-    "en": "Yes! I'm actively looking for internships, working student positions, or entry-level roles in software development or cybersecurity in Germany. Also open to remote work.",
-    "de": "Ja! Ich suche aktiv nach Praktika, Werkstudentenstellen oder Einstiegspositionen in der Softwareentwicklung oder Cybersicherheit in Deutschland. Auch Remote möglich."
+    "en": "I'm interested in internships, working student roles, and entry-level positions in software or cybersecurity where I can keep learning and contribute to the team.",
+    "de": "Ich interessiere mich fuer Praktika, Werkstudentenstellen und Einstiegspositionen in Software oder Cybersicherheit, in denen ich weiterlernen und zum Team beitragen kann."
   },
   "contact.q2": {
     "en": "Can you work in German?",
@@ -663,8 +663,8 @@
     "de": "Machen Sie freiberufliche Webentwicklung?"
   },
   "contact.a3": {
-    "en": "I'm open to freelance projects, especially small to medium websites, web apps, or landing pages. Send me a message with your requirements.",
-    "de": "Ich bin offen für Freelance-Projekte, insbesondere kleine bis mittlere Websites und Web-Apps."
+    "en": "Yes. I'm happy to take selected freelance projects with clear goals, good communication, and realistic timelines.",
+    "de": "Ja. Ich uebernehme gern ausgewaehlte Freelance-Projekte mit klaren Zielen, guter Kommunikation und realistischen Zeitplaenen."
   },
   "contact.q4": {
     "en": "Can you create content for my organization?",
