@@ -36,14 +36,22 @@
       top: 0; right: 0;
       width: 42%;
       height: 100%;
-      background: repeating-linear-gradient(
-        -55deg,
-        transparent,
-        transparent 12px,
-        rgba(255,92,53,0.04) 12px,
-        rgba(255,92,53,0.04) 13px
-      );
+      background:
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 44px,
+          rgba(var(--accent4-rgb),0.07) 44px,
+          rgba(var(--accent4-rgb),0.07) 45px
+        );
       pointer-events: none;
+      opacity: 0.55;
+      animation: stripe-shift 30s linear infinite;
+    }
+
+    @keyframes stripe-shift {
+      from { background-position: 0 0; }
+      to { background-position: 0 180px; }
     }
 
     .hero-eyebrow {
@@ -138,12 +146,25 @@
     .hero-card {
       background: var(--surface);
       border: 1.5px solid var(--border);
-      border-radius: 16px;
+      border-radius: 34px 34px 18px 18px;
       overflow: hidden;
       opacity: 0;
       animation: fadeLeft .7s .4s forwards;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.07);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.18);
       position: relative;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 46%;
+      height: 16px;
+      border-bottom: 1px solid rgba(var(--accent4-rgb),0.34);
+      border-radius: 0 0 32px 32px;
+      pointer-events: none;
+      z-index: 1;
     }
     .hero-card-top {
       padding: 2rem 2rem 1.5rem;
@@ -214,9 +235,9 @@
       color: var(--muted);
       letter-spacing: 0.04em;
     }
-    .skill-chip.o { border-color: rgba(255,92,53,0.3);  color: var(--accent);  background: rgba(255,92,53,0.06); }
-    .skill-chip.t { border-color: rgba(0,168,120,0.3);  color: var(--accent3); background: rgba(0,168,120,0.06); }
-    .skill-chip.g { border-color: rgba(245,166,35,0.3); color: var(--accent4); background: rgba(245,166,35,0.06); }
+    .skill-chip.o { border-color: rgba(var(--accent-rgb),0.3);  color: var(--accent);  background: rgba(var(--accent-rgb),0.06); }
+    .skill-chip.t { border-color: rgba(var(--accent3-rgb),0.3);  color: var(--accent3); background: rgba(var(--accent3-rgb),0.06); }
+    .skill-chip.g { border-color: rgba(var(--accent3-rgb),0.3); color: var(--accent4); background: rgba(var(--accent3-rgb),0.06); }
 
     /* Features */
     #features { background: var(--bg2); }
@@ -228,6 +249,7 @@
       display: block;
       position: relative;
       overflow: hidden;
+      border-radius: 26px 26px 14px 14px;
     }
     .feat-card::before {
       content: '';
@@ -259,7 +281,27 @@
     }
 
     /* Creator strip */
-    #creator-strip { background: var(--accent); }
+    #creator-strip {
+      background: linear-gradient(135deg, rgba(6,20,38,0.96), rgba(13,44,74,0.92));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    #creator-strip::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: -84px;
+      width: min(900px, 86vw);
+      height: 150px;
+      border: 1px solid rgba(var(--accent4-rgb),0.2);
+      border-bottom: 0;
+      border-radius: 999px 999px 0 0;
+      pointer-events: none;
+      opacity: 0.7;
+    }
     .creator-strip-inner {
       display: flex;
       align-items: center;
@@ -272,12 +314,12 @@
       font-family: var(--display);
       font-size: clamp(1.6rem, 2.5vw, 2.2rem);
       font-weight: 900;
-      color: #fff;
+      color: var(--text);
       letter-spacing: -0.03em;
       line-height: 1.1;
     }
     .creator-strip-left p {
-      color: rgba(255,255,255,0.75);
+      color: var(--muted);
       font-size: 0.92rem;
       margin-top: 0.5rem;
       max-width: 480px;
@@ -289,9 +331,9 @@
       flex-shrink: 0;
     }
     .strip-badge {
-      background: rgba(255,255,255,0.15);
-      border: 1.5px solid rgba(255,255,255,0.3);
-      border-radius: 8px;
+      background: rgba(var(--accent-rgb),0.08);
+      border: 1.5px solid rgba(var(--accent-rgb),0.22);
+      border-radius: 18px 18px 10px 10px;
       padding: 0.8rem 1.2rem;
       text-align: center;
       min-width: 90px;
@@ -300,13 +342,13 @@
       font-family: var(--display);
       font-size: 1.4rem;
       font-weight: 900;
-      color: #fff;
+      color: var(--text);
       letter-spacing: -0.02em;
     }
     .strip-badge-label {
       font-family: var(--mono);
       font-size: 0.62rem;
-      color: rgba(255,255,255,0.7);
+      color: var(--muted);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -316,9 +358,9 @@
     /* CTA */
     #cta-band { background: var(--bg); }
     .cta-inner {
-      background: linear-gradient(135deg, rgba(255,92,53,0.07), rgba(245,166,35,0.05));
-      border: 1.5px solid rgba(255,92,53,0.2);
-      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(var(--accent-rgb),0.07), rgba(var(--accent3-rgb),0.05));
+      border: 1.5px solid rgba(var(--accent-rgb),0.2);
+      border-radius: 34px 34px 18px 18px;
       padding: 5rem 3rem;
       text-align: center;
     }
@@ -377,6 +419,7 @@
 
   <!-- ── HERO ── -->
   <section id="home">
+    <div class="terrain-lines"></div>
     <div class="hero-stripe"></div>
     <div class="glow-orb orb-coral" style="width:480px;height:480px;top:-100px;right:5%;"></div>
     <div class="glow-orb orb-gold"  style="width:320px;height:320px;bottom:-60px;left:-60px;"></div>
@@ -454,14 +497,16 @@
               <span class="card-row-val" data-i18n="home.card_status_val" data-i18n-html><span class="status-dot"></span> &nbsp;Active</span>
             </div>
             <div class="skill-cloud">
-              <span class="skill-chip o">Python</span>
+              <span class="skill-chip o">C</span>
+              <span class="skill-chip o">Java</span>
+              <span class="skill-chip o">HTML</span>
+              <span class="skill-chip o">CSS</span>
               <span class="skill-chip o">JavaScript</span>
-              <span class="skill-chip o">React</span>
               <span class="skill-chip t">Docker</span>
               <span class="skill-chip t">Linux</span>
-              <span class="skill-chip t">Nextcloud</span>
-              <span class="skill-chip g">Video Editing</span>
-              <span class="skill-chip g">Instagram Reels</span>
+              <span class="skill-chip t">macOS</span>
+              <span class="skill-chip t">Windows</span>
+              <span class="skill-chip t">CLI</span>
             </div>
             <div class="hero-card-foot">
               <div class="hero-card-foot-icon">📲</div>
@@ -480,6 +525,7 @@
 
   <!-- ── Fun Fact ── -->
   <section id="creator-strip" style="padding: 0 2.5rem;">
+    <div class="terrain-lines"></div>
     <div class="container">
       <div class="creator-strip-inner">
         <div class="creator-strip-left">
@@ -504,6 +550,7 @@
 
   <!-- ── FEATURES ── -->
   <section id="features">
+    <div class="terrain-lines"></div>
     <div class="glow-orb orb-gold" style="width:380px;height:380px;top:0;right:-80px;"></div>
     <div class="container">
       <div class="section-header reveal" style="max-width:560px">
