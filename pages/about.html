@@ -919,26 +919,6 @@
   <script src="../assets/js/i18n.js" onerror="console.log('i18n not loaded')"></script>
   <script src="../assets/js/main.js" onerror="console.log('main.js not loaded')"></script>
   <script>
-    // ── Hamburger ──
-    const ham = document.getElementById('hamburger');
-    const mob = document.getElementById('mobile-menu');
-    ham?.addEventListener('click', () => {
-      ham.classList.toggle('open');
-      mob.classList.toggle('open');
-    });
-
-    // ── Scroll progress ──
-    window.addEventListener('scroll', () => {
-      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-      document.getElementById('progress').style.width = pct + '%';
-    });
-
-    // ── Scroll reveal ──
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
     // ── Language bar animation ──
     const langBars = document.querySelectorAll('.lang-bar');
     const barObs = new IntersectionObserver(entries => {

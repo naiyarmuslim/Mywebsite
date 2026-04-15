@@ -41,6 +41,9 @@ body {
   overflow-x: hidden;
   cursor: none;
 }
+@supports (overflow: clip) {
+  html, body { overflow-x: clip; }
+}
 
 /* ── Noise overlay ── */
 body::before {
@@ -416,8 +419,12 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
+  nav { padding: 0 1rem; }
   .hamburger { display: flex; }
   .nav-links  { display: none; }
+  #lang-toggle { display: none; }
+  .mobile-menu { padding: 1rem; }
+  .glow-orb { display: none; }
 }
 @media (max-width: 480px) {
   section { padding: 5rem 1.5rem; }

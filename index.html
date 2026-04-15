@@ -567,42 +567,5 @@
 
   <script src="assets/js/i18n.js" onerror="console.log('i18n not loaded')"></script>
   <script src="assets/js/main.js" onerror="console.log('main.js not loaded')"></script>
-  <script>
-    // ── Custom cursor ──
-    const cursor = document.getElementById('cursor');
-    const ring   = document.getElementById('cursor-ring');
-    let rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => {
-      cursor.style.left = e.clientX - 5 + 'px';
-      cursor.style.top  = e.clientY - 5 + 'px';
-      rx += (e.clientX - 18 - rx) * 0.12;
-      ry += (e.clientY - 18 - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
-    });
-    requestAnimationFrame(function loop(){
-      requestAnimationFrame(loop);
-    });
-
-    // ── Hamburger ──
-    const ham = document.getElementById('hamburger');
-    const mob = document.getElementById('mobile-menu');
-    ham?.addEventListener('click', () => {
-      ham.classList.toggle('open');
-      mob.classList.toggle('open');
-    });
-
-    // ── Scroll progress ──
-    window.addEventListener('scroll', () => {
-      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-      document.getElementById('progress').style.width = pct + '%';
-    });
-
-    // ── Scroll reveal ──
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  </script>
 </body>
 </html>
