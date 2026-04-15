@@ -161,7 +161,7 @@
     <div id="course-grid">
       <div class="state-msg" id="state-loading">
         <div class="spinner"></div>
-        <p>Loading lessons…</p>
+        <p data-i18n="courses.loading">Loading lessons…</p>
       </div>
     </div>
 
@@ -171,7 +171,7 @@
   <div id="vmodal" onclick="maybeClose(event)">
     <div class="minner">
       <div class="mhead">
-        <div class="mtitle" id="modal-title">Lesson</div>
+        <div class="mtitle" id="modal-title" data-i18n="courses.lesson">Lesson</div>
         <button class="mclose" onclick="closeModal()">✕</button>
       </div>
       <div class="mvideo">
@@ -189,7 +189,7 @@
         </a>
         <a id="modal-yt" href="#" class="btn-watch" target="_blank" rel="noopener"
            style="text-decoration:none;flex:unset">
-          ▶ YouTube
+          <span data-i18n="courses.youtube">▶ YouTube</span>
         </a>
       </div>
     </div>
@@ -338,7 +338,7 @@
       <button class="btn-watch" onclick="openModal(${globalIdx})">${wLbl}</button>
       ${lesson.dlurl
         ? `<a class="btn-dl" href="${esc(lesson.dlurl)}" target="_blank" rel="noopener">${dLbl}</a>`
-        : `<a class="btn-dl" href="${esc(ytWatch(lesson.ytid))}" target="_blank" rel="noopener">▶ YouTube</a>`
+        : `<a class="btn-dl" href="${esc(ytWatch(lesson.ytid))}" target="_blank" rel="noopener">${lang === 'de' ? '▶ YouTube ansehen' : '▶ YouTube'}</a>`
       }
     </div>
   </div>
@@ -354,17 +354,18 @@
     clearGridStates();
     document.getElementById('course-grid').querySelectorAll('.ccard').forEach(c => c.remove());
     const grid = document.getElementById('course-grid');
+    const lang = getLang();
     let html = '';
     if (type === 'loading') {
-      html = `<div class="state-msg"><div class="spinner"></div><p>Loading lessons…</p></div>`;
+      html = `<div class="state-msg"><div class="spinner"></div><p>${lang === 'de' ? 'Lektionen werden geladen…' : 'Loading lessons…'}</p></div>`;
     } else if (type === 'empty') {
       html = `<div class="state-msg"><div class="ei">🏔️</div>
-        <p>No lessons yet — check back soon!</p></div>`;
+        <p>${lang === 'de' ? 'Noch keine Lektionen — schau bald wieder vorbei!' : 'No lessons yet — check back soon!'}</p></div>`;
     } else if (type === 'error') {
       html = `<div class="state-msg"><div class="ei">⚠️</div>
-        <p><strong>Could not load lessons.</strong><br>
-        Make sure your Google Sheet is published as CSV and
-        <code>SHEET_CSV_URL</code> in the script is set correctly.<br><br>
+        <p><strong>${lang === 'de' ? 'Lektionen konnten nicht geladen werden.' : 'Could not load lessons.'}</strong><br>
+        ${lang === 'de' ? 'Stelle sicher, dass dein Google Sheet als CSV veröffentlicht ist und' : 'Make sure your Google Sheet is published as CSV and'}
+        <code>SHEET_CSV_URL</code> ${lang === 'de' ? 'im Skript korrekt gesetzt ist.' : 'in the script is set correctly.'}<br><br>
         <span style="font-size:.76rem;opacity:.55">${esc(errMsg||'')}</span></p></div>`;
     }
     grid.insertAdjacentHTML('afterbegin', html);

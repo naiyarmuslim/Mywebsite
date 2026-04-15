@@ -65,19 +65,19 @@
    <nav>
     <a href="../index.html" class="nav-logo"><span class="bracket">[</span>naiyar.dev<span class="bracket">]</span></a>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="about.html" >About Me</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="content.html" >Content</a></li>
-      <li><a href="contact.html"  class="nav-cta">Contact →</a></li>
+      <li><a href="../index.html" data-i18n="shared.nav.home">Home</a></li>
+      <li><a href="about.html" data-i18n="shared.nav.about">About Me</a></li>
+      <li><a href="courses.html" data-i18n="shared.nav.courses">Courses</a></li>
+      <li><a href="projects.html" class="active" data-i18n="shared.nav.projects">Projects</a></li>
+      <li><a href="content.html" data-i18n="shared.nav.content">Content</a></li>
+      <li><a href="contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
     <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="../index.html">Home</a>
-    <a href="about.html" data-i18n="shared.nav.home" data-i18n="shared.nav.about">About Me</a>
+    <a href="../index.html" data-i18n="shared.nav.home">Home</a>
+    <a href="about.html" data-i18n="shared.nav.about">About Me</a>
     <a href="courses.html" data-i18n="shared.nav.courses">Courses</a>
     <a href="projects.html" class="active" data-i18n="shared.nav.projects">Projects</a>
     <a href="content.html" data-i18n="shared.nav.content">Content</a>
@@ -87,7 +87,7 @@
   <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="section-tag" style="justify-content:center" data-i18n="projects.page_tag">portfolio</div>
-    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)">Things I've<br><span>built.</span></h1>
+    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)"><span data-i18n="projects.page_title1">Things I've</span><br><span data-i18n="projects.page_title2">built.</span></h1>
   </div>
 
   <!-- ── PROJECTS ── -->
@@ -98,9 +98,9 @@
       <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem" class="reveal">
         <div>
           <div class="section-tag" data-i18n="projects.self_tag">self-learning projects</div>
-          <h2 class="section-title" style="font-size:1.6rem">Personal &amp; <span>Self-Built</span></h2>
+          <h2 class="section-title" style="font-size:1.6rem"><span data-i18n="projects.self_t1">Personal &amp;</span> <span data-i18n="projects.self_t2">Self-Built Projects</span></h2>
         </div>
-        <a href="https://github.com/naiyarmuslim" target="_blank" class="btn-outline">View GitHub →</a>
+        <a href="https://github.com/naiyarmuslim" target="_blank" class="btn-outline" data-i18n="projects.gh_btn">View GitHub →</a>
       </div>
 
       <!-- Self-learning completed -->
@@ -112,8 +112,8 @@
       <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem">
         <div class="project-row reveal">
           <div>
-            <div class="project-name">🖥️ Self-Hosted Cloud Server</div>
-            <div class="project-desc">Deployed a private Nextcloud instance on Linux using Docker Compose. Overcame ISP port-443 restriction with Cloudflare Proxy Tunnel and custom DNS on GoDaddy. Diagnosed and resolved a recursive Git loop conflict via manual IP configuration.</div>
+            <div class="project-name" data-i18n="projects.p1_name">🖥️ Self-Hosted Cloud Server</div>
+            <div class="project-desc" data-i18n="projects.p1_desc">Deployed a private Nextcloud instance on Linux using Docker Compose. Overcame ISP port-443 restriction with Cloudflare Proxy Tunnel and custom DNS on GoDaddy. Diagnosed and resolved a recursive Git loop conflict via manual IP configuration.</div>
           </div>
           <div class="project-stack">
             <span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Nextcloud</span><span class="tag">Cloudflare</span>
@@ -125,8 +125,8 @@
 
         <div class="project-row reveal reveal-d1">
           <div>
-            <div class="project-name">🌐 Personal Portfolio Website</div>
-            <div class="project-desc">This website — modern developer portfolio built with pure HTML, CSS, and JavaScript. Separate pages per section, shared stylesheet, responsive design with dark terminal aesthetic.</div>
+            <div class="project-name" data-i18n="projects.p2_name">🌐 Personal Portfolio Website</div>
+            <div class="project-desc" data-i18n="projects.p2_desc">This website — modern developer portfolio built with pure HTML, CSS, and JavaScript. Separate pages per section, shared stylesheet, responsive design with dark terminal aesthetic.</div>
           </div>
           <div class="project-stack">
             <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
@@ -147,8 +147,8 @@
       <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem">
         <div class="project-row reveal" style="opacity:.65">
           <div>
-            <div class="project-name">🤖 Simple AI Chatbot</div>
-            <div class="project-desc">Python-based chatbot using basic NLP and data structures. Currently paused while focusing on university coursework.</div>
+            <div class="project-name" data-i18n="projects.p3_name">🤖 Simple AI Chatbot</div>
+            <div class="project-desc" data-i18n="projects.p3_desc">Python-based chatbot using basic NLP and data structures. Currently paused while focusing on university coursework.</div>
           </div>
           <div class="project-stack">
             <span class="tag">Python</span><span class="tag">NLP</span>
@@ -162,16 +162,16 @@
       <!-- GitHub projects not previously listed -->
       <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem" class="reveal">
         <div>
-          <div class="section-tag">github</div>
-          <h2 class="section-title" style="font-size:1.6rem">More <span>GitHub Projects</span></h2>
+          <div class="section-tag" data-i18n="projects.more_tag">github</div>
+          <h2 class="section-title" style="font-size:1.6rem"><span data-i18n="projects.more_t1">More</span> <span data-i18n="projects.more_t2">GitHub Projects</span></h2>
         </div>
       </div>
 
       <div style="display:flex;flex-direction:column;gap:1rem">
         <div class="project-row reveal">
           <div>
-            <div class="project-name">🗓️ Shift Planner</div>
-            <div class="project-desc">Web application for planning employee shifts for a small business. Built as a practical scheduling tool for organizing teams and weekly coverage.</div>
+            <div class="project-name" data-i18n="projects.g1_name">🗓️ Shift Planner</div>
+            <div class="project-desc" data-i18n="projects.g1_desc">Web application for planning employee shifts for a small business. Built as a practical scheduling tool for organizing teams and weekly coverage.</div>
           </div>
           <div class="project-stack">
             <span class="tag">HTML</span><span class="tag">Planning</span><span class="tag">Web App</span>
@@ -183,8 +183,8 @@
 
         <div class="project-row reveal reveal-d1">
           <div>
-            <div class="project-name">🧑‍💻 Portfolio (TypeScript)</div>
-            <div class="project-desc">Personal portfolio implementation built with TypeScript, focusing on stronger structure and modern front-end setup compared to earlier static versions.</div>
+            <div class="project-name" data-i18n="projects.g2_name">🧑‍💻 Portfolio (TypeScript)</div>
+            <div class="project-desc" data-i18n="projects.g2_desc">Personal portfolio implementation built with TypeScript, focusing on stronger structure and modern front-end setup compared to earlier static versions.</div>
           </div>
           <div class="project-stack">
             <span class="tag">TypeScript</span><span class="tag">Portfolio</span><span class="tag">Frontend</span>
@@ -196,8 +196,8 @@
 
         <div class="project-row reveal reveal-d2">
           <div>
-            <div class="project-name">🧭 Rasta</div>
-            <div class="project-desc">TypeScript-based project from your GitHub profile, added to showcase ongoing experimentation and additional app development work.</div>
+            <div class="project-name" data-i18n="projects.g3_name">🧭 Rasta</div>
+            <div class="project-desc" data-i18n="projects.g3_desc">TypeScript-based project from your GitHub profile, added to showcase ongoing experimentation and additional app development work.</div>
           </div>
           <div class="project-stack">
             <span class="tag">TypeScript</span><span class="tag">App Dev</span>
@@ -213,9 +213,9 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo"><span>[</span>naiyar.dev<span>]</span></div>
-    <div class="footer-copy">© 2025 Naiyar Muslim. All rights reserved.</div>
+    <div class="footer-copy" data-i18n="shared.footer.copy">© 2025 Naiyar Muslim. All rights reserved.</div>
     <div class="footer-links">
-      <a href="../index.html">Home</a>
+      <a href="../index.html" data-i18n="shared.nav.home">Home</a>
       <a href="courses.html" data-i18n="shared.nav.courses">Courses</a>
       <a href="contact.html" data-i18n="shared.nav.contact">Contact</a>
     </div>

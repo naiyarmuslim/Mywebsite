@@ -175,12 +175,12 @@
   <nav>
     <a href="../index.html" class="nav-logo"><span class="bracket">[</span>naiyar.dev<span class="bracket">]</span></a>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="about.html" >About Me</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="content.html">Content</a></li>
-      <li><a href="contact.html" class="active" class="nav-cta">Contact →</a></li>
+      <li><a href="../index.html" data-i18n="shared.nav.home">Home</a></li>
+      <li><a href="about.html" data-i18n="shared.nav.about">About Me</a></li>
+      <li><a href="courses.html" data-i18n="shared.nav.courses">Courses</a></li>
+      <li><a href="projects.html" data-i18n="shared.nav.projects">Projects</a></li>
+      <li><a href="content.html" data-i18n="shared.nav.content">Content</a></li>
+      <li><a href="contact.html" class="active nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
     <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
@@ -197,7 +197,7 @@
   <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="section-tag" style="justify-content:center" data-i18n="contact.page_tag">contact</div>
-    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)">Let's build<br><span>something.</span></h1>
+    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)"><span data-i18n="contact.page_title1">Let's build</span><br><span data-i18n="contact.page_title2">something.</span></h1>
   </div>
 
   <!-- ── CONTACT MAIN ── -->
@@ -221,8 +221,8 @@
             <div class="contact-item">
               <div class="contact-item-icon">📍</div>
               <div>
-                <div class="contact-item-label">Location</div>
-                <div class="contact-item-value">Germany — Open to Remote &amp; Relocation</div>
+                <div class="contact-item-label" data-i18n="home.card_location_lbl">Location</div>
+                <div class="contact-item-value" data-i18n="contact.ci_loc_val">Germany — Open to Remote &amp; Relocation</div>
               </div>
             </div>
             <div class="contact-item">
@@ -237,15 +237,15 @@
             <div class="contact-item">
               <div class="contact-item-icon">🕐</div>
               <div>
-                <div class="contact-item-label">Response time</div>
-                <div class="contact-item-value">Usually within 24 hours</div>
+                <div class="contact-item-label" data-i18n="contact.ci_resp_lbl">Response time</div>
+                <div class="contact-item-value" data-i18n="contact.ci_resp_val">Usually within 24 hours</div>
               </div>
             </div>
             <div class="contact-item" style="margin-bottom:0">
               <div class="contact-item-icon">🎯</div>
               <div>
-                <div class="contact-item-label">Open to</div>
-                <div class="contact-item-value">Jobs, Internships, Collaborations, Mentorship</div>
+                <div class="contact-item-label" data-i18n="contact.ci_open_lbl">Open to</div>
+                <div class="contact-item-value" data-i18n="contact.ci_open_val">Jobs, Internships, Collaborations, Mentorship</div>
               </div>
             </div>
 
@@ -265,25 +265,25 @@
           <form id="contact-form" onsubmit="handleSubmit(event)">
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">Name</label>
-                <input type="text" class="form-input" placeholder="Your name" required>
+                <label class="form-label" data-i18n="contact.f_name">Name</label>
+                <input type="text" class="form-input" placeholder="Your name" data-i18n-ph="contact.f_name_ph" required>
               </div>
               <div class="form-group">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-input" placeholder="your@email.com" required>
+                <label class="form-label" data-i18n="contact.f_email">Email</label>
+                <input type="email" class="form-input" placeholder="your@email.com" data-i18n-ph="contact.f_email_ph" required>
               </div>
             </div>
             <div class="form-group">
-              <label class="form-label">Subject</label>
-              <input type="text" class="form-input" placeholder="e.g. Job Opportunity / Collaboration">
+              <label class="form-label" data-i18n="contact.f_subject">Subject</label>
+              <input type="text" class="form-input" placeholder="e.g. Job Opportunity / Collaboration" data-i18n-ph="contact.f_subject_ph">
             </div>
             <div class="form-group">
-              <label class="form-label">Message</label>
-              <textarea class="form-textarea" placeholder="Tell me about your project, opportunity, or question..." required></textarea>
+              <label class="form-label" data-i18n="contact.f_msg">Message</label>
+              <textarea class="form-textarea" placeholder="Tell me about your project, opportunity, or question..." data-i18n-ph="contact.f_msg_ph" required></textarea>
             </div>
             <button type="submit" class="submit-btn" data-i18n="contact.f_submit">✉ Send Message</button>
           </form>
-          <div class="form-success" id="form-success">
+          <div class="form-success" id="form-success" data-i18n="contact.f_success">
             ✓ Message sent! I'll get back to you within 24 hours.
           </div>
         </div>
@@ -307,35 +307,35 @@
           <div class="faq-q" onclick="toggleFaq(this)">
             <span data-i18n="contact.q1">Are you open to job opportunities?</span> <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">Yes! I'm actively looking for internships, working student positions, or entry-level roles in software development, web development, or cybersecurity in Germany. I'm also open to remote work internationally.</div>
+          <div class="faq-a" data-i18n="contact.a1">Yes! I'm actively looking for internships, working student positions, or entry-level roles in software development, web development, or cybersecurity in Germany. I'm also open to remote work internationally.</div>
         </div>
 
         <div class="faq-item reveal reveal-d1">
           <div class="faq-q" onclick="toggleFaq(this)">
-            Can you work in German? <span class="faq-icon">+</span>
+            <span data-i18n="contact.q2">Can you work in German?</span> <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">Absolutely. I hold a C1 German language certificate (DSH-2) and use German daily in my academic and professional environment. I can conduct meetings, write documentation, and collaborate fully in German.</div>
+          <div class="faq-a" data-i18n="contact.a2">Absolutely. I hold a C1 German language certificate (DSH-2) and use German daily in my academic and professional environment. I can conduct meetings, write documentation, and collaborate fully in German.</div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
           <div class="faq-q" onclick="toggleFaq(this)">
-            Do you do freelance web development? <span class="faq-icon">+</span>
+            <span data-i18n="contact.q3">Do you do freelance web development?</span> <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">I'm open to freelance projects, especially small to medium websites, web apps, or landing pages. Feel free to send me a message with your requirements and I'll get back to you.</div>
+          <div class="faq-a" data-i18n="contact.a3">I'm open to freelance projects, especially small to medium websites, web apps, or landing pages. Feel free to send me a message with your requirements and I'll get back to you.</div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
           <div class="faq-q" onclick="toggleFaq(this)">
-            Can you create content / educational videos for my organization? <span class="faq-icon">+</span>
+            <span data-i18n="contact.q4">Can you create content / educational videos for my organization?</span> <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">If you're working on educational content for Baltistani communities or Gilgit-Baltistan, I'd love to collaborate. I create content in Balti, Urdu, and English.</div>
+          <div class="faq-a" data-i18n="contact.a4">If you're working on educational content for Baltistani communities or Gilgit-Baltistan, I'd love to collaborate. I create content in Balti, Urdu, and English.</div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
           <div class="faq-q" onclick="toggleFaq(this)">
-            How quickly do you respond to messages? <span class="faq-icon">+</span>
+            <span data-i18n="contact.q5">How quickly do you respond to messages?</span> <span class="faq-icon">+</span>
           </div>
-          <div class="faq-a">I typically respond within 24 hours. For urgent matters, feel free to reach out directly via email at naiyarmuslim@gmail.com.</div>
+          <div class="faq-a" data-i18n="contact.a5">I typically respond within 24 hours. For urgent matters, feel free to reach out directly via email at naiyarmuslim@gmail.com.</div>
         </div>
 
       </div>
@@ -345,9 +345,9 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo"><span>[</span>naiyar.dev<span>]</span></div>
-    <div class="footer-copy">© 2025 Naiyar Muslim. All rights reserved.</div>
+    <div class="footer-copy" data-i18n="shared.footer.copy">© 2025 Naiyar Muslim. All rights reserved.</div>
     <div class="footer-links">
-      <a href="../index.html">Home</a>
+      <a href="../index.html" data-i18n="shared.nav.home">Home</a>
       <a href="projects.html" data-i18n="shared.nav.projects">Projects</a>
       <a href="contact.html" data-i18n="shared.nav.contact">Contact</a>
     </div>
@@ -359,7 +359,7 @@
     function handleSubmit(e) {
       e.preventDefault();
       const btn = e.target.querySelector('.submit-btn');
-      btn.textContent = 'Sending...';
+      btn.textContent = (localStorage.getItem('nm_lang') || 'en') === 'de' ? 'Wird gesendet...' : 'Sending...';
       btn.disabled = true;
       setTimeout(() => {
         e.target.style.display = 'none';

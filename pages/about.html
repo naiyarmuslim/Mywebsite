@@ -617,23 +617,23 @@
   <nav>
     <a href="../index.html" class="nav-logo"><span class="bracket">[</span>naiyar.dev<span class="bracket">]</span></a>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="about.html" class="active">About Me</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="content.html">Content</a></li>
-      <li><a href="contact.html" class="nav-cta">Contact →</a></li>
+      <li><a href="../index.html" data-i18n="shared.nav.home">Home</a></li>
+      <li><a href="about.html" class="active" data-i18n="shared.nav.about">About Me</a></li>
+      <li><a href="courses.html" data-i18n="shared.nav.courses">Courses</a></li>
+      <li><a href="projects.html" data-i18n="shared.nav.projects">Projects</a></li>
+      <li><a href="content.html" data-i18n="shared.nav.content">Content</a></li>
+      <li><a href="contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
     <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="../index.html">Home</a>
-    <a href="about.html" class="active">About Me</a>
-    <a href="courses.html">Courses</a>
-    <a href="projects.html">Projects</a>
-    <a href="content.html">Content</a>
-    <a href="contact.html">Contact →</a>
+    <a href="../index.html" data-i18n="shared.nav.home">Home</a>
+    <a href="about.html" class="active" data-i18n="shared.nav.about">About Me</a>
+    <a href="courses.html" data-i18n="shared.nav.courses">Courses</a>
+    <a href="projects.html" data-i18n="shared.nav.projects">Projects</a>
+    <a href="content.html" data-i18n="shared.nav.content">Content</a>
+    <a href="contact.html" data-i18n="shared.nav.contact">Contact →</a>
   </div>
 
   <!-- ── PAGE HEADER ── -->
@@ -641,13 +641,13 @@
     <div class="header-dash"></div>
     <div class="page-header-inner">
       <div>
-        <div class="page-tag">about me</div>
-        <h1 class="page-h1">From<br>Pentium 3<br>to <em>AI</em></h1>
+        <div class="page-tag" data-i18n="about.page_tag">about me</div>
+        <h1 class="page-h1"><span data-i18n="about.page_title1">From the Himalayas</span><br><span data-i18n="about.page_title2">to Applied CS.</span></h1>
       </div>
       <div class="header-badge">
-        <span class="badge-chip chip-teal">⚡ Looking for new Innovative Projects</span>
-        <span class="badge-chip chip-orange">📍 Germany</span>
-        <span class="badge-chip chip-gold">🎓 Applied CS</span>
+        <span class="badge-chip chip-teal" data-i18n="about.badge_1">⚡ Looking for new Innovative Projects</span>
+        <span class="badge-chip chip-orange" data-i18n="about.badge_2">📍 Germany</span>
+        <span class="badge-chip chip-gold" data-i18n="about.badge_3">🎓 Applied CS</span>
       </div>
     </div>
   </div>
@@ -665,30 +665,30 @@
             onerror="this.src='https://placehold.co/600x800/faf8f5/1a1a1a?text=Naiyar+Muslim'; this.style.filter='none';"
           >
           <div class="photo-badge">
-            <div><span class="status-dot"></span> &nbsp;Open to opportunities</div>
+            <div data-i18n="about.photo_badge_1" data-i18n-html><span class="status-dot"></span> &nbsp;Open to opportunities</div>
             <div style="margin-top:.35rem;color:var(--muted)">📍 Germany</div>
           </div>
         </div>
 
         <div class="about-body">
           <div class="section-header reveal">
-            <div class="section-tag">my story</div>
-            <h2 class="section-title">Developer with a<br><em>human-first</em> mindset.</h2>
+            <div class="section-tag" data-i18n="about.story_tag">my story</div>
+            <h2 class="section-title"><span data-i18n="about.bio_title1">Developer with a</span><br><em data-i18n="about.bio_title2">human-first mindset.</em></h2>
           </div>
 
-          <p class="reveal reveal-d1">
+          <p class="reveal reveal-d1" data-i18n="about.p1" data-i18n-html>
             I'm <strong>Naiyar Muslim</strong>, from  <strong>Gilgit-Baltistan, Pakistan</strong> — one of the most breathtaking corners of the world. Growing up with a tech enthausiast Dad, i got my hand on computer "a pentium 3 intel System" at a very young age. with no internet access, I taught myself to diagnose hardware problems from first principles: RAM, CPUs, boot configs. Curiosity was my only tool.
           </p>
-          <p class="reveal reveal-d2">
+          <p class="reveal reveal-d2" data-i18n="about.p2" data-i18n-html>
             Today I'm studying <strong>Applied Computer Science in Germany</strong> with a C1/DSH-2 German certificate. I build self-hosted cloud servers, web apps, and ML projects — always trying to solve<strong>Real Life Problems</strong> as a hobby to make my life easier.
           </p>
-          <p class="reveal reveal-d3">
+          <p class="reveal reveal-d3" data-i18n="about.p3" data-i18n-html>
             Before university I was a teacher, a call-center agent (12-hour night shifts), a kitchen professional, and a delivery helper. Every role sharpened a different skill. I bring that <strong>work ethic and adaptability</strong> to every codebase and team I join.
           </p>
 
           <div class="creator-callout reveal reveal-d4">
-            <div class="creator-callout-title">📲 Content Creator · Instagram</div>
-            <p>I also creat instagram reels and informative videos about studentlife in germany in <strong>Balti Language</strong> for the people of Gilgit-Baltistan — and I'm currently producing <strong>Reels</strong> for my Hochschule's Pre-college & Pre-study programs. I film, record audio, and edit everything to optimize the video for Social media.</p>
+            <div class="creator-callout-title" data-i18n="about.callout_title">📲 Content Creator · Instagram</div>
+            <p data-i18n="about.callout_desc" data-i18n-html>I also creat instagram reels and informative videos about studentlife in germany in <strong>Balti Language</strong> for the people of Gilgit-Baltistan — and I'm currently producing <strong>Reels</strong> for my Hochschule's Pre-college & Pre-study programs. I film, record audio, and edit everything to optimize the video for Social media.</p>
           </div>
 
           <div class="pills-wrap reveal reveal-d4">
@@ -719,41 +719,41 @@
   <section id="creator">
     <div class="container">
       <div class="section-header reveal" style="max-width:580px">
-        <div class="section-tag">current project</div>
-        <h2 class="section-title">Hochschule <em>Content Project.</em></h2>
+        <div class="section-tag" data-i18n="about.creator_tag">current project</div>
+        <h2 class="section-title"><span data-i18n="about.creator_t1">Hochschule</span> <em data-i18n="about.creator_t2">Content Project.</em></h2>
       </div>
       <div class="creator-grid">
         <div class="creator-card reveal" style="--cc: var(--accent)">
           <div class="creator-card-icon">🎙️</div>
-          <div class="creator-card-title">Company Interviews</div>
-          <div class="creator-card-desc">
+          <div class="creator-card-title" data-i18n="about.creator_c1_title">Company Interviews</div>
+          <div class="creator-card-desc" data-i18n="about.creator_c1_desc" data-i18n-html>
             Interviewing companies about their experience hosting <strong>Pre-college interns</strong> — turning their feedback into compelling 1-min reels to motivate new partner companies to take on students.
           </div>
-          <div class="creator-card-tag">Pre-college Program</div>
+          <div class="creator-card-tag" data-i18n="about.creator_c1_tag">Pre-college Program</div>
         </div>
         <div class="creator-card reveal reveal-d1" style="--cc: var(--accent3)">
           <div class="creator-card-icon">🌍</div>
-          <div class="creator-card-title">Student Testimonials</div>
-          <div class="creator-card-desc">
+          <div class="creator-card-title" data-i18n="about.creator_c2_title">Student Testimonials</div>
+          <div class="creator-card-desc" data-i18n="about.creator_c2_desc" data-i18n-html>
             Interviewing <strong>former Pre-study candidates</strong> about their German language & culture journey — inspiring international students to enroll. Fully filmed, recorded & edited by me.
           </div>
-          <div class="creator-card-tag" style="background:rgba(0,168,120,0.1);color:var(--accent3)">Pre-study Program</div>
+          <div class="creator-card-tag" style="background:rgba(0,168,120,0.1);color:var(--accent3)" data-i18n="about.creator_c2_tag">Pre-study Program</div>
         </div>
         <div class="creator-card reveal reveal-d2" style="--cc: var(--accent4)">
           <div class="creator-card-icon">✂️</div>
-          <div class="creator-card-title">Production</div>
-          <div class="creator-card-desc">
+          <div class="creator-card-title" data-i18n="about.creator_c3_title">Production</div>
+          <div class="creator-card-desc" data-i18n="about.creator_c3_desc" data-i18n-html>
             My Colegue handles the appointments and I handel the planning, the interviews, filming on location, recording audio, and editing everything into polished <strong>60-second Instagram Reels</strong>.
           </div>
-          <div class="creator-card-tag" style="background:rgba(245,166,35,0.1);color:var(--accent4)">For Social Media</div>
+          <div class="creator-card-tag" style="background:rgba(245,166,35,0.1);color:var(--accent4)" data-i18n="about.creator_c3_tag">For Social Media</div>
         </div>
         <div class="creator-card reveal reveal-d3" style="--cc: var(--accent5)">
           <div class="creator-card-icon">📲</div>
-          <div class="creator-card-title">Balti Educational Content</div>
-          <div class="creator-card-desc">
+          <div class="creator-card-title" data-i18n="about.creator_c4_title">Balti Educational Content</div>
+          <div class="creator-card-desc" data-i18n="about.creator_c4_desc" data-i18n-html>
             Independently creating study guides, reels, and German Language courses in <strong>Balti</strong> for Instagram, Facebook and my Website— making education accessible to mountain communities back home.
           </div>
-          <div class="creator-card-tag" style="background:rgba(196,92,245,0.1);color:var(--accent5)">Instagram · Facebook</div>
+          <div class="creator-card-tag" style="background:rgba(196,92,245,0.1);color:var(--accent5)" data-i18n="about.creator_c4_tag">Instagram · Facebook</div>
         </div>
       </div>
     </div>
@@ -765,44 +765,44 @@
   <section id="journey">
     <div class="container">
       <div class="section-header reveal" style="max-width:580px">
-        <div class="section-tag">timeline</div>
-        <h2 class="section-title">My journey<br><em>so far.</em></h2>
+            <div class="section-tag" data-i18n="about.timeline_tag">timeline</div>
+            <h2 class="section-title"><span data-i18n="about.timeline_t1">My journey</span><br><em data-i18n="about.timeline_t2">so far.</em></h2>
       </div>
       <div class="timeline">
 
         <div class="tl-item reveal">
           <div class="tl-dot"></div>
-          <div class="tl-year">Baltistan, Pakistan</div>
-          <div class="tl-title">Growing Up — Curiosity in the Mountains</div>
-          <div class="tl-desc">Grew up in the majestic landscape of Gilgit-Baltistan. First experience with computers in a zero-internet environment — diagnosing hardware issues (RAM, CPU, boot settings) from first principles.</div>
+          <div class="tl-year" data-i18n="about.tl1_period">Baltistan, Pakistan</div>
+          <div class="tl-title" data-i18n="about.tl1_title">Growing Up — Curiosity in the Mountains</div>
+          <div class="tl-desc" data-i18n="about.tl1_desc">Grew up in the majestic landscape of Gilgit-Baltistan. First experience with computers in a zero-internet environment — diagnosing hardware issues (RAM, CPU, boot settings) from first principles.</div>
         </div>
 
         <div class="tl-item reveal reveal-d1">
           <div class="tl-dot"></div>
-          <div class="tl-year">Teaching Years</div>
-          <div class="tl-title">Volunteer Teacher — English, Math & Science</div>
-          <div class="tl-desc">Served as a local mentor, providing free instruction to students. Built strong communication, leadership, and the ability to break down complex ideas simply.</div>
+          <div class="tl-year" data-i18n="about.tl2_period">Teaching Years</div>
+          <div class="tl-title" data-i18n="about.tl2_title">Volunteer Teacher — English, Math & Science</div>
+          <div class="tl-desc" data-i18n="about.tl2_desc">Served as a local mentor, providing free instruction to students. Built strong communication, leadership, and the ability to break down complex ideas simply.</div>
         </div>
 
         <div class="tl-item reveal reveal-d2">
           <div class="tl-dot"></div>
-          <div class="tl-year">Work Experience</div>
-          <div class="tl-title">Multiple Roles — Resilience & Precision</div>
-          <div class="tl-desc">Call Center Sales Agent (12-hour night shifts), Delivery & Assembly Helper, and Kitchen Professional — each role built work ethic, resilience under pressure, and process discipline.</div>
+          <div class="tl-year" data-i18n="about.tl3_period">Work Experience</div>
+          <div class="tl-title" data-i18n="about.tl3_title">Multiple Roles — Resilience & Precision</div>
+          <div class="tl-desc" data-i18n="about.tl3_desc">Call Center Sales Agent (12-hour night shifts), Delivery & Assembly Helper, and Kitchen Professional — each role built work ethic, resilience under pressure, and process discipline.</div>
         </div>
 
         <div class="tl-item reveal reveal-d3">
           <div class="tl-dot"></div>
-          <div class="tl-year">Present — Germany</div>
-          <div class="tl-title">Applied Computer Science · C1 German · Content Creator</div>
-          <div class="tl-desc">Studying Applied CS with DSH-2/C1 German. Building self-hosted cloud servers, web apps, and ML projects — and producing video content for my Hochschule's Pre-college and Pre-study programs.</div>
+          <div class="tl-year" data-i18n="about.tl4_period">Present — Germany</div>
+          <div class="tl-title" data-i18n="about.tl4_title">Applied Computer Science · C1 German · Content Creator</div>
+          <div class="tl-desc" data-i18n="about.tl4_desc">Studying Applied CS with DSH-2/C1 German. Building self-hosted cloud servers, web apps, and ML projects — and producing video content for my Hochschule's Pre-college and Pre-study programs.</div>
         </div>
 
         <div class="tl-item reveal reveal-d4">
           <div class="tl-dot future"></div>
-          <div class="tl-year" style="color:var(--accent4)">Future Goal</div>
-          <div class="tl-title">Cyber Security Analyst / Network Architect</div>
-          <div class="tl-desc">Aspiring to be a "soldier of good" in cyber security — protecting citizens and ensuring a secure digital environment. Working toward CompTIA Security+ and CCNA certifications.</div>
+          <div class="tl-year" style="color:var(--accent4)" data-i18n="about.tl5_period">Future Goal</div>
+          <div class="tl-title" data-i18n="about.tl5_title">Cyber Security Analyst / Network Architect</div>
+          <div class="tl-desc" data-i18n="about.tl5_desc">Aspiring to be a "soldier of good" in cyber security — protecting citizens and ensuring a secure digital environment. Working toward CompTIA Security+ and CCNA certifications.</div>
         </div>
 
       </div>
@@ -815,39 +815,39 @@
   <section id="values">
     <div class="container">
       <div class="section-header reveal" style="max-width:540px">
-        <div class="section-tag">what drives me</div>
-        <h2 class="section-title">Core values &amp;<br><em>strengths.</em></h2>
+        <div class="section-tag" data-i18n="about.values_tag">what drives me</div>
+        <h2 class="section-title"><span data-i18n="about.values_t1">Core values &</span><br><em data-i18n="about.values_t2">strengths.</em></h2>
       </div>
       <div class="values-grid">
         <div class="val-card reveal">
           <div class="val-icon">🔥</div>
-          <div class="val-title">Extreme Persistence</div>
-          <div class="val-desc">Willing to dedicate up to 18 consecutive hours on a technical problem until it's solved. Driven by a genuine passion for diagnosing and resolving complex issues.</div>
+          <div class="val-title" data-i18n="about.v1_title">Extreme Persistence</div>
+          <div class="val-desc" data-i18n="about.v1_desc">Willing to dedicate up to 18 consecutive hours on a technical problem until it's solved. Driven by a genuine passion for diagnosing and resolving complex issues.</div>
         </div>
         <div class="val-card reveal reveal-d1">
           <div class="val-icon">⚡</div>
-          <div class="val-title">Innovative Problem-Solving</div>
-          <div class="val-desc">"If I want to build it, I will learn how." Overcame ISP port restrictions with Cloudflare tunnels; resolved recursive Git loop conflicts through manual network diagnosis.</div>
+          <div class="val-title" data-i18n="about.v2_title">Innovative Problem-Solving</div>
+          <div class="val-desc" data-i18n="about.v2_desc">"If I want to build it, I will learn how." Overcame ISP port restrictions with Cloudflare tunnels; resolved recursive Git loop conflicts through manual network diagnosis.</div>
         </div>
         <div class="val-card reveal reveal-d2">
           <div class="val-icon">🎯</div>
-          <div class="val-title">Precision & Quality</div>
-          <div class="val-desc">From refining kitchen order assembly from 15 mins to 7 mins, to treating every program execution with the same commitment to perfection and detail.</div>
+          <div class="val-title" data-i18n="about.v3_title">Precision & Quality</div>
+          <div class="val-desc" data-i18n="about.v3_desc">From refining kitchen order assembly from 15 mins to 7 mins, to treating every program execution with the same commitment to perfection and detail.</div>
         </div>
         <div class="val-card reveal reveal-d3">
           <div class="val-icon">🤝</div>
-          <div class="val-title">Team Adaptability</div>
-          <div class="val-desc">Quickly assesses team strengths and adjusts my role to fill gaps — in kitchens, classrooms, codebases, and film sets.</div>
+          <div class="val-title" data-i18n="about.v4_title">Team Adaptability</div>
+          <div class="val-desc" data-i18n="about.v4_desc">Quickly assesses team strengths and adjusts my role to fill gaps — in kitchens, classrooms, codebases, and film sets.</div>
         </div>
         <div class="val-card reveal reveal-d4">
           <div class="val-icon">🌍</div>
-          <div class="val-title">Cultural Intelligence</div>
-          <div class="val-desc">Conversational greetings in Russian, Persian, and Arabic build immediate rapport. Proven ability to coordinate complex tasks non-verbally across language barriers.</div>
+          <div class="val-title" data-i18n="about.v5_title">Cultural Intelligence</div>
+          <div class="val-desc" data-i18n="about.v5_desc">Conversational greetings in Russian, Persian, and Arabic build immediate rapport. Proven ability to coordinate complex tasks non-verbally across language barriers.</div>
         </div>
         <div class="val-card reveal">
           <div class="val-icon">🏔️</div>
-          <div class="val-title">Community Purpose</div>
-          <div class="val-desc">Creating educational content in Balti for the people of Baltistan — making knowledge accessible to a mountain community that deserves every opportunity.</div>
+          <div class="val-title" data-i18n="about.v6_title">Community Purpose</div>
+          <div class="val-desc" data-i18n="about.v6_desc">Creating educational content in Balti for the people of Baltistan — making knowledge accessible to a mountain community that deserves every opportunity.</div>
         </div>
       </div>
     </div>
@@ -859,32 +859,32 @@
   <section id="languages">
     <div class="container">
       <div class="section-header reveal" style="max-width:500px">
-        <div class="section-tag">communication</div>
-        <h2 class="section-title">Languages<br><em>I speak.</em></h2>
+        <div class="section-tag" data-i18n="about.lang_tag">communication</div>
+        <h2 class="section-title"><span data-i18n="about.lang_t1">Languages</span><br><em data-i18n="about.lang_t2">I speak.</em></h2>
       </div>
       <div class="lang-grid">
         <div class="lang-card reveal">
           <div class="lang-flag">🏔️</div>
-          <div class="lang-name">Balti</div>
-          <div class="lang-level">Native</div>
+          <div class="lang-name" data-i18n="about.lang_balti">Balti</div>
+          <div class="lang-level" data-i18n="about.lang_native">Native</div>
           <div class="lang-bar-wrap"><div class="lang-bar" data-width="100%"></div></div>
         </div>
         <div class="lang-card reveal reveal-d1">
           <div class="lang-flag">🇵🇰</div>
-          <div class="lang-name">Urdu</div>
-          <div class="lang-level">Native</div>
+          <div class="lang-name" data-i18n="about.lang_urdu">Urdu</div>
+          <div class="lang-level" data-i18n="about.lang_native">Native</div>
           <div class="lang-bar-wrap"><div class="lang-bar" data-width="100%"></div></div>
         </div>
         <div class="lang-card reveal reveal-d2">
           <div class="lang-flag">🇩🇪</div>
-          <div class="lang-name">German</div>
-          <div class="lang-level">C1 · DSH-2 Professional</div>
+          <div class="lang-name" data-i18n="about.lang_german">German</div>
+          <div class="lang-level" data-i18n="about.lang_german_level">C1 · DSH-2 Professional</div>
           <div class="lang-bar-wrap"><div class="lang-bar" data-width="90%" style="background:var(--accent3)"></div></div>
         </div>
         <div class="lang-card reveal reveal-d3">
           <div class="lang-flag">🇬🇧</div>
-          <div class="lang-name">English</div>
-          <div class="lang-level">C1 Professional</div>
+          <div class="lang-name" data-i18n="about.lang_english">English</div>
+          <div class="lang-level" data-i18n="about.lang_english_level">C1 Professional</div>
           <div class="lang-bar-wrap"><div class="lang-bar" data-width="90%" style="background:var(--accent3)"></div></div>
         </div>
       </div>
@@ -897,9 +897,9 @@
   <section id="cta-band">
     <div class="container">
       <div class="cta-inner reveal">
-        <div class="cta-title">Ready to connect?</div>
-        <p class="cta-desc">I Appriciate Suggestions!</p>
-        <a href="contact.html" class="btn-primary" style="font-size:.9rem">✉ Send a Message</a>
+        <div class="cta-title" data-i18n="home.cta_title">Ready to connect?</div>
+        <p class="cta-desc" data-i18n="about.cta_desc">I Appriciate Suggestions!</p>
+        <a href="contact.html" class="btn-primary" style="font-size:.9rem" data-i18n="home.cta_btn">✉ Send a Message</a>
       </div>
     </div>
   </section>
@@ -907,11 +907,11 @@
   <!-- ── FOOTER ── -->
   <footer>
     <div class="footer-logo"><span>[</span>naiyar.dev<span>]</span></div>
-    <div class="footer-copy">© 2025 Naiyar Muslim. All rights reserved.</div>
+    <div class="footer-copy" data-i18n="shared.footer.copy">© 2025 Naiyar Muslim. All rights reserved.</div>
     <div class="footer-links">
-      <a href="../index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact →</a>
+      <a href="../index.html" data-i18n="shared.nav.home">Home</a>
+      <a href="projects.html" data-i18n="shared.nav.projects">Projects</a>
+      <a href="contact.html" data-i18n="shared.nav.contact">Contact →</a>
     </div>
   </footer>
 

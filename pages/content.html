@@ -169,19 +169,19 @@
    <nav>
     <a href="../index.html" class="nav-logo"><span class="bracket">[</span>naiyar.dev<span class="bracket">]</span></a>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="about.html" >About Me</a></li>
-      <li><a href="courses.html">Courses</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="content.html" class="active">Content</a></li>
-      <li><a href="contact.html"  class="nav-cta">Contact →</a></li>
+      <li><a href="../index.html" data-i18n="shared.nav.home">Home</a></li>
+      <li><a href="about.html" data-i18n="shared.nav.about">About Me</a></li>
+      <li><a href="courses.html" data-i18n="shared.nav.courses">Courses</a></li>
+      <li><a href="projects.html" data-i18n="shared.nav.projects">Projects</a></li>
+      <li><a href="content.html" class="active" data-i18n="shared.nav.content">Content</a></li>
+      <li><a href="contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
     <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
-    <a href="../index.html">Home</a>
-    <a href="about.html" data-i18n="shared.nav.home" data-i18n="shared.nav.about">About Me</a>
+    <a href="../index.html" data-i18n="shared.nav.home">Home</a>
+    <a href="about.html" data-i18n="shared.nav.about">About Me</a>
     <a href="courses.html" data-i18n="shared.nav.courses">Courses</a>
     <a href="projects.html" data-i18n="shared.nav.projects">Projects</a>
     <a href="content.html" class="active" data-i18n="shared.nav.content">Content</a>
@@ -191,7 +191,7 @@
   <!-- PAGE HEADER -->
   <div class="page-header">
     <div class="section-tag" style="justify-content:center" data-i18n="content.page_tag">content creation</div>
-    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)">Sharing knowledge<br><span>with Baltistan.</span></h1>
+    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)"><span data-i18n="content.page_title1">Sharing knowledge</span><br><span data-i18n="content.page_title2">with Baltistan.</span></h1>
   </div>
 
   <!-- ── INTRO BAND ── -->
@@ -201,8 +201,8 @@
         <div class="balti-flag">🏔️</div>
         <div>
           <div class="balti-title" data-i18n="content.balti_title">Why I create content</div>
-          <div class="balti-desc">
-            Baltistan is a remote, mountainous region in northern Pakistan with incredible people and enormous potential — but limited access to quality education in the local language. I create <strong style="color:var(--text)">study guide videos in Balti</strong> on Facebook so that students back home can learn Math, Science, and Computer concepts in their mother tongue. On Instagram, I share developer life, travel reels, and content to inspire young learners from the region.
+          <div class="balti-desc" data-i18n="content.balti_desc" data-i18n-html>
+            Baltistan is a remote, mountainous region in northern Pakistan with incredible people and enormous potential — but limited access to verified information about studying in Germany. On Facebook, I create <strong style="color:var(--text)">guidance videos in Balti</strong> about visa procedure, blocked account, language requirements, visa types, and pathways like conditional admission + Studienkolleg. On Instagram, I share developer life, travel reels, and content to inspire young learners from the region.
           </div>
         </div>
       </div>
@@ -219,10 +219,10 @@
 
         <div class="platform-info-card reveal">
           <span class="platform-badge badge-ig">📸 Instagram</span>
-          <div class="platform-title">Reels &amp; Developer Life</div>
-          <div class="platform-desc">Short-form vertical videos covering travel, developer life, community stories, and content to inspire young people from Gilgit-Baltistan who dream of studying abroad.</div>
+          <div class="platform-title" data-i18n="content.ig_title">Reels &amp; Developer Life</div>
+          <div class="platform-desc" data-i18n="content.ig_desc">Short-form vertical videos covering travel, developer life, community stories, and content to inspire young people from Gilgit-Baltistan who dream of studying abroad.</div>
           <div class="platform-stat">
-            <div><div class="p-stat-num">@reels.gull</div><div class="p-stat-lbl">Instagram handle</div></div>
+            <div><div class="p-stat-num">@reels.gull</div><div class="p-stat-lbl" data-i18n="content.ig_handle_lbl">Instagram handle</div></div>
           </div>
           <a href="https://www.instagram.com/reels.gull/" target="_blank" class="btn-primary" style="width:100%;justify-content:center">
             <span data-i18n="content.ig_follow">📸 Follow on Instagram</span>
@@ -231,8 +231,8 @@
 
         <div>
           <div class="section-header reveal">
-            <div class="section-tag">instagram reels</div>
-            <h2 class="section-title">Recent<br><span>reels.</span></h2>
+            <div class="section-tag" data-i18n="content.ig_tag">instagram reels</div>
+            <h2 class="section-title"><span data-i18n="content.ig_t1">Recent</span><br><span data-i18n="content.ig_t2">reels.</span></h2>
           </div>
           <div class="reels-grid">
 
@@ -244,8 +244,8 @@
                 </div>
               </div>
               <div class="reel-info">
-                <div class="reel-title" data-i18n="content.r1_title">Baltistan Views 🏔️</div>
-                <div class="reel-sub">@khaleelbalti · Travel Reel</div>
+                <div class="reel-title" data-i18n="content.r1_title">Drone View of My Village in Baltistan</div>
+                <div class="reel-sub" data-i18n="content.r1_sub">An aerial glimpse of my village in the mountains of Baltistan.</div>
               </div>
             </div>
 
@@ -257,8 +257,8 @@
                 </div>
               </div>
               <div class="reel-info">
-                <div class="reel-title" data-i18n="content.r2_title">Awara Vibes</div>
-                <div class="reel-sub">@reels.gull · Lifestyle Reel</div>
+                <div class="reel-title" data-i18n="content.r2_title">Mountain Daily Life Moments</div>
+                <div class="reel-sub" data-i18n="content.r2_sub">From picking apricots to the struggle of carrying water for plants in the mountains.</div>
               </div>
             </div>
 
@@ -270,8 +270,8 @@
                 </div>
               </div>
               <div class="reel-info">
-                <div class="reel-title" data-i18n="content.r3_title">Life in Motion</div>
-                <div class="reel-sub">@reels.gull · Lifestyle Reel</div>
+                <div class="reel-title" data-i18n="content.r3_title">Day 10: Quality Time with My Younger Brother</div>
+                <div class="reel-sub" data-i18n="content.r3_sub">Manthokha Waterfall, first coffee attempt, and an honest reaction.</div>
               </div>
             </div>
 
@@ -279,12 +279,38 @@
               <div class="reel-thumb">
                 <div style="width:100%;height:100%;background:linear-gradient(135deg,#134e5e,#71b280);display:flex;align-items:center;justify-content:center;font-size:3rem;">🌿</div>
                 <div class="reel-play-overlay">
+                  <a href="https://www.instagram.com/reel/DVn8o4hjGe3/" target="_blank" class="reel-play-btn">▶</a>
+                </div>
+              </div>
+              <div class="reel-info">
+                <div class="reel-title" data-i18n="content.r4_title">Life Is for Living</div>
+                <div class="reel-sub" data-i18n="content.r4_sub">Glimpses of my life in Germany and Pakistan with family, friends, and culture.</div>
+              </div>
+            </div>
+
+            <div class="reel-card reveal reveal-d4">
+              <div class="reel-thumb">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg,#2c3e50,#fd746c);display:flex;align-items:center;justify-content:center;font-size:3rem;">🎭</div>
+                <div class="reel-play-overlay">
+                  <a href="https://www.instagram.com/reel/DU08Ttekkfg/" target="_blank" class="reel-play-btn">▶</a>
+                </div>
+              </div>
+              <div class="reel-info">
+                <div class="reel-title" data-i18n="content.r5_title">Fulda Karneval: Winter Farewell</div>
+                <div class="reel-sub" data-i18n="content.r5_sub">Walking with my friend and flatmate to watch the colorful Karneval parade in Fulda.</div>
+              </div>
+            </div>
+
+            <div class="reel-card reveal reveal-d5">
+              <div class="reel-thumb">
+                <div style="width:100%;height:100%;background:linear-gradient(135deg,#0f2027,#2c5364);display:flex;align-items:center;justify-content:center;font-size:3rem;">🏔️</div>
+                <div class="reel-play-overlay">
                   <a href="https://www.instagram.com/reel/DOGqqzuDHEf/" target="_blank" class="reel-play-btn">▶</a>
                 </div>
               </div>
               <div class="reel-info">
-                <div class="reel-title" data-i18n="content.r4_title">Peaceful Moments</div>
-                <div class="reel-sub">@reels.gull · Lifestyle Reel</div>
+                <div class="reel-title" data-i18n="content.r6_title">Skardu Diaries: Day 7 with My Brother</div>
+                <div class="reel-sub" data-i18n="content.r6_sub">A scenic day out in Skardu with my younger brother and real travel moments.</div>
               </div>
             </div>
 
@@ -309,10 +335,10 @@
 
         <div class="platform-info-card reveal">
           <span class="platform-badge badge-fb">📘 Facebook</span>
-          <div class="platform-title">Study Guides in Balti</div>
-          <div class="platform-desc">Educational video content in the <strong style="color:var(--text)">Balti language</strong> — covering Math, Science, Computer Science, and student life guidance for young people of Baltistan who want to study in Germany or beyond.</div>
+          <div class="platform-title" data-i18n="content.fb_title">German Visa & Study Guidance in Balti</div>
+          <div class="platform-desc" data-i18n="content.fb_desc" data-i18n-html>Informative video content in the <strong style="color:var(--text)">Balti language</strong> — focused on German visa procedure, blocked account basics, language requirements, visa categories, and study pathways such as conditional admission, Studienkolleg, and university progression.</div>
           <div class="platform-stat">
-            <div><div class="p-stat-num">naiyar.gull</div><div class="p-stat-lbl">Facebook profile</div></div>
+            <div><div class="p-stat-num">naiyar.gull</div><div class="p-stat-lbl" data-i18n="content.fb_handle_lbl">Facebook profile</div></div>
           </div>
           <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="btn-primary" style="width:100%;justify-content:center;background:#1877f2;color:#fff">
             <span data-i18n="content.fb_follow">📘 Follow on Facebook</span>
@@ -321,8 +347,8 @@
 
         <div>
           <div class="section-header reveal">
-            <div class="section-tag">facebook videos</div>
-            <h2 class="section-title">Study guides<br><span>in Balti.</span></h2>
+            <div class="section-tag" data-i18n="content.fb_tag">facebook videos</div>
+            <h2 class="section-title"><span data-i18n="content.fb_t1">Visa & Study Guidance</span><br><span data-i18n="content.fb_t2">in Balti.</span></h2>
           </div>
           <div class="fb-grid">
 
@@ -330,12 +356,12 @@
               <div class="fb-thumb">
                 🎬
                 <div class="fb-overlay">
-                  <a href="https://www.facebook.com/reel/1129082608958033" target="_blank" class="fb-watch-btn">▶ Watch</a>
+                  <a href="https://www.facebook.com/reel/1608975196847443" target="_blank" class="fb-watch-btn">▶ Watch</a>
                 </div>
               </div>
               <div class="fb-info">
-                <div class="fb-title" data-i18n="content.f1_title">Student Life in Germany</div>
-                <div class="fb-sub">The Introduction — Tips for Baltistani students</div>
+                <div class="fb-title" data-i18n="content.f1_title">German Language Requirements for Study in Germany</div>
+                <div class="fb-sub" data-i18n="content.f1_sub">A clear guide to A1, A2, B1, B2, and the language level needed for each study path.</div>
               </div>
             </div>
 
@@ -343,12 +369,12 @@
               <div class="fb-thumb">
                 👨‍🏫
                 <div class="fb-overlay">
-                  <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="fb-watch-btn">▶ Watch</a>
+                  <a href="https://www.facebook.com/reel/2080275745713643" target="_blank" class="fb-watch-btn">▶ Watch</a>
                 </div>
               </div>
               <div class="fb-info">
-                <div class="fb-title" data-i18n="content.f2_title">Shaping New Minds</div>
-                <div class="fb-sub">Confidence &amp; leadership for the next generation</div>
+                <div class="fb-title" data-i18n="content.f2_title">DAAD Scholarship Search: Step-by-Step Guide</div>
+                <div class="fb-sub" data-i18n="content.f2_sub">How to find and apply for a suitable scholarship on the DAAD website.</div>
               </div>
             </div>
 
@@ -356,12 +382,12 @@
               <div class="fb-thumb">
                 📚
                 <div class="fb-overlay">
-                  <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="fb-watch-btn">▶ Watch</a>
+                  <a href="https://www.facebook.com/reel/1164522531737738/?s=single_unit" target="_blank" class="fb-watch-btn">▶ Watch</a>
                 </div>
               </div>
               <div class="fb-info">
-                <div class="fb-title" data-i18n="content.f3_title">Studying in Germany — A Guide</div>
-                <div class="fb-sub">University application process in Balti</div>
+                <div class="fb-title" data-i18n="content.f3_title">IELTS & Language Certificates: Basic Guide</div>
+                <div class="fb-sub" data-i18n="content.f3_sub">Essential information about IELTS and general language certificates for study planning.</div>
               </div>
             </div>
 
@@ -369,12 +395,25 @@
               <div class="fb-thumb">
                 🧮
                 <div class="fb-overlay">
-                  <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="fb-watch-btn">▶ Watch</a>
+                  <a href="https://www.facebook.com/reel/2147485625776455/?s=single_unit" target="_blank" class="fb-watch-btn">▶ Watch</a>
                 </div>
               </div>
               <div class="fb-info">
-                <div class="fb-title" data-i18n="content.f4_title">Mathematics Explained</div>
-                <div class="fb-sub">Core math concepts in the Balti language</div>
+                <div class="fb-title" data-i18n="content.f4_title">Admission Process & Scholarship Guide</div>
+                <div class="fb-sub" data-i18n="content.f4_sub">A clear overview of admission steps and scholarship opportunities.</div>
+              </div>
+            </div>
+
+            <div class="fb-card reveal reveal-d4">
+              <div class="fb-thumb">
+                🛠️
+                <div class="fb-overlay">
+                  <a href="https://www.facebook.com/reel/1335244518329073" target="_blank" class="fb-watch-btn">▶ Watch</a>
+                </div>
+              </div>
+              <div class="fb-info">
+                <div class="fb-title" data-i18n="content.f5_title">Ausbildung in Germany: A-to-Z Guide</div>
+                <div class="fb-sub" data-i18n="content.f5_sub">A to Z information about Ausbildung, German visa types, requirements, and procedure.</div>
               </div>
             </div>
 
@@ -392,9 +431,9 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-logo"><span>[</span>naiyar.dev<span>]</span></div>
-    <div class="footer-copy">© 2025 Naiyar Muslim. All rights reserved.</div>
+    <div class="footer-copy" data-i18n="shared.footer.copy">© 2025 Naiyar Muslim. All rights reserved.</div>
     <div class="footer-links">
-      <a href="../index.html">Home</a>
+      <a href="../index.html" data-i18n="shared.nav.home">Home</a>
       <a href="projects.html" data-i18n="shared.nav.projects">Projects</a>
       <a href="contact.html" data-i18n="shared.nav.contact">Contact</a>
     </div>

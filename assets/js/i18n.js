@@ -99,12 +99,12 @@
     "de": "Entdecken"
   },
   "home.features_title1": {
-    "en": "Everything",
-    "de": "Alles"
+    "en": "Explore this",
+    "de": "Entdecke diese"
   },
   "home.features_title2": {
-    "en": "I do.",
-    "de": "was ich tue."
+    "en": "website.",
+    "de": "Website."
   },
   "home.feat1_title": {
     "en": "About Me",
@@ -119,24 +119,24 @@
     "de": "Meine Geschichte →"
   },
   "home.feat2_title": {
-    "en": "Courses",
-    "de": "Kurse"
+    "en": "German Learning Hub",
+    "de": "Deutsch-Lernbereich"
   },
   "home.feat2_desc": {
-    "en": "Academic foundation: algorithms, web dev, cloud computing, cybersecurity and more.",
-    "de": "Akademische Grundlagen: Algorithmen, Webentwicklung, Cloud Computing und mehr."
+    "en": "German language lessons and practical study-prep resources for students aiming for Germany.",
+    "de": "Deutschlektionen und praktische Studienvorbereitung für Studierende mit Ziel Deutschland."
   },
   "home.feat2_link": {
-    "en": "View coursework →",
-    "de": "Kurse ansehen →"
+    "en": "Open learning hub →",
+    "de": "Lernbereich öffnen →"
   },
   "home.feat3_title": {
     "en": "Projects",
     "de": "Projekte"
   },
   "home.feat3_desc": {
-    "en": "Self-hosted cloud servers, web apps, C programming, and practical academic work.",
-    "de": "Selbst gehostete Cloud-Server, Web-Apps, C-Programmierung und Akademikprojekte."
+    "en": "Self-hosted cloud servers, web apps, and practical tools built to solve real problems.",
+    "de": "Selbst gehostete Cloud-Server, Web-Apps und praktische Tools zur Lösung realer Probleme."
   },
   "home.feat3_link": {
     "en": "View projects →",
@@ -147,8 +147,8 @@
     "de": "Content-Erstellung"
   },
   "home.feat4_desc": {
-    "en": "Instagram reels & Facebook study guides in Balti for the people of Baltistan.",
-    "de": "Instagram-Reels & Facebook-Lernvideos auf Balti für die Menschen Baltistans."
+    "en": "Instagram reels and Facebook guidance videos on German visa procedures, blocked accounts, and study pathways.",
+    "de": "Instagram-Reels und Facebook-Infovideos zu deutschem Visumverfahren, Sperrkonto und Studienwegen."
   },
   "home.feat4_link": {
     "en": "Watch content →",
@@ -199,8 +199,8 @@
     "de": "Derzeit studiere ich <strong>Angewandte Informatik in Deutschland</strong> mit einem Deutschniveau von <strong>C1 (DSH-2)</strong>. Mein Ansatz ist <em>Innovative Beharrlichkeit</em> — wenn ich etwas bauen will, lerne ich es und setze es um."
   },
   "about.p3": {
-    "en": "Beyond code, I spent years as a <strong>volunteer teacher</strong> — teaching English, Math, and Science in Baltistan. I also create <strong>study guide videos in Balti</strong> on Facebook and lifestyle reels on Instagram.",
-    "de": "Neben dem Programmieren war ich jahrelang <strong>Freiwilligenlehrer</strong> für Englisch, Mathematik und Naturwissenschaften in Baltistan. Ich erstelle auch <strong>Lernvideos auf Balti</strong> bei Facebook und Instagram-Reels."
+    "en": "Beyond code, I spent years as a <strong>volunteer teacher</strong> in Baltistan. I now create <strong>guidance videos in Balti</strong> on Facebook about German visa procedure, blocked account, language requirements, and study pathways, plus lifestyle reels on Instagram.",
+    "de": "Neben dem Programmieren war ich jahrelang <strong>Freiwilligenlehrer</strong> in Baltistan. Heute erstelle ich auf Facebook <strong>Infovideos auf Balti</strong> zu deutschem Visumverfahren, Sperrkonto, Sprachanforderungen und Studienwegen sowie Lifestyle-Reels auf Instagram."
   },
   "about.timeline_tag": {
     "en": "timeline",
@@ -471,8 +471,8 @@
     "de": "Warum ich Content erstelle"
   },
   "content.balti_desc": {
-    "en": "Baltistan is a remote, mountainous region in northern Pakistan with incredible people and enormous potential — but limited access to quality education in the local language. I create study guide videos in Balti on Facebook so students back home can learn in their mother tongue.",
-    "de": "Baltistan ist eine abgelegene Bergregion in Nordpakistan mit unglaublichen Menschen — aber begrenztem Zugang zu Bildung in der Landessprache. Ich erstelle Lernvideos auf Balti bei Facebook, damit Schüler in der Heimat in ihrer Muttersprache lernen können."
+    "en": "Baltistan is a remote, mountainous region in northern Pakistan with incredible people and enormous potential — but limited access to verified information about studying in Germany. On Facebook, I create guidance videos in Balti about visa procedure, blocked account, language requirements, visa types, and pathways like conditional admission + Studienkolleg.",
+    "de": "Baltistan ist eine abgelegene Bergregion im Norden Pakistans mit großem Potenzial — aber mit begrenztem Zugang zu verlässlichen Informationen zum Studium in Deutschland. Auf Facebook erstelle ich Infovideos auf Balti zu Visumverfahren, Sperrkonto, Sprachanforderungen, Visaarten und Wegen wie bedingter Zulassung + Studienkolleg."
   },
   "content.ig_follow": {
     "en": "📸 Follow on Instagram",
@@ -495,20 +495,28 @@
     "de": "Alle Reels auf Instagram →"
   },
   "content.r1_title": {
-    "en": "Baltistan Views 🏔️",
-    "de": "Baltistan-Ansichten 🏔️"
+    "en": "Drone View of My Village in Baltistan",
+    "de": "Drohnenaufnahme meines Dorfes in Baltistan"
   },
   "content.r2_title": {
-    "en": "Awara Vibes",
-    "de": "Awara-Vibes"
+    "en": "Mountain Daily Life Moments",
+    "de": "Momente aus dem Bergalltag"
   },
   "content.r3_title": {
-    "en": "Life in Motion",
-    "de": "Leben in Bewegung"
+    "en": "Day 10: Quality Time with My Younger Brother",
+    "de": "Tag 10: Quality Time mit meinem jüngeren Bruder"
   },
   "content.r4_title": {
-    "en": "Peaceful Moments",
-    "de": "Friedliche Momente"
+    "en": "Life Is for Living",
+    "de": "Das Leben ist zum Leben da"
+  },
+  "content.r5_title": {
+    "en": "Fulda Karneval: Winter Farewell",
+    "de": "Fulda Karneval: Abschied vom Winter"
+  },
+  "content.r6_title": {
+    "en": "Skardu Diaries: Day 7 with My Brother",
+    "de": "Skardu Diaries: Tag 7 mit meinem Bruder"
   },
   "content.fb_follow": {
     "en": "📘 Follow on Facebook",
@@ -519,8 +527,8 @@
     "de": "Facebook-Videos"
   },
   "content.fb_t1": {
-    "en": "Study guides",
-    "de": "Lernvideos"
+    "en": "Visa & Study Guidance",
+    "de": "Visa- & Studienberatung"
   },
   "content.fb_t2": {
     "en": "in Balti.",
@@ -531,20 +539,24 @@
     "de": "Mehr auf Facebook →"
   },
   "content.f1_title": {
-    "en": "Student Life in Germany",
-    "de": "Studentenleben in Deutschland"
+    "en": "German Language Requirements for Study in Germany",
+    "de": "Deutschanforderungen für ein Studium in Deutschland"
   },
   "content.f2_title": {
-    "en": "Shaping New Minds",
-    "de": "Neue Gedanken formen"
+    "en": "DAAD Scholarship Search: Step-by-Step Guide",
+    "de": "DAAD-Stipendiensuche: Schritt-für-Schritt-Anleitung"
   },
   "content.f3_title": {
-    "en": "Studying in Germany — A Guide",
-    "de": "Studieren in Deutschland — Ein Leitfaden"
+    "en": "IELTS & Language Certificates: Basic Guide",
+    "de": "IELTS & Sprachzertifikate: Grundlagen"
   },
   "content.f4_title": {
-    "en": "Mathematics Explained",
-    "de": "Mathematik erklärt"
+    "en": "Admission Process & Scholarship Guide",
+    "de": "Zulassungsprozess & Stipendien-Guide"
+  },
+  "content.f5_title": {
+    "en": "Ausbildung in Germany: A-to-Z Guide",
+    "de": "Ausbildung in Deutschland: A-bis-Z-Leitfaden"
   },
   "contact.page_tag": {
     "en": "contact",
@@ -809,6 +821,136 @@
     "de": "Video herunterladen"
   }
 };
+
+  Object.assign(T, {
+    "home.card_location_lbl": { "en": "Location", "de": "Standort" },
+    "home.card_location_val": { "en": "📍 Germany", "de": "📍 Deutschland" },
+    "home.card_origin_lbl": { "en": "Origin", "de": "Herkunft" },
+    "home.card_origin_val": { "en": "Gilgit-Baltistan, PK", "de": "Gilgit-Baltistan, PK" },
+    "home.card_study_lbl": { "en": "Study", "de": "Studium" },
+    "home.card_study_val": { "en": "Applied Computer Science", "de": "Angewandte Informatik" },
+    "home.card_goal_lbl": { "en": "Goal", "de": "Ziel" },
+    "home.card_goal_val": { "en": "IT Solutions Engineer", "de": "IT-Losungsingenieur" },
+    "home.card_german_lbl": { "en": "German", "de": "Deutsch" },
+    "home.card_status_lbl": { "en": "Status", "de": "Status" },
+    "home.card_status_val": { "en": "<span class='status-dot'></span> &nbsp;Active", "de": "<span class='status-dot'></span> &nbsp;Aktiv" },
+    "home.card_footer": {
+      "en": "Currently Creating <strong>Instagram Contents</strong> for Hochschule Pre-college & Pre-study programs.",
+      "de": "Derzeit erstelle ich <strong>Instagram-Inhalte</strong> für die Pre-College- und Pre-Study-Programme meiner Hochschule."
+    },
+    "home.funfact_title": { "en": "Fun Fact about my Heimat<br>Gilgit Baltistan", "de": "Fun Fact über meine Heimat<br>Gilgit-Baltistan" },
+    "home.funfact_desc": {
+      "en": "Gilgit Baltistan is home to three major mountain ranges: the Karakoram, the Hindu Kush, and the Himalayas. <br> The second highest mountain peak in the world  is located here.",
+      "de": "Gilgit-Baltistan beherbergt drei große Gebirgszüge: den Karakorum, den Hindukusch und den Himalaya. <br> Der zweithöchste Berg der Welt befindet sich hier."
+    },
+    "about.badge_1": { "en": "⚡ Looking for new Innovative Projects", "de": "⚡ Offen für innovative Projekte" },
+    "about.badge_2": { "en": "📍 Germany", "de": "📍 Deutschland" },
+    "about.badge_3": { "en": "🎓 Applied CS", "de": "🎓 Angewandte Informatik" },
+    "about.photo_badge_1": { "en": "<span class='status-dot'></span> &nbsp;Open to opportunities", "de": "<span class='status-dot'></span> &nbsp;Offen für Möglichkeiten" },
+    "about.callout_title": { "en": "📲 Content Creator · Instagram", "de": "📲 Content Creator · Instagram" },
+    "about.callout_desc": {
+      "en": "I also create Instagram reels and informative videos about student life in Germany in <strong>Balti language</strong> for the people of Gilgit-Baltistan — and I'm currently producing <strong>reels</strong> for my Hochschule's Pre-college & Pre-study programs. I film, record audio, and edit everything to optimize each video for social media.",
+      "de": "Ich erstelle außerdem Instagram-Reels und informative Videos über das Studentenleben in Deutschland in <strong>baltiischer Sprache</strong> für die Menschen aus Gilgit-Baltistan — und produziere derzeit <strong>Reels</strong> für die Pre-College- und Pre-Study-Programme meiner Hochschule. Ich filme, nehme Audio auf und schneide alles selbst, um jedes Video für Social Media zu optimieren."
+    },
+    "about.creator_tag": { "en": "current project", "de": "aktuelles Projekt" },
+    "about.creator_t1": { "en": "Hochschule", "de": "Hochschule" },
+    "about.creator_t2": { "en": "Content Project.", "de": "Content-Projekt." },
+    "about.creator_c1_title": { "en": "Company Interviews", "de": "Unternehmensinterviews" },
+    "about.creator_c1_desc": {
+      "en": "Interviewing companies about their experience hosting <strong>Pre-college interns</strong> — turning their feedback into compelling 1-min reels to motivate new partner companies to take on students.",
+      "de": "Interviews mit Unternehmen über ihre Erfahrungen mit <strong>Pre-College-Praktikanten</strong> — und daraus starke 1-Minuten-Reels, die neue Partnerunternehmen motivieren, Studierende aufzunehmen."
+    },
+    "about.creator_c1_tag": { "en": "Pre-college Program", "de": "Pre-College-Programm" },
+    "about.creator_c2_title": { "en": "Student Testimonials", "de": "Studierenden-Testimonials" },
+    "about.creator_c2_desc": {
+      "en": "Interviewing <strong>former Pre-study candidates</strong> about their German language & culture journey — inspiring international students to enroll. Fully filmed, recorded & edited by me.",
+      "de": "Interviews mit <strong>ehemaligen Pre-Study-Teilnehmenden</strong> über ihren Weg mit deutscher Sprache und Kultur — um internationale Studierende zur Bewerbung zu inspirieren. Komplett von mir gefilmt, aufgenommen und geschnitten."
+    },
+    "about.creator_c2_tag": { "en": "Pre-study Program", "de": "Pre-Study-Programm" },
+    "about.creator_c3_title": { "en": "Production", "de": "Produktion" },
+    "about.creator_c3_desc": {
+      "en": "My Colegue handles the appointments and I handel the planning, the interviews, filming on location, recording audio, and editing everything into polished <strong>60-second Instagram Reels</strong>.",
+      "de": "Mein Kollege übernimmt die Terminplanung, ich übernehme Planung, Interviews, Drehs vor Ort, Audioaufnahme und den Schnitt zu professionellen <strong>60-Sekunden-Instagram-Reels</strong>."
+    },
+    "about.creator_c3_tag": { "en": "For Social Media", "de": "Für Social Media" },
+    "about.creator_c4_title": { "en": "Balti Educational Content", "de": "Bildungscontent auf Balti" },
+    "about.creator_c4_desc": {
+      "en": "Independently creating reels and practical guidance content in <strong>Balti</strong> for Instagram, Facebook and my Website — focused on German visa procedure, blocked account, language requirements, and study pathways for students from Gilgit-Baltistan.",
+      "de": "Eigenständige Erstellung von Reels und praxisnahen Infoinhalten auf <strong>Balti</strong> für Instagram, Facebook und meine Website — mit Fokus auf deutsches Visumverfahren, Sperrkonto, Sprachanforderungen und Studienwege für Studierende aus Gilgit-Baltistan."
+    },
+    "about.creator_c4_tag": { "en": "Instagram · Facebook", "de": "Instagram · Facebook" },
+    "about.lang_balti": { "en": "Balti", "de": "Balti" },
+    "about.lang_urdu": { "en": "Urdu", "de": "Urdu" },
+    "about.lang_german": { "en": "German", "de": "Deutsch" },
+    "about.lang_english": { "en": "English", "de": "Englisch" },
+    "about.lang_native": { "en": "Native", "de": "Muttersprache" },
+    "about.lang_german_level": { "en": "C1 · DSH-2 Professional", "de": "C1 · DSH-2 Professionell" },
+    "about.lang_english_level": { "en": "C1 Professional", "de": "C1 Professionell" },
+    "about.cta_desc": { "en": "I Appriciate Suggestions!", "de": "Ich freue mich über Vorschläge!" },
+    "contact.ci_resp_lbl": { "en": "Response time", "de": "Antwortzeit" },
+    "content.ig_title": { "en": "Reels & Developer Life", "de": "Reels & Entwicklerleben" },
+    "content.ig_desc": {
+      "en": "Short-form vertical videos covering travel, developer life, community stories, and content to inspire young people from Gilgit-Baltistan who dream of studying abroad.",
+      "de": "Kurzformatige vertikale Videos über Reisen, Entwickleralltag, Community-Geschichten und Inhalte, die junge Menschen aus Gilgit-Baltistan inspirieren, die im Ausland studieren möchten."
+    },
+    "content.ig_handle_lbl": { "en": "Instagram handle", "de": "Instagram-Handle" },
+    "content.r1_sub": {
+      "en": "An aerial glimpse of my village in the mountains of Baltistan.",
+      "de": "Ein Luftblick auf mein Dorf in den Bergen von Baltistan."
+    },
+    "content.r2_sub": {
+      "en": "From picking apricots to the struggle of carrying water for plants in the mountains.",
+      "de": "Vom Aprikosenpfluecken bis zum anstrengenden Wassertragen fuer Pflanzen in den Bergen."
+    },
+    "content.r3_sub": {
+      "en": "Manthokha Waterfall, first coffee attempt, and an honest reaction.",
+      "de": "Manthokha-Wasserfall, der erste Kaffeeversuch und eine ehrliche Reaktion."
+    },
+    "content.r4_sub": {
+      "en": "Glimpses of my life in Germany and Pakistan with family, friends, and culture.",
+      "de": "Einblicke in mein Leben in Deutschland und Pakistan mit Familie, Freunden und Kultur."
+    },
+    "content.r5_sub": {
+      "en": "Walking with my friend and flatmate to watch the colorful Karneval parade in Fulda.",
+      "de": "Mit meinem Freund und Mitbewohner beim bunten Karnevalsumzug in Fulda unterwegs."
+    },
+    "content.r6_sub": {
+      "en": "A scenic day out in Skardu with my younger brother and real travel moments.",
+      "de": "Ein landschaftlich wunderschöner Tag in Skardu mit meinem jüngeren Bruder und echten Reisemomenten."
+    },
+    "content.fb_title": { "en": "German Visa & Study Guidance in Balti", "de": "Deutsche Visa- & Studienberatung auf Balti" },
+    "content.fb_desc": {
+      "en": "Informative video content in the <strong style='color:var(--text)'>Balti language</strong> — focused on German visa procedure, blocked account basics, language requirements, visa categories, and study pathways such as conditional admission, Studienkolleg, and university progression.",
+      "de": "Informationsvideos in <strong style='color:var(--text)'>baltiischer Sprache</strong> — mit Fokus auf deutsches Visumverfahren, Grundlagen zum Sperrkonto, Sprachanforderungen, Visa-Kategorien und Studienwege wie bedingte Zulassung, Studienkolleg und den Weg zur Universität."
+    },
+    "content.fb_handle_lbl": { "en": "Facebook profile", "de": "Facebook-Profil" },
+    "content.f1_sub": { "en": "A clear guide to A1, A2, B1, B2, and the language level needed for each study path.", "de": "Ein klarer Leitfaden zu A1, A2, B1, B2 und dem benötigten Sprachniveau je Studienweg." },
+    "content.f2_sub": { "en": "How to find and apply for a suitable scholarship on the DAAD website.", "de": "So findest du passende Stipendien auf der DAAD-Website und bewirbst dich richtig." },
+    "content.f3_sub": { "en": "Essential information about IELTS and general language certificates for study planning.", "de": "Wichtige Grundlagen zu IELTS und allgemeinen Sprachzertifikaten für die Studienplanung." },
+    "content.f4_sub": { "en": "A clear overview of admission steps and scholarship opportunities.", "de": "Ein klarer Überblick über Zulassungsschritte und Stipendienmöglichkeiten." },
+    "content.f5_sub": { "en": "A to Z information about Ausbildung, German visa types, requirements, and procedure.", "de": "A-bis-Z-Informationen zu Ausbildung, deutschen Visaarten, Voraussetzungen und Verfahren." },
+    "projects.more_tag": { "en": "github", "de": "github" },
+    "projects.more_t1": { "en": "More", "de": "Weitere" },
+    "projects.more_t2": { "en": "GitHub Projects", "de": "GitHub-Projekte" },
+    "projects.g1_name": { "en": "🗓️ Shift Planner", "de": "🗓️ Schichtplaner" },
+    "projects.g1_desc": {
+      "en": "Web application for planning employee shifts for a small business. Built as a practical scheduling tool for organizing teams and weekly coverage.",
+      "de": "Webanwendung zur Planung von Mitarbeiterschichten für kleine Unternehmen. Entwickelt als praktisches Planungstool für Teams und Wochenabdeckung."
+    },
+    "projects.g2_name": { "en": "🧑‍💻 Portfolio (TypeScript)", "de": "🧑‍💻 Portfolio (TypeScript)" },
+    "projects.g2_desc": {
+      "en": "Personal portfolio implementation built with TypeScript, focusing on stronger structure and modern front-end setup compared to earlier static versions.",
+      "de": "Persönliches Portfolio mit TypeScript, mit Fokus auf bessere Struktur und modernes Frontend-Setup im Vergleich zu früheren statischen Versionen."
+    },
+    "projects.g3_name": { "en": "🧭 Rasta", "de": "🧭 Rasta" },
+    "projects.g3_desc": {
+      "en": "TypeScript-based project from your GitHub profile, added to showcase ongoing experimentation and additional app development work.",
+      "de": "TypeScript-basiertes Projekt aus deinem GitHub-Profil, das laufende Experimente und weitere App-Entwicklung zeigt."
+    },
+    "courses.loading": { "en": "Loading lessons…", "de": "Lektionen werden geladen…" },
+    "courses.lesson": { "en": "Lesson", "de": "Lektion" },
+    "courses.youtube": { "en": "▶ YouTube", "de": "▶ YouTube" }
+  });
 
   // ── 2. DETECT LANGUAGE ──────────────────────────────────
   var GERMAN_LANGS = ['de', 'de-de', 'de-at', 'de-ch', 'de-li', 'de-lu'];
