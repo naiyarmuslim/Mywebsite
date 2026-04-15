@@ -17,11 +17,11 @@
       padding: 1.5rem 2rem;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 24px 24px 14px 14px;
       transition: border-color 0.2s, background 0.2s;
       cursor: default;
     }
-    .project-row:hover { border-color: rgba(0,212,255,0.3); background: #13202f; }
+    .project-row:hover { border-color: rgba(var(--accent-rgb),0.28); background: rgba(var(--accent-rgb),0.06); }
     .project-name { font-family:var(--display); font-size:1rem; font-weight:700; margin-bottom:0.2rem; }
     .project-desc { font-size:0.84rem; color:var(--muted); font-weight:300; }
     .project-stack { display:flex; flex-wrap:wrap; gap:0.4rem; justify-content:flex-end; }
@@ -30,7 +30,7 @@
       width:36px; height:36px;
       background:rgba(255,255,255,0.04);
       border:1px solid var(--border);
-      border-radius:6px;
+      border-radius:12px;
       display:flex; align-items:center; justify-content:center;
       text-decoration:none;
       color:var(--muted);
@@ -86,12 +86,17 @@
 
   <!-- PAGE HEADER -->
   <div class="page-header">
+    <div class="terrain-lines"></div>
+    <div class="nature-trail"></div>
     <div class="section-tag" style="justify-content:center" data-i18n="projects.page_tag">portfolio</div>
     <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)"><span data-i18n="projects.page_title1">Things I've</span><br><span data-i18n="projects.page_title2">built.</span></h1>
   </div>
 
   <!-- ── PROJECTS ── -->
   <section id="projects-main" style="padding-top:2rem">
+    <div class="terrain-lines"></div>
+    <div class="nature-mountains"></div>
+    <div class="nature-forest"></div>
     <div class="glow-orb orb-cyan" style="width:400px;height:400px;top:-80px;right:-80px;"></div>
     <div class="container">
 
@@ -147,11 +152,11 @@
       <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem">
         <div class="project-row reveal" style="opacity:.65">
           <div>
-            <div class="project-name" data-i18n="projects.p3_name">🤖 Simple AI Chatbot</div>
-            <div class="project-desc" data-i18n="projects.p3_desc">Python-based chatbot using basic NLP and data structures. Currently paused while focusing on university coursework.</div>
+            <div class="project-name" data-i18n="projects.p3_name">🧪 C & Java Practice Projects</div>
+            <div class="project-desc" data-i18n="projects.p3_desc">Practice programs and coursework exercises in C and Java to strengthen problem-solving fundamentals.</div>
           </div>
           <div class="project-stack">
-            <span class="tag">Python</span><span class="tag">NLP</span>
+            <span class="tag">C</span><span class="tag">Java</span>
           </div>
           <div class="proj-links">
             <a href="#" class="proj-link" title="GitHub">⌥</a>
@@ -183,11 +188,11 @@
 
         <div class="project-row reveal reveal-d1">
           <div>
-            <div class="project-name" data-i18n="projects.g2_name">🧑‍💻 Portfolio (TypeScript)</div>
-            <div class="project-desc" data-i18n="projects.g2_desc">Personal portfolio implementation built with TypeScript, focusing on stronger structure and modern front-end setup compared to earlier static versions.</div>
+            <div class="project-name" data-i18n="projects.g2_name">🧑‍💻 Portfolio</div>
+            <div class="project-desc" data-i18n="projects.g2_desc">Portfolio project from my GitHub profile, focused on layout structure and front-end presentation.</div>
           </div>
           <div class="project-stack">
-            <span class="tag">TypeScript</span><span class="tag">Portfolio</span><span class="tag">Frontend</span>
+            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
           </div>
           <div class="proj-links">
             <a href="https://github.com/naiyarmuslim/Portfolio" target="_blank" class="proj-link" title="GitHub">⌥</a>
@@ -197,10 +202,10 @@
         <div class="project-row reveal reveal-d2">
           <div>
             <div class="project-name" data-i18n="projects.g3_name">🧭 Rasta</div>
-            <div class="project-desc" data-i18n="projects.g3_desc">TypeScript-based project from your GitHub profile, added to showcase ongoing experimentation and additional app development work.</div>
+            <div class="project-desc" data-i18n="projects.g3_desc">Project from my GitHub profile, included to show ongoing app development and experimentation.</div>
           </div>
           <div class="project-stack">
-            <span class="tag">TypeScript</span><span class="tag">App Dev</span>
+            <span class="tag">JavaScript</span><span class="tag">App Dev</span>
           </div>
           <div class="proj-links">
             <a href="https://github.com/naiyarmuslim/Rasta" target="_blank" class="proj-link" title="GitHub">⌥</a>

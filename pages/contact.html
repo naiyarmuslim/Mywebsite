@@ -19,7 +19,7 @@
     .contact-info-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 26px 26px 14px 14px;
       padding: 2rem;
       position: sticky;
       top: 80px;
@@ -32,9 +32,9 @@
     }
     .contact-item-icon {
       width: 40px; height: 40px;
-      background: rgba(0,212,255,0.08);
-      border: 1px solid rgba(0,212,255,0.2);
-      border-radius: 8px;
+      background: rgba(94,203,255,0.08);
+      border: 1px solid rgba(94,203,255,0.2);
+      border-radius: 14px;
       display: flex; align-items: center; justify-content: center;
       font-size: 1rem;
       flex-shrink: 0;
@@ -63,16 +63,16 @@
       text-decoration: none;
       transition: all .2s;
     }
-    .social-pill:hover { color: var(--accent); border-color: var(--accent); background: rgba(0,212,255,.04); }
-    .social-pill.ig:hover  { color:#f472b6; border-color:#f472b6; background:rgba(244,114,182,.04); }
-    .social-pill.fb:hover  { color:#60a5fa; border-color:#60a5fa; background:rgba(96,165,250,.04); }
+    .social-pill:hover { color: var(--accent); border-color: var(--accent); background: rgba(var(--accent-rgb),.06); }
+    .social-pill.ig:hover  { color:var(--accent3); border-color:var(--accent3); background:rgba(var(--accent3-rgb),.06); }
+    .social-pill.fb:hover  { color:var(--accent); border-color:var(--accent); background:rgba(var(--accent-rgb),.06); }
     .social-pill.gh:hover  { color:#e2e8f0; border-color:#e2e8f0; }
 
     /* ── Form side ── */
     .form-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 30px 30px 16px 16px;
       padding: 2.5rem;
     }
     .form-title { font-family:var(--display); font-size:1.4rem; font-weight:800; margin-bottom:.4rem; }
@@ -102,7 +102,7 @@
       width: 100%;
       padding: .9rem;
       background: var(--accent);
-      color: #000;
+      color: var(--accent2);
       font-family: var(--mono);
       font-size: .85rem;
       font-weight: 700;
@@ -112,7 +112,7 @@
       cursor: none;
       transition: transform .15s, box-shadow .15s;
     }
-    .submit-btn:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(0,212,255,.3); }
+    .submit-btn:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(var(--accent-rgb),.24); }
 
     .form-success {
       display: none;
@@ -132,7 +132,7 @@
     .faq-list { max-width: 700px; }
     .faq-item {
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 18px 18px 10px 10px;
       margin-bottom: .75rem;
       overflow: hidden;
     }
@@ -196,12 +196,16 @@
 
   <!-- PAGE HEADER -->
   <div class="page-header">
+    <div class="terrain-lines"></div>
+    <div class="nature-trail"></div>
     <div class="section-tag" style="justify-content:center" data-i18n="contact.page_tag">contact</div>
     <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)"><span data-i18n="contact.page_title1">Let's build</span><br><span data-i18n="contact.page_title2">something.</span></h1>
   </div>
 
   <!-- ── CONTACT MAIN ── -->
   <section id="contact-main" style="padding-top:2rem">
+    <div class="terrain-lines"></div>
+    <div class="nature-mountains"></div>
     <div class="glow-orb orb-cyan" style="width:420px;height:420px;top:-80px;right:-80px;"></div>
     <div class="container">
       <div class="contact-layout">
@@ -296,6 +300,8 @@
 
   <!-- ── FAQ ── -->
   <section id="faq">
+    <div class="terrain-lines"></div>
+    <div class="nature-forest"></div>
     <div class="container">
       <div class="section-header reveal" style="max-width:600px">
         <div class="section-tag" data-i18n="contact.faq_tag">common questions</div>

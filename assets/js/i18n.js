@@ -195,8 +195,8 @@
     "de": "Hallo! Ich bin <strong>Naiyar Muslim</strong>. Mein Weg begann in den atemberaubenden Landschaften von <strong>Gilgit-Baltistan</strong>, einer Region mit majestätischen Gipfeln und reicher Kultur in Nordpakistan."
   },
   "about.p2": {
-    "en": "Currently I'm an <strong>Applied Computer Science student in Germany</strong>, studying with a German proficiency of <strong>C1 (DSH-2)</strong>. My technical approach is defined by <em>Innovative Persistence</em> — when I want to build something, it doesn't matter if I know how yet. I will learn, and I will do it.",
-    "de": "Derzeit studiere ich <strong>Angewandte Informatik in Deutschland</strong> mit einem Deutschniveau von <strong>C1 (DSH-2)</strong>. Mein Ansatz ist <em>Innovative Beharrlichkeit</em> — wenn ich etwas bauen will, lerne ich es und setze es um."
+    "en": "Currently I'm an <strong>Applied Computer Science student in Germany</strong> with German proficiency at <strong>C1 (DSH-2)</strong>. My core programming languages are <strong>C, Java, HTML, CSS, and JavaScript</strong>.",
+    "de": "Derzeit studiere ich <strong>Angewandte Informatik in Deutschland</strong> mit Deutschkenntnissen auf <strong>C1 (DSH-2)</strong>. Meine Kern-Programmiersprachen sind <strong>C, Java, HTML, CSS und JavaScript</strong>."
   },
   "about.p3": {
     "en": "Beyond code, I spent years as a <strong>volunteer teacher</strong> in Baltistan. I now create <strong>guidance videos in Balti</strong> on Facebook about German visa procedure, blocked account, language requirements, and study pathways, plus lifestyle reels on Instagram.",
@@ -267,12 +267,12 @@
     "de": "ZUKUNFTSZIEL"
   },
   "about.tl5_title": {
-    "en": "Cyber Security Analyst / Network Architect",
-    "de": "Cybersicherheitsanalyst / Netzwerkarchitekt"
+    "en": "IT Solutions Engineer",
+    "de": "IT-Loesungsingenieur"
   },
   "about.tl5_desc": {
-    "en": "Aspiring to be a soldier of good in cyber security — protecting citizens and ensuring a secure digital environment. Working toward CompTIA Security+ and CCNA.",
-    "de": "Ich möchte ein Soldat des Guten in der Cybersicherheit sein. Ziel: CompTIA Security+ und CCNA."
+    "en": "Focused on building reliable and practical IT solutions that solve real problems through clean implementation and teamwork.",
+    "de": "Fokus auf zuverlaessige und praktische IT-Loesungen, die reale Probleme durch saubere Umsetzung und Teamarbeit loesen."
   },
   "about.values_tag": {
     "en": "what drives me",
@@ -395,12 +395,12 @@
     "de": "Diese Website — modernes Entwicklerportfolio mit dunkler Terminal-Ästhetik, responsivem Design und zweisprachigem EN/DE-Support."
   },
   "projects.p3_name": {
-    "en": "🤖 Simple AI Chatbot",
-    "de": "🤖 Einfacher KI-Chatbot"
+    "en": "🧪 C & Java Practice Projects",
+    "de": "🧪 C- & Java-Uebungsprojekte"
   },
   "projects.p3_desc": {
-    "en": "Python-based chatbot using basic NLP and data structures. Currently paused while focusing on university coursework.",
-    "de": "Python-Chatbot mit einfachem NLP und Datenstrukturen. Derzeit pausiert, Fokus auf Universitätsstudium."
+    "en": "Practice programs and coursework exercises in C and Java to strengthen problem-solving fundamentals.",
+    "de": "Uebungsprogramme und Kursaufgaben in C und Java zur Staerkung der Problemlosungsgrundlagen."
   },
   "projects.uni_tag": {
     "en": "academic",
@@ -937,15 +937,15 @@
       "en": "Web application for planning employee shifts for a small business. Built as a practical scheduling tool for organizing teams and weekly coverage.",
       "de": "Webanwendung zur Planung von Mitarbeiterschichten für kleine Unternehmen. Entwickelt als praktisches Planungstool für Teams und Wochenabdeckung."
     },
-    "projects.g2_name": { "en": "🧑‍💻 Portfolio (TypeScript)", "de": "🧑‍💻 Portfolio (TypeScript)" },
+    "projects.g2_name": { "en": "🧑‍💻 Portfolio", "de": "🧑‍💻 Portfolio" },
     "projects.g2_desc": {
-      "en": "Personal portfolio implementation built with TypeScript, focusing on stronger structure and modern front-end setup compared to earlier static versions.",
-      "de": "Persönliches Portfolio mit TypeScript, mit Fokus auf bessere Struktur und modernes Frontend-Setup im Vergleich zu früheren statischen Versionen."
+      "en": "Portfolio project from my GitHub profile, focused on layout structure and front-end presentation.",
+      "de": "Portfolio-Projekt aus meinem GitHub-Profil mit Fokus auf Layout-Struktur und Frontend-Darstellung."
     },
     "projects.g3_name": { "en": "🧭 Rasta", "de": "🧭 Rasta" },
     "projects.g3_desc": {
-      "en": "TypeScript-based project from your GitHub profile, added to showcase ongoing experimentation and additional app development work.",
-      "de": "TypeScript-basiertes Projekt aus deinem GitHub-Profil, das laufende Experimente und weitere App-Entwicklung zeigt."
+      "en": "Project from my GitHub profile, included to show ongoing app development and experimentation.",
+      "de": "Projekt aus meinem GitHub-Profil, um laufende App-Entwicklung und Experimente zu zeigen."
     },
     "courses.loading": { "en": "Loading lessons…", "de": "Lektionen werden geladen…" },
     "courses.lesson": { "en": "Lesson", "de": "Lektion" },

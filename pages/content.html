@@ -23,7 +23,7 @@
     .platform-info-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 30px 30px 16px 16px;
       padding: 2rem;
       position: sticky;
       top: 80px;
@@ -37,11 +37,11 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       padding: 0.3rem 0.75rem;
-      border-radius: 3px;
+      border-radius: 999px;
       margin-bottom: 1.2rem;
     }
-    .badge-ig { background:rgba(233,30,99,0.15); color:#f472b6; border:1px solid rgba(244,114,182,0.3); }
-    .badge-fb { background:rgba(24,119,242,0.15); color:#60a5fa; border:1px solid rgba(96,165,250,0.3); }
+    .badge-ig { background:rgba(var(--accent3-rgb),0.12); color:var(--accent3); border:1px solid rgba(var(--accent3-rgb),0.28); }
+    .badge-fb { background:rgba(var(--accent-rgb),0.12); color:var(--accent); border:1px solid rgba(var(--accent-rgb),0.28); }
 
     .platform-title { font-family:var(--display); font-size:1.5rem; font-weight:800; margin-bottom:.6rem; }
     .platform-desc  { font-size:.9rem; color:var(--muted); font-weight:300; line-height:1.7; margin-bottom:1.5rem; }
@@ -58,11 +58,11 @@
     .reel-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 24px 24px 14px 14px;
       overflow: hidden;
       transition: border-color .2s, transform .2s;
     }
-    .reel-card:hover { border-color:rgba(0,212,255,0.3); transform:translateY(-3px); }
+    .reel-card:hover { border-color:rgba(var(--accent-rgb),0.28); transform:translateY(-3px); }
     .reel-thumb {
       aspect-ratio: 9/16;
       background: var(--surface2);
@@ -89,7 +89,7 @@
       background: rgba(255,255,255,.9);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; color: #000;
+      font-size: 1.1rem; color: var(--accent2);
       text-decoration: none;
       transition: transform .15s, box-shadow .15s;
     }
@@ -107,7 +107,7 @@
     .fb-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 24px 24px 14px 14px;
       overflow: hidden;
       transition: border-color .2s, transform .2s;
     }
@@ -129,7 +129,7 @@
     .fb-watch-btn {
       font-family:var(--mono);font-size:.75rem;font-weight:700;
       padding:.5rem 1.2rem;
-      background:#1877f2;color:#fff;
+      background:var(--accent);color:var(--accent2);
       border-radius:4px; text-decoration:none;
       transition:background .2s;
     }
@@ -140,9 +140,9 @@
 
     /* ── Baltistan note ── */
     .balti-card {
-      background: linear-gradient(135deg, rgba(0,212,255,0.06), rgba(16,185,129,0.06));
-      border: 1px solid rgba(0,212,255,0.2);
-      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(var(--accent-rgb),0.08), rgba(var(--accent3-rgb),0.08));
+      border: 1px solid rgba(var(--accent-rgb),0.2);
+      border-radius: 30px 30px 16px 16px;
       padding: 2.5rem;
       display: grid;
       grid-template-columns: auto 1fr;
@@ -190,12 +190,15 @@
 
   <!-- PAGE HEADER -->
   <div class="page-header">
+    <div class="terrain-lines"></div>
+    <div class="nature-trail"></div>
     <div class="section-tag" style="justify-content:center" data-i18n="content.page_tag">content creation</div>
     <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)"><span data-i18n="content.page_title1">Sharing knowledge</span><br><span data-i18n="content.page_title2">with Baltistan.</span></h1>
   </div>
 
   <!-- ── INTRO BAND ── -->
   <section id="intro-band" style="padding-top:2rem;padding-bottom:3rem">
+    <div class="terrain-lines"></div>
     <div class="container">
       <div class="balti-card reveal">
         <div class="balti-flag">🏔️</div>
@@ -213,6 +216,8 @@
 
   <!-- ── INSTAGRAM ── -->
   <section id="instagram">
+    <div class="terrain-lines"></div>
+    <div class="nature-forest"></div>
     <div class="glow-orb orb-purple" style="width:400px;height:400px;top:0;right:-80px;"></div>
     <div class="container">
       <div class="platform-row">
@@ -329,6 +334,8 @@
 
   <!-- ── FACEBOOK ── -->
   <section id="facebook">
+    <div class="terrain-lines"></div>
+    <div class="nature-mountains"></div>
     <div class="glow-orb orb-cyan" style="width:380px;height:380px;bottom:0;left:-60px;"></div>
     <div class="container">
       <div class="platform-row reverse">
@@ -340,7 +347,7 @@
           <div class="platform-stat">
             <div><div class="p-stat-num">naiyar.gull</div><div class="p-stat-lbl" data-i18n="content.fb_handle_lbl">Facebook profile</div></div>
           </div>
-          <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="btn-primary" style="width:100%;justify-content:center;background:#1877f2;color:#fff">
+          <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="btn-primary" style="width:100%;justify-content:center;background:var(--accent);color:var(--accent2)">
             <span data-i18n="content.fb_follow">📘 Follow on Facebook</span>
           </a>
         </div>
