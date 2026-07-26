@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('nm_theme')||'light')}catch(e){}</script>
   <title>Contact — Naiyar Muslim</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <style>
@@ -19,7 +20,7 @@
     .contact-info-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 26px 26px 14px 14px;
+      border-radius: 18px;
       padding: 2rem;
       position: sticky;
       top: 80px;
@@ -32,8 +33,8 @@
     }
     .contact-item-icon {
       width: 40px; height: 40px;
-      background: rgba(94,203,255,0.08);
-      border: 1px solid rgba(94,203,255,0.2);
+      background: rgba(var(--accent-rgb),0.05);
+      border: 1px solid rgba(var(--accent-rgb),0.18);
       border-radius: 14px;
       display: flex; align-items: center; justify-content: center;
       font-size: 1rem;
@@ -66,13 +67,13 @@
     .social-pill:hover { color: var(--accent); border-color: var(--accent); background: rgba(var(--accent-rgb),.06); }
     .social-pill.ig:hover  { color:var(--accent3); border-color:var(--accent3); background:rgba(var(--accent3-rgb),.06); }
     .social-pill.fb:hover  { color:var(--accent); border-color:var(--accent); background:rgba(var(--accent-rgb),.06); }
-    .social-pill.gh:hover  { color:#e2e8f0; border-color:#e2e8f0; }
+    .social-pill.gh:hover  { color:var(--accent); border-color:var(--accent); }
 
     /* ── Form side ── */
     .form-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 30px 30px 16px 16px;
+      border-radius: 18px;
       padding: 2.5rem;
     }
     .form-title { font-family:var(--display); font-size:1.4rem; font-weight:800; margin-bottom:.4rem; }
@@ -116,8 +117,8 @@
 
     .form-success {
       display: none;
-      background: rgba(16,185,129,.1);
-      border: 1px solid rgba(16,185,129,.3);
+      background: rgba(var(--accent-rgb),.06);
+      border: 1px solid rgba(var(--accent-rgb),.25);
       border-radius: 6px;
       padding: 1rem 1.2rem;
       font-family: var(--mono);
@@ -132,7 +133,7 @@
     .faq-list { max-width: 700px; }
     .faq-item {
       border: 1px solid var(--border);
-      border-radius: 18px 18px 10px 10px;
+      border-radius: 18px;
       margin-bottom: .75rem;
       overflow: hidden;
     }
@@ -180,9 +181,11 @@
       <li><a href="courses.html" data-i18n="shared.nav.courses">Courses</a></li>
       <li><a href="projects.html" data-i18n="shared.nav.projects">Projects</a></li>
       <li><a href="content.html" data-i18n="shared.nav.content">Content</a></li>
+      <li><a href="how-the-internet-works.html">How the Internet Works</a></li>
       <li><a href="contact.html" class="active nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
     <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
+    <button id="theme-toggle" data-theme-toggle title="Toggle dark mode"><span class="theme-toggle-icon">🌙</span></button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
@@ -191,6 +194,8 @@
     <a href="courses.html" data-i18n="shared.nav.courses">Courses</a>
     <a href="projects.html" data-i18n="shared.nav.projects">Projects</a>
     <a href="content.html" data-i18n="shared.nav.content">Content</a>
+    <a href="how-the-internet-works.html">How the Internet Works</a>
+    <div class="mobile-theme-row">Dark mode <button data-theme-toggle><span class="theme-toggle-icon">🌙</span></button></div>
     <a href="contact.html" class="active" data-i18n="shared.nav.contact">Contact →</a>
   </div>
 

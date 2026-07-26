@@ -3,45 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('nm_theme')||'light')}catch(e){}</script>
   <title>About Me — Naiyar Muslim</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* ── TOKENS ── */
     :root {
-      --bg:        #0f1722;
-      --bg2:       #162233;
-      --surface:   #1d2b3f;
-      --surface2:  #1a2739;
-      --border:    #2b3b52;
-      --border2:   #3d5370;
+      --bg:        #EEF8FF;
+      --bg2:       #D1F5FF;
+      --surface:   #FFFFFF;
+      --surface2:  #F6FCFF;
+      --border:    #C3ECFB;
+      --border2:   #78E3FD;
 
-      --accent:    #aebfd7;
-      --accent2:   #040b18;
-      --accent3:   #9fb7a6;
-      --accent4:   #c7d3e1;
-      --accent5:   #bfc9be;
+      --accent:    #7D53DE;
+      --accent2:   #FFFFFF;
+      --accent3:   #34F6F2;
+      --accent4:   #78E3FD;
+      --accent5:   #5A36B0;
 
-      --text:      #edf2f7;
-      --muted:     #a5b0bf;
-      --light:     #8693a7;
+      --text:      #1B1533;
+      --muted:     #5C567F;
+      --light:     #8B85B3;
+
+      --accent-rgb: 125,83,222;
+      --accent3-rgb: 52,246,242;
+      --accent4-rgb: 120,227,253;
+      --line-rgb: 125,83,222;
+
+      --brand-gradient: linear-gradient(120deg, #7D53DE 0%, #78E3FD 70%, #34F6F2 100%);
 
       --mono:    'Space Mono', monospace;
       --display: 'Cabinet Grotesk', sans-serif;
       --serif:   'Instrument Serif', serif;
     }
 
+    /* ── Dark mode — flips every token; toggled via [data-theme] on <html> ── */
+    html[data-theme="dark"] {
+      --bg:        #0B0A17;
+      --bg2:       #14122A;
+      --surface:   #181634;
+      --surface2:  #1E1B40;
+      --border:    #2E2A57;
+      --border2:   #4A3F8C;
+      --text:      #EEEBFF;
+      --muted:     #B3AEDD;
+      --light:     #8880BE;
+    }
+    html[data-theme="dark"] body::before { opacity: 0.5; }
+    html[data-theme="dark"] .mobile-menu { background: rgba(11,10,23,0.97); }
+    html[data-theme="dark"] nav { background: rgba(11,10,23,0.78); }
+    html[data-theme="dark"] body {
+      background:
+        radial-gradient(900px 460px at 88% -6%, rgba(120,227,253,0.16), transparent 60%),
+        radial-gradient(760px 420px at -6% 18%, rgba(125,83,222,0.24), transparent 62%),
+        linear-gradient(180deg, #0B0A17 0%, #100E22 50%, #14122A 100%);
+    }
+
+    #theme-toggle {
+      font-family: var(--mono); font-size: 0.85rem; width: 32px; height: 32px; padding: 0;
+      border: 1.5px solid var(--border2); border-radius: 999px; background: rgba(var(--accent4-rgb),0.1);
+      color: var(--accent5); cursor: pointer; transition: all 0.2s; margin-left: 0.5rem; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    #theme-toggle:hover { border-color: var(--accent); background: rgba(var(--accent-rgb),0.08); }
+    .mobile-theme-row {
+      display: flex; align-items: center; justify-content: space-between; padding: 0.65rem 0;
+      border-bottom: 1px solid var(--border); font-family: var(--display); font-size: 0.95rem;
+      font-weight: 600; color: var(--muted);
+    }
+    .mobile-theme-row button {
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 700; padding: 0.35rem 0.8rem;
+      border: 1.5px solid var(--border2); border-radius: 999px; background: rgba(var(--accent4-rgb),0.1);
+      color: var(--accent5); cursor: pointer;
+    }
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
       background:
-        radial-gradient(900px 420px at 78% -8%, rgba(var(--accent-rgb),0.12), transparent 62%),
-        linear-gradient(180deg, #0f1722 0%, #152033 52%, #18263b 100%);
+        radial-gradient(900px 460px at 88% -6%, rgba(120,227,253,0.5), transparent 60%),
+        radial-gradient(760px 420px at -6% 18%, rgba(125,83,222,0.14), transparent 62%),
+        linear-gradient(180deg, #F7FCFF 0%, #EEF8FF 45%, #D1F5FF 100%);
       color: var(--text);
       font-family: var(--display);
       font-size: 16px;
       line-height: 1.7;
       overflow-x: hidden;
+      transition: background-color 0.2s;
     }
 
     /* ── CUSTOM CURSOR ── */
@@ -143,8 +193,8 @@
           90deg,
           transparent 0,
           transparent 92px,
-          rgba(146,173,204,0.06) 92px,
-          rgba(146,173,204,0.06) 93px
+          rgba(var(--accent-rgb),0.03) 92px,
+          rgba(var(--accent-rgb),0.03) 93px
         );
       pointer-events: none;
       z-index: 0;
@@ -171,7 +221,7 @@
       align-items: center;
       justify-content: space-between;
       height: 64px;
-      background: rgba(6,20,38,0.92);
+      background: rgba(255,255,255,0.72);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
@@ -205,7 +255,7 @@
     .nav-links a.active { color: var(--accent); background: rgba(var(--accent-rgb),0.08); }
     .nav-links .nav-cta {
       background: var(--accent);
-      color: #031320 !important;
+      color: var(--surface) !important;
       font-weight: 700;
       padding: 0.45rem 1.1rem;
       margin-left: 0.5rem;
@@ -216,7 +266,7 @@
       transform: translateY(-1px);
       box-shadow: 0 6px 20px rgba(var(--accent-rgb),0.35);
       background: var(--accent) !important;
-      color: #031320 !important;
+      color: var(--surface) !important;
     }
 
     /* ── APPEARANCE CONTROLS ── */
@@ -437,7 +487,7 @@
       display: none;
       position: fixed;
       top: 64px; left: 0; right: 0;
-      background: rgba(6,20,38,0.98);
+      background: rgba(255,255,255,0.97);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(20px);
       padding: 1.5rem 2.5rem;
@@ -626,7 +676,7 @@
     .creator-callout {
       background: linear-gradient(135deg, rgba(var(--accent-rgb),0.06), rgba(var(--accent3-rgb),0.06));
       border: 1.5px solid rgba(var(--accent-rgb),0.2);
-      border-radius: 30px 30px 16px 16px;
+      border-radius: 18px;
       padding: 1.5rem 1.75rem;
       margin-top: 1.5rem;
       margin-bottom: 1.5rem;
@@ -663,9 +713,9 @@
     }
     .pill.orange { border-color: rgba(var(--accent-rgb),0.3);  color: var(--accent); background: rgba(var(--accent-rgb),0.05); }
     .pill.teal   { border-color: rgba(var(--accent3-rgb),0.3);  color: var(--accent3); background: rgba(var(--accent3-rgb),0.05); }
-    .pill.violet { border-color: rgba(191,201,191,0.35); color: var(--accent5); background: rgba(191,201,191,0.09); }
+    .pill.violet { border-color: rgba(var(--accent3-rgb),0.35); color: var(--accent5); background: rgba(var(--accent3-rgb),0.09); }
     .pill.gold   { border-color: rgba(var(--accent3-rgb),0.3); color: var(--accent4); background: rgba(var(--accent3-rgb),0.05); }
-    .pill.navy   { border-color: rgba(10,17,28,0.45);  color: #cbd9e8; background: rgba(10,17,28,0.24); }
+    .pill.navy   { border-color: var(--border2);  color: var(--accent5); background: rgba(var(--accent-rgb),0.05); }
 
     /* ── JOURNEY ── */
     #journey { background: var(--bg2); }
@@ -711,7 +761,7 @@
     .creator-card {
       background: var(--surface);
       border: 1.5px solid var(--border);
-      border-radius: 28px 28px 14px 14px;
+      border-radius: 18px;
       padding: 2rem;
       transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
       position: relative;
@@ -762,7 +812,7 @@
     .val-card {
       background: var(--surface);
       border: 1.5px solid var(--border);
-      border-radius: 22px 22px 12px 12px;
+      border-radius: 18px;
       padding: 1.8rem;
       transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
@@ -781,7 +831,7 @@
     .lang-card {
       background: var(--surface);
       border: 1.5px solid var(--border);
-      border-radius: 22px 22px 12px 12px;
+      border-radius: 18px;
       padding: 1.6rem;
       transition: border-color 0.2s, transform 0.2s;
     }
@@ -797,7 +847,7 @@
     .cta-inner {
       background: linear-gradient(135deg, rgba(var(--accent-rgb),0.08), rgba(var(--accent3-rgb),0.06));
       border: 1.5px solid rgba(var(--accent-rgb),0.2);
-      border-radius: 34px 34px 18px 18px;
+      border-radius: 18px;
       padding: 4rem 3rem;
       text-align: center;
     }
@@ -817,7 +867,7 @@
       gap: 0.5rem;
       padding: 0.85rem 2rem;
       background: var(--accent);
-      color: #fff;
+      color: var(--surface);
       font-family: var(--display);
       font-size: 0.88rem;
       font-weight: 800;
@@ -990,7 +1040,7 @@
     body[data-site-style="architect"] .cta-inner,
     body[data-site-style="architect"] .photo-badge,
     body[data-site-style="architect"] .creator-callout {
-      border-radius: 34px 34px 18px 18px;
+      border-radius: 18px;
     }
     body[data-site-style="architect"] .section-header {
       padding-left: 1rem;
@@ -1156,7 +1206,7 @@
     body[data-site-style="organic"] .lang-card,
     body[data-site-style="organic"] .cta-inner,
     body[data-site-style="organic"] .photo-badge {
-      border-radius: 30px 54px 24px 40px;
+      border-radius: 18px;
       box-shadow: 0 20px 44px rgba(6, 16, 12, 0.24);
     }
     body[data-site-style="organic"] .section-header {
@@ -1166,7 +1216,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: var(--accent2);
+      background: linear-gradient(120deg, var(--accent5), var(--accent));
       border-top: none;
       padding: 2.2rem 2.5rem;
       display: flex;
@@ -1175,11 +1225,11 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-    .footer-logo { font-family: var(--mono); font-size: 0.82rem; color: rgba(255,255,255,0.5); font-weight: 700; }
+    .footer-logo { font-family: var(--mono); font-size: 0.82rem; color: rgba(255,255,255,0.55); font-weight: 700; }
     .footer-logo span { color: var(--accent); }
     .footer-copy { font-size: 0.74rem; color: rgba(255,255,255,0.35); font-family: var(--mono); }
     .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a { font-family: var(--display); font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-links a { font-family: var(--display); font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--accent); }
 
     /* ── SCROLL REVEAL ── */
@@ -1227,9 +1277,11 @@
       <li><a href="courses.html" data-i18n="shared.nav.courses">Courses</a></li>
       <li><a href="projects.html" data-i18n="shared.nav.projects">Projects</a></li>
       <li><a href="content.html" data-i18n="shared.nav.content">Content</a></li>
+      <li><a href="how-the-internet-works.html">How the Internet Works</a></li>
       <li><a href="contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
     <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
+    <button id="theme-toggle" data-theme-toggle title="Toggle dark mode"><span class="theme-toggle-icon">🌙</span></button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
@@ -1238,6 +1290,8 @@
     <a href="courses.html" data-i18n="shared.nav.courses">Courses</a>
     <a href="projects.html" data-i18n="shared.nav.projects">Projects</a>
     <a href="content.html" data-i18n="shared.nav.content">Content</a>
+    <a href="how-the-internet-works.html">How the Internet Works</a>
+    <div class="mobile-theme-row">Dark mode <button data-theme-toggle><span class="theme-toggle-icon">🌙</span></button></div>
     <a href="contact.html" data-i18n="shared.nav.contact">Contact →</a>
   </div>
 
@@ -1353,7 +1407,7 @@
           <div class="creator-card-desc" data-i18n="about.creator_c4_desc" data-i18n-html>
             Independently creating study guides, reels, and German Language courses in <strong>Balti</strong> for Instagram, Facebook and my Website— making education accessible to mountain communities back home.
           </div>
-          <div class="creator-card-tag" style="background:rgba(191,201,191,0.1);color:var(--accent5)" data-i18n="about.creator_c4_tag">Instagram · Facebook</div>
+          <div class="creator-card-tag" style="background:rgba(var(--accent3-rgb),0.1);color:var(--accent5)" data-i18n="about.creator_c4_tag">Instagram · Facebook</div>
         </div>
       </div>
     </div>

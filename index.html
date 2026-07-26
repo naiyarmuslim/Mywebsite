@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('nm_theme')||'light')}catch(e){}</script>
   <title>Naiyar Muslim</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -146,7 +147,7 @@
     .hero-card {
       background: var(--surface);
       border: 1.5px solid var(--border);
-      border-radius: 34px 34px 18px 18px;
+      border-radius: 18px;
       overflow: hidden;
       opacity: 0;
       animation: fadeLeft .7s .4s forwards;
@@ -249,7 +250,7 @@
       display: block;
       position: relative;
       overflow: hidden;
-      border-radius: 26px 26px 14px 14px;
+      border-radius: 18px;
     }
     .feat-card::before {
       content: '';
@@ -282,7 +283,7 @@
 
     /* Creator strip */
     #creator-strip {
-      background: linear-gradient(135deg, rgba(6,20,38,0.96), rgba(13,44,74,0.92));
+      background: linear-gradient(135deg, var(--accent), var(--accent5));
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       position: relative;
@@ -314,12 +315,12 @@
       font-family: var(--display);
       font-size: clamp(1.6rem, 2.5vw, 2.2rem);
       font-weight: 900;
-      color: var(--text);
+      color: var(--surface);
       letter-spacing: -0.03em;
       line-height: 1.1;
     }
     .creator-strip-left p {
-      color: var(--muted);
+      color: rgba(255,255,255,0.62);
       font-size: 0.92rem;
       margin-top: 0.5rem;
       max-width: 480px;
@@ -331,9 +332,9 @@
       flex-shrink: 0;
     }
     .strip-badge {
-      background: rgba(var(--accent-rgb),0.08);
-      border: 1.5px solid rgba(var(--accent-rgb),0.22);
-      border-radius: 18px 18px 10px 10px;
+      background: rgba(255,255,255,0.08);
+      border: 1.5px solid rgba(255,255,255,0.16);
+      border-radius: 18px;
       padding: 0.8rem 1.2rem;
       text-align: center;
       min-width: 90px;
@@ -342,13 +343,13 @@
       font-family: var(--display);
       font-size: 1.4rem;
       font-weight: 900;
-      color: var(--text);
+      color: var(--surface);
       letter-spacing: -0.02em;
     }
     .strip-badge-label {
       font-family: var(--mono);
       font-size: 0.62rem;
-      color: var(--muted);
+      color: rgba(255,255,255,0.55);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -360,7 +361,7 @@
     .cta-inner {
       background: linear-gradient(135deg, rgba(var(--accent-rgb),0.07), rgba(var(--accent3-rgb),0.05));
       border: 1.5px solid rgba(var(--accent-rgb),0.2);
-      border-radius: 34px 34px 18px 18px;
+      border-radius: 18px;
       padding: 5rem 3rem;
       text-align: center;
     }
@@ -403,9 +404,11 @@
       <li><a href="pages/courses.html"  data-i18n="shared.nav.courses">Courses</a></li>
       <li><a href="pages/projects.html" data-i18n="shared.nav.projects">Projects</a></li>
       <li><a href="pages/content.html"  data-i18n="shared.nav.content">Content</a></li>
+      <li><a href="pages/how-the-internet-works.html">How the Internet Works</a></li>
       <li><a href="pages/contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
     <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
+    <button id="theme-toggle" data-theme-toggle title="Toggle dark mode"><span class="theme-toggle-icon">🌙</span></button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
@@ -414,6 +417,8 @@
     <a href="pages/courses.html" data-i18n="shared.nav.courses">Courses</a>
     <a href="pages/projects.html" data-i18n="shared.nav.projects">Projects</a>
     <a href="pages/content.html" data-i18n="shared.nav.content">Content</a>
+    <a href="pages/how-the-internet-works.html">How the Internet Works</a>
+    <div class="mobile-theme-row">Dark mode <button data-theme-toggle><span class="theme-toggle-icon">🌙</span></button></div>
     <a href="pages/contact.html" data-i18n="shared.nav.contact">Contact →</a>
   </div>
 
@@ -583,6 +588,12 @@
           <div class="feat-title" data-i18n="home.feat4_title">Content Creation</div>
           <div class="feat-desc" data-i18n="home.feat4_desc">Instagram reels and Facebook guidance videos on German visa procedures, blocked accounts, and study pathways.</div>
           <div class="feat-link" data-i18n="home.feat4_link">Watch content →</div>
+        </a>
+        <a href="pages/how-the-internet-works.html" class="card feat-card reveal reveal-d5" style="--fc:var(--accent)">
+          <div class="feat-icon">🌐</div>
+          <div class="feat-title">How the Internet Works</div>
+          <div class="feat-desc">A simple guide to the systems behind the websites and apps we use every day.</div>
+          <div class="feat-link">Read the guide →</div>
         </a>
       </div>
     </div>

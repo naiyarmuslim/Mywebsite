@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('nm_theme')||'light')}catch(e){}</script>
   <title>Projects — Naiyar Muslim</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <style>
@@ -17,7 +18,7 @@
       padding: 1.5rem 2rem;
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 24px 24px 14px 14px;
+      border-radius: 18px;
       transition: border-color 0.2s, background 0.2s;
       cursor: default;
     }
@@ -70,9 +71,11 @@
       <li><a href="courses.html" data-i18n="shared.nav.courses">Courses</a></li>
       <li><a href="projects.html" class="active" data-i18n="shared.nav.projects">Projects</a></li>
       <li><a href="content.html" data-i18n="shared.nav.content">Content</a></li>
+      <li><a href="how-the-internet-works.html">How the Internet Works</a></li>
       <li><a href="contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
     <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
+    <button id="theme-toggle" data-theme-toggle title="Toggle dark mode"><span class="theme-toggle-icon">🌙</span></button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
@@ -81,6 +84,8 @@
     <a href="courses.html" data-i18n="shared.nav.courses">Courses</a>
     <a href="projects.html" class="active" data-i18n="shared.nav.projects">Projects</a>
     <a href="content.html" data-i18n="shared.nav.content">Content</a>
+    <a href="how-the-internet-works.html">How the Internet Works</a>
+    <div class="mobile-theme-row">Dark mode <button data-theme-toggle><span class="theme-toggle-icon">🌙</span></button></div>
     <a href="contact.html" data-i18n="shared.nav.contact">Contact</a>
   </div>
 

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('nm_theme')||'light')}catch(e){}</script>
   <title>Naiyar Muslim — German in Balti · Courses</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <style>
@@ -97,9 +98,11 @@
       <li><a href="courses.html" class="active" data-i18n="shared.nav.courses">Courses</a></li>
       <li><a href="projects.html"  data-i18n="shared.nav.projects">Projects</a></li>
       <li><a href="content.html"   data-i18n="shared.nav.content">Content</a></li>
+      <li><a href="how-the-internet-works.html">How the Internet Works</a></li>
       <li><a href="contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
     <button id="lang-toggle" onclick="toggleLang()" title="Switch language">DE 🇩🇪</button>
+    <button id="theme-toggle" data-theme-toggle title="Toggle dark mode"><span class="theme-toggle-icon">🌙</span></button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
   <div class="mobile-menu" id="mobile-menu">
@@ -108,12 +111,14 @@
     <a href="courses.html" class="active" data-i18n="shared.nav.courses">Courses</a>
     <a href="projects.html"  data-i18n="shared.nav.projects">Projects</a>
     <a href="content.html"   data-i18n="shared.nav.content">Content</a>
+    <a href="how-the-internet-works.html">How the Internet Works</a>
+    <div class="mobile-theme-row">Dark mode <button data-theme-toggle><span class="theme-toggle-icon">🌙</span></button></div>
     <a href="contact.html"   data-i18n="shared.nav.contact">Contact →</a>
   </div>
 
   <!-- PAGE HEADER -->
   <div class="page-header">
-    <div class="g-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(124,58,237,.18),transparent 70%);top:-100px;right:-80px;"></div>
+    <div class="g-orb" style="width:500px;height:500px;background:radial-gradient(circle,rgba(var(--accent-rgb),.12),transparent 70%);top:-100px;right:-80px;"></div>
     <div class="g-orb" style="width:300px;height:300px;background:radial-gradient(circle,rgba(var(--accent-rgb),.1),transparent 70%);bottom:-50px;left:-50px;"></div>
     <div class="container">
       <div class="section-tag" style="margin-bottom:.7rem">🏔️ <span data-i18n="courses.page_tag">German in Balti</span></div>
@@ -214,9 +219,9 @@
   // ================================================================
 
   const LEVEL_CFG = {
-    a1: { label: 'A1', cls: 'la1', color: '#10b981' },
-    a2: { label: 'A2', cls: 'la2', color: '#00d4ff' },
-    b1: { label: 'B1', cls: 'lb1', color: '#f59e0b' },
+    a1: { label: 'A1', cls: 'la1', color: 'var(--accent3)' },
+    a2: { label: 'A2', cls: 'la2', color: 'var(--accent)' },
+    b1: { label: 'B1', cls: 'lb1', color: 'var(--accent5)' },
   };
 
   function getLang() { return localStorage.getItem('nm_lang') || 'en'; }
