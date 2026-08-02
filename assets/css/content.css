@@ -1,0 +1,175 @@
+    #intro-band { background: var(--bg2); }
+    #instagram   { background: var(--bg); }
+    #facebook    { background: var(--bg2); }
+
+    /* ── Platform hero cards ── */
+    .platform-row {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .platform-row.reverse { direction: rtl; }
+    .platform-row.reverse > * { direction: ltr; }
+
+    .platform-info-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 2rem;
+      position: sticky;
+      top: 80px;
+    }
+    .platform-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1.2rem;
+    }
+    .badge-ig { background:rgba(var(--accent3-rgb),0.12); color:var(--accent3); border:1px solid rgba(var(--accent3-rgb),0.28); }
+    .badge-fb { background:rgba(var(--accent-rgb),0.12); color:var(--accent); border:1px solid rgba(var(--accent-rgb),0.28); }
+
+    .platform-title { font-family:var(--display); font-size:1.5rem; font-weight:800; margin-bottom:.6rem; }
+    .platform-desc  { font-size:.9rem; color:var(--muted); font-weight:300; line-height:1.7; margin-bottom:1.5rem; }
+    .platform-stat  { display:flex; gap:1.5rem; margin-bottom:1.5rem; }
+    .p-stat-num     { font-family:var(--display); font-size:1.4rem; font-weight:800; }
+    .p-stat-lbl     { font-size:.72rem; color:var(--muted); font-family:var(--mono); }
+
+    /* ── Reel grid ── */
+    .reels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .reel-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: border-color .2s, transform .2s;
+    }
+    .reel-card:hover { border-color:rgba(var(--accent-rgb),0.28); transform:translateY(-3px); }
+    .reel-thumb {
+      aspect-ratio: 9/16;
+      background: var(--surface2);
+      position: relative;
+      overflow: hidden;
+    }
+    .reel-thumb iframe {
+      width: 100%; height: 100%;
+      border: none;
+      pointer-events: none;
+    }
+    .reel-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,.3);
+      transition: background .2s;
+    }
+    .reel-card:hover .reel-play-overlay { background: rgba(0,0,0,.1); }
+    .reel-play-btn {
+      width: 56px; height: 56px;
+      background: rgba(255,255,255,.9);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--accent2);
+      text-decoration: none;
+      transition: transform .15s, box-shadow .15s;
+    }
+    .reel-play-btn:hover { transform:scale(1.1); box-shadow:0 8px 24px rgba(0,0,0,.4); }
+    .reel-info { padding: 1rem 1.2rem; }
+    .reel-title { font-family:var(--display); font-size:.95rem; font-weight:700; margin-bottom:.25rem; }
+    .reel-sub   { font-size:.78rem; color:var(--muted); }
+
+    /* ── Facebook video cards ── */
+    .fb-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .fb-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: border-color .2s, transform .2s;
+    }
+    .fb-card:hover { border-color:rgba(var(--accent-rgb),0.35); transform:translateY(-3px); }
+    .fb-thumb {
+      aspect-ratio: 16/9;
+      background: var(--surface2);
+      display: flex; align-items:center; justify-content:center;
+      font-size: 3rem;
+      position: relative;
+    }
+    .fb-overlay {
+      position:absolute; inset:0;
+      background: rgba(0,0,0,.4);
+      display:flex;align-items:center;justify-content:center;
+      opacity:0; transition:opacity .2s;
+    }
+    .fb-card:hover .fb-overlay { opacity:1; }
+    .fb-watch-btn {
+      font-family:var(--mono);font-size:.75rem;font-weight:700;
+      padding:.5rem 1.2rem;
+      background:var(--accent);color:var(--accent2);
+      border-radius:4px; text-decoration:none;
+      transition:background .2s;
+    }
+    .fb-watch-btn:hover { background:var(--accent5); }
+    .fb-info { padding:1rem 1.2rem; }
+    .fb-title { font-family:var(--display);font-size:.95rem;font-weight:700;margin-bottom:.25rem; }
+    .fb-sub   { font-size:.78rem; color:var(--muted); }
+
+    /* ── Baltistan note ── */
+    .balti-card {
+      background: linear-gradient(135deg, rgba(var(--accent-rgb),0.08), rgba(var(--accent3-rgb),0.08));
+      border: 1px solid rgba(var(--accent-rgb),0.2);
+      border-radius: 18px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .balti-flag { font-size: 4rem; }
+    .balti-title { font-family:var(--display);font-size:1.4rem;font-weight:800;margin-bottom:.5rem; }
+    .balti-desc  { color:var(--muted);font-size:.95rem;font-weight:300;line-height:1.7; }
+
+    @media(max-width:900px) {
+      .platform-row { grid-template-columns:1fr; }
+      .platform-row.reverse { direction:ltr; }
+      .platform-info-card { position:static; }
+      .balti-card { grid-template-columns:1fr; text-align:center; }
+    }
+
+/* ── inlined style= extractions ── */
+.section-tag-center { justify-content: center; }
+.page-title-content { font-size: clamp(2.5rem, 5vw, 4rem); }
+.intro-band-pad { padding-top: 2rem; padding-bottom: 3rem; }
+.balti-desc strong { color: var(--text); }
+.orb-content-purple { width: 400px; height: 400px; top: 0; right: -80px; }
+.btn-block-center { width: 100%; justify-content: center; }
+.reel-thumb-fallback {
+  width: 100%; height: 100%; display: flex; align-items: center;
+  justify-content: center; font-size: 3rem;
+}
+.reel-thumb-fallback.rf1 { background: linear-gradient(135deg,#C74A09,#E8A200); }
+.reel-thumb-fallback.rf2 { background: linear-gradient(135deg,#7A2B0A,#E8912A); }
+.reel-thumb-fallback.rf3 { background: linear-gradient(135deg,#C74A09,#FFE7CC); }
+.reel-thumb-fallback.rf4 { background: linear-gradient(135deg,#E8A200,#D9720A); }
+.reel-thumb-fallback.rf5 { background: linear-gradient(135deg,#7A2B0A,#D9720A); }
+.reel-thumb-fallback.rf6 { background: linear-gradient(135deg,#C74A09,#7A2B0A); }
+.view-all-link { margin-top: 1.5rem; }
+.orb-content-cyan { width: 380px; height: 380px; bottom: 0; left: -60px; }
+.platform-desc strong { color: var(--text); }
+.btn-block-fb { width: 100%; justify-content: center; background: var(--accent); color: var(--accent2); }

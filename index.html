@@ -3,392 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('nm_theme')||'light')}catch(e){}</script>
+  <script src="assets/js/theme-init.js"></script>
   <title>Naiyar Muslim</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    /* ── HOME-SPECIFIC STYLES ── */
-
-    /* Hero */
-    #home {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      padding-top: 64px;
-      overflow: hidden;
-      background: var(--bg);
-      position: relative;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      width: 100%;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Decorative diagonal stripe block */
-    .hero-stripe {
-      position: absolute;
-      top: 0; right: 0;
-      width: 42%;
-      height: 100%;
-      background:
-        repeating-linear-gradient(
-          90deg,
-          transparent,
-          transparent 44px,
-          rgba(var(--accent4-rgb),0.07) 44px,
-          rgba(var(--accent4-rgb),0.07) 45px
-        );
-      pointer-events: none;
-      opacity: 0.55;
-      animation: stripe-shift 30s linear infinite;
-    }
-
-    @keyframes stripe-shift {
-      from { background-position: 0 0; }
-      to { background-position: 0 180px; }
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      font-family: var(--mono);
-      font-size: .72rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-      opacity: 0;
-      animation: fadeUp .6s .2s forwards;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      display: inline-block;
-      width: 24px; height: 2px;
-      background: var(--accent);
-      border-radius: 2px;
-    }
-
-    .hero-title {
-      font-family: var(--display);
-      font-size: clamp(3.4rem, 5.5vw, 5.8rem);
-      font-weight: 900;
-      line-height: 1.0;
-      letter-spacing: -0.04em;
-      margin-bottom: 1.4rem;
-      opacity: 0;
-      animation: fadeUp .6s .35s forwards;
-    }
-    .hero-title .line2 {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--accent);
-    }
-
-    .hero-desc {
-      color: var(--muted);
-      font-size: 1.02rem;
-      font-weight: 400;
-      max-width: 440px;
-      margin-bottom: 2.2rem;
-      opacity: 0;
-      animation: fadeUp .6s .5s forwards;
-      line-height: 1.7;
-    }
-    .hero-desc strong { color: var(--text); font-weight: 700; }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp .6s .65s forwards;
-    }
-
-    .stats-strip {
-      display: flex;
-      gap: 2.5rem;
-      flex-wrap: wrap;
-      margin-top: 2.8rem;
-      padding-top: 2.2rem;
-      border-top: 1px solid var(--border);
-      opacity: 0;
-      animation: fadeUp .6s .8s forwards;
-    }
-    .stat-num {
-      font-family: var(--display);
-      font-size: 1.6rem;
-      font-weight: 900;
-      color: var(--text);
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-    }
-    .stat-num span { color: var(--accent); }
-    .stat-label {
-      font-size: .72rem;
-      color: var(--light);
-      font-family: var(--mono);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 0.15rem;
-    }
-
-    /* Hero card — replaces the dark terminal */
-    .hero-card {
-      background: var(--surface);
-      border: 1.5px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      opacity: 0;
-      animation: fadeLeft .7s .4s forwards;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.18);
-      position: relative;
-    }
-    .hero-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 46%;
-      height: 16px;
-      border-bottom: 1px solid rgba(var(--accent4-rgb),0.34);
-      border-radius: 0 0 32px 32px;
-      pointer-events: none;
-      z-index: 1;
-    }
-    .hero-card-top {
-      padding: 2rem 2rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
-    }
-    .hero-avatar {
-      width: 60px; height: 60px;
-      border-radius: 50%;
-      background: var(--bg2);
-      border: 2px solid var(--border2);
-      object-fit: cover;
-      object-position: top;
-      flex-shrink: 0;
-    }
-    .hero-card-name {
-      font-family: var(--display);
-      font-size: 1.1rem;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-    }
-    .hero-card-role {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      color: var(--muted);
-      font-weight: 700;
-      margin-top: 0.1rem;
-    }
-    .hero-card-body { padding: 1.6rem 2rem 2rem; }
-    .card-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.88rem;
-    }
-    .card-row:last-child { border-bottom: none; padding-bottom: 0; }
-    .card-row-label { font-family: var(--mono); font-size: 0.68rem; color: var(--light); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-    .card-row-val { font-weight: 700; color: var(--text); font-size: 0.88rem; }
-    .card-row-val.accent { color: var(--accent); }
-    .card-row-val.teal   { color: var(--accent3); }
-    .card-row-val.gold   { color: var(--accent4); }
-    .hero-card-foot {
-      margin-top: 1.4rem;
-      background: var(--bg2);
-      border-radius: 8px;
-      padding: 1rem 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .hero-card-foot-icon { font-size: 1.3rem; flex-shrink: 0; }
-    .hero-card-foot-text { font-size: 0.82rem; color: var(--muted); font-weight: 400; line-height: 1.4; }
-    .hero-card-foot-text strong { color: var(--text); font-weight: 700; }
-
-    /* Skills tag cloud in card */
-    .skill-cloud { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.75rem; }
-    .skill-chip {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      font-weight: 700;
-      padding: 0.2rem 0.55rem;
-      border-radius: 4px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      letter-spacing: 0.04em;
-    }
-    .skill-chip.o { border-color: rgba(var(--accent-rgb),0.3);  color: var(--accent);  background: rgba(var(--accent-rgb),0.06); }
-    .skill-chip.t { border-color: rgba(var(--accent3-rgb),0.3);  color: var(--accent3); background: rgba(var(--accent3-rgb),0.06); }
-    .skill-chip.g { border-color: rgba(var(--accent3-rgb),0.3); color: var(--accent4); background: rgba(var(--accent3-rgb),0.06); }
-
-    /* Features */
-    #features { background: var(--bg2); }
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
-    .feat-card {
-      padding: 2rem;
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      position: relative;
-      overflow: hidden;
-      border-radius: 18px;
-    }
-    .feat-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: var(--fc, var(--accent));
-      border-radius: 1px;
-    }
-    .feat-icon { font-size: 1.8rem; margin-bottom: 1rem; }
-    .feat-title {
-      font-family: var(--display);
-      font-size: 1.05rem;
-      font-weight: 800;
-      margin-bottom: 0.4rem;
-      letter-spacing: -0.01em;
-    }
-    .feat-desc { font-size: 0.85rem; color: var(--muted); font-weight: 400; line-height: 1.6; }
-    .feat-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      margin-top: 1rem;
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 0.02em;
-    }
-
-    /* Creator strip */
-    #creator-strip {
-      background: linear-gradient(135deg, var(--accent), var(--accent5));
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-    #creator-strip::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: -84px;
-      width: min(900px, 86vw);
-      height: 150px;
-      border: 1px solid rgba(var(--accent4-rgb),0.2);
-      border-bottom: 0;
-      border-radius: 999px 999px 0 0;
-      pointer-events: none;
-      opacity: 0.7;
-    }
-    .creator-strip-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-      padding: 3rem 0;
-    }
-    .creator-strip-left h2 {
-      font-family: var(--display);
-      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
-      font-weight: 900;
-      color: var(--surface);
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-    }
-    .creator-strip-left p {
-      color: rgba(255,255,255,0.62);
-      font-size: 0.92rem;
-      margin-top: 0.5rem;
-      max-width: 480px;
-    }
-    .creator-strip-right {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      flex-shrink: 0;
-    }
-    .strip-badge {
-      background: rgba(255,255,255,0.08);
-      border: 1.5px solid rgba(255,255,255,0.16);
-      border-radius: 18px;
-      padding: 0.8rem 1.2rem;
-      text-align: center;
-      min-width: 90px;
-    }
-    .strip-badge-num {
-      font-family: var(--display);
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: var(--surface);
-      letter-spacing: -0.02em;
-    }
-    .strip-badge-label {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      color: rgba(255,255,255,0.55);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-top: 0.15rem;
-    }
-
-    /* CTA */
-    #cta-band { background: var(--bg); }
-    .cta-inner {
-      background: linear-gradient(135deg, rgba(var(--accent-rgb),0.07), rgba(var(--accent3-rgb),0.05));
-      border: 1.5px solid rgba(var(--accent-rgb),0.2);
-      border-radius: 18px;
-      padding: 5rem 3rem;
-      text-align: center;
-    }
-    .cta-title {
-      font-family: var(--display);
-      font-size: clamp(1.9rem, 3vw, 2.8rem);
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.75rem;
-    }
-    .cta-title em {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--accent);
-    }
-    .cta-desc { color: var(--muted); margin-bottom: 2rem; max-width: 480px; margin-left: auto; margin-right: auto; }
-
-    @media(max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-card { display: none; }
-      .creator-strip-inner { flex-direction: column; align-items: flex-start; }
-    }
-    @media(max-width: 480px) {
-      .stats-strip { gap: 1.5rem; }
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/home.css">
 </head>
 <body data-page="home">
   <div class="cursor" id="cursor"></div>
@@ -407,7 +27,7 @@
       <li><a href="pages/how-the-internet-works.html">How the Internet Works</a></li>
       <li><a href="pages/contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
-    <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
+    <button id="lang-toggle" title="Switch language">DE 🇩🇪</button>
     <button id="theme-toggle" data-theme-toggle title="Toggle dark mode"><span class="theme-toggle-icon">🌙</span></button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
@@ -426,8 +46,8 @@
   <section id="home">
     <div class="terrain-lines"></div>
     <div class="hero-stripe"></div>
-    <div class="glow-orb orb-coral" style="width:480px;height:480px;top:-100px;right:5%;"></div>
-    <div class="glow-orb orb-gold"  style="width:320px;height:320px;bottom:-60px;left:-60px;"></div>
+    <div class="glow-orb orb-coral orb-hero-coral"></div>
+    <div class="glow-orb orb-gold orb-hero-gold"></div>
     <div class="container">
       <div class="hero-grid">
 
@@ -465,16 +85,16 @@
         <div class="hero-card">
           <div class="hero-card-top">
             <img
+              id="hero-avatar"
               src="assets/Images/profile.jpg"
               alt="Naiyar Muslim"
               class="hero-avatar"
-              onerror="this.src='https://placehold.co/120x120/f2ede6/1a1a1a?text=NM'; this.style.filter='none';"
             >
             <div>
               <div class="hero-card-name">Naiyar Muslim</div>
               <div class="hero-card-role">Applied CS · Content Creator </div>
             </div>
-            <span style="margin-left:auto;font-size:1.1rem">🏔️</span>
+            <span class="hero-card-flag">🏔️</span>
           </div>
           <div class="hero-card-body">
             <div class="card-row">
@@ -529,7 +149,7 @@
   <div class="divider"></div>
 
   <!-- ── Fun Fact ── -->
-  <section id="creator-strip" style="padding: 0 2.5rem;">
+  <section id="creator-strip">
     <div class="terrain-lines"></div>
     <div class="container">
       <div class="creator-strip-inner">
@@ -556,40 +176,40 @@
   <!-- ── FEATURES ── -->
   <section id="features">
     <div class="terrain-lines"></div>
-    <div class="glow-orb orb-gold" style="width:380px;height:380px;top:0;right:-80px;"></div>
+    <div class="glow-orb orb-gold orb-features-gold"></div>
     <div class="container">
-      <div class="section-header reveal" style="max-width:560px">
+      <div class="section-header reveal features-header">
         <div class="section-tag" data-i18n="home.features_tag">explore</div>
         <h2 class="section-title">
           <span data-i18n="home.features_title1">Explore this</span><br><em data-i18n="home.features_title2">website.</em>
         </h2>
       </div>
       <div class="features-grid">
-        <a href="pages/about.html" class="card feat-card reveal reveal-d1" style="--fc:var(--accent)">
+        <a href="pages/about.html" class="card feat-card reveal reveal-d1 feat-card-accent">
           <div class="feat-icon">👤</div>
           <div class="feat-title" data-i18n="home.feat1_title">About Me</div>
           <div class="feat-desc" data-i18n="home.feat1_desc">From a small Village Mehdiabad between Mountain ranges— my story, values, and the work ethic forged across many roles.</div>
           <div class="feat-link" data-i18n="home.feat1_link">Read my story →</div>
         </a>
-        <a href="pages/courses.html" class="card feat-card reveal reveal-d2" style="--fc:var(--accent3)">
+        <a href="pages/courses.html" class="card feat-card reveal reveal-d2 feat-card-accent3">
           <div class="feat-icon">🎓</div>
           <div class="feat-title" data-i18n="home.feat2_title">German Learning Hub</div>
           <div class="feat-desc" data-i18n="home.feat2_desc">German language lessons and practical study-prep resources for students aiming for Germany.</div>
           <div class="feat-link" data-i18n="home.feat2_link">Open learning hub →</div>
         </a>
-        <a href="pages/projects.html" class="card feat-card reveal reveal-d3" style="--fc:var(--accent4)">
+        <a href="pages/projects.html" class="card feat-card reveal reveal-d3 feat-card-accent4">
           <div class="feat-icon">💻</div>
           <div class="feat-title" data-i18n="home.feat3_title">Projects</div>
           <div class="feat-desc" data-i18n="home.feat3_desc">Self-hosted cloud servers, web apps, and practical tools built to solve real problems.</div>
           <div class="feat-link" data-i18n="home.feat3_link">View projects →</div>
         </a>
-        <a href="pages/content.html" class="card feat-card reveal reveal-d4" style="--fc:var(--accent5)">
+        <a href="pages/content.html" class="card feat-card reveal reveal-d4 feat-card-accent5">
           <div class="feat-icon">📲</div>
           <div class="feat-title" data-i18n="home.feat4_title">Content Creation</div>
           <div class="feat-desc" data-i18n="home.feat4_desc">Instagram reels and Facebook guidance videos on German visa procedures, blocked accounts, and study pathways.</div>
           <div class="feat-link" data-i18n="home.feat4_link">Watch content →</div>
         </a>
-        <a href="pages/how-the-internet-works.html" class="card feat-card reveal reveal-d5" style="--fc:var(--accent)">
+        <a href="pages/how-the-internet-works.html" class="card feat-card reveal reveal-d5 feat-card-accent">
           <div class="feat-icon">🌐</div>
           <div class="feat-title">How the Internet Works</div>
           <div class="feat-desc">A simple guide to the systems behind the websites and apps we use every day.</div>
@@ -607,7 +227,7 @@
       <div class="cta-inner reveal">
         <div class="cta-title" data-i18n="home.cta_title" data-i18n-html>Ready to <em>connect?</em></div>
         <p class="cta-desc" data-i18n="home.cta_desc">I always welcome new opportunities to collaborate and connect with like-minded individuals.</p>
-        <a href="pages/contact.html" class="btn-primary" style="font-size:.9rem" data-i18n="home.cta_btn">✉ Send a Message</a>
+        <a href="pages/contact.html" class="btn-primary cta-btn-sm" data-i18n="home.cta_btn">✉ Send a Message</a>
       </div>
     </div>
   </section>
@@ -623,7 +243,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/i18n.js" onerror="console.log('i18n not loaded')"></script>
-  <script src="assets/js/main.js" onerror="console.log('main.js not loaded')"></script>
+  <script src="assets/js/i18n.js" id="i18n-script"></script>
+  <script src="assets/js/main.js" id="main-script"></script>
+  <script src="assets/js/home.js"></script>
 </body>
 </html>

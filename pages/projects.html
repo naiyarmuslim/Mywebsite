@@ -3,59 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('nm_theme')||'light')}catch(e){}</script>
+  <script src="../assets/js/theme-init.js"></script>
   <title>Projects — Naiyar Muslim</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-  <style>
-    #projects-main { background: var(--bg2); }
-
-    /* ── Project rows ── */
-    .project-row {
-      display: grid;
-      grid-template-columns: 1fr auto auto;
-      align-items: center;
-      gap: 1rem;
-      padding: 1.5rem 2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      transition: border-color 0.2s, background 0.2s;
-      cursor: default;
-    }
-    .project-row:hover { border-color: rgba(var(--accent-rgb),0.28); background: rgba(var(--accent-rgb),0.06); }
-    .project-name { font-family:var(--display); font-size:1rem; font-weight:700; margin-bottom:0.2rem; }
-    .project-desc { font-size:0.84rem; color:var(--muted); font-weight:300; }
-    .project-stack { display:flex; flex-wrap:wrap; gap:0.4rem; justify-content:flex-end; }
-    .proj-links { display:flex; gap:0.5rem; }
-    .proj-link {
-      width:36px; height:36px;
-      background:rgba(255,255,255,0.04);
-      border:1px solid var(--border);
-      border-radius:12px;
-      display:flex; align-items:center; justify-content:center;
-      text-decoration:none;
-      color:var(--muted);
-      font-size:0.9rem;
-      transition: color 0.2s, border-color 0.2s;
-    }
-    .proj-link:hover { color:var(--accent); border-color:var(--accent); }
-
-    /* ── Category headers ── */
-    .cat-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin: 2.5rem 0 1.2rem;
-    }
-    .cat-header:first-child { margin-top: 0; }
-    .cat-title { font-family:var(--display); font-size:1.1rem; font-weight:700; }
-    .cat-line { flex:1; height:1px; background:var(--border); }
-
-    @media(max-width:900px) {
-      .project-row { grid-template-columns:1fr; }
-      .project-stack,.proj-links { justify-content:flex-start; }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/projects.css">
 </head>
 <body data-page="projects">
   <div class="cursor" id="cursor"></div>
@@ -74,7 +25,7 @@
       <li><a href="how-the-internet-works.html">How the Internet Works</a></li>
       <li><a href="contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
-    <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
+    <button id="lang-toggle" title="Switch language">DE 🇩🇪</button>
     <button id="theme-toggle" data-theme-toggle title="Toggle dark mode"><span class="theme-toggle-icon">🌙</span></button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
@@ -93,33 +44,33 @@
   <div class="page-header">
     <div class="terrain-lines"></div>
     <div class="nature-trail"></div>
-    <div class="section-tag" style="justify-content:center" data-i18n="projects.page_tag">portfolio</div>
-    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)"><span data-i18n="projects.page_title1">Things I've</span><br><span data-i18n="projects.page_title2">built.</span></h1>
+    <div class="section-tag section-tag-center" data-i18n="projects.page_tag">portfolio</div>
+    <h1 class="section-title page-title-projects"><span data-i18n="projects.page_title1">Things I've</span><br><span data-i18n="projects.page_title2">built.</span></h1>
   </div>
 
   <!-- ── PROJECTS ── -->
-  <section id="projects-main" style="padding-top:2rem">
+  <section id="projects-main" class="projects-main-top">
     <div class="terrain-lines"></div>
     <div class="nature-mountains"></div>
     <div class="nature-forest"></div>
-    <div class="glow-orb orb-cyan" style="width:400px;height:400px;top:-80px;right:-80px;"></div>
+    <div class="glow-orb orb-cyan orb-projects-cyan"></div>
     <div class="container">
 
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem" class="reveal">
+      <div class="row-header reveal">
         <div>
           <div class="section-tag" data-i18n="projects.self_tag">self-learning projects</div>
-          <h2 class="section-title" style="font-size:1.6rem"><span data-i18n="projects.self_t1">Personal &amp;</span> <span data-i18n="projects.self_t2">Self-Built Projects</span></h2>
+          <h2 class="section-title section-title-sm"><span data-i18n="projects.self_t1">Personal &amp;</span> <span data-i18n="projects.self_t2">Self-Built Projects</span></h2>
         </div>
         <a href="https://github.com/naiyarmuslim" target="_blank" class="btn-outline" data-i18n="projects.gh_btn">View GitHub →</a>
       </div>
 
       <!-- Self-learning completed -->
       <div class="cat-header reveal">
-        <span class="cat-title" style="color:var(--accent3)" data-i18n="projects.cat_done">✓ Completed</span>
+        <span class="cat-title cat-title-done" data-i18n="projects.cat_done">✓ Completed</span>
         <div class="cat-line"></div>
       </div>
 
-      <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2rem">
+      <div class="row-stack">
         <div class="project-row reveal">
           <div>
             <div class="project-name" data-i18n="projects.p1_name">🖥️ Self-Hosted Cloud Server</div>
@@ -150,12 +101,12 @@
 
       <!-- Self-learning in progress -->
       <div class="cat-header reveal">
-        <span class="cat-title" style="color:var(--accent4)" data-i18n="projects.cat_wip">⟳ In Progress / Paused</span>
+        <span class="cat-title cat-title-wip" data-i18n="projects.cat_wip">⟳ In Progress / Paused</span>
         <div class="cat-line"></div>
       </div>
 
-      <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem">
-        <div class="project-row reveal" style="opacity:.65">
+      <div class="row-stack-loose">
+        <div class="project-row reveal project-row-faded">
           <div>
             <div class="project-name" data-i18n="projects.p3_name">🧪 C & Java Practice Projects</div>
             <div class="project-desc" data-i18n="projects.p3_desc">Practice programs and coursework exercises in C and Java to strengthen problem-solving fundamentals.</div>
@@ -170,14 +121,14 @@
       </div>
 
       <!-- GitHub projects not previously listed -->
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem" class="reveal">
+      <div class="row-header-tight reveal">
         <div>
           <div class="section-tag" data-i18n="projects.more_tag">github</div>
-          <h2 class="section-title" style="font-size:1.6rem"><span data-i18n="projects.more_t1">More</span> <span data-i18n="projects.more_t2">GitHub Projects</span></h2>
+          <h2 class="section-title section-title-sm"><span data-i18n="projects.more_t1">More</span> <span data-i18n="projects.more_t2">GitHub Projects</span></h2>
         </div>
       </div>
 
-      <div style="display:flex;flex-direction:column;gap:1rem">
+      <div class="row-stack-tight">
         <div class="project-row reveal">
           <div>
             <div class="project-name" data-i18n="projects.g1_name">🗓️ Shift Planner</div>
@@ -233,5 +184,6 @@
 
   <script src="../assets/js/i18n.js"></script>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/projects.js"></script>
 </body>
 </html>

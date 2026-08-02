@@ -3,164 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('nm_theme')||'light')}catch(e){}</script>
+  <script src="../assets/js/theme-init.js"></script>
   <title>Content Creation — Naiyar Muslim</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-  <style>
-    #intro-band { background: var(--bg2); }
-    #instagram   { background: var(--bg); }
-    #facebook    { background: var(--bg2); }
-
-    /* ── Platform hero cards ── */
-    .platform-row {
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 4rem;
-      align-items: start;
-    }
-    .platform-row.reverse { direction: rtl; }
-    .platform-row.reverse > * { direction: ltr; }
-
-    .platform-info-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 2rem;
-      position: sticky;
-      top: 80px;
-    }
-    .platform-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border-radius: 999px;
-      margin-bottom: 1.2rem;
-    }
-    .badge-ig { background:rgba(var(--accent3-rgb),0.12); color:var(--accent3); border:1px solid rgba(var(--accent3-rgb),0.28); }
-    .badge-fb { background:rgba(var(--accent-rgb),0.12); color:var(--accent); border:1px solid rgba(var(--accent-rgb),0.28); }
-
-    .platform-title { font-family:var(--display); font-size:1.5rem; font-weight:800; margin-bottom:.6rem; }
-    .platform-desc  { font-size:.9rem; color:var(--muted); font-weight:300; line-height:1.7; margin-bottom:1.5rem; }
-    .platform-stat  { display:flex; gap:1.5rem; margin-bottom:1.5rem; }
-    .p-stat-num     { font-family:var(--display); font-size:1.4rem; font-weight:800; }
-    .p-stat-lbl     { font-size:.72rem; color:var(--muted); font-family:var(--mono); }
-
-    /* ── Reel grid ── */
-    .reels-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.2rem;
-    }
-    .reel-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      transition: border-color .2s, transform .2s;
-    }
-    .reel-card:hover { border-color:rgba(var(--accent-rgb),0.28); transform:translateY(-3px); }
-    .reel-thumb {
-      aspect-ratio: 9/16;
-      background: var(--surface2);
-      position: relative;
-      overflow: hidden;
-    }
-    .reel-thumb iframe {
-      width: 100%; height: 100%;
-      border: none;
-      pointer-events: none;
-    }
-    .reel-play-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(0,0,0,.3);
-      transition: background .2s;
-    }
-    .reel-card:hover .reel-play-overlay { background: rgba(0,0,0,.1); }
-    .reel-play-btn {
-      width: 56px; height: 56px;
-      background: rgba(255,255,255,.9);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; color: var(--accent2);
-      text-decoration: none;
-      transition: transform .15s, box-shadow .15s;
-    }
-    .reel-play-btn:hover { transform:scale(1.1); box-shadow:0 8px 24px rgba(0,0,0,.4); }
-    .reel-info { padding: 1rem 1.2rem; }
-    .reel-title { font-family:var(--display); font-size:.95rem; font-weight:700; margin-bottom:.25rem; }
-    .reel-sub   { font-size:.78rem; color:var(--muted); }
-
-    /* ── Facebook video cards ── */
-    .fb-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.2rem;
-    }
-    .fb-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      transition: border-color .2s, transform .2s;
-    }
-    .fb-card:hover { border-color:rgba(var(--accent-rgb),0.35); transform:translateY(-3px); }
-    .fb-thumb {
-      aspect-ratio: 16/9;
-      background: var(--surface2);
-      display: flex; align-items:center; justify-content:center;
-      font-size: 3rem;
-      position: relative;
-    }
-    .fb-overlay {
-      position:absolute; inset:0;
-      background: rgba(0,0,0,.4);
-      display:flex;align-items:center;justify-content:center;
-      opacity:0; transition:opacity .2s;
-    }
-    .fb-card:hover .fb-overlay { opacity:1; }
-    .fb-watch-btn {
-      font-family:var(--mono);font-size:.75rem;font-weight:700;
-      padding:.5rem 1.2rem;
-      background:var(--accent);color:var(--accent2);
-      border-radius:4px; text-decoration:none;
-      transition:background .2s;
-    }
-    .fb-watch-btn:hover { background:var(--accent5); }
-    .fb-info { padding:1rem 1.2rem; }
-    .fb-title { font-family:var(--display);font-size:.95rem;font-weight:700;margin-bottom:.25rem; }
-    .fb-sub   { font-size:.78rem; color:var(--muted); }
-
-    /* ── Baltistan note ── */
-    .balti-card {
-      background: linear-gradient(135deg, rgba(var(--accent-rgb),0.08), rgba(var(--accent3-rgb),0.08));
-      border: 1px solid rgba(var(--accent-rgb),0.2);
-      border-radius: 18px;
-      padding: 2.5rem;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
-    .balti-flag { font-size: 4rem; }
-    .balti-title { font-family:var(--display);font-size:1.4rem;font-weight:800;margin-bottom:.5rem; }
-    .balti-desc  { color:var(--muted);font-size:.95rem;font-weight:300;line-height:1.7; }
-
-    @media(max-width:900px) {
-      .platform-row { grid-template-columns:1fr; }
-      .platform-row.reverse { direction:ltr; }
-      .platform-info-card { position:static; }
-      .balti-card { grid-template-columns:1fr; text-align:center; }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/content.css">
 </head>
 <body data-page="content">
   <div class="cursor" id="cursor"></div>
@@ -178,7 +24,7 @@
       <li><a href="how-the-internet-works.html">How the Internet Works</a></li>
       <li><a href="contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
-    <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
+    <button id="lang-toggle" title="Switch language">DE 🇩🇪</button>
     <button id="theme-toggle" data-theme-toggle title="Toggle dark mode"><span class="theme-toggle-icon">🌙</span></button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
@@ -197,12 +43,12 @@
   <div class="page-header">
     <div class="terrain-lines"></div>
     <div class="nature-trail"></div>
-    <div class="section-tag" style="justify-content:center" data-i18n="content.page_tag">content creation</div>
-    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)"><span data-i18n="content.page_title1">Sharing knowledge</span><br><span data-i18n="content.page_title2">with Baltistan.</span></h1>
+    <div class="section-tag section-tag-center" data-i18n="content.page_tag">content creation</div>
+    <h1 class="section-title page-title-content"><span data-i18n="content.page_title1">Sharing knowledge</span><br><span data-i18n="content.page_title2">with Baltistan.</span></h1>
   </div>
 
   <!-- ── INTRO BAND ── -->
-  <section id="intro-band" style="padding-top:2rem;padding-bottom:3rem">
+  <section id="intro-band" class="intro-band-pad">
     <div class="terrain-lines"></div>
     <div class="container">
       <div class="balti-card reveal">
@@ -210,7 +56,7 @@
         <div>
           <div class="balti-title" data-i18n="content.balti_title">Why I create content</div>
           <div class="balti-desc" data-i18n="content.balti_desc" data-i18n-html>
-            Baltistan is a remote, mountainous region in northern Pakistan with incredible people and enormous potential — but limited access to verified information. So as a son of this region, I aim to bridge the gap by creating accessible content On Facebook. I create <strong style="color:var(--text)">guidance videos in Balti</strong> about visa procedure, blocked account, language requirements, visa types, and pathways for diffrent groups of Students. On Instagram, I share developer life, travel reels, and content to inspire the youth that if i can so can they.
+            Baltistan is a remote, mountainous region in northern Pakistan with incredible people and enormous potential — but limited access to verified information. So as a son of this region, I aim to bridge the gap by creating accessible content On Facebook. I create <strong>guidance videos in Balti</strong> about visa procedure, blocked account, language requirements, visa types, and pathways for diffrent groups of Students. On Instagram, I share developer life, travel reels, and content to inspire the youth that if i can so can they.
           </div>
         </div>
       </div>
@@ -223,7 +69,7 @@
   <section id="instagram">
     <div class="terrain-lines"></div>
     <div class="nature-forest"></div>
-    <div class="glow-orb orb-purple" style="width:400px;height:400px;top:0;right:-80px;"></div>
+    <div class="glow-orb orb-purple orb-content-purple"></div>
     <div class="container">
       <div class="platform-row">
 
@@ -234,7 +80,7 @@
           <div class="platform-stat">
             <div><div class="p-stat-num">@reels.gull</div><div class="p-stat-lbl" data-i18n="content.ig_handle_lbl">Instagram handle</div></div>
           </div>
-          <a href="https://www.instagram.com/reels.gull/" target="_blank" class="btn-primary" style="width:100%;justify-content:center">
+          <a href="https://www.instagram.com/reels.gull/" target="_blank" class="btn-primary btn-block-center">
             <span data-i18n="content.ig_follow">📸 Follow on Instagram</span>
           </a>
         </div>
@@ -248,7 +94,7 @@
 
             <div class="reel-card reveal">
               <div class="reel-thumb">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#7D53DE,#78E3FD);display:flex;align-items:center;justify-content:center;font-size:3rem;">📸</div>
+                <div class="reel-thumb-fallback rf1">📸</div>
                 <div class="reel-play-overlay">
                   <a href="https://www.instagram.com/reel/DPdkqRZDJgn/" target="_blank" class="reel-play-btn">▶</a>
                 </div>
@@ -261,7 +107,7 @@
 
             <div class="reel-card reveal reveal-d1">
               <div class="reel-thumb">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#5A36B0,#34F6F2);display:flex;align-items:center;justify-content:center;font-size:3rem;">🕊️</div>
+                <div class="reel-thumb-fallback rf2">🕊️</div>
                 <div class="reel-play-overlay">
                   <a href="https://www.instagram.com/reel/DOOeL4vjHhE/" target="_blank" class="reel-play-btn">▶</a>
                 </div>
@@ -274,7 +120,7 @@
 
             <div class="reel-card reveal reveal-d2">
               <div class="reel-thumb">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#7D53DE,#D1F5FF);display:flex;align-items:center;justify-content:center;font-size:3rem;">✨</div>
+                <div class="reel-thumb-fallback rf3">✨</div>
                 <div class="reel-play-overlay">
                   <a href="https://www.instagram.com/reel/DOROwVhjCgx/" target="_blank" class="reel-play-btn">▶</a>
                 </div>
@@ -287,7 +133,7 @@
 
             <div class="reel-card reveal reveal-d3">
               <div class="reel-thumb">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#34F6F2,#78E3FD);display:flex;align-items:center;justify-content:center;font-size:3rem;">🌿</div>
+                <div class="reel-thumb-fallback rf4">🌿</div>
                 <div class="reel-play-overlay">
                   <a href="https://www.instagram.com/reel/DVn8o4hjGe3/" target="_blank" class="reel-play-btn">▶</a>
                 </div>
@@ -300,7 +146,7 @@
 
             <div class="reel-card reveal reveal-d4">
               <div class="reel-thumb">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#5A36B0,#78E3FD);display:flex;align-items:center;justify-content:center;font-size:3rem;">🎭</div>
+                <div class="reel-thumb-fallback rf5">🎭</div>
                 <div class="reel-play-overlay">
                   <a href="https://www.instagram.com/reel/DU08Ttekkfg/" target="_blank" class="reel-play-btn">▶</a>
                 </div>
@@ -313,7 +159,7 @@
 
             <div class="reel-card reveal reveal-d5">
               <div class="reel-thumb">
-                <div style="width:100%;height:100%;background:linear-gradient(135deg,#7D53DE,#5A36B0);display:flex;align-items:center;justify-content:center;font-size:3rem;">🏔️</div>
+                <div class="reel-thumb-fallback rf6">🏔️</div>
                 <div class="reel-play-overlay">
                   <a href="https://www.instagram.com/reel/DOGqqzuDHEf/" target="_blank" class="reel-play-btn">▶</a>
                 </div>
@@ -325,7 +171,7 @@
             </div>
 
           </div>
-          <div style="margin-top:1.5rem" class="reveal">
+          <div class="view-all-link reveal">
             <a href="https://www.instagram.com/reels.gull/" target="_blank" class="btn-outline">
               <span data-i18n="content.ig_all">View all reels on Instagram →</span>
             </a>
@@ -341,18 +187,18 @@
   <section id="facebook">
     <div class="terrain-lines"></div>
     <div class="nature-mountains"></div>
-    <div class="glow-orb orb-cyan" style="width:380px;height:380px;bottom:0;left:-60px;"></div>
+    <div class="glow-orb orb-cyan orb-content-cyan"></div>
     <div class="container">
       <div class="platform-row reverse">
 
         <div class="platform-info-card reveal">
           <span class="platform-badge badge-fb">📘 Facebook</span>
           <div class="platform-title" data-i18n="content.fb_title">German Visa & Study Guidance in Balti</div>
-          <div class="platform-desc" data-i18n="content.fb_desc" data-i18n-html>Informative video content in the <strong style="color:var(--text)">Balti language</strong> — focused on German visa procedure, blocked account basics, language requirements, visa categories, and study pathways such as conditional admission, Studienkolleg, and university progression.</div>
+          <div class="platform-desc" data-i18n="content.fb_desc" data-i18n-html>Informative video content in the <strong>Balti language</strong> — focused on German visa procedure, blocked account basics, language requirements, visa categories, and study pathways such as conditional admission, Studienkolleg, and university progression.</div>
           <div class="platform-stat">
             <div><div class="p-stat-num">naiyar.gull</div><div class="p-stat-lbl" data-i18n="content.fb_handle_lbl">Facebook profile</div></div>
           </div>
-          <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="btn-primary" style="width:100%;justify-content:center;background:var(--accent);color:var(--accent2)">
+          <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="btn-primary btn-block-fb">
             <span data-i18n="content.fb_follow">📘 Follow on Facebook</span>
           </a>
         </div>
@@ -430,7 +276,7 @@
             </div>
 
           </div>
-          <div style="margin-top:1.5rem" class="reveal">
+          <div class="view-all-link reveal">
             <a href="https://www.facebook.com/naiyar.gull/" target="_blank" class="btn-outline">
               <span data-i18n="content.fb_all">Watch more on Facebook →</span>
             </a>
@@ -453,5 +299,6 @@
 
   <script src="../assets/js/i18n.js"></script>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/content.js"></script>
 </body>
 </html>

@@ -3,170 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('nm_theme')||'light')}catch(e){}</script>
+  <script src="../assets/js/theme-init.js"></script>
   <title>Contact — Naiyar Muslim</title>
   <link rel="stylesheet" href="../assets/css/style.css">
-  <style>
-    #contact-main { background: var(--bg2); }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    /* ── Info side ── */
-    .contact-info-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 2rem;
-      position: sticky;
-      top: 80px;
-    }
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .contact-item-icon {
-      width: 40px; height: 40px;
-      background: rgba(var(--accent-rgb),0.05);
-      border: 1px solid rgba(var(--accent-rgb),0.18);
-      border-radius: 14px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    .contact-item-label { font-family:var(--mono); font-size:.7rem; color:var(--muted); letter-spacing:.07em; text-transform:uppercase; margin-bottom:.2rem; }
-    .contact-item-value { font-size:.9rem; }
-    .contact-item-value a { color:var(--text); text-decoration:none; transition:color .2s; }
-    .contact-item-value a:hover { color:var(--accent); }
-
-    .social-row {
-      display: flex; gap:.75rem; flex-wrap:wrap;
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-    .social-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      padding: .45rem .9rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      font-family: var(--mono);
-      font-size: .72rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: all .2s;
-    }
-    .social-pill:hover { color: var(--accent); border-color: var(--accent); background: rgba(var(--accent-rgb),.06); }
-    .social-pill.ig:hover  { color:var(--accent3); border-color:var(--accent3); background:rgba(var(--accent3-rgb),.06); }
-    .social-pill.fb:hover  { color:var(--accent); border-color:var(--accent); background:rgba(var(--accent-rgb),.06); }
-    .social-pill.gh:hover  { color:var(--accent); border-color:var(--accent); }
-
-    /* ── Form side ── */
-    .form-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 2.5rem;
-    }
-    .form-title { font-family:var(--display); font-size:1.4rem; font-weight:800; margin-bottom:.4rem; }
-    .form-sub   { font-size:.88rem; color:var(--muted); margin-bottom:2rem; font-weight:300; }
-
-    .form-group { margin-bottom:1.3rem; }
-    .form-label { font-family:var(--mono); font-size:.7rem; color:var(--muted); letter-spacing:.07em; text-transform:uppercase; display:block; margin-bottom:.5rem; }
-    .form-input,
-    .form-textarea {
-      width: 100%;
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: .75rem 1rem;
-      color: var(--text);
-      font-family: var(--body);
-      font-size: .9rem;
-      transition: border-color .2s;
-      outline: none;
-    }
-    .form-input:focus,
-    .form-textarea:focus { border-color: var(--accent); }
-    .form-textarea { resize: vertical; min-height: 130px; }
-    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-
-    .submit-btn {
-      width: 100%;
-      padding: .9rem;
-      background: var(--accent);
-      color: var(--accent2);
-      font-family: var(--mono);
-      font-size: .85rem;
-      font-weight: 700;
-      letter-spacing: .05em;
-      border: none;
-      border-radius: 4px;
-      cursor: none;
-      transition: transform .15s, box-shadow .15s;
-    }
-    .submit-btn:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(var(--accent-rgb),.24); }
-
-    .form-success {
-      display: none;
-      background: rgba(var(--accent-rgb),.06);
-      border: 1px solid rgba(var(--accent-rgb),.25);
-      border-radius: 6px;
-      padding: 1rem 1.2rem;
-      font-family: var(--mono);
-      font-size: .82rem;
-      color: var(--accent3);
-      margin-top: 1rem;
-      text-align: center;
-    }
-
-    /* ── FAQ ── */
-    #faq { background: var(--bg); }
-    .faq-list { max-width: 700px; }
-    .faq-item {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      margin-bottom: .75rem;
-      overflow: hidden;
-    }
-    .faq-q {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.4rem;
-      cursor: none;
-      font-family: var(--display);
-      font-size: .95rem;
-      font-weight: 600;
-      transition: background .2s;
-    }
-    .faq-q:hover { background: var(--surface); }
-    .faq-icon { font-family:var(--mono); color:var(--accent); font-size:1rem; transition:transform .2s; }
-    .faq-item.open .faq-icon { transform:rotate(45deg); }
-    .faq-a {
-      display: none;
-      padding: 0 1.4rem 1.2rem;
-      font-size: .87rem;
-      color: var(--muted);
-      font-weight: 300;
-      line-height: 1.65;
-    }
-    .faq-item.open .faq-a { display: block; }
-
-    @media(max-width:900px) {
-      .contact-layout { grid-template-columns:1fr; }
-      .contact-info-card { position:static; }
-      .form-row { grid-template-columns:1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/css/contact.css">
 </head>
 <body data-page="contact">
   <div class="cursor" id="cursor"></div>
@@ -184,7 +24,7 @@
       <li><a href="how-the-internet-works.html">How the Internet Works</a></li>
       <li><a href="contact.html" class="active nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
-    <button id="lang-toggle" onclick="toggleLang && toggleLang()" title="Switch language">DE 🇩🇪</button>
+    <button id="lang-toggle" title="Switch language">DE 🇩🇪</button>
     <button id="theme-toggle" data-theme-toggle title="Toggle dark mode"><span class="theme-toggle-icon">🌙</span></button>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </nav>
@@ -203,15 +43,15 @@
   <div class="page-header">
     <div class="terrain-lines"></div>
     <div class="nature-trail"></div>
-    <div class="section-tag" style="justify-content:center" data-i18n="contact.page_tag">contact</div>
-    <h1 class="section-title" style="font-size:clamp(2.5rem,5vw,4rem)"><span data-i18n="contact.page_title1">Let's build</span><br><span data-i18n="contact.page_title2">something.</span></h1>
+    <div class="section-tag section-tag-center" data-i18n="contact.page_tag">contact</div>
+    <h1 class="section-title page-title-contact"><span data-i18n="contact.page_title1">Let's build</span><br><span data-i18n="contact.page_title2">something.</span></h1>
   </div>
 
   <!-- ── CONTACT MAIN ── -->
-  <section id="contact-main" style="padding-top:2rem">
+  <section id="contact-main" class="contact-main-top">
     <div class="terrain-lines"></div>
     <div class="nature-mountains"></div>
-    <div class="glow-orb orb-cyan" style="width:420px;height:420px;top:-80px;right:-80px;"></div>
+    <div class="glow-orb orb-cyan orb-contact-cyan"></div>
     <div class="container">
       <div class="contact-layout">
 
@@ -250,7 +90,7 @@
                 <div class="contact-item-value" data-i18n="contact.ci_resp_val">Usually within 24 hours</div>
               </div>
             </div>
-            <div class="contact-item" style="margin-bottom:0">
+            <div class="contact-item contact-item-last">
               <div class="contact-item-icon">🎯</div>
               <div>
                 <div class="contact-item-label" data-i18n="contact.ci_open_lbl">Best Fit</div>
@@ -271,30 +111,31 @@
           <div class="form-title" data-i18n="contact.form_title">Send a message</div>
           <div class="form-sub" data-i18n="contact.form_sub">I enjoy thoughtful projects, teamwork, and creative problem-solving. If our goals align, I'd be happy to connect.</div>
 
-          <form id="contact-form" onsubmit="handleSubmit(event)">
+          <form id="contact-form">
             <div class="form-row">
               <div class="form-group">
                 <label class="form-label" data-i18n="contact.f_name">Name</label>
-                <input type="text" class="form-input" placeholder="Your name" data-i18n-ph="contact.f_name_ph" required>
+                <input type="text" name="name" class="form-input" placeholder="Your name" data-i18n-ph="contact.f_name_ph" required maxlength="80" pattern="[\p{L}\p{M} '.-]{1,80}">
               </div>
               <div class="form-group">
                 <label class="form-label" data-i18n="contact.f_email">Email</label>
-                <input type="email" class="form-input" placeholder="your@email.com" data-i18n-ph="contact.f_email_ph" required>
+                <input type="email" name="email" class="form-input" placeholder="your@email.com" data-i18n-ph="contact.f_email_ph" required maxlength="254">
               </div>
             </div>
             <div class="form-group">
               <label class="form-label" data-i18n="contact.f_subject">Subject</label>
-              <input type="text" class="form-input" placeholder="e.g. Job Opportunity / Collaboration" data-i18n-ph="contact.f_subject_ph">
+              <input type="text" name="subject" class="form-input" placeholder="e.g. Job Opportunity / Collaboration" data-i18n-ph="contact.f_subject_ph" maxlength="150">
             </div>
             <div class="form-group">
               <label class="form-label" data-i18n="contact.f_msg">Message</label>
-              <textarea class="form-textarea" placeholder="Tell me about your project, opportunity, or question..." data-i18n-ph="contact.f_msg_ph" required></textarea>
+              <textarea name="message" class="form-textarea" placeholder="Tell me about your project, opportunity, or question..." data-i18n-ph="contact.f_msg_ph" required maxlength="2000"></textarea>
             </div>
             <button type="submit" class="submit-btn" data-i18n="contact.f_submit">✉ Send Message</button>
           </form>
           <div class="form-success" id="form-success" data-i18n="contact.f_success">
             ✓ Message sent! I'll get back to you within 24 hours.
           </div>
+          <div class="form-error" id="form-error"></div>
         </div>
 
       </div>
@@ -308,42 +149,42 @@
     <div class="terrain-lines"></div>
     <div class="nature-forest"></div>
     <div class="container">
-      <div class="section-header reveal" style="max-width:600px">
+      <div class="section-header reveal faq-header">
         <div class="section-tag" data-i18n="contact.faq_tag">common questions</div>
         <h2 class="section-title" data-i18n="contact.faq_title">FAQs</h2>
       </div>
       <div class="faq-list">
 
         <div class="faq-item reveal">
-          <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q">
             <span data-i18n="contact.q1">What opportunities are a good fit for you?</span> <span class="faq-icon">+</span>
           </div>
           <div class="faq-a" data-i18n="contact.a1">I'm interested in internships, working student roles, and entry-level positions in software or cybersecurity where I can keep learning and contribute to the team.</div>
         </div>
 
         <div class="faq-item reveal reveal-d1">
-          <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q">
             <span data-i18n="contact.q2">Can you work in German?</span> <span class="faq-icon">+</span>
           </div>
           <div class="faq-a" data-i18n="contact.a2">Absolutely. I hold a C1 German language certificate (DSH-2) and use German daily in my academic and professional environment. I can conduct meetings, write documentation, and collaborate fully in German.</div>
         </div>
 
         <div class="faq-item reveal reveal-d2">
-          <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q">
             <span data-i18n="contact.q3">Do you do freelance web development?</span> <span class="faq-icon">+</span>
           </div>
           <div class="faq-a" data-i18n="contact.a3">Yes. I'm happy to take selected freelance projects with clear goals, good communication, and realistic timelines.</div>
         </div>
 
         <div class="faq-item reveal reveal-d3">
-          <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q">
             <span data-i18n="contact.q4">Can you create content / educational videos for my organization?</span> <span class="faq-icon">+</span>
           </div>
           <div class="faq-a" data-i18n="contact.a4">If you're working on educational content for Baltistani communities or Gilgit-Baltistan, I'd love to collaborate. I create content in Balti, Urdu, and English.</div>
         </div>
 
         <div class="faq-item reveal reveal-d4">
-          <div class="faq-q" onclick="toggleFaq(this)">
+          <div class="faq-q">
             <span data-i18n="contact.q5">How quickly do you respond to messages?</span> <span class="faq-icon">+</span>
           </div>
           <div class="faq-a" data-i18n="contact.a5">I typically respond within 24 hours. For urgent matters, feel free to reach out directly via email at naiyarmuslim@gmail.com.</div>
@@ -366,22 +207,6 @@
 
   <script src="../assets/js/i18n.js"></script>
   <script src="../assets/js/main.js"></script>
-  <script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('.submit-btn');
-      btn.textContent = (localStorage.getItem('nm_lang') || 'en') === 'de' ? 'Wird gesendet...' : 'Sending...';
-      btn.disabled = true;
-      setTimeout(() => {
-        e.target.style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
-      }, 1000);
-    }
-
-    function toggleFaq(el) {
-      const item = el.parentElement;
-      item.classList.toggle('open');
-    }
-  </script>
+  <script src="../assets/js/contact.js"></script>
 </body>
 </html>

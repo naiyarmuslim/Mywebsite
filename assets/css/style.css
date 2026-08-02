@@ -1,42 +1,42 @@
 /* ============================================================
   NAIYAR MUSLIM — SHARED STYLESHEET
-  Electric Glass · Violet → Cyan
+  Warm Ember · Amber → Rust → Crimson, high contrast
   ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* ── CSS Variables — violet/cyan brand palette ── */
+/* ── CSS Variables — warm ember brand palette ── */
 :root {
-  --bg:        #EEF8FF;
-  --bg2:       #D1F5FF;
+  --bg:        #FFF8F0;
+  --bg2:       #FFE7CC;
   --surface:   #FFFFFF;
-  --surface2:  #F6FCFF;
-  --border:    #C3ECFB;
-  --border2:   #78E3FD;
+  --surface2:  #FFF2E2;
+  --border:    #F0D2AC;
+  --border2:   #E8A855;
 
-  --accent:    #7D53DE;
+  --accent:    #C74A09;
   --accent2:   #FFFFFF;
-  --accent3:   #34F6F2;
-  --accent4:   #78E3FD;
-  --accent5:   #5A36B0;
+  --accent3:   #B0192F;
+  --accent4:   #E8A200;
+  --accent5:   #7A2B0A;
 
-  --text:      #1B1533;
-  --muted:     #5C567F;
-  --light:     #8B85B3;
+  --text:      #241608;
+  --muted:     #6B5644;
+  --light:     #9C8670;
 
-  --accent-rgb: 125,83,222;
-  --accent3-rgb: 52,246,242;
-  --accent4-rgb: 120,227,253;
-  --line-rgb: 125,83,222;
+  --accent-rgb: 199,74,9;
+  --accent3-rgb: 176,25,47;
+  --accent4-rgb: 232,162,0;
+  --line-rgb: 199,74,9;
 
-  --brand-gradient: linear-gradient(120deg, #7D53DE 0%, #78E3FD 70%, #34F6F2 100%);
+  --brand-gradient: linear-gradient(120deg, #C74A09 0%, #E8A200 60%, #B0192F 100%);
 
   --bg-overlay:
-    radial-gradient(900px 460px at 88% -6%, rgba(120,227,253,0.5), transparent 60%),
-    radial-gradient(760px 420px at -6% 18%, rgba(125,83,222,0.14), transparent 62%),
-    radial-gradient(640px 360px at 50% 100%, rgba(52,246,242,0.16), transparent 60%);
-  --bg-base: linear-gradient(180deg, #F7FCFF 0%, #EEF8FF 45%, #D1F5FF 100%);
-  --nav-bg: rgba(255,255,255,0.72);
+    radial-gradient(900px 460px at 88% -6%, rgba(232,162,0,0.35), transparent 60%),
+    radial-gradient(760px 420px at -6% 18%, rgba(199,74,9,0.16), transparent 62%),
+    radial-gradient(640px 360px at 50% 100%, rgba(176,25,47,0.14), transparent 60%);
+  --bg-base: linear-gradient(180deg, #FFFDF9 0%, #FFF8F0 45%, #FFE7CC 100%);
+  --nav-bg: rgba(255,253,249,0.78);
 
   --mono:    'Space Mono', monospace;
   --display: 'Cabinet Grotesk', sans-serif;
@@ -45,23 +45,23 @@
 
 /* ── Dark mode — flips every shared token; toggled via [data-theme] on <html> ── */
 html[data-theme="dark"] {
-  --bg:        #0B0A17;
-  --bg2:       #14122A;
-  --surface:   #181634;
-  --surface2:  #1E1B40;
-  --border:    #2E2A57;
-  --border2:   #4A3F8C;
+  --bg:        #1A0F08;
+  --bg2:       #24140A;
+  --surface:   #2A170D;
+  --surface2:  #331D10;
+  --border:    #4A2C16;
+  --border2:   #6E4018;
 
-  --text:      #EEEBFF;
-  --muted:     #B3AEDD;
-  --light:     #8880BE;
+  --text:      #FFF3E2;
+  --muted:     #D9B698;
+  --light:     #A9825E;
 
-  --nav-bg: rgba(11,10,23,0.78);
+  --nav-bg: rgba(26,15,8,0.82);
   --bg-overlay:
-    radial-gradient(900px 460px at 88% -6%, rgba(120,227,253,0.16), transparent 60%),
-    radial-gradient(760px 420px at -6% 18%, rgba(125,83,222,0.24), transparent 62%),
-    radial-gradient(640px 360px at 50% 100%, rgba(52,246,242,0.1), transparent 60%);
-  --bg-base: linear-gradient(180deg, #0B0A17 0%, #100E22 50%, #14122A 100%);
+    radial-gradient(900px 460px at 88% -6%, rgba(232,162,0,0.18), transparent 60%),
+    radial-gradient(760px 420px at -6% 18%, rgba(199,74,9,0.26), transparent 62%),
+    radial-gradient(640px 360px at 50% 100%, rgba(176,25,47,0.16), transparent 60%);
+  --bg-base: linear-gradient(180deg, #1A0F08 0%, #20120A 50%, #24140A 100%);
 }
 html[data-theme="dark"] body::before { opacity: 0.5; }
 html[data-theme="dark"] .mobile-menu { background: rgba(11,10,23,0.97); }
