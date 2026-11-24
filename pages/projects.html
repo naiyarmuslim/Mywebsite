@@ -7,14 +7,12 @@
   <title>Projects — Naiyar Muslim</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/projects.css">
+  <link rel="stylesheet" href="../assets/css/repos.css">
 </head>
 <body data-page="projects">
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursor-ring"></div>
   <div id="progress"></div>
 
-  
-   <nav>
+  <nav>
     <a href="../index.html" class="nav-logo"><span class="bracket">[</span>naiyar.dev<span class="bracket">]</span></a>
     <ul class="nav-links">
       <li><a href="../index.html" data-i18n="shared.nav.home">Home</a></li>
@@ -22,7 +20,6 @@
       <li><a href="courses.html" data-i18n="shared.nav.courses">Courses</a></li>
       <li><a href="projects.html" class="active" data-i18n="shared.nav.projects">Projects</a></li>
       <li><a href="content.html" data-i18n="shared.nav.content">Content</a></li>
-      <li><a href="how-the-internet-works.html">How the Internet Works</a></li>
       <li><a href="contact.html" class="nav-cta" data-i18n="shared.nav.contact">Contact →</a></li>
     </ul>
     <button id="lang-toggle" title="Switch language">DE 🇩🇪</button>
@@ -35,143 +32,83 @@
     <a href="courses.html" data-i18n="shared.nav.courses">Courses</a>
     <a href="projects.html" class="active" data-i18n="shared.nav.projects">Projects</a>
     <a href="content.html" data-i18n="shared.nav.content">Content</a>
-    <a href="how-the-internet-works.html">How the Internet Works</a>
     <div class="mobile-theme-row">Dark mode <button data-theme-toggle><span class="theme-toggle-icon">🌙</span></button></div>
     <a href="contact.html" data-i18n="shared.nav.contact">Contact</a>
   </div>
 
-  <!-- PAGE HEADER -->
   <div class="page-header">
-    <div class="terrain-lines"></div>
-    <div class="nature-trail"></div>
-    <div class="section-tag section-tag-center" data-i18n="projects.page_tag">portfolio</div>
-    <h1 class="section-title page-title-projects"><span data-i18n="projects.page_title1">Things I've</span><br><span data-i18n="projects.page_title2">built.</span></h1>
+    <div class="section-tag section-tag-center">repositories</div>
+    <h1 class="section-title page-title-projects">Things I've<br>built.</h1>
   </div>
 
-  <!-- ── PROJECTS ── -->
-  <section id="projects-main" class="projects-main-top">
-    <div class="terrain-lines"></div>
-    <div class="nature-mountains"></div>
-    <div class="nature-forest"></div>
-    <div class="glow-orb orb-cyan orb-projects-cyan"></div>
-    <div class="container">
-
-      <div class="row-header reveal">
-        <div>
-          <div class="section-tag" data-i18n="projects.self_tag">self-learning projects</div>
-          <h2 class="section-title section-title-sm"><span data-i18n="projects.self_t1">Personal &amp;</span> <span data-i18n="projects.self_t2">Self-Built Projects</span></h2>
-        </div>
-        <a href="https://github.com/naiyarmuslim" target="_blank" class="btn-outline" data-i18n="projects.gh_btn">View GitHub →</a>
-      </div>
-
-      <!-- Self-learning completed -->
-      <div class="cat-header reveal">
-        <span class="cat-title cat-title-done" data-i18n="projects.cat_done">✓ Completed</span>
-        <div class="cat-line"></div>
-      </div>
-
-      <div class="row-stack">
-        <div class="project-row reveal">
-          <div>
-            <div class="project-name" data-i18n="projects.p1_name">🖥️ Self-Hosted Cloud Server</div>
-            <div class="project-desc" data-i18n="projects.p1_desc">Deployed a private Nextcloud instance on Linux using Docker Compose. Overcame ISP port-443 restriction with Cloudflare Proxy Tunnel and custom DNS on GoDaddy. Diagnosed and resolved a recursive Git loop conflict via manual IP configuration.</div>
-          </div>
-          <div class="project-stack">
-            <span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">Nextcloud</span><span class="tag">Cloudflare</span>
-          </div>
-          <div class="proj-links">
-            <a href="#" class="proj-link" title="GitHub">⌥</a>
-          </div>
-        </div>
-
-        <div class="project-row reveal reveal-d1">
-          <div>
-            <div class="project-name" data-i18n="projects.p2_name">🌐 Personal Portfolio Website</div>
-            <div class="project-desc" data-i18n="projects.p2_desc">This website — modern developer portfolio built with pure HTML, CSS, and JavaScript. Separate pages per section, shared stylesheet, responsive design with dark terminal aesthetic.</div>
-          </div>
-          <div class="project-stack">
-            <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
-          </div>
-          <div class="proj-links">
-            <a href="#" class="proj-link" title="GitHub">⌥</a>
-            <a href="../index.html" class="proj-link" title="Live">↗</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Self-learning in progress -->
-      <div class="cat-header reveal">
-        <span class="cat-title cat-title-wip" data-i18n="projects.cat_wip">⟳ In Progress / Paused</span>
-        <div class="cat-line"></div>
-      </div>
-
-      <div class="row-stack-loose">
-        <div class="project-row reveal project-row-faded">
-          <div>
-            <div class="project-name" data-i18n="projects.p3_name">🧪 C & Java Practice Projects</div>
-            <div class="project-desc" data-i18n="projects.p3_desc">Practice programs and coursework exercises in C and Java to strengthen problem-solving fundamentals.</div>
-          </div>
-          <div class="project-stack">
-            <span class="tag">C</span><span class="tag">Java</span>
-          </div>
-          <div class="proj-links">
-            <a href="#" class="proj-link" title="GitHub">⌥</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- GitHub projects not previously listed -->
-      <div class="row-header-tight reveal">
-        <div>
-          <div class="section-tag" data-i18n="projects.more_tag">github</div>
-          <h2 class="section-title section-title-sm"><span data-i18n="projects.more_t1">More</span> <span data-i18n="projects.more_t2">GitHub Projects</span></h2>
-        </div>
-      </div>
-
-      <div class="row-stack-tight">
-        <div class="project-row reveal">
-          <div>
-            <div class="project-name" data-i18n="projects.g1_name">🗓️ Shift Planner</div>
-            <div class="project-desc" data-i18n="projects.g1_desc">Web application for planning employee shifts for a small business. Built as a practical scheduling tool for organizing teams and weekly coverage.</div>
-          </div>
-          <div class="project-stack">
-            <span class="tag">HTML</span><span class="tag">Planning</span><span class="tag">Web App</span>
-          </div>
-          <div class="proj-links">
-            <a href="https://github.com/naiyarmuslim/shift-planner" target="_blank" class="proj-link" title="GitHub">⌥</a>
-          </div>
-        </div>
-
-        <div class="project-row reveal reveal-d1">
-          <div>
-            <div class="project-name" data-i18n="projects.g2_name">🧑‍💻 Portfolio</div>
-            <div class="project-desc" data-i18n="projects.g2_desc">Portfolio project from my GitHub profile, focused on layout structure and front-end presentation.</div>
-          </div>
-          <div class="project-stack">
-            <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-          </div>
-          <div class="proj-links">
-            <a href="https://github.com/naiyarmuslim/Portfolio" target="_blank" class="proj-link" title="GitHub">⌥</a>
-          </div>
-        </div>
-
-        <div class="project-row reveal reveal-d2">
-          <div>
-            <div class="project-name" data-i18n="projects.g3_name">🧭 Rasta</div>
-            <div class="project-desc" data-i18n="projects.g3_desc">Project from my GitHub profile, included to show ongoing app development and experimentation.</div>
-          </div>
-          <div class="project-stack">
-            <span class="tag">JavaScript</span><span class="tag">App Dev</span>
-          </div>
-          <div class="proj-links">
-            <a href="https://github.com/naiyarmuslim/Rasta" target="_blank" class="proj-link" title="GitHub">⌥</a>
-          </div>
-        </div>
-      </div>
+  <main class="repo-wrap">
+    <div class="repo-toolbar">
+      <input id="repo-search" class="repo-search" type="search" placeholder="Find a project…" aria-label="Search projects">
+      <button class="repo-filter active" data-status="all" type="button">All</button>
+      <button class="repo-filter" data-status="completed" type="button">Completed</button>
+      <button class="repo-filter" data-status="progress" type="button">In progress</button>
+      <select id="repo-sort" class="repo-sort" aria-label="Sort">
+        <option value="updated">Last updated</option>
+        <option value="name">Name</option>
+      </select>
+      <a href="https://github.com/naiyarmuslim" target="_blank" rel="noopener" class="btn-outline">View GitHub →</a>
     </div>
-  </section>
 
-  <!-- FOOTER -->
+    <p id="repo-count" class="repo-count"></p>
+
+    <ul id="repo-list" class="repo-list">
+
+      <li><a class="repo-item" href="projects/internet.html" data-status="completed" data-name="how-the-internet-works" data-updated="9">
+        <div class="repo-head"><span class="repo-name">how-the-internet-works</span><span class="repo-badge">Interactive</span></div>
+        <p class="repo-desc">Interactive reference for the OSI 7-layer model, Protocol Data Units, encapsulation and the protocols HTTP, DNS, QUIC, TCP, UDP and IP.</p>
+        <div class="repo-meta"><span><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span>Networking</span></div>
+        <div class="repo-topics"><span class="repo-topic">osi-model</span><span class="repo-topic">networking</span><span class="repo-topic">protocols</span></div>
+      </a></li>
+
+      <li><a class="repo-item" href="projects/algorithms.html" data-status="progress" data-name="algorithms" data-updated="8">
+        <div class="repo-head"><span class="repo-name">algorithms</span><span class="repo-badge">Interactive</span></div>
+        <p class="repo-desc">Algorithms explained and visualised step by step.</p>
+        <div class="repo-meta"><span><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span>Algorithms</span></div>
+        <div class="repo-topics"><span class="repo-topic">algorithms</span><span class="repo-topic">visualization</span></div>
+      </a></li>
+
+      <li><a class="repo-item" href="projects/planner.html" data-status="completed" data-name="shift-planner" data-updated="7">
+        <div class="repo-head"><span class="repo-name">shift-planner</span><span class="repo-badge">Public</span></div>
+        <p class="repo-desc">Web application for planning employee shifts for a small business. Built as a practical scheduling tool for organizing teams and weekly coverage.</p>
+        <div class="repo-meta"><span><span class="lang-dot" style="background:#e34c26"></span>HTML</span></div>
+        <div class="repo-topics"><span class="repo-topic">planning</span><span class="repo-topic">web-app</span></div>
+      </a></li>
+
+      <li><a class="repo-item" href="projects/fsil.html" data-status="completed" data-name="self-hosted-cloud-server" data-updated="6">
+        <div class="repo-head"><span class="repo-name">self-hosted-cloud-server</span><span class="repo-badge">Completed</span></div>
+        <p class="repo-desc">Private Nextcloud instance on Linux with Docker Compose, reachable via Cloudflare Proxy Tunnel and custom DNS on GoDaddy.</p>
+        <div class="repo-meta"><span><span class="lang-dot" style="background:#384d54"></span>Docker</span><span>Linux</span></div>
+        <div class="repo-topics"><span class="repo-topic">docker</span><span class="repo-topic">linux</span><span class="repo-topic">nextcloud</span><span class="repo-topic">cloudflare</span></div>
+      </a></li>
+
+      <li><a class="repo-item" href="projects/mywebsite.html" data-status="completed" data-name="personal-portfolio-website" data-updated="5">
+        <div class="repo-head"><span class="repo-name">personal-portfolio-website</span><span class="repo-badge">Completed</span></div>
+        <p class="repo-desc">This website — a developer portfolio built with pure HTML, CSS and JavaScript. Separate pages per section, shared stylesheet, responsive design.</p>
+        <div class="repo-meta"><span><span class="lang-dot" style="background:#e34c26"></span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <div class="repo-topics"><span class="repo-topic">html5</span><span class="repo-topic">css3</span><span class="repo-topic">javascript</span></div>
+      </a></li>
+
+      <li><a class="repo-item" href="projects/rasta.html" data-status="progress" data-name="rasta" data-updated="3">
+        <div class="repo-head"><span class="repo-name">Rasta</span><span class="repo-badge">Public</span></div>
+        <p class="repo-desc">Project from my GitHub profile, included to show ongoing app development and experimentation.</p>
+        <div class="repo-meta"><span><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span><span>App Dev</span></div>
+      </a></li>
+
+      <li><a class="repo-item" href="projects/programming.html" data-status="progress" data-name="c-and-java-practice" data-updated="2">
+        <div class="repo-head"><span class="repo-name">c-and-java-practice</span><span class="repo-badge">Paused</span></div>
+        <p class="repo-desc">Practice programs and coursework exercises in C and Java to strengthen problem-solving fundamentals.</p>
+        <div class="repo-meta"><span><span class="lang-dot" style="background:#555555"></span>C</span><span><span class="lang-dot" style="background:#b07219"></span>Java</span></div>
+      </a></li>
+
+    </ul>
+    <div id="repo-empty" class="repo-empty" hidden>No projects match your search.</div>
+  </main>
+
   <footer>
     <div class="footer-logo"><span>[</span>naiyar.dev<span>]</span></div>
     <div class="footer-copy" data-i18n="shared.footer.copy">© 2025 Naiyar Muslim. All rights reserved.</div>
@@ -184,6 +121,6 @@
 
   <script src="../assets/js/i18n.js"></script>
   <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/projects.js"></script>
+  <script src="../assets/js/repos.js"></script>
 </body>
 </html>
